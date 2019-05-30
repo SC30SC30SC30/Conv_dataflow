@@ -97,7 +97,8 @@ int main(int argc, char* argv[])
 {
 	config* data = (config*)malloc(sizeof(config));
 	tile_param* tile = (tile_param*)malloc(sizeof(tile_param));
-	int a[10] = {6, 4, 3, 4, 8, 2, 2, 2, 4, 1};   // AlexNet的CONV4
+	// int a[10] = {15, 192, 3, 13, 384, 13, 13, 4, 4, 1};   // AlexNet的CONV4
+	int a[10] = {15, 192, 3, 13, 256, 13, 13, 4, 4, 1};   // AlexNet的CONV5
 	set_configuration(data, tile, a);
 
 	// verify_IR(data, tile);
