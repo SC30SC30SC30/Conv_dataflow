@@ -32,18 +32,17 @@ float* create_data(size_t size);
 void reorder_data_layout(float* input, float* kernel, config* data, tile_param* tile);
 
 // 設定不同的block size
-void set_block_id(int size);
-void label_block_id(float* data, int size);
+void label_block_id(float* data, int total_data, int block_size);
 
 // 記錄input、weight、output的data access
-void memory_trace(char type, float* addr, char* data_type, uint64_t* data_addr, int* addr_idx);
+void memory_trace(int block_size, char type, float* addr, char* data_type, uint64_t* data_addr, int* addr_idx);
 void write_trace_result(char* file_name, char* data_type, uint64_t* data_addr, int addr_count);
 
 // 算出data access的reuse distance
 void compute_rd(bool write_file, tile_param* tile, char* data_type, uint64_t* data_addr, int addr_count);
 
 // (2d input) x (2d weight) 
-void a_2d_conv(float* input, float* kernel, float* output, config* data, bool trace_flag, char* data_type, uint64_t* data_addr, int* addr_idx);
+void a_2d_conv(float* input, float* kernel, float* output, config* data, tile_param* tile, bool trace_flag, char* data_type, uint64_t* data_addr, int* addr_idx);
 
 // 不同的convolution dataflow的執行順序
 void direct_conv_oc_ic_oh_ow(float* input, float* kernel, float* output, config* data, tile_param* tile, bool tile_flag, bool trace_flag, char* data_type, uint64_t* data_addr, int* addr_idx);

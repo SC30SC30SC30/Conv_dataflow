@@ -1,10 +1,8 @@
 #include "splay_tree.h"
 #include "dataflow.h"
 
-std::map<float*, float*> data_block_id;
-int idx = 0;
-int block_size = 1;
-std::vector<float> block_id;
+std::map<float*, int> data_block_id;
+int block_id = 1;
 int file_count = 1;
 
 void set_configuration(config* data, tile_param* tile, int* param)
@@ -171,44 +169,34 @@ void reorder_data_layout(float* input, float* kernel, config* data, tile_param* 
 	}
 }
 
-void set_block_id(int size)
+void label_block_id(float* data, int total_data, int block_size)
 {
-	for(int i = 0; i < (size/block_size); i++)
+	int count = 1;
+	for (int i = 0; i < total_data; i++)
 	{
-		block_id.push_back(i+1.0);
-	}
-}
-
-void label_block_id(float* data, int size)
-{
-	if((size % block_size) != 0)
-	{
-		printf("block_size error !!!\n");
-		exit(1);
-	}
-
-	for(int i = 0; i < size; i += block_size)
-	{
-		for(int j = 0; j < block_size; j++)
+		data_block_id[(data + i)] = block_id;
+		if(count == block_size)
 		{
-			data_block_id[(data+i+j)] = &(block_id[idx]);
+			count = 0;
+			block_id++;
 		}
-		idx++;
+		count++;
+		printf("%p\t%d\n", (data+i), data_block_id[(data + i)]);
 	}
-	printf("data label finish !!!\tsize = %d\tidx = %d~%d\n", size, (idx-size/block_size), idx-1);
+	block_id++;
 }
 
-void memory_trace(char type, float* addr, char* data_type, uint64_t* data_addr, int* addr_idx)
+void memory_trace(int block_size, char type, float* addr, char* data_type, uint64_t* data_addr, int* addr_idx)
 {
 	*(data_type + (*addr_idx)) = type;
 	if(block_size == 1)
 	{
 		*(data_addr + (*addr_idx)) = (uint64_t)addr;
 	}
-	else
-	{
-		*(data_addr + (*addr_idx)) = (uint64_t)data_block_id[addr];
-	}
+	// else
+	// {
+	// 	*(data_addr + (*addr_idx)) = (uint64_t)data_block_id[addr];
+	// }
 	(*addr_idx)++;
 }
 
@@ -287,7 +275,7 @@ void compute_rd(bool write_file, tile_param* tile, char* data_type, uint64_t* da
 	}
 }
 
-void a_2d_conv(float* input, float* kernel, float* output, config* data, bool trace_flag, char* data_type, uint64_t* data_addr, int* addr_idx)
+void a_2d_conv(float* input, float* kernel, float* output, config* data, tile_param* tile, bool trace_flag, char* data_type, uint64_t* data_addr, int* addr_idx)
 {
 	for(int kh = 0; kh < (data->weight_size); kh++)
 	{
@@ -298,9 +286,9 @@ void a_2d_conv(float* input, float* kernel, float* output, config* data, bool tr
 			*(output) += (*(i_addr) * *(w_addr));
 			if(trace_flag)
 			{
-				memory_trace('i', i_addr, data_type, data_addr, addr_idx);
-				memory_trace('w', w_addr, data_type, data_addr, addr_idx);
-				memory_trace('o', output, data_type, data_addr, addr_idx);
+				memory_trace(tile->block_size, 'i', i_addr, data_type, data_addr, addr_idx);
+				memory_trace(tile->block_size, 'w', w_addr, data_type, data_addr, addr_idx);
+				memory_trace(tile->block_size, 'o', output, data_type, data_addr, addr_idx);
 			}
 		}
 	}
@@ -337,7 +325,7 @@ void direct_conv_oc_ic_oh_ow(float* input, float* kernel, float* output, config*
 					float* w_addr = (kernel + oc*(data->weight_size)*(data->weight_size)*data->input_c + ic*(data->weight_size)*(data->weight_size));
 					float* o_addr = (output + oc*data->output_size*data->output_size + oh*data->output_size + ow);
 
-					a_2d_conv(i_addr, w_addr, o_addr, data, trace_flag, data_type, data_addr, addr_idx);
+					a_2d_conv(i_addr, w_addr, o_addr, data, tile, trace_flag, data_type, data_addr, addr_idx);
 				}
 			}
 		}
@@ -375,7 +363,7 @@ void direct_conv_ic_oc_oh_ow(float* input, float* kernel, float* output, config*
 					float* w_addr = (kernel + oc*(data->weight_size)*(data->weight_size)*data->input_c + ic*(data->weight_size)*(data->weight_size));
 					float* o_addr = (output + oc*data->output_size*data->output_size + oh*data->output_size + ow);
 
-					a_2d_conv(i_addr, w_addr, o_addr, data, trace_flag, data_type, data_addr, addr_idx);
+					a_2d_conv(i_addr, w_addr, o_addr, data, tile, trace_flag, data_type, data_addr, addr_idx);
 				}
 			}
 		}
@@ -413,7 +401,7 @@ void direct_conv_oc_oh_ow_ic(float* input, float* kernel, float* output, config*
 					float* w_addr = (kernel + oc*(data->weight_size)*(data->weight_size)*data->input_c + ic*(data->weight_size)*(data->weight_size));
 					float* o_addr = (output + oc*data->output_size*data->output_size + oh*data->output_size + ow);
 
-					a_2d_conv(i_addr, w_addr, o_addr, data, trace_flag, data_type, data_addr, addr_idx);
+					a_2d_conv(i_addr, w_addr, o_addr, data, tile, trace_flag, data_type, data_addr, addr_idx);
 				}
 			}
 		}
@@ -451,7 +439,7 @@ void direct_conv_oh_ow_oc_ic(float* input, float* kernel, float* output, config*
 					float* w_addr = (kernel + oc*(data->weight_size)*(data->weight_size)*data->input_c + ic*(data->weight_size)*(data->weight_size));
 					float* o_addr = (output + oc*data->output_size*data->output_size + oh*data->output_size + ow);
 
-					a_2d_conv(i_addr, w_addr, o_addr, data, trace_flag, data_type, data_addr, addr_idx);
+					a_2d_conv(i_addr, w_addr, o_addr, data, tile, trace_flag, data_type, data_addr, addr_idx);
 				}
 			}
 		}
@@ -489,7 +477,7 @@ void direct_conv_ic_oh_ow_oc(float* input, float* kernel, float* output, config*
 					float* w_addr = (kernel + oc*(data->weight_size)*(data->weight_size)*data->input_c + ic*(data->weight_size)*(data->weight_size));
 					float* o_addr = (output + oc*data->output_size*data->output_size + oh*data->output_size + ow);
 
-					a_2d_conv(i_addr, w_addr, o_addr, data, trace_flag, data_type, data_addr, addr_idx);
+					a_2d_conv(i_addr, w_addr, o_addr, data, tile, trace_flag, data_type, data_addr, addr_idx);
 				}
 			}
 		}
@@ -527,7 +515,7 @@ void direct_conv_oh_ow_ic_oc(float* input, float* kernel, float* output, config*
 					float* w_addr = (kernel + oc*(data->weight_size)*(data->weight_size)*data->input_c + ic*(data->weight_size)*(data->weight_size));
 					float* o_addr = (output + oc*data->output_size*data->output_size + oh*data->output_size + ow);
 
-					a_2d_conv(i_addr, w_addr, o_addr, data, trace_flag, data_type, data_addr, addr_idx);
+					a_2d_conv(i_addr, w_addr, o_addr, data, tile, trace_flag, data_type, data_addr, addr_idx);
 				}
 			}
 		}
@@ -573,9 +561,9 @@ void direct_conv_kh_kw_oh_ow_oc_ic(float* input, float* kernel, float* output, c
 
 							if(trace_flag)
 							{
-								memory_trace('i', i_addr, data_type, data_addr, addr_idx);
-								memory_trace('w', w_addr, data_type, data_addr, addr_idx);
-								memory_trace('o', o_addr, data_type, data_addr, addr_idx);
+								memory_trace(tile->block_size, 'i', i_addr, data_type, data_addr, addr_idx);
+								memory_trace(tile->block_size, 'w', w_addr, data_type, data_addr, addr_idx);
+								memory_trace(tile->block_size, 'o', o_addr, data_type, data_addr, addr_idx);
 							}
 						}
 					}
@@ -625,9 +613,9 @@ void direct_conv_kh_kw_oh_ow_oc_ic_reorder(float* input, float* kernel, float* o
 
 							if(trace_flag)
 							{
-								memory_trace('i', i_addr, data_type, data_addr, addr_idx);
-								memory_trace('w', w_addr, data_type, data_addr, addr_idx);
-								memory_trace('o', o_addr, data_type, data_addr, addr_idx);
+								memory_trace(tile->block_size, 'i', i_addr, data_type, data_addr, addr_idx);
+								memory_trace(tile->block_size, 'w', w_addr, data_type, data_addr, addr_idx);
+								memory_trace(tile->block_size, 'o', o_addr, data_type, data_addr, addr_idx);
 							}
 						}
 					}
