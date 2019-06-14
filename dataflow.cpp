@@ -193,10 +193,10 @@ void memory_trace(int block_size, char type, float* addr, char* data_type, uint6
 	{
 		*(data_addr + (*addr_idx)) = (uint64_t)addr;
 	}
-	// else
-	// {
-	// 	*(data_addr + (*addr_idx)) = (uint64_t)data_block_id[addr];
-	// }
+	else
+	{
+		*(data_addr + (*addr_idx)) = (uint64_t)data_block_id[addr];
+	}
 	(*addr_idx)++;
 }
 
