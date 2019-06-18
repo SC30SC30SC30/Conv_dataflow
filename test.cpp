@@ -194,6 +194,10 @@ int main(int argc, char* argv[])
 	// int a[10] = {4, 4, 1, 4, 8, 2, 2, 2, 4, 1};   // simple test 
 	set_configuration(data, tile, a);
 
+	printf("Input : %d x %d x %d\n", data->input_size, data->input_size, data->input_c);
+	printf("Weight : %d x %d x %d x %d\n", data->weight_size, data->weight_size, data->input_c, data->output_c);
+	printf("Output : %d x %d x %d\n", data->output_size, data->output_size, data->output_c);
+
 	// verify_IR(data, tile);
 	verify_WR(data, tile);
 	// run_one_case(data, tile);
