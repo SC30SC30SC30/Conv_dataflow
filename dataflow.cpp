@@ -49,7 +49,7 @@ int total_value(config* data, char data_type)
 {
 	int result = 0;
 	if(data_type == 'I')
-		result = data->input_size * data->input_size * data->input_size;
+		result = data->input_size * data->input_size * data->input_c;
 	else if(data_type == 'W')
 		result = data->weight_size * data->weight_size * data->input_c * data->output_c;
 	else if(data_type == 'O')
