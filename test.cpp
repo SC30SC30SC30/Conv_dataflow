@@ -130,30 +130,73 @@ void verify_IR(config* data, tile_param* tile)
 	free(I);
 }
 
+// Deep Convolutional Neural Network Architecture With Reconfigurable Computation Patterns, 2017
+void verify_WR(config* data, tile_param* tile)
+{
+	float* I = create_data(data->input_size*data->input_size*data->input_c);
+	float* W = create_data(data->weight_size*data->weight_size*data->input_c*data->output_c);
+	float* O = create_data(data->output_size*data->output_size*data->output_c);
+	int total_O = data->output_size * data->output_size * data->output_c;
+	clear_data(O, total_O);
+	int total_access = total_access_times(data);
+
+	char* data_type = (char*)malloc(total_access * sizeof(char));
+	uint64_t* data_addr = (uint64_t*)malloc(total_access * sizeof(uint64_t));
+	int addr_idx = 0;
+
+	for(int TR = 1; TR <= (data->output_size); TR++)
+	{
+		if(((data->output_size) % TR) == 0)
+		{
+			for(int TM = 1; TM <= (data->output_c); TM++)
+			{
+				if(((data->output_c) % TM) == 0)
+				{
+					for(int TN = 1; TN <= (data->input_c); TN++)
+					{
+						if(((data->input_c) % TN) == 0)
+						{
+							tile->tr = TR;
+							tile->tc = TR;
+							tile->tn = TN;
+							tile->tm = TM;
+							if(greater50(tile->tr, tile->tc, tile->tn, tile->tm, data->weight_size, 'W'))
+							{
+								printf("<tr, tc, tn, tm> = <%d, %d, %d, %d>\n", tile->tr, tile->tc, tile->tn, tile->tm);
+
+								tile_conv_oc_ic_oh_ow(I, W, O, data, tile, 1, true, data_type, data_addr, &addr_idx);
+								compute_rd(true, tile, data_type, data_addr, total_access);
+								clear_data(O, total_O);
+								addr_idx = 0;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	free(data_addr);
+	free(data_type);
+	free(O);
+	free(W);
+	free(I);
+}
+
 int main(int argc, char* argv[])
 {
 	config* data = (config*)malloc(sizeof(config));
 	tile_param* tile = (tile_param*)malloc(sizeof(tile_param));
+	// int a[10] = {31, 48, 5, 27, 256, 16, 16, 4, 4, 1};   // AlexNet的CONV2
+	int a[10] = {15, 256, 3, 13, 384, 4, 4, 64, 3, 1};   // AlexNet的CONV3
 	// int a[10] = {15, 192, 3, 13, 384, 13, 13, 4, 4, 1};   // AlexNet的CONV4
 	// int a[10] = {15, 192, 3, 13, 256, 13, 13, 4, 4, 1};   // AlexNet的CONV5
-	int a[10] = {4, 4, 1, 4, 8, 2, 2, 2, 4, 1};   // simple test 
+	// int a[10] = {4, 4, 1, 4, 8, 2, 2, 2, 4, 1};   // simple test 
 	set_configuration(data, tile, a);
 
 	// verify_IR(data, tile);
+	verify_WR(data, tile);
 	// run_one_case(data, tile);
-
-	float* I = create_data(data->input_size*data->input_size*data->input_c);
-	float* W = create_data(data->weight_size*data->weight_size*data->input_c*data->output_c);
-	float* O = create_data(data->output_size*data->output_size*data->output_c);
-	int total_O = total_value(data, 'O');
-	clear_data(O, total_O);
-	int total_access = total_access_times(data);
-	printf("total_I=%d\ttotal_W=%d\ttotal_O=%d\ttotal_access=%d\n", 
-		total_value(data,'I'), total_value(data,'W'), total_value(data,'O'), total_access);
-	printf("Input : \n");
-	label_block_id(I, total_value(data, 'I'), 3);
-	printf("Weight : \n");
-	label_block_id(W, total_value(data, 'W'), 3);
 	
 	free(data);
 	free(tile);
