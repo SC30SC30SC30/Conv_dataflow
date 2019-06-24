@@ -50,13 +50,12 @@ void run_one_case(config* data, tile_param* tile)
 	uint64_t* data_addr = (uint64_t*)malloc(total_access * sizeof(uint64_t));
 	int addr_idx = 0;
 
-<<<<<<< Updated upstream
-	if(greater50(tile->tr, tile->tc, tile->tn, tile->tm, data->weight_size, 'W'))
+	if(greater50(tile->tr, tile->tc, tile->tn, tile->tm, data->weight_size, 'I'))
 	{
 		// clock_t start, end;
 		// start = clock();
-		// tile_conv_oh_ow_ic_oc(I, W, O, data, tile, 1, true, data_type, data_addr, &addr_idx);//IR
-		tile_conv_oc_ic_oh_ow(I, W, O, data, tile, 1, true, data_type, data_addr, &addr_idx);//WR
+		tile_conv_oh_ow_ic_oc(I, W, O, data, tile, 1, true, data_type, data_addr, &addr_idx);//IR
+		// tile_conv_oc_ic_oh_ow(I, W, O, data, tile, 1, true, data_type, data_addr, &addr_idx);//WR
 		// direct_conv_oc_ic_oh_ow(I, W, O, data, tile, false, true, data_type, data_addr, &addr_idx);
 		// end = clock();
 		// printf("The time = %ld ms\n", (end-start)/**1000/CLOCKS_PER_SEC*/);
@@ -67,20 +66,6 @@ void run_one_case(config* data, tile_param* tile)
 		// clear_data(O, total_O);
 		// reorder_data_layout(I, W, data, tile);
 	}
-=======
-	// clock_t start, end;
-	// start = clock();
-	tile_conv_oh_ow_ic_oc(I, W, O, data, tile, 1, true, data_type, data_addr, &addr_idx);
-	// direct_conv_oc_ic_oh_ow(I, W, O, data, tile, false, true, data_type, data_addr, &addr_idx);
-	// end = clock();
-	// printf("The time = %ld ms\n", (end-start)/**1000/CLOCKS_PER_SEC*/);
-	compute_rd(true, tile, data_type, data_addr, total_access);
-
-	// write_trace_result("conv_3x3_trace.out", data_type, data_addr, total_access);
-
-	// clear_data(O, total_O);
-	// reorder_data_layout(I, W, data, tile);
->>>>>>> Stashed changes
 
 	free(data_addr);
 	free(data_type);
