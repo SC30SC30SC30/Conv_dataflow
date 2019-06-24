@@ -7,9 +7,9 @@ import matplotlib.pyplot as plt
 import sys
 import os
 
-FILE_NUM = 7
+FILE_NUM = 2
 FILE_PATH = []
-PROD_FIG = False
+PROD_FIG = True
 FIG_TYPE = "bar"
 FIG_NAME = []
 on_chip_buffer_size = 2000
@@ -112,8 +112,8 @@ def get_rd_hist(fig_name):
 	plt.savefig(fig_name + ".jpg")
 
 def run():
-	# get_file_name(FILE_NUM)
-	FILE_NUM = get_many_file_name()
+	get_file_name(FILE_NUM)
+	# FILE_NUM = get_many_file_name()
 	for i in range(FILE_NUM):
 		read_mem_access_rd(FILE_PATH[i], PROD_FIG, FIG_TYPE)
 		if PROD_FIG:

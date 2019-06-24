@@ -68,7 +68,7 @@ void run_one_case(config* data, tile_param* tile)
 	}
 	else
 	{
-		printf("Not greater 50%\n");
+		printf("Not greater 50\n");
 		int tile_I = (tile->tr-1+data->weight_size) * (tile->tr-1+data->weight_size) * (tile->tn);
 		int tile_W = data->weight_size * data->weight_size * tile->tn * tile->tm;
 		int tile_O = tile->tr * tile->tc * tile->tm;
@@ -203,7 +203,7 @@ int main(int argc, char* argv[])
 	// int a[10] = {15, 256, 3, 13, 384, 4, 4, 64, 3, 1};   // AlexNet的CONV3
 	// int a[10] = {15, 192, 3, 13, 384, 13, 13, 4, 4, 1};   // AlexNet的CONV4
 	// int a[10] = {15, 192, 3, 13, 256, 13, 13, 4, 4, 1};   // AlexNet的CONV5
-	int a[10] = {4, 4, 1, 4, 8, 2, 2, 2, 4, 1};   // simple test 
+	int a[10] = {8, 4, 1, 8, 8, 2, 2, 4, 2, 1};   // simple test 
 	set_configuration(data, tile, a);
 
 	printf("Input : %d x %d x %d\n", data->input_size, data->input_size, data->input_c);
