@@ -50,6 +50,7 @@ void run_one_case(config* data, tile_param* tile)
 	uint64_t* data_addr = (uint64_t*)malloc(total_access * sizeof(uint64_t));
 	int addr_idx = 0;
 
+<<<<<<< Updated upstream
 	if(greater50(tile->tr, tile->tc, tile->tn, tile->tm, data->weight_size, 'W'))
 	{
 		// clock_t start, end;
@@ -66,6 +67,20 @@ void run_one_case(config* data, tile_param* tile)
 		// clear_data(O, total_O);
 		// reorder_data_layout(I, W, data, tile);
 	}
+=======
+	// clock_t start, end;
+	// start = clock();
+	tile_conv_oh_ow_ic_oc(I, W, O, data, tile, 1, true, data_type, data_addr, &addr_idx);
+	// direct_conv_oc_ic_oh_ow(I, W, O, data, tile, false, true, data_type, data_addr, &addr_idx);
+	// end = clock();
+	// printf("The time = %ld ms\n", (end-start)/**1000/CLOCKS_PER_SEC*/);
+	compute_rd(true, tile, data_type, data_addr, total_access);
+
+	// write_trace_result("conv_3x3_trace.out", data_type, data_addr, total_access);
+
+	// clear_data(O, total_O);
+	// reorder_data_layout(I, W, data, tile);
+>>>>>>> Stashed changes
 
 	free(data_addr);
 	free(data_type);
@@ -192,10 +207,10 @@ int main(int argc, char* argv[])
 	config* data = (config*)malloc(sizeof(config));
 	tile_param* tile = (tile_param*)malloc(sizeof(tile_param));
 	// int a[10] = {31, 48, 5, 27, 256, 16, 16, 4, 4, 1};   // AlexNet的CONV2
-	int a[10] = {15, 256, 3, 13, 384, 4, 4, 64, 3, 1};   // AlexNet的CONV3
+	// int a[10] = {15, 256, 3, 13, 384, 4, 4, 64, 3, 1};   // AlexNet的CONV3
 	// int a[10] = {15, 192, 3, 13, 384, 13, 13, 4, 4, 1};   // AlexNet的CONV4
 	// int a[10] = {15, 192, 3, 13, 256, 13, 13, 4, 4, 1};   // AlexNet的CONV5
-	// int a[10] = {4, 4, 1, 4, 8, 2, 2, 2, 4, 1};   // simple test 
+	int a[10] = {4, 4, 1, 4, 8, 2, 2, 2, 4, 1};   // simple test 
 	set_configuration(data, tile, a);
 
 	printf("Input : %d x %d x %d\n", data->input_size, data->input_size, data->input_c);
@@ -203,8 +218,8 @@ int main(int argc, char* argv[])
 	printf("Output : %d x %d x %d\n", data->output_size, data->output_size, data->output_c);
 
 	// verify_IR(data, tile);
-	verify_WR(data, tile);
-	// run_one_case(data, tile);
+	// verify_WR(data, tile);
+	run_one_case(data, tile);
 	
 	free(data);
 	free(tile);
