@@ -66,6 +66,14 @@ void run_one_case(config* data, tile_param* tile)
 		// clear_data(O, total_O);
 		// reorder_data_layout(I, W, data, tile);
 	}
+	else
+	{
+		printf("Not greater 50%\n");
+		int tile_I = (tile->tr-1+data->weight_size) * (tile->tr-1+data->weight_size) * (tile->tn);
+		int tile_W = data->weight_size * data->weight_size * tile->tn * tile->tm;
+		int tile_O = tile->tr * tile->tc * tile->tm;
+		printf("tile_I=%d\ttile_W=%d\ttile_O=%d\n", tile_I, tile_W, tile_O);
+	}
 
 	free(data_addr);
 	free(data_type);
