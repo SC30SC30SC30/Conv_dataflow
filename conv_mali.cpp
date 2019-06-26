@@ -12,6 +12,14 @@
 
 using namespace std;
 
+cl_program read_cl_file(char* file_name)
+{
+	fstream file;
+	file.read(file_name, ios::in);
+	cl_program program;
+	program = clCreateProgramWithSource(context, );
+} 
+
 bool setup_gpu()
 {
 	cl_int err;
@@ -81,7 +89,7 @@ bool setup_gpu()
 	}
 
 	cl_program program;
-	program = clCreateProgramWithSource(context, );
+	program = read_cl_file();
 }
 
 int main(int argc, char* argv[])
