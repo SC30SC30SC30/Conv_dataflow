@@ -7,12 +7,12 @@ import matplotlib.pyplot as plt
 import sys
 import os
 
-FILE_NUM = 2
+FILE_NUM = 4
 FILE_PATH = []
 PROD_FIG = True
 FIG_TYPE = "bar"
 FIG_NAME = []
-on_chip_buffer_size = 2000
+on_chip_buffer_size = 1283
 expand = []
 rd_bar_x = []
 rd_bar_y = []
@@ -76,13 +76,17 @@ def read_mem_access_rd(path, fig_bool, fig_type):
 				if count == 0:
 					log_count = 0
 				else:
-					log_count = int(round(math.log(count, 2)))
+					log_count = int(round(math.log(count, 10)))
 				for i in range(log_count):
 					expand.append(distance)
 			# 圖的內容 (用plt.bar)
 			if fig_type == "bar":
+				if count == 0:
+					log_count = 0
+				else:
+					log_count = int(round(math.log(count, 10)))
 				rd_bar_x.append(distance)
-				rd_bar_y.append(count)
+				rd_bar_y.append(log_count)
 			# 圖的內容 (用plt.plot)
 			if fig_type == "plot":
 				x.append(distance)
@@ -103,7 +107,7 @@ def get_rd_hist(fig_name):
 	plt.ylabel("number")
 	# plt.xlim((100, 500))
 	if FIG_TYPE == "hist":
-		plt.hist(np.array(expand), bins = 1000, label = fig_name, color = '#FF5733')
+		plt.hist(np.array(expand), label = fig_name, color = '#FF5733')
 	elif FIG_TYPE == "bar":
 		plt.bar(rd_bar_x, rd_bar_y, label = fig_name, color = 'darkgreen')
 	elif FIG_TYPE == "plot":
