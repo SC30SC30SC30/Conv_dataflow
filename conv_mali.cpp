@@ -12,12 +12,25 @@
 
 using namespace std;
 
+cl_device_id gpu_device;
+
 cl_program read_cl_file(char* file_name)
 {
-	fstream file;
-	file.read(file_name, ios::in);
+	ifstream in(file_name, ios::binary);
+	// get file length
+	in.seekg(0, ios_base::end);
+	size_t length = in.tellg();
+	in.seekg(0, ios_base::beg);
+	// read program source
+	vector<char> data(length+1);
+	in.read(&data[0], length);
+	data[length] = 0;
+
+	const char* source = &data[0];
 	cl_program program;
-	program = clCreateProgramWithSource(context, );
+	program = clCreateProgramWithSource(context, 1, &source, NULL);
+
+	return program;
 } 
 
 bool setup_gpu()
@@ -87,13 +100,22 @@ bool setup_gpu()
 		cout << "Error Message :" << err << endl;
 		return false;
 	}
+}
 
-	cl_program program;
-	program = read_cl_file();
+void print_device_info()
+{
+
+}
+
+void compile_gpu_program()
+{
+	cl_int err;
+	cl_program program = read_cl_file("conv.cl");
+	err = clBuildProgram(program, 1, &gpu_device, NULL, NULL, NULL);
 }
 
 int main(int argc, char* argv[])
 {
-	setup_gpu();
+	// setup_gpu();
 	return 0;
 }
