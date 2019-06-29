@@ -61,7 +61,7 @@ void run_one_case(config* data, tile_param* tile)
 		// printf("The time = %ld ms\n", (end-start)/**1000/CLOCKS_PER_SEC*/);
 		compute_rd(true, tile, data_type, data_addr, total_access);
 
-		// write_trace_result("conv_3x3_trace.out", data_type, data_addr, total_access);
+		// write_trace_result("mem_trace.out", data_type, data_addr, total_access);
 
 		// clear_data(O, total_O);
 		// reorder_data_layout(I, W, data, tile);
