@@ -80,7 +80,32 @@ void setup_gpu()
 
 void print_device_info()
 {
+	printf("//--------------------DEVICE INFO--------------------//\n");
+	size_t num;
 
+	size_t max_work_group_size;
+	clGetDeviceInfo(gpu_device, CL_DEVICE_MAX_WORK_GROUP_SIZE, 0, NULL, &num);
+	clGetDeviceInfo(gpu_device, CL_DEVICE_MAX_WORK_GROUP_SIZE, num, &max_work_group_size, NULL);
+	cout << "Maximum number of work-items in a work-group : " << max_work_group_size << endl;
+
+	cl_uint max_work_item_dim;
+	clGetDeviceInfo(gpu_device, CL_DEVICE_MAX_WORK_ITEM_DIMENSIONS, sizeof(cl_uint), &max_work_item_dim, NULL);
+	cout << "Maximum dimensions : " << max_work_item_dim << endl;
+
+	clGetDeviceInfo(gpu_device, CL_DEVICE_MAX_WORK_ITEM_SIZES, 0, NULL, &num);
+	vector<size_t> max_work_item(num);
+	clGetDeviceInfo(gpu_device, CL_DEVICE_MAX_WORK_ITEM_SIZES, num, &max_work_item[0], NULL);
+	printf("Maximum number of work-items that can be specified in each dimensions of the work-group : \n");
+	for(int i = 0; i < num; i++)
+	{
+		cout << max_work_item[i] << endl;
+	}
+
+	cl_device_type device_type;
+	clGetDeviceInfo(gpu_device, CL_DEVICE_TYPE, sizeof(cl_device_type), &device_type, NULL);
+	cout << "OpenCL device type : " << device_type << endl;
+
+	printf("//--------------------DEVICE INFO--------------------//\n");
 }
 
 void print_error_message(cl_int err)
