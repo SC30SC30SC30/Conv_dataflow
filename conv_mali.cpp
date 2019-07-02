@@ -14,23 +14,10 @@ cl_context context;
 cl_command_queue queue;
 cl_kernel kernel;
 
-cl_program read_cl_file(char* file_name)
+void print_error_message(cl_int err)
 {
-	ifstream in(file_name, ios::binary);
-	// get file length
-	in.seekg(0, ios_base::end);
-	size_t length = in.tellg();
-	in.seekg(0, ios_base::beg);
-	// read program source
-	vector<char> data(length+1);
-	in.read(&data[0], length);
-	data[length] = 0;
-
-	const char* source = &data[0];
-	cl_program program;
-	program = clCreateProgramWithSource(context, 1, &source, NULL, NULL);
-
-	return program;
+	cout << "Error Message :" << err << endl;
+	exit(-1);
 } 
 
 void setup_gpu()
@@ -59,16 +46,6 @@ void setup_gpu()
 
 	gpu_device = devices[0];
 
-	for(int i = 0; i < num; i++)
-	{
-		size_t str_num;
-		string devname;
-		err = clGetDeviceInfo(devices[i], CL_DEVICE_NAME, 0, NULL, &str_num);
-		devname.resize(str_num);
-		err = clGetDeviceInfo(devices[i], CL_DEVICE_NAME, str_num, &devname[0], NULL);
-		cout << devname.c_str() << endl;
-	}
-
 	context = clCreateContext(NULL, num, &devices[0], NULL, NULL, &err);
 	if(err != CL_SUCCESS)
 		print_error_message(err);
@@ -83,6 +60,26 @@ void print_device_info()
 	printf("//--------------------DEVICE INFO--------------------//\n");
 	size_t num;
 
+	cl_ulong global_mem_cache_size;
+	clGetDeviceInfo(gpu_device, CL_DEVICE_GLOBAL_MEM_CACHE_SIZE, sizeof(cl_ulong), &global_mem_cache_size, NULL);
+	cout << "global memory cache : " << global_mem_cache_size << " Bytes" << endl;
+
+	cl_device_mem_cache_type global_mem_cache_type;
+	clGetDeviceInfo(gpu_device, CL_DEVICE_GLOBAL_MEM_CACHE_TYPE, sizeof(cl_device_mem_cache_type), &global_mem_cache_type, NULL);
+	cout << "global memory cache type : " << global_mem_cache_type << endl;
+
+	cl_uint global_mem_cacheline_size;
+	clGetDeviceInfo(gpu_device, CL_DEVICE_GLOBAL_MEM_CACHELINE_SIZE, sizeof(cl_uint), &global_mem_cacheline_size, NULL);
+	cout << "global memory cache line : " << global_mem_cacheline_size << " Bytes" << endl;
+
+	cl_ulong global_mem_size;
+	clGetDeviceInfo(gpu_device, CL_DEVICE_GLOBAL_MEM_SIZE, sizeof(cl_ulong), &global_mem_size, NULL);
+	cout << "global device memory : " << global_mem_size << " Bytes" << endl;
+
+	cl_ulong local_mem_size;
+	clGetDeviceInfo(gpu_device, CL_DEVICE_LOCAL_MEM_SIZE, sizeof(cl_ulong), &local_mem_size, NULL);
+	cout << "local memory : " << local_mem_size << " Bytes" << endl;
+
 	size_t max_work_group_size;
 	clGetDeviceInfo(gpu_device, CL_DEVICE_MAX_WORK_GROUP_SIZE, 0, NULL, &num);
 	clGetDeviceInfo(gpu_device, CL_DEVICE_MAX_WORK_GROUP_SIZE, num, &max_work_group_size, NULL);
@@ -92,26 +89,46 @@ void print_device_info()
 	clGetDeviceInfo(gpu_device, CL_DEVICE_MAX_WORK_ITEM_DIMENSIONS, sizeof(cl_uint), &max_work_item_dim, NULL);
 	cout << "Maximum dimensions : " << max_work_item_dim << endl;
 
-	clGetDeviceInfo(gpu_device, CL_DEVICE_MAX_WORK_ITEM_SIZES, 0, NULL, &num);
-	vector<size_t> max_work_item(num);
-	clGetDeviceInfo(gpu_device, CL_DEVICE_MAX_WORK_ITEM_SIZES, num, &max_work_item[0], NULL);
-	printf("Maximum number of work-items that can be specified in each dimensions of the work-group : \n");
-	for(int i = 0; i < num; i++)
-	{
-		cout << max_work_item[i] << endl;
-	}
-
 	cl_device_type device_type;
 	clGetDeviceInfo(gpu_device, CL_DEVICE_TYPE, sizeof(cl_device_type), &device_type, NULL);
 	cout << "OpenCL device type : " << device_type << endl;
 
+	string devname;
+	clGetDeviceInfo(gpu_device, CL_DEVICE_NAME, 0, NULL, &num);
+	devname.resize(num);
+	clGetDeviceInfo(gpu_device, CL_DEVICE_NAME, num, &devname[0], NULL);
+	cout << "Device name : " << devname.c_str() << endl;
+
+	clGetDeviceInfo(gpu_device, CL_DEVICE_VERSION, 0, NULL, &num);
+	devname.resize(num);
+	clGetDeviceInfo(gpu_device, CL_DEVICE_VERSION, num, &devname[0], NULL);
+	cout << "The OpenCL version supported by the device : " << devname.c_str() << endl;
+
+	clGetDeviceInfo(gpu_device, CL_DRIVER_VERSION, 0, NULL, &num);
+	devname.resize(num);
+	clGetDeviceInfo(gpu_device, CL_DRIVER_VERSION, num, &devname[0], NULL);
+	cout << "OpenCL software driver version :  " << devname.c_str() << endl;
+
 	printf("//--------------------DEVICE INFO--------------------//\n");
 }
 
-void print_error_message(cl_int err)
+cl_program read_cl_file(char* file_name)
 {
-	cout << "Error Message :" << err << endl;
-	exit(-1);
+	ifstream in(file_name, ios::binary);
+	// get file length
+	in.seekg(0, ios_base::end);
+	size_t length = in.tellg();
+	in.seekg(0, ios_base::beg);
+	// read program source
+	vector<char> data(length+1);
+	in.read(&data[0], length);
+	data[length] = 0;
+
+	const char* source = &data[0];
+	cl_program program;
+	program = clCreateProgramWithSource(context, 1, &source, NULL, NULL);
+
+	return program;
 }
 
 void compile_gpu_program(float* I, float* W, float* O, config* data)
@@ -160,6 +177,7 @@ void run()
 	clear_data(O, 4);
 
 	setup_gpu();
+	print_device_info();
 	compile_gpu_program(I, W, O, data);
 	run_gpu_program(4);
 
