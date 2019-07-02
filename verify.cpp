@@ -6,7 +6,7 @@
 
 using namespace std;
 
-int conv_config[5] = {15, 192, 3, 13, 384};
+int conv_config[5] = {15, 192, 3, 13, 256};
 int tile[4] = {2, 2, 4, 2};
 
 void initialization(int* rd, uint64_t* num, int size)
