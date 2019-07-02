@@ -7,10 +7,7 @@ splay_tree.o:splay_tree.h
 compile_dataflow:splay_tree.o
 	g++ -O0 -g dataflow.cpp splay_tree.o -o dataflow
 
-run_dataflow:
-	./dataflow
-
-compile_dataflow_test:splay_tree.o
+compile_test:splay_tree.o
 	g++ -g -c dataflow.cpp
 	g++ -O0 -g test.cpp dataflow.o splay_tree.o -o test
 
@@ -20,9 +17,12 @@ compile_log_rd:
 run_log_rd:
 	./log_rd ${LOG_RD_INPUT_FILE_NAME} ${LOG_RD_OUTPUT_FILE_NAME}
 
-compile_verify:splay_tree.o
+compile_verify:
+	g++ -g verify.cpp -o verify
+
+compile_conv_mali:splay_tree.o
 	g++ -g -c dataflow.cpp
-	g++ -O0 -g verify.cpp dataflow.o splay_tree.o -o verify -fopenmp
+	g++ -g conv_mali.cpp dataflow.o splay_tree.o -o conv_gpu -lOpenCL
 
 clean:
-	rm -f *.o log_rd dataflow test verify
+	rm -f *.o log_rd dataflow test verify conv_gpu
