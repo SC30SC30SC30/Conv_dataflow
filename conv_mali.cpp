@@ -13,6 +13,7 @@ cl_device_id gpu_device;
 cl_context context;
 cl_command_queue queue;
 cl_kernel kernel;
+cl_mem buffer_O;
 
 void print_error_message(cl_int err)
 {
@@ -80,6 +81,14 @@ void print_device_info()
 	clGetDeviceInfo(gpu_device, CL_DEVICE_LOCAL_MEM_SIZE, sizeof(cl_ulong), &local_mem_size, NULL);
 	cout << "local memory : " << local_mem_size << " Bytes" << endl;
 
+	cl_device_local_mem_type local_mem_type;
+	clGetDeviceInfo(gpu_device, CL_DEVICE_LOCAL_MEM_TYPE, sizeof(cl_device_local_mem_type), &local_mem_type, NULL);
+	cout << "local memory type : " << local_mem_type << endl;
+
+	cl_uint compute_units;
+	clGetDeviceInfo(gpu_device, CL_DEVICE_MAX_COMPUTE_UNITS, sizeof(cl_uint), &compute_units, NULL);
+	cout << "The number of parallel compute cores on the OpenCL device : " << compute_units << endl;
+
 	size_t max_work_group_size;
 	clGetDeviceInfo(gpu_device, CL_DEVICE_MAX_WORK_GROUP_SIZE, 0, NULL, &num);
 	clGetDeviceInfo(gpu_device, CL_DEVICE_MAX_WORK_GROUP_SIZE, num, &max_work_group_size, NULL);
@@ -143,19 +152,22 @@ void compile_gpu_program(float* I, float* W, float* O, config* data)
 	if(err != CL_SUCCESS)
 		print_error_message(err);
 
-	cl_mem buffer_I = clCreateBuffer(context, CL_MEM_READ_ONLY | CL_MEM_USE_HOST_PTR, sizeof(cl_float)*4, I, NULL);
-	cl_mem buffer_W = clCreateBuffer(context, CL_MEM_READ_ONLY | CL_MEM_USE_HOST_PTR, sizeof(cl_float)*4, W, NULL);
-	cl_mem buffer_O = clCreateBuffer(context, CL_MEM_READ_WRITE | CL_MEM_USE_HOST_PTR, sizeof(cl_float)*4, O, NULL);
+	cl_mem buffer_I = clCreateBuffer(context, CL_MEM_READ_ONLY | CL_MEM_COPY_HOST_PTR, sizeof(cl_float)*4, I, NULL);
+	cl_mem buffer_W = clCreateBuffer(context, CL_MEM_READ_ONLY | CL_MEM_COPY_HOST_PTR, sizeof(cl_float)*4, W, NULL);
+	buffer_O = clCreateBuffer(context, CL_MEM_READ_WRITE, sizeof(cl_float)*4, NULL, NULL);
 
 	clSetKernelArg(kernel, 0, sizeof(cl_mem), &buffer_I);
 	clSetKernelArg(kernel, 1, sizeof(cl_mem), &buffer_W);
 	clSetKernelArg(kernel, 2, sizeof(cl_mem), &buffer_O);
 }
 
-void run_gpu_program(size_t global_work_size)
+void run_gpu_program(size_t global_work_size, float* O)
 {
 	cl_int err;
 	err = clEnqueueNDRangeKernel(queue, kernel, 1, NULL, &global_work_size, NULL, NULL, NULL, NULL);
+	if(err != CL_SUCCESS)
+		print_error_message(err);
+	err = clEnqueueReadBuffer(queue, buffer_O, CL_TRUE, 0, sizeof(float)*4, O, 0, NULL, NULL);
 	if(err != CL_SUCCESS)
 		print_error_message(err);
 	err = clFinish(queue);
@@ -179,9 +191,8 @@ void run()
 	setup_gpu();
 	print_device_info();
 	compile_gpu_program(I, W, O, data);
-	run_gpu_program(4);
+	run_gpu_program(4, O);
 
-	//==============================================================//
 	for(int i = 0; i < 4; i++)
 	{
 		float result = 0.0;
