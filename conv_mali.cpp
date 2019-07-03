@@ -63,65 +63,65 @@ void print_device_info()
 
 	cl_ulong global_mem_cache_size;
 	clGetDeviceInfo(gpu_device, CL_DEVICE_GLOBAL_MEM_CACHE_SIZE, sizeof(cl_ulong), &global_mem_cache_size, NULL);
-	cout << "global memory cache : " << global_mem_cache_size << " Bytes" << endl;
+	cout << "\tglobal memory cache : " << global_mem_cache_size << " Bytes" << endl;
 
 	cl_device_mem_cache_type global_mem_cache_type;
 	clGetDeviceInfo(gpu_device, CL_DEVICE_GLOBAL_MEM_CACHE_TYPE, sizeof(cl_device_mem_cache_type), &global_mem_cache_type, NULL);
-	cout << "global memory cache type : " << global_mem_cache_type << endl;
+	cout << "\tglobal memory cache type : " << global_mem_cache_type << endl;
 
 	cl_uint global_mem_cacheline_size;
 	clGetDeviceInfo(gpu_device, CL_DEVICE_GLOBAL_MEM_CACHELINE_SIZE, sizeof(cl_uint), &global_mem_cacheline_size, NULL);
-	cout << "global memory cache line : " << global_mem_cacheline_size << " Bytes" << endl;
+	cout << "\tglobal memory cache line : " << global_mem_cacheline_size << " Bytes" << endl;
 
 	cl_ulong global_mem_size;
 	clGetDeviceInfo(gpu_device, CL_DEVICE_GLOBAL_MEM_SIZE, sizeof(cl_ulong), &global_mem_size, NULL);
-	cout << "global device memory : " << global_mem_size << " Bytes" << endl;
+	cout << "\tglobal device memory : " << global_mem_size << " Bytes" << endl;
 
 	cl_ulong local_mem_size;
 	clGetDeviceInfo(gpu_device, CL_DEVICE_LOCAL_MEM_SIZE, sizeof(cl_ulong), &local_mem_size, NULL);
-	cout << "local memory : " << local_mem_size << " Bytes" << endl;
+	cout << "\tlocal memory : " << local_mem_size << " Bytes" << endl;
 
 	cl_device_local_mem_type local_mem_type;
 	clGetDeviceInfo(gpu_device, CL_DEVICE_LOCAL_MEM_TYPE, sizeof(cl_device_local_mem_type), &local_mem_type, NULL);
-	cout << "local memory type : " << local_mem_type << endl;
+	cout << "\tlocal memory type : " << local_mem_type << endl;
 
 	cl_uint compute_units;
 	clGetDeviceInfo(gpu_device, CL_DEVICE_MAX_COMPUTE_UNITS, sizeof(cl_uint), &compute_units, NULL);
-	cout << "The number of parallel compute cores on the OpenCL device : " << compute_units << endl;
+	cout << "\tThe number of parallel compute cores on the OpenCL device : " << compute_units << endl;
 
 	size_t max_work_group_size;
 	clGetDeviceInfo(gpu_device, CL_DEVICE_MAX_WORK_GROUP_SIZE, 0, NULL, &num);
 	clGetDeviceInfo(gpu_device, CL_DEVICE_MAX_WORK_GROUP_SIZE, num, &max_work_group_size, NULL);
-	cout << "Maximum number of work-items in a work-group : " << max_work_group_size << endl;
+	cout << "\tMaximum number of work-items in a work-group : " << max_work_group_size << endl;
 
 	cl_uint max_work_item_dim;
 	clGetDeviceInfo(gpu_device, CL_DEVICE_MAX_WORK_ITEM_DIMENSIONS, sizeof(cl_uint), &max_work_item_dim, NULL);
-	cout << "Maximum dimensions : " << max_work_item_dim << endl;
+	cout << "\tMaximum dimensions : " << max_work_item_dim << endl;
 
 	cl_device_type device_type;
 	clGetDeviceInfo(gpu_device, CL_DEVICE_TYPE, sizeof(cl_device_type), &device_type, NULL);
-	cout << "OpenCL device type : " << device_type << endl;
+	cout << "\tOpenCL device type : " << device_type << endl;
 
 	string devname;
 	clGetDeviceInfo(gpu_device, CL_DEVICE_NAME, 0, NULL, &num);
 	devname.resize(num);
 	clGetDeviceInfo(gpu_device, CL_DEVICE_NAME, num, &devname[0], NULL);
-	cout << "Device name : " << devname.c_str() << endl;
+	cout << "\tDevice name : " << devname.c_str() << endl;
 
 	clGetDeviceInfo(gpu_device, CL_DEVICE_VERSION, 0, NULL, &num);
 	devname.resize(num);
 	clGetDeviceInfo(gpu_device, CL_DEVICE_VERSION, num, &devname[0], NULL);
-	cout << "The OpenCL version supported by the device : " << devname.c_str() << endl;
+	cout << "\tThe OpenCL version supported by the device : " << devname.c_str() << endl;
 
 	clGetDeviceInfo(gpu_device, CL_DRIVER_VERSION, 0, NULL, &num);
 	devname.resize(num);
 	clGetDeviceInfo(gpu_device, CL_DRIVER_VERSION, num, &devname[0], NULL);
-	cout << "OpenCL software driver version :  " << devname.c_str() << endl;
+	cout << "\tOpenCL software driver version :  " << devname.c_str() << endl;
 
 	printf("//--------------------DEVICE INFO--------------------//\n");
 }
 
-cl_program read_cl_file(char* file_name)
+cl_program read_cl_file(const char* file_name)
 {
 	ifstream in(file_name, ios::binary);
 	// get file length
@@ -152,9 +152,9 @@ void compile_gpu_program(float* I, float* W, float* O, config* data)
 	if(err != CL_SUCCESS)
 		print_error_message(err);
 
-	cl_mem buffer_I = clCreateBuffer(context, CL_MEM_READ_ONLY | CL_MEM_COPY_HOST_PTR, sizeof(cl_float)*4, I, NULL);
-	cl_mem buffer_W = clCreateBuffer(context, CL_MEM_READ_ONLY | CL_MEM_COPY_HOST_PTR, sizeof(cl_float)*4, W, NULL);
-	buffer_O = clCreateBuffer(context, CL_MEM_READ_WRITE, sizeof(cl_float)*4, NULL, NULL);
+	cl_mem buffer_I = clCreateBuffer(context, CL_MEM_READ_ONLY | CL_MEM_ALLOC_HOST_PTR, sizeof(cl_float)*4, I, NULL);
+	cl_mem buffer_W = clCreateBuffer(context, CL_MEM_READ_ONLY | CL_MEM_ALLOC_HOST_PTR, sizeof(cl_float)*4, W, NULL);
+	buffer_O = clCreateBuffer(context, CL_MEM_READ_WRITE | CL_MEM_ALLOC_HOST_PTR, sizeof(cl_float)*4, NULL, NULL);
 
 	clSetKernelArg(kernel, 0, sizeof(cl_mem), &buffer_I);
 	clSetKernelArg(kernel, 1, sizeof(cl_mem), &buffer_W);
@@ -164,13 +164,25 @@ void compile_gpu_program(float* I, float* W, float* O, config* data)
 void run_gpu_program(size_t global_work_size, float* O)
 {
 	cl_int err;
-	err = clEnqueueNDRangeKernel(queue, kernel, 1, NULL, &global_work_size, NULL, NULL, NULL, NULL);
+	err = clEnqueueNDRangeKernel(queue, kernel, 1, NULL, &global_work_size, NULL, 0, NULL, NULL);
 	if(err != CL_SUCCESS)
 		print_error_message(err);
-	err = clEnqueueReadBuffer(queue, buffer_O, CL_TRUE, 0, sizeof(float)*4, O, 0, NULL, NULL);
-	if(err != CL_SUCCESS)
-		print_error_message(err);
+	printf("clEnqueueNDRangeKernel() Finish !!!\n");
 	err = clFinish(queue);
+	if(err != CL_SUCCESS)
+		print_error_message(err);
+	printf("clFinish() Finish !!!\n");
+	printf("%p\n", O);
+	// err = clEnqueueReadBuffer(queue, buffer_O, CL_TRUE, 0, sizeof(float)*4, O, 0, NULL, NULL);
+	// if(err != CL_SUCCESS)
+	// 	print_error_message(err);
+	O = (float*)clEnqueueMapBuffer(queue, buffer_O, CL_TRUE, CL_MAP_READ | CL_MAP_WRITE, 0, sizeof(cl_float)*4, 0, NULL, NULL, &err);
+	printf("%p\n", O);
+	if(err != CL_SUCCESS)
+		print_error_message(err);
+	printf("clEnqueueMapBuffer() Finish !!!\n");
+	err = clFinish(queue);
+	printf("clFinish() Finish !!!\n");
 	if(err != CL_SUCCESS)
 		print_error_message(err);
 }

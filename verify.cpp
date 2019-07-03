@@ -1,8 +1,4 @@
-#include <stdlib.h>
-#include <stdio.h>
-#include <stdint.h>
-#include <vector>
-#include <string>
+#include "verify.h"
 
 using namespace std;
 
@@ -18,6 +14,7 @@ void initialization(int* rd, uint64_t* num, int size)
 	}
 }
 
+// oc -> ic -> oh -> ow -> kh -> kw
 void get_tile_inside_rd(int* tile, char reuse_type, int* rd)
 {
 	if(reuse_type == 'I')
@@ -133,7 +130,7 @@ void run()
 {
 	int* rd = (int*)malloc(6 * sizeof(int));
 	uint64_t* num = (uint64_t*)malloc(6 * sizeof(uint64_t));
-	int cache_size = 1283;
+	int cache_size = 16384;
 
 	for(int tr = 1; tr <= conv_config[3]; tr++)
 	{
