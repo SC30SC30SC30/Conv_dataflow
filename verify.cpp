@@ -15,7 +15,7 @@ void initialization(int* rd, uint64_t* num, int size)
 }
 
 // oc -> ic -> oh -> ow -> kh -> kw
-void get_tile_inside_rd(int* tile, char reuse_type, int* rd)
+void get_tile_inside_rd_IR1(int* tile, char reuse_type, int* rd)
 {
 	if(reuse_type == 'I')
 	{
@@ -101,9 +101,9 @@ void IR(int* tile, int* rd, uint64_t* num)
 	int t_isize = tile[0]-1+conv_config[2];
 
 	// reuse distance
-	get_tile_inside_rd(tile, 'I', rd);
-	get_tile_inside_rd(tile, 'W', rd);
-	get_tile_inside_rd(tile, 'O', rd);
+	get_tile_inside_rd_IR1(tile, 'I', rd);
+	get_tile_inside_rd_IR1(tile, 'W', rd);
+	get_tile_inside_rd_IR1(tile, 'O', rd);
 	*(rd+3) = -1;
 	*(rd+4) = t_isize*t_isize*conv_config[1] + 
 			  conv_config[2]*conv_config[2]*conv_config[1]*conv_config[4] + 
