@@ -37,11 +37,10 @@ bool greater50(int tr, int tc, int tn, int tm, int k_size, char reuse_type)
 
 void run_one_case(config* data, tile_param* tile)
 {
-	float* I = create_data(data->input_size*data->input_size*data->input_c);
-	float* W = create_data(data->weight_size*data->weight_size*data->input_c*data->output_c);
-	float* O = create_data(data->output_size*data->output_size*data->output_c);
-	int total_O = total_value(data, 'O');
-	clear_data(O, total_O);
+	float* I = create_data(total_value(data, 'I'));
+	float* W = create_data(total_value(data, 'W'));
+	float* O = create_data(total_value(data, 'O'));
+	clear_data(O, total_value(data, 'O'));
 	int total_access = total_access_times(data);
 
 	printf("total_I=%d\ttotal_W=%d\ttotal_O=%d\ttotal_access=%d\n", total_value(data,'I'), total_value(data,'W'), total_value(data,'O'), total_access);
@@ -85,11 +84,10 @@ void run_one_case(config* data, tile_param* tile)
 // Deep Convolutional Neural Network Architecture With Reconfigurable Computation Patterns, 2017
 void verify_IR(config* data, tile_param* tile)
 {
-	float* I = create_data(data->input_size*data->input_size*data->input_c);
-	float* W = create_data(data->weight_size*data->weight_size*data->input_c*data->output_c);
-	float* O = create_data(data->output_size*data->output_size*data->output_c);
-	int total_O = data->output_size * data->output_size * data->output_c;
-	clear_data(O, total_O);
+	float* I = create_data(total_value(data, 'I'));
+	float* W = create_data(total_value(data, 'W'));
+	float* O = create_data(total_value(data, 'O'));
+	clear_data(O, total_value(data, 'O'));
 	int total_access = total_access_times(data);
 
 	char* data_type = (char*)malloc(total_access * sizeof(char));
@@ -97,43 +95,37 @@ void verify_IR(config* data, tile_param* tile)
 	int addr_idx = 0;
 
 	// exhaustively search
-	// for(int TC = 1; TC <= (data->output_size); TC++)
-	// {
-	// 	if(((data->output_size) % TC) == 0)
-	// 	{
-			for(int TR = 1; TR <= (data->output_size); TR++)
+	for(int TR = 1; TR <= (data->output_size); TR++)
+	{
+		if(((data->output_size) % TR) == 0)
+		{
+			for(int TM = 1; TM <= (data->output_c); TM++)
 			{
-				if(((data->output_size) % TR) == 0)
+				if(((data->output_c) % TM) == 0)
 				{
-					for(int TM = 1; TM <= (data->output_c); TM++)
+					for(int TN = 1; TN <= (data->input_c); TN++)
 					{
-						if(((data->output_c) % TM) == 0)
+						if(((data->input_c) % TN) == 0)
 						{
-							for(int TN = 1; TN <= (data->input_c); TN++)
+							tile->tr = TR;
+							tile->tc = TR;
+							tile->tn = TN;
+							tile->tm = TM;
+							if(greater50(tile->tr, tile->tc, tile->tn, tile->tm, data->weight_size, 'I'))
 							{
-								if(((data->input_c) % TN) == 0)
-								{
-									tile->tr = TR;
-									tile->tc = TR;
-									tile->tn = TN;
-									tile->tm = TM;
-									if(greater50(tile->tr, tile->tc, tile->tn, tile->tm, data->weight_size, 'I'))
-									{
-										printf("<tr, tc, tn, tm> = <%d, %d, %d, %d>\n", tile->tr, tile->tc, tile->tn, tile->tm);
+								printf("<tr, tc, tn, tm> = <%d, %d, %d, %d>\n", tile->tr, tile->tc, tile->tn, tile->tm);
 
-										tile_conv_oh_ow_ic_oc(I, W, O, data, tile, 1, true, data_type, data_addr, &addr_idx);
-										compute_rd(true, tile, data_type, data_addr, total_access);
-										clear_data(O, total_O);
-										addr_idx = 0;
-									}
-								}
+								tile_conv_oh_ow_ic_oc(I, W, O, data, tile, 1, true, data_type, data_addr, &addr_idx);
+								compute_rd(true, tile, data_type, data_addr, total_access);
+								clear_data(O, total_value(data, 'O'));
+								addr_idx = 0;
 							}
 						}
 					}
 				}
 			}
-	// 	}
-	// }
+		}
+	}
 
 	free(data_addr);
 	free(data_type);
@@ -145,11 +137,10 @@ void verify_IR(config* data, tile_param* tile)
 // Deep Convolutional Neural Network Architecture With Reconfigurable Computation Patterns, 2017
 void verify_WR(config* data, tile_param* tile)
 {
-	float* I = create_data(data->input_size*data->input_size*data->input_c);
-	float* W = create_data(data->weight_size*data->weight_size*data->input_c*data->output_c);
-	float* O = create_data(data->output_size*data->output_size*data->output_c);
-	int total_O = data->output_size * data->output_size * data->output_c;
-	clear_data(O, total_O);
+	float* I = create_data(total_value(data, 'I'));
+	float* W = create_data(total_value(data, 'W'));
+	float* O = create_data(total_value(data, 'O'));
+	clear_data(O, total_value(data, 'O'));
 	int total_access = total_access_times(data);
 
 	char* data_type = (char*)malloc(total_access * sizeof(char));
@@ -178,7 +169,7 @@ void verify_WR(config* data, tile_param* tile)
 
 								tile_conv_oc_ic_oh_ow(I, W, O, data, tile, 1, true, data_type, data_addr, &addr_idx);
 								compute_rd(true, tile, data_type, data_addr, total_access);
-								clear_data(O, total_O);
+								clear_data(O, total_value(data, 'O'));
 								addr_idx = 0;
 							}
 						}
