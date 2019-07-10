@@ -367,9 +367,9 @@ void run(cl_param* cl_gpu, config* data, tile_param* tile, size_t* global_work_s
 	for(int i = 0; i < 20; i++)
 	{
 		float sum = 0.0;
-		for(int j = 0; j < 9; j++)
+		for(int j = 0; j < 36; j++)
 		{
-			sum += *(gpu_partsum + 9*i + j) + *(gpu_partsum + 9*i + 1521 + j) + *(gpu_partsum + 9*i + 3042 + j) + *(gpu_partsum + 9*i + 4563 + j);
+			sum += *(gpu_partsum + 36*i + j);
 		}
 		printf("%d.\tcpu=%f\tgpu=%f\tgpu_O=%f\n", i, *(O+i), sum, *(gpu_O+i));
 	}
