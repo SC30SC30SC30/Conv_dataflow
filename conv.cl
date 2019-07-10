@@ -1,64 +1,34 @@
 __kernel void convolution(
 	__global const float* input, 
 	__global const float* weight, 
+	__global float* partsum, 
 	__global float* output, 
 	int i_offset, 
 	int w_offset, 
-	int o_offset,
-	int i_size)
+	int o_offset)
 {
-	int idx = get_global_id(0);
+	int global_id = get_global_id(0);
 
-	int tmp = idx/13;
-	int i_idx = idx + 2*tmp;
+	int channel_id = global_id / 1521;
+	int ohow = global_id % 1521;
+	int ohow_id = get_group_id(0);
+	int ihiw_id = ohow_id + (ohow_id/13)*2;
+	int w_id = ohow % 9;
 
-	float sum1 = *(input + i_offset + i_idx) * *(weight + w_offset);
-	float sum2 = *(input + i_offset + i_idx + 1) * *(weight + w_offset + 1);
-	float sum3 = *(input + i_offset + i_idx + 2) * *(weight + w_offset + 2);
-	float sum4 = *(input + i_offset + i_idx + i_size) * *(weight + w_offset + 3);
-	float sum5 = *(input + i_offset + i_idx + i_size + 1) * *(weight + w_offset + 4);
-	float sum6 = *(input + i_offset + i_idx + i_size + 2) * *(weight + w_offset + 5);
-	float sum7 = *(input + i_offset + i_idx + i_size*2) * *(weight + w_offset + 6);
-	float sum8 = *(input + i_offset + i_idx + i_size*2 + 1) * *(weight + w_offset + 7);
-	float sum9 = *(input + i_offset + i_idx + i_size*2 + 2) * *(weight + w_offset + 8);
+	float img = *(input + i_offset + channel_id*225 + ihiw_id + (w_id/3)*15 + (w_id%3));
+	float k = *(weight + w_offset + channel_id*9 + w_id);
+	*(partsum + global_id) = img * k;
 
-	float result = (sum1 + sum2 + sum3 + sum4 + sum5 + sum6 + sum7 + sum8 + sum9);
+	barrier(CLK_GLOBAL_MEM_FENCE);
 
-	sum1 = *(input + i_size*i_size + i_offset + i_idx) * *(weight + w_offset + 3*3);
-	sum2 = *(input + i_size*i_size + i_offset + i_idx + 1) * *(weight + w_offset + 1 + 3*3);
-	sum3 = *(input + i_size*i_size + i_offset + i_idx + 2) * *(weight + w_offset + 2 + 3*3);
-	sum4 = *(input + i_size*i_size + i_offset + i_idx + i_size) * *(weight + w_offset + 3 + 3*3);
-	sum5 = *(input + i_size*i_size + i_offset + i_idx + i_size + 1) * *(weight + w_offset + 4 + 3*3);
-	sum6 = *(input + i_size*i_size + i_offset + i_idx + i_size + 2) * *(weight + w_offset + 5 + 3*3);
-    sum7 = *(input + i_size*i_size + i_offset + i_idx + i_size*2) * *(weight + w_offset + 6 + 3*3);
-	sum8 = *(input + i_size*i_size + i_offset + i_idx + i_size*2 + 1) * *(weight + w_offset + 7 + 3*3);
-	sum9 = *(input + i_size*i_size + i_offset + i_idx + i_size*2 + 2) * *(weight + w_offset + 8 + 3*3);
+	int multiple = global_id / 9;
+	if((global_id <= 1512) && (global_id % 9 == 0))
+	{
+		float sum = *(partsum+9*multiple)+*(partsum+9*multiple+1)+*(partsum+9*multiple+2)+*(partsum+9*multiple+3)+*(partsum+9*multiple+4)+*(partsum+9*multiple+5)+*(partsum+9*multiple+6)+*(partsum+9*multiple+7)+*(partsum+9*multiple+8)+
+					*(partsum+9*multiple+1521)+*(partsum+9*multiple+1522)+*(partsum+9*multiple+1523)+*(partsum+9*multiple+1524)+*(partsum+9*multiple+1525)+*(partsum+9*multiple+1526)+*(partsum+9*multiple+1527)+*(partsum+9*multiple+1528)+*(partsum+9*multiple+1529)+
+					*(partsum+9*multiple+3042)+*(partsum+9*multiple+3043)+*(partsum+9*multiple+3044)+*(partsum+9*multiple+3045)+*(partsum+9*multiple+3046)+*(partsum+9*multiple+3047)+*(partsum+9*multiple+3048)+*(partsum+9*multiple+3049)+*(partsum+9*multiple+3050)+
+					*(partsum+9*multiple+4563)+*(partsum+9*multiple+4564)+*(partsum+9*multiple+4565)+*(partsum+9*multiple+4566)+*(partsum+9*multiple+4567)+*(partsum+9*multiple+4568)+*(partsum+9*multiple+4569)+*(partsum+9*multiple+4570)+*(partsum+9*multiple+4571);
 
-	result += (sum1 + sum2 + sum3 + sum4 + sum5 + sum6 + sum7 + sum8 + sum9);
-
-	sum1 = *(input + 2*i_size*i_size + i_offset + i_idx) * *(weight + w_offset + 18);
-	sum2 = *(input + 2*i_size*i_size + i_offset + i_idx + 1) * *(weight + w_offset + 1 + 18);
-	sum3 = *(input + 2*i_size*i_size + i_offset + i_idx + 2) * *(weight + w_offset + 2 + 18);
-	sum4 = *(input + 2*i_size*i_size + i_offset + i_idx + i_size) * *(weight + w_offset + 3 + 18);
-	sum5 = *(input + 2*i_size*i_size + i_offset + i_idx + i_size + 1) * *(weight + w_offset + 4 + 18);
-	sum6 = *(input + 2*i_size*i_size + i_offset + i_idx + i_size + 2) * *(weight + w_offset + 5 + 18);
-	sum7 = *(input + 2*i_size*i_size + i_offset + i_idx + i_size*2) * *(weight + w_offset + 6 + 18);
-	sum8 = *(input + 2*i_size*i_size + i_offset + i_idx + i_size*2 + 1) * *(weight + w_offset + 7 + 18);
-	sum9 = *(input + 2*i_size*i_size + i_offset + i_idx + i_size*2 + 2) * *(weight + w_offset + 8 + 18);
-
-	result += (sum1 + sum2 + sum3 + sum4 + sum5 + sum6 + sum7 + sum8 + sum9);
-
-	sum1 = *(input + 3*i_size*i_size + i_offset + i_idx) * *(weight + w_offset + 27);
-	sum2 = *(input + 3*i_size*i_size + i_offset + i_idx + 1) * *(weight + w_offset + 1 + 27);
-	sum3 = *(input + 3*i_size*i_size + i_offset + i_idx + 2) * *(weight + w_offset + 2 + 27);
-	sum4 = *(input + 3*i_size*i_size + i_offset + i_idx + i_size) * *(weight + w_offset + 3 + 27);
-	sum5 = *(input + 3*i_size*i_size + i_offset + i_idx + i_size + 1) * *(weight + w_offset + 4 + 27);
-	sum6 = *(input + 3*i_size*i_size + i_offset + i_idx + i_size + 2) * *(weight + w_offset + 5 + 27);
-	sum7 = *(input + 3*i_size*i_size + i_offset + i_idx + i_size*2) * *(weight + w_offset + 6 + 27);
-	sum8 = *(input + 3*i_size*i_size + i_offset + i_idx + i_size*2 + 1) * *(weight + w_offset + 7 + 27);
-	sum9 = *(input + 3*i_size*i_size + i_offset + i_idx + i_size*2 + 2) * *(weight + w_offset + 8 + 27);
-
-	result += (sum1 + sum2 + sum3 + sum4 + sum5 + sum6 + sum7 + sum8 + sum9);
-
-	output[o_offset + idx] += result;
+		*(output + o_offset + ohow_id) = sum; 
+	}
 }

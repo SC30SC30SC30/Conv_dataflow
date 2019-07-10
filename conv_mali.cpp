@@ -198,21 +198,22 @@ float* ptr_to_clmem_map(cl_param* cl_gpu, void* ptr)
 	return new_ptr;
 }
 
-void run_gpu_program(cl_param* cl_gpu, size_t* global_work_size, float* I, float* W, float* O, config* data, int i_offset, int w_offset, int o_offset)
+void run_gpu_program(cl_param* cl_gpu, size_t* global_work_size, size_t* local_work_size, float* I, float* W, float* partsum, float* O, config* data, int i_offset, int w_offset, int o_offset)
 {
 	cl_int err;
 
 	cl_mem buffer_I = ptr_to_clmem_unmap(cl_gpu, (void*)I);
 	cl_mem buffer_W = ptr_to_clmem_unmap(cl_gpu, (void*)W);
+	cl_mem buffer_partsum = ptr_to_clmem_unmap(cl_gpu, (void*)partsum);
 	cl_mem buffer_O = ptr_to_clmem_unmap(cl_gpu, (void*)O);
 
 	clSetKernelArg(cl_gpu->kernel, 0, sizeof(cl_mem), &buffer_I);
 	clSetKernelArg(cl_gpu->kernel, 1, sizeof(cl_mem), &buffer_W);
-	clSetKernelArg(cl_gpu->kernel, 2, sizeof(cl_mem), &buffer_O);
-	clSetKernelArg(cl_gpu->kernel, 3, sizeof(int), &i_offset);
-	clSetKernelArg(cl_gpu->kernel, 4, sizeof(int), &w_offset);
-	clSetKernelArg(cl_gpu->kernel, 5, sizeof(int), &o_offset);
-	clSetKernelArg(cl_gpu->kernel, 6, sizeof(int), &(data->input_size));
+	clSetKernelArg(cl_gpu->kernel, 2, sizeof(cl_mem), &buffer_partsum);
+	clSetKernelArg(cl_gpu->kernel, 3, sizeof(cl_mem), &buffer_O);
+	clSetKernelArg(cl_gpu->kernel, 4, sizeof(int), &i_offset);
+	clSetKernelArg(cl_gpu->kernel, 5, sizeof(int), &w_offset);
+	clSetKernelArg(cl_gpu->kernel, 6, sizeof(int), &o_offset);
 
 	err = clEnqueueNDRangeKernel(cl_gpu->queue, cl_gpu->kernel, 1, NULL, global_work_size, NULL, 0, NULL, NULL);
 	if(err != CL_SUCCESS)
@@ -224,6 +225,7 @@ void run_gpu_program(cl_param* cl_gpu, size_t* global_work_size, float* I, float
 
 	I = ptr_to_clmem_map(cl_gpu, (void*)I);
 	W = ptr_to_clmem_map(cl_gpu, (void*)W);
+	partsum = ptr_to_clmem_map(cl_gpu, (void*)partsum);
 	O = ptr_to_clmem_map(cl_gpu, (void*)O);
 
 	err = clFinish(cl_gpu->queue);
@@ -265,7 +267,7 @@ void clean_objects(cl_param* cl_gpu, float* I, float* W, float* O)
 		print_error_message(err);
 }
 
-void conv(cl_param* cl_gpu, float* I, float* W, float* O, config* data, tile_param* tile, size_t* global_work_size)
+void conv(cl_param* cl_gpu, float* I, float* W, float* partsum, float* O, config* data, tile_param* tile, size_t* global_work_size, size_t* local_work_size)
 {
 	for(int oh = 0; (oh+(tile->tr)-1) < data->output_size; oh += (tile->tr))
 	{
@@ -291,7 +293,7 @@ void conv(cl_param* cl_gpu, float* I, float* W, float* O, config* data, tile_par
 							int w_offset = ((uint64_t)w_base_addr - (uint64_t)W)/4;
 							int o_offset = ((uint64_t)o_base_addr - (uint64_t)O)/4;
 
-							run_gpu_program(cl_gpu, global_work_size, I, W, O, data, i_offset, w_offset, o_offset);
+							run_gpu_program(cl_gpu, global_work_size, local_work_size, I, W, partsum, O, data, i_offset, w_offset, o_offset);
 							// if(t_ic == 1)
 							// 	break;
 						//}
@@ -307,7 +309,7 @@ void conv(cl_param* cl_gpu, float* I, float* W, float* O, config* data, tile_par
 	}
 }
 
-void run(cl_param* cl_gpu, config* data, tile_param* tile, size_t* global_work_size)
+void run(cl_param* cl_gpu, config* data, tile_param* tile, size_t* global_work_size, size_t* local_work_size)
 {
 	float* I = create_data(total_value(data, 'I'));
 	float* W = create_data(total_value(data, 'W'));
@@ -327,6 +329,9 @@ void run(cl_param* cl_gpu, config* data, tile_param* tile, size_t* global_work_s
 	{
 		*(gpu_W+i) = *(W+i);
 	}
+	int partsum_num = tile->tn*tile->tr*tile->tc*data->weight_size*data->weight_size;
+	printf("partsum_num=%d\n", partsum_num);
+	float* gpu_partsum = malloc_gpu_space(cl_gpu, sizeof(float)*partsum_num);
 	float* gpu_O = malloc_gpu_space(cl_gpu, sizeof(float)*total_value(data, 'O'));
 	for(int i = 0; i < total_value(data, 'O'); i++)
 	{
@@ -334,7 +339,10 @@ void run(cl_param* cl_gpu, config* data, tile_param* tile, size_t* global_work_s
 	}
 
 	// run_gpu_program(cl_gpu, global_work_size, gpu_I, gpu_W, gpu_O, data, (uint64_t)gpu_I, (uint64_t)gpu_W, (uint64_t)gpu_O);
-	conv(cl_gpu, gpu_I, gpu_W, gpu_O, data, tile, global_work_size);
+	conv(cl_gpu, gpu_I, gpu_W, gpu_partsum, gpu_O, data, tile, global_work_size, local_work_size);
+
+	// the result of cpu computation
+	//==================================================================================================//
 	for(int ic = 0; ic < 4; ic++)
 	{
 		for(int oh = 0; oh < 13; oh++)
@@ -352,12 +360,20 @@ void run(cl_param* cl_gpu, config* data, tile_param* tile, size_t* global_work_s
 			}
 		}
 	}
+	//==================================================================================================//
 
+	// compare cpu and gpu result whether correct
+	//==================================================================================================//
 	for(int i = 0; i < 20; i++)
 	{
-		// *(O+i) = *(I+i) * *(W+i);
-		printf("%d.\tcpu=%f\tgpu=%f\n", i, *(O+i), *(gpu_O+i));
+		float sum = 0.0;
+		for(int j = 0; j < 9; j++)
+		{
+			sum += *(gpu_partsum + 9*i + j) + *(gpu_partsum + 9*i + 1521 + j) + *(gpu_partsum + 9*i + 3042 + j) + *(gpu_partsum + 9*i + 4563 + j);
+		}
+		printf("%d.\tcpu=%f\tgpu=%f\tgpu_O=%f\n", i, *(O+i), sum, *(gpu_O+i));
 	}
+	//==================================================================================================//
 
 	clean_objects(cl_gpu, gpu_I, gpu_W, gpu_O);
 	free(O);
@@ -374,8 +390,9 @@ int main(int argc, char* argv[])
 	int a[10] = {15, 192, 3, 13, 384, 13, 13, 4, 4, 1};   // simple test 
 	set_configuration(data, tile, a);
 
-	size_t global_work_size = 169;
-	run(cl_gpu, data, tile, &global_work_size);
+	size_t global_work_size = 6084;
+	size_t local_work_size = 36;
+	run(cl_gpu, data, tile, &global_work_size, &local_work_size);
 
 	free(tile);
 	free(data);
