@@ -28,6 +28,7 @@ float* malloc_gpu_space(cl_param* cl_gpu, size_t sz);
 cl_mem ptr_to_clmem_unmap(cl_param* cl_gpu, void* ptr);
 float* ptr_to_clmem_map(cl_param* cl_gpu, void* ptr);
 
-void run_gpu_program(cl_param* cl_gpu, size_t global_work_size, float* I, float* W, float* O, config* data);
+void run_gpu_program(cl_param* cl_gpu, size_t* global_work_size, size_t* local_work_size, float* I, float* W, float* partsum, float* O, config* data, int i_offset, int w_offset, int o_offset);
+void conv(cl_param* cl_gpu, float* I, float* W, float* partsum, float* O, config* data, tile_param* tile, size_t* global_work_size, size_t* local_work_size);
 
-void run(cl_param* cl_gpu, config* data, tile_param* tile);
+void clean_objects(cl_param* cl_gpu, float* I, float* W, float* O);

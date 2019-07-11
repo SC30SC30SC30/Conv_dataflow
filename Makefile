@@ -22,11 +22,13 @@ compile_verify:
 
 compile_conv_mali:splay_tree.o
 	g++ -g -c dataflow.cpp
-	g++ -g conv_mali.cpp dataflow.o splay_tree.o -o conv_gpu -lOpenCL
+	g++ -g -c conv_mali.cpp
+	g++ -g conv_mali_test.cpp conv_mali.o dataflow.o splay_tree.o -o conv_gpu -lOpenCL
 
 compile_conv_mali_on_MAC:splay_tree.o
 	g++ -g -c dataflow.cpp
-	g++ -g conv_mali.cpp dataflow.o splay_tree.o -o conv_gpu -framework opencl
+	g++ -g -c conv_mali.cpp
+	g++ -g conv_mali_test.cpp conv_mali.o dataflow.o splay_tree.o -o conv_gpu -framework opencl
 
 clean:
 	rm -f *.o log_rd dataflow test verify conv_gpu
