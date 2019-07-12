@@ -297,9 +297,7 @@ void conv(cl_param* cl_gpu, float* I, float* W, float* partsum, float* O, config
 						printf("oh=%d\tow=%d\tic=%d\toc=%d\tt_oc=%d\n", oh, ow, ic, oc, t_oc);
 						run_gpu_program(cl_gpu, global_work_size, local_work_size, I, W, partsum, O, data, i_offset, w_offset, o_offset);
 					}
-					break;
 				}
-				break;
 			}
 			break;
 		}

@@ -1,3 +1,4 @@
+#include <time.h>
 #include "conv_mali.h"
 
 void run(cl_param* cl_gpu, config* data, tile_param* tile, size_t* global_work_size, size_t* local_work_size)
@@ -34,9 +35,9 @@ void run(cl_param* cl_gpu, config* data, tile_param* tile, size_t* global_work_s
 
 	// the result of cpu computation
 	//==================================================================================================//
-	for(int oc = 0; oc < 4; oc++)
+	for(int oc = 0; oc < 384; oc++)
 	{
-		for(int ic = 0; ic < 4; ic++)
+		for(int ic = 0; ic < 192; ic++)
 		{
 			for(int oh = 0; oh < 13; oh++)
 			{
@@ -54,6 +55,10 @@ void run(cl_param* cl_gpu, config* data, tile_param* tile, size_t* global_work_s
 			}
 		}
 	}
+	// char* data_type;
+	// uint64_t* data_addr;
+	// int* addr_idx;
+	// tile_conv_oh_ow_ic_oc(I, W, O, data, tile, 1, false, data_type, data_addr, addr_idx);
 	//==================================================================================================//
 
 	// compare cpu and gpu result whether correct
