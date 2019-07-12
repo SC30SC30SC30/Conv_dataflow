@@ -200,6 +200,7 @@ float* ptr_to_clmem_map(cl_param* cl_gpu, void* ptr)
 
 void run_gpu_program(cl_param* cl_gpu, size_t* global_work_size, size_t* local_work_size, float* I, float* W, float* partsum, float* O, config* data, int i_offset, int w_offset, int o_offset)
 {
+	printf("run_gpu_program() Start !!!\n");
 	cl_int err;
 
 	cl_mem buffer_I = ptr_to_clmem_unmap(cl_gpu, (void*)I);
@@ -281,23 +282,20 @@ void conv(cl_param* cl_gpu, float* I, float* W, float* partsum, float* O, config
 					float* w_tile_base_addr = (W + oc*(data->weight_size)*(data->weight_size)*data->input_c + ic*(data->weight_size)*(data->weight_size));
 					float* o_tile_base_addr = (O + oc*data->output_size*data->output_size + oh*data->output_size + ow);
 					
-					for(int t_oc = 0; oc < tile->tm; t_oc++)
+					for(int t_oc = 0; t_oc < tile->tm; t_oc++)
 					{
-						// for(int t_ic = 0; ic < tile->tn; t_ic++)
-						// {
-							float* i_base_addr = i_tile_base_addr /*+ t_ic*(data->input_size)*(data->input_size)*/;
-							float* w_base_addr = w_tile_base_addr + t_oc*(data->weight_size)*(data->weight_size)*data->input_c /*+ t_ic*(data->weight_size)*(data->weight_size)*/;
-							float* o_base_addr = o_tile_base_addr + t_oc*data->output_size*data->output_size;
+						float* i_base_addr = i_tile_base_addr;
+						float* w_base_addr = w_tile_base_addr + t_oc*(data->weight_size)*(data->weight_size)*data->input_c;
+						float* o_base_addr = o_tile_base_addr + t_oc*data->output_size*data->output_size;
 
-							int i_offset = ((uint64_t)i_base_addr - (uint64_t)I)/4;
-							int w_offset = ((uint64_t)w_base_addr - (uint64_t)W)/4;
-							int o_offset = ((uint64_t)o_base_addr - (uint64_t)O)/4;
+						int i_offset = ((uint64_t)i_base_addr - (uint64_t)I)/4;
+						int w_offset = ((uint64_t)w_base_addr - (uint64_t)W)/4;
+						int o_offset = ((uint64_t)o_base_addr - (uint64_t)O)/4;
 
-							run_gpu_program(cl_gpu, global_work_size, local_work_size, I, W, partsum, O, data, i_offset, w_offset, o_offset);
-							// if(t_ic == 1)
-							// 	break;
-						//}
-						break;
+						printf("i_offset=%d\tw_offset=%d\to_offset=%d\n", i_offset, w_offset, o_offset);
+
+						printf("oh=%d\tow=%d\tic=%d\toc=%d\tt_oc=%d\n", oh, ow, ic, oc, t_oc);
+						run_gpu_program(cl_gpu, global_work_size, local_work_size, I, W, partsum, O, data, i_offset, w_offset, o_offset);
 					}
 					break;
 				}

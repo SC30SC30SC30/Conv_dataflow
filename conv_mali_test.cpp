@@ -34,18 +34,21 @@ void run(cl_param* cl_gpu, config* data, tile_param* tile, size_t* global_work_s
 
 	// the result of cpu computation
 	//==================================================================================================//
-	for(int ic = 0; ic < 4; ic++)
+	for(int oc = 0; oc < 4; oc++)
 	{
-		for(int oh = 0; oh < 13; oh++)
+		for(int ic = 0; ic < 4; ic++)
 		{
-			for(int ow = 0; ow < 13; ow++)
+			for(int oh = 0; oh < 13; oh++)
 			{
-				for(int kh = 0; kh < 3; kh++)
+				for(int ow = 0; ow < 13; ow++)
 				{
-					for(int kw = 0; kw < 3; kw++)
+					for(int kh = 0; kh < 3; kh++)
 					{
-						float partsum = *(I+ic*15*15+oh*15+ow+kh*15+kw) * *(W+ic*3*3+kh*3+kw);
-						*(O+oh*13+ow) += partsum;
+						for(int kw = 0; kw < 3; kw++)
+						{
+							float partsum = *(I+ic*15*15+oh*15+ow+kh*15+kw) * *(W+oc*192*3*3+ic*3*3+kh*3+kw);
+							*(O+oc*13*13+oh*13+ow) += partsum;
+						}
 					}
 				}
 			}
@@ -81,8 +84,9 @@ int main(int argc, char* argv[])
 	int a[10] = {15, 192, 3, 13, 384, 13, 13, 4, 4, 1};   // simple test 
 	set_configuration(data, tile, a);
 
-	size_t global_work_size = 6084;
-	size_t local_work_size = 36;
+	size_t local_work_size = data->weight_size * data->weight_size * tile->tn;
+	size_t global_work_size = local_work_size * data->output_size * data->output_size;
+	printf("global_work_size=%d\tlocal_work_size=%d\twork_group_num=%d\n", global_work_size, local_work_size, (global_work_size/local_work_size));
 	run(cl_gpu, data, tile, &global_work_size, &local_work_size);
 
 	free(tile);

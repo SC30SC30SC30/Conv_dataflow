@@ -5,13 +5,14 @@ __kernel void convolution(
 	__global float* output, 
 	int i_offset, 
 	int w_offset, 
-	int o_offset)
+	int o_offset
+	)
 {
 	int global_id = get_global_id(0);
-	int local_id = get_local_id(0);
+	int local_id = global_id % 36;
 
 	int channel_id = local_id / 9;
-	int ohow_id = get_group_id(0);
+	int ohow_id = global_id / 36;
 	int ihiw_id = ohow_id + (ohow_id/13)*2;
 	int w_id = local_id % 9;
 
@@ -28,6 +29,6 @@ __kernel void convolution(
 					*(partsum+ohow_id*36+18)+*(partsum+ohow_id*36+19)+*(partsum+ohow_id*36+20)+*(partsum+ohow_id*36+21)+*(partsum+ohow_id*36+22)+*(partsum+ohow_id*36+23)+*(partsum+ohow_id*36+24)+*(partsum+ohow_id*36+25)+*(partsum+ohow_id*36+26)+
 					*(partsum+ohow_id*36+27)+*(partsum+ohow_id*36+28)+*(partsum+ohow_id*36+29)+*(partsum+ohow_id*36+30)+*(partsum+ohow_id*36+31)+*(partsum+ohow_id*36+32)+*(partsum+ohow_id*36+33)+*(partsum+ohow_id*36+34)+*(partsum+ohow_id*36+35);
 
-		*(output + ohow_id) = sum;
+		*(output + o_offset + ohow_id) += sum;
 	}
 }
