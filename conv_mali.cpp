@@ -159,7 +159,7 @@ void compile_gpu_program(cl_param* cl_gpu, const char* kernel_file_name, const c
 		print_error_message(err);
 }
 
-void prepare_to_execute(cl_param* cl_gpu, bool get_device_info)
+void prepare_to_execute(cl_param* cl_gpu, bool get_device_info, const char* kernel_file_name, const char* kernel_func)
 {
 	setup_gpu(cl_gpu);
 	if(get_device_info)
@@ -168,7 +168,7 @@ void prepare_to_execute(cl_param* cl_gpu, bool get_device_info)
 		print_device_info(cl_gpu);
 		printf("\n");
 	}
-	compile_gpu_program(cl_gpu, "conv.cl", "convolution");
+	compile_gpu_program(cl_gpu, kernel_file_name, kernel_func);
 }
 
 float* malloc_gpu_space(cl_param* cl_gpu, size_t sz)
@@ -200,7 +200,6 @@ float* ptr_to_clmem_map(cl_param* cl_gpu, void* ptr)
 
 void run_gpu_program(cl_param* cl_gpu, size_t* global_work_size, size_t* local_work_size, float* I, float* W, float* partsum, float* O, config* data, int i_offset, int w_offset, int o_offset)
 {
-	printf("run_gpu_program() Start !!!\n");
 	cl_int err;
 
 	cl_mem buffer_I = ptr_to_clmem_unmap(cl_gpu, (void*)I);
@@ -216,7 +215,72 @@ void run_gpu_program(cl_param* cl_gpu, size_t* global_work_size, size_t* local_w
 	clSetKernelArg(cl_gpu->kernel, 5, sizeof(int), &w_offset);
 	clSetKernelArg(cl_gpu->kernel, 6, sizeof(int), &o_offset);
 
-	err = clEnqueueNDRangeKernel(cl_gpu->queue, cl_gpu->kernel, 1, NULL, global_work_size, NULL, 0, NULL, NULL);
+	err = clEnqueueNDRangeKernel(cl_gpu->queue, cl_gpu->kernel, 1, NULL, global_work_size, local_work_size, 0, NULL, NULL);
+	if(err != CL_SUCCESS)
+		print_error_message(err);
+
+	err = clFinish(cl_gpu->queue);
+	if(err != CL_SUCCESS)
+		print_error_message(err);
+
+	I = ptr_to_clmem_map(cl_gpu, (void*)I);
+	W = ptr_to_clmem_map(cl_gpu, (void*)W);
+	partsum = ptr_to_clmem_map(cl_gpu, (void*)partsum);
+	O = ptr_to_clmem_map(cl_gpu, (void*)O);
+
+	err = clFinish(cl_gpu->queue);
+	if(err != CL_SUCCESS)
+		print_error_message(err);
+}
+
+void tile_conv(cl_param* cl_gpu, float* I, float* W, float* partsum, float* O, config* data, tile_param* tile, size_t* global_work_size, size_t* local_work_size)
+{
+	for(int oh = 0; (oh+(tile->tr)-1) < data->output_size; oh += (tile->tr))
+	{
+		for(int ow = 0; (ow+(tile->tc)-1) < data->output_size; ow += (tile->tc))
+		{
+			for(int ic = 0; ic < data->input_c; ic += (tile->tn))
+			{
+				for(int oc = 0; oc < data->output_c; oc += (tile->tm))
+				{
+					float* i_base_addr = (I + ic*(data->input_size)*(data->input_size) + oh*(data->input_size) + ow);
+					float* w_base_addr = (W + oc*(data->weight_size)*(data->weight_size)*data->input_c + ic*(data->weight_size)*(data->weight_size));
+					float* o_base_addr = (O + oc*data->output_size*data->output_size + oh*data->output_size + ow);
+
+					int i_offset = ((uint64_t)i_base_addr - (uint64_t)I)/4;
+					int w_offset = ((uint64_t)w_base_addr - (uint64_t)W)/4;
+					int o_offset = ((uint64_t)o_base_addr - (uint64_t)O)/4;
+
+					// printf("i_offset=%d\tw_offset=%d\to_offset=%d\n", i_offset, w_offset, o_offset);
+					// printf("oh=%d\tow=%d\tic=%d\toc=%d\n", oh, ow, ic, oc);
+
+					run_gpu_program(cl_gpu, global_work_size, local_work_size, I, W, partsum, O, data, i_offset, w_offset, o_offset);
+				}
+			}
+		}
+	}
+}
+
+void direct_conv(cl_param* cl_gpu, float* I, float* W, float* partsum, float* O, config* data, size_t* global_work_size, size_t* local_work_size)
+{
+	cl_int err;
+
+	cl_mem buffer_I = ptr_to_clmem_unmap(cl_gpu, (void*)I);
+	cl_mem buffer_W = ptr_to_clmem_unmap(cl_gpu, (void*)W);
+	cl_mem buffer_partsum = ptr_to_clmem_unmap(cl_gpu, (void*)partsum);
+	cl_mem buffer_O = ptr_to_clmem_unmap(cl_gpu, (void*)O);
+
+	clSetKernelArg(cl_gpu->kernel, 0, sizeof(cl_mem), &buffer_I);
+	clSetKernelArg(cl_gpu->kernel, 1, sizeof(cl_mem), &buffer_W);
+	clSetKernelArg(cl_gpu->kernel, 2, sizeof(cl_mem), &buffer_partsum);
+	clSetKernelArg(cl_gpu->kernel, 3, sizeof(cl_mem), &buffer_O);
+	clSetKernelArg(cl_gpu->kernel, 4, sizeof(int), &(data->input_size));
+	clSetKernelArg(cl_gpu->kernel, 5, sizeof(int), &(data->input_c));
+	clSetKernelArg(cl_gpu->kernel, 6, sizeof(int), &(data->weight_size));
+	clSetKernelArg(cl_gpu->kernel, 7, sizeof(int), &(data->output_size));
+	clSetKernelArg(cl_gpu->kernel, 8, sizeof(int), &(data->output_c));
+
+	err = clEnqueueNDRangeKernel(cl_gpu->queue, cl_gpu->kernel, 1, NULL, global_work_size, local_work_size, 0, NULL, NULL);
 	if(err != CL_SUCCESS)
 		print_error_message(err);
 
@@ -266,41 +330,4 @@ void clean_objects(cl_param* cl_gpu, float* I, float* W, float* O)
 	err = clReleaseContext(cl_gpu->context);
 	if(err != CL_SUCCESS)
 		print_error_message(err);
-}
-
-void conv(cl_param* cl_gpu, float* I, float* W, float* partsum, float* O, config* data, tile_param* tile, size_t* global_work_size, size_t* local_work_size)
-{
-	for(int oh = 0; (oh+(tile->tr)-1) < data->output_size; oh += (tile->tr))
-	{
-		for(int ow = 0; (ow+(tile->tc)-1) < data->output_size; ow += (tile->tc))
-		{
-			for(int ic = 0; ic < data->input_c; ic += (tile->tn))
-			{
-				for(int oc = 0; oc < data->output_c; oc += (tile->tm))
-				{
-					float* i_tile_base_addr = (I + ic*(data->input_size)*(data->input_size) + oh*(data->input_size) + ow);
-					float* w_tile_base_addr = (W + oc*(data->weight_size)*(data->weight_size)*data->input_c + ic*(data->weight_size)*(data->weight_size));
-					float* o_tile_base_addr = (O + oc*data->output_size*data->output_size + oh*data->output_size + ow);
-					
-					for(int t_oc = 0; t_oc < tile->tm; t_oc++)
-					{
-						float* i_base_addr = i_tile_base_addr;
-						float* w_base_addr = w_tile_base_addr + t_oc*(data->weight_size)*(data->weight_size)*data->input_c;
-						float* o_base_addr = o_tile_base_addr + t_oc*data->output_size*data->output_size;
-
-						int i_offset = ((uint64_t)i_base_addr - (uint64_t)I)/4;
-						int w_offset = ((uint64_t)w_base_addr - (uint64_t)W)/4;
-						int o_offset = ((uint64_t)o_base_addr - (uint64_t)O)/4;
-
-						printf("i_offset=%d\tw_offset=%d\to_offset=%d\n", i_offset, w_offset, o_offset);
-
-						printf("oh=%d\tow=%d\tic=%d\toc=%d\tt_oc=%d\n", oh, ow, ic, oc, t_oc);
-						run_gpu_program(cl_gpu, global_work_size, local_work_size, I, W, partsum, O, data, i_offset, w_offset, o_offset);
-					}
-				}
-			}
-			break;
-		}
-		break;
-	}
 }
