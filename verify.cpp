@@ -94,6 +94,7 @@ bool greater50(int tr, int tc, int tn, int tm, int k_size, char reuse_type)
 		else 
 			return false;
 	}
+	return false;
 }
 
 void IR(int* tile, int* rd, uint64_t* num)
@@ -130,7 +131,7 @@ void run()
 {
 	int* rd = (int*)malloc(6 * sizeof(int));
 	uint64_t* num = (uint64_t*)malloc(6 * sizeof(uint64_t));
-	int cache_size = 16384;
+	int cache_size = 64*1024/4;
 
 	for(int tr = 1; tr <= conv_config[3]; tr++)
 	{
