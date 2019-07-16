@@ -58,8 +58,8 @@ __kernel void conv_unroll_ohow(
 	for(; ic < 32; ic++)
 	{
 		float4 img1 = vload4(0, (input + i_offset + ic*225 + ihiw_id));
-		float4 img2 = vload2(0, (input + i_offset + ic*225 + ihiw_id + 15));
-		float2 img3 = vload2(0, (input + i_offset + ic*225 + ihiw_id + 30));
+		float4 img2 = vload4(0, (input + i_offset + ic*225 + ihiw_id + 15));
+		float4 img3 = vload4(0, (input + i_offset + ic*225 + ihiw_id + 30));
 		float4 k1 = vload4(0, (weight + w_offset + o_channel_id*1728 + ic*9));
 		float4 k2 = vload4(0, (weight + w_offset + o_channel_id*1728 + ic*9 + 4));
 		float k3 = *(weight + w_offset + o_channel_id*1728 + ic*9 + 8);
