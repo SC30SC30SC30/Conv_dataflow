@@ -88,6 +88,11 @@ void print_device_info(cl_param* cl_gpu)
 	clGetDeviceInfo(cl_gpu->gpu_device, CL_DEVICE_MAX_WORK_ITEM_DIMENSIONS, sizeof(cl_uint), &max_work_item_dim, NULL);
 	cout << "\tMaximum dimensions : " << max_work_item_dim << endl;
 
+	clGetDeviceInfo(cl_gpu->gpu_device, CL_DEVICE_MAX_WORK_ITEM_SIZES, 0, NULL, &num);
+	vector<size_t> max_work_item_size(num);
+	clGetDeviceInfo(cl_gpu->gpu_device, CL_DEVICE_MAX_WORK_ITEM_SIZES, num, &max_work_item_size[0], NULL);
+	cout << "\tMaximum work item for each dimensions : " << max_work_item_size[0] << "\t" << max_work_item_size[1] << "\t" << max_work_item_size[2] << endl;
+
 	cl_device_type device_type;
 	clGetDeviceInfo(cl_gpu->gpu_device, CL_DEVICE_TYPE, sizeof(cl_device_type), &device_type, NULL);
 	cout << "\tOpenCL device type : " << device_type << endl;
@@ -259,43 +264,6 @@ void tile_conv(cl_param* cl_gpu, float* I, float* W, float* partsum, float* O, c
 			}
 		}
 	}
-}
-
-void direct_conv(cl_param* cl_gpu, float* I, float* W, float* partsum, float* O, config* data, size_t* global_work_size, size_t* local_work_size)
-{
-	cl_int err;
-
-	cl_mem buffer_I = ptr_to_clmem_unmap(cl_gpu, (void*)I);
-	cl_mem buffer_W = ptr_to_clmem_unmap(cl_gpu, (void*)W);
-	cl_mem buffer_partsum = ptr_to_clmem_unmap(cl_gpu, (void*)partsum);
-	cl_mem buffer_O = ptr_to_clmem_unmap(cl_gpu, (void*)O);
-
-	clSetKernelArg(cl_gpu->kernel, 0, sizeof(cl_mem), &buffer_I);
-	clSetKernelArg(cl_gpu->kernel, 1, sizeof(cl_mem), &buffer_W);
-	clSetKernelArg(cl_gpu->kernel, 2, sizeof(cl_mem), &buffer_partsum);
-	clSetKernelArg(cl_gpu->kernel, 3, sizeof(cl_mem), &buffer_O);
-	clSetKernelArg(cl_gpu->kernel, 4, sizeof(int), &(data->input_size));
-	clSetKernelArg(cl_gpu->kernel, 5, sizeof(int), &(data->input_c));
-	clSetKernelArg(cl_gpu->kernel, 6, sizeof(int), &(data->weight_size));
-	clSetKernelArg(cl_gpu->kernel, 7, sizeof(int), &(data->output_size));
-	clSetKernelArg(cl_gpu->kernel, 8, sizeof(int), &(data->output_c));
-
-	err = clEnqueueNDRangeKernel(cl_gpu->queue, cl_gpu->kernel, 1, NULL, global_work_size, local_work_size, 0, NULL, NULL);
-	if(err != CL_SUCCESS)
-		print_error_message(err);
-
-	err = clFinish(cl_gpu->queue);
-	if(err != CL_SUCCESS)
-		print_error_message(err);
-
-	I = ptr_to_clmem_map(cl_gpu, (void*)I);
-	W = ptr_to_clmem_map(cl_gpu, (void*)W);
-	partsum = ptr_to_clmem_map(cl_gpu, (void*)partsum);
-	O = ptr_to_clmem_map(cl_gpu, (void*)O);
-
-	err = clFinish(cl_gpu->queue);
-	if(err != CL_SUCCESS)
-		print_error_message(err);
 }
 
 void clean_objects(cl_param* cl_gpu, float* I, float* W, float* O)

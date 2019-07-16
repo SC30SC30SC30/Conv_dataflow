@@ -1,4 +1,4 @@
-__kernel void convolution(
+__kernel void conv_unroll_all(
 	__global const float* input, 
 	__global const float* weight, 
 	__global float* partsum, 
@@ -35,4 +35,38 @@ __kernel void convolution(
 
 		*(output + o_offset + o_channel_id*169 + ohow_id) += sum;
 	}
+}
+
+__kernel void conv_unroll_ohow(
+	__global const float* input, 
+	__global const float* weight, 
+	__global float* partsum, 
+	__global float* output, 
+	int i_offset, 
+	int w_offset, 
+	int o_offset
+	)
+{
+	int o_channel_id = get_group_id(0);
+	int ohow_id = get_local_id(0);
+	int ihiw_id = ohow_id + (ohow_id/13)*2;
+
+	printf("%d. o_channel_id=%d\tohow_id=%d\tihiw_id=%d\n", get_global_id(0), o_channel_id, ohow_id, ihiw_id);
+
+	float sum = 0.0;
+	int ic = 0;
+	for(; ic < 32; ic++)
+	{
+		sum += *(input + i_offset + ic*225 + ihiw_id + 0) * *(weight + w_offset + o_channel_id*1728 + ic*9 + 0) +
+		 *(input + i_offset + ic*225 + ihiw_id + 1) * *(weight + w_offset + o_channel_id*1728 + ic*9 + 1) +
+		 *(input + i_offset + ic*225 + ihiw_id + 2) * *(weight + w_offset + o_channel_id*1728 + ic*9 + 2) +
+		 *(input + i_offset + ic*225 + ihiw_id + 15) * *(weight + w_offset + o_channel_id*1728 + ic*9 + 3) +
+		 *(input + i_offset + ic*225 + ihiw_id + 16) * *(weight + w_offset + o_channel_id*1728 + ic*9 + 4) +
+		 *(input + i_offset + ic*225 + ihiw_id + 17) * *(weight + w_offset + o_channel_id*1728 + ic*9 + 5) +
+		 *(input + i_offset + ic*225 + ihiw_id + 30) * *(weight + w_offset + o_channel_id*1728 + ic*9 + 6) +
+		 *(input + i_offset + ic*225 + ihiw_id + 31) * *(weight + w_offset + o_channel_id*1728 + ic*9 + 7) + 
+		 *(input + i_offset + ic*225 + ihiw_id + 32) * *(weight + w_offset + o_channel_id*1728 + ic*9 + 8);
+	}
+
+	*(output + o_offset + o_channel_id*169 + ohow_id) += sum;
 }
