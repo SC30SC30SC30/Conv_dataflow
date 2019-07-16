@@ -57,7 +57,15 @@ __kernel void conv_unroll_ohow(
 	int ic = 0;
 	for(; ic < 32; ic++)
 	{
-		sum += *(input + i_offset + ic*225 + ihiw_id + 0) * *(weight + w_offset + o_channel_id*1728 + ic*9 + 0) +
+		float4 img1 = vload4(0, (input + i_offset + ic*225 + ihiw_id));
+		float4 img2 = vload2(0, (input + i_offset + ic*225 + ihiw_id + 15));
+		float2 img3 = vload2(0, (input + i_offset + ic*225 + ihiw_id + 30));
+		float4 k1 = vload4(0, (weight + w_offset + o_channel_id*1728 + ic*9));
+		float4 k2 = vload4(0, (weight + w_offset + o_channel_id*1728 + ic*9 + 4));
+		float k3 = *(weight + w_offset + o_channel_id*1728 + ic*9 + 8);
+
+
+		/*sum += *(input + i_offset + ic*225 + ihiw_id + 0) * *(weight + w_offset + o_channel_id*1728 + ic*9 + 0) +
 		 *(input + i_offset + ic*225 + ihiw_id + 1) * *(weight + w_offset + o_channel_id*1728 + ic*9 + 1) +
 		 *(input + i_offset + ic*225 + ihiw_id + 2) * *(weight + w_offset + o_channel_id*1728 + ic*9 + 2) +
 		 *(input + i_offset + ic*225 + ihiw_id + 15) * *(weight + w_offset + o_channel_id*1728 + ic*9 + 3) +
@@ -65,7 +73,7 @@ __kernel void conv_unroll_ohow(
 		 *(input + i_offset + ic*225 + ihiw_id + 17) * *(weight + w_offset + o_channel_id*1728 + ic*9 + 5) +
 		 *(input + i_offset + ic*225 + ihiw_id + 30) * *(weight + w_offset + o_channel_id*1728 + ic*9 + 6) +
 		 *(input + i_offset + ic*225 + ihiw_id + 31) * *(weight + w_offset + o_channel_id*1728 + ic*9 + 7) + 
-		 *(input + i_offset + ic*225 + ihiw_id + 32) * *(weight + w_offset + o_channel_id*1728 + ic*9 + 8);
+		 *(input + i_offset + ic*225 + ihiw_id + 32) * *(weight + w_offset + o_channel_id*1728 + ic*9 + 8);*/
 	}
 
 	*(output + o_offset + o_channel_id*169 + ohow_id) += sum;
