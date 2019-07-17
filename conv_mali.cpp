@@ -76,7 +76,7 @@ void print_device_info(cl_param* cl_gpu)
 	cout << "\tlocal memory type : " << local_mem_type << endl;
 
 	cl_ulong mem_alloc_size;
-	clGetDeviceInfo(cl->gpu_device, CL_DEVICE_MAX_MEM_ALLOC_SIZE, sizeof(cl_ulong), &mem_alloc_size, NULL);
+	clGetDeviceInfo(cl_gpu->gpu_device, CL_DEVICE_MAX_MEM_ALLOC_SIZE, sizeof(cl_ulong), &mem_alloc_size, NULL);
 	cout << "\tMaximum memory object allocation : " << mem_alloc_size <<　" Bytes" << endl;
 
 	cl_uint compute_units;
@@ -263,7 +263,7 @@ void tile_conv(cl_param* cl_gpu, float* I, float* W, float* partsum, float* O, c
 					// printf("i_offset=%d\tw_offset=%d\to_offset=%d\n", i_offset, w_offset, o_offset);
 					// printf("oh=%d\tow=%d\tic=%d\toc=%d\n", oh, ow, ic, oc);
 
-					run_gpu_program(cl_gpu, global_work_size, local_work_size, I, W, partsum, O, data, i_offset, w_offset, o_offset);
+					run_gpu_program(cl_gpu, global_work_size, local_work_size, I, W, partsum, O, i_offset, w_offset, o_offset);
 				}
 			}
 		}
@@ -272,7 +272,7 @@ void tile_conv(cl_param* cl_gpu, float* I, float* W, float* partsum, float* O, c
 
 void direct_conv(cl_param* cl_gpu, float* I, float* W, float* partsum, float* O, config* data, size_t* global_work_size, size_t* local_work_size)
 {
-	run_gpu_program(cl_gpu, global_work_size, local_work_size, I, W, partsum, O, data, 0, 0, 0);
+	run_gpu_program(cl_gpu, global_work_size, local_work_size, I, W, partsum, O, 0, 0, 0);
 }
 
 void clean_objects(cl_param* cl_gpu, float* I, float* W, float* O)

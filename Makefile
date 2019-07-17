@@ -23,7 +23,7 @@ compile_verify:
 compile_conv_mali:splay_tree.o
 	g++ -g -c dataflow.cpp
 	g++ -g -c conv_mali.cpp
-	g++ -g conv_mali_test.cpp conv_mali.o dataflow.o splay_tree.o -o conv_gpu -lOpenCL -fopenmp
+	g++ -g conv_mali_test.cpp conv_mali.o dataflow.o splay_tree.o -o conv_gpu -lOpenCL
 
 compile_conv_mali_on_MAC:splay_tree.o
 	g++ -g -c dataflow.cpp

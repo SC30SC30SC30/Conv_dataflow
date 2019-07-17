@@ -1,5 +1,4 @@
 #include <time.h>
-#include <omp.h>
 #include "conv_mali.h"
 
 void run_tile_conv(cl_param* cl_gpu, config* data, tile_param* tile, size_t* global_work_size, size_t* local_work_size)
@@ -10,7 +9,7 @@ void run_tile_conv(cl_param* cl_gpu, config* data, tile_param* tile, size_t* glo
 	clear_data(O, total_value(data, 'O'));
 	printf("total_I=%d\ttotal_W=%d\ttotal_O=%d\n", total_value(data, 'I'), total_value(data, 'W'), total_value(data, 'O'));
 
-	prepare_to_execute(cl_gpu, false, "conv_unroll_all.cl", "convolution");
+	prepare_to_execute(cl_gpu, true, "OpenCL/conv_unroll_all.cl", "convolution");
 
 	float* gpu_I = malloc_gpu_space(cl_gpu, sizeof(float)*total_value(data, 'I'));
 	for(int i = 0; i < total_value(data, 'I'); i++)
@@ -37,7 +36,6 @@ void run_tile_conv(cl_param* cl_gpu, config* data, tile_param* tile, size_t* glo
 	// the result of cpu computation
 	//==================================================================================================//
 	start = clock();
-	#pragma omp parallel for
 	for(int oc = 0; oc < 384; oc++)
 	{
 		for(int ic = 0; ic < 192; ic++)
@@ -84,7 +82,7 @@ void run_direct_conv(cl_param* cl_gpu, config* data, size_t* global_work_size, s
 	clear_data(O, total_value(data, 'O'));
 	printf("total_I=%d\ttotal_W=%d\ttotal_O=%d\n", total_value(data, 'I'), total_value(data, 'W'), total_value(data, 'O'));
 
-	prepare_to_execute(cl_gpu, false, "direct_conv.cl", "convolution");
+	prepare_to_execute(cl_gpu, false, "OpenCL/direct_conv.cl", "convolution");
 
 	float* gpu_I = malloc_gpu_space(cl_gpu, sizeof(float)*total_value(data, 'I'));
 	for(int i = 0; i < total_value(data, 'I'); i++)
@@ -96,7 +94,7 @@ void run_direct_conv(cl_param* cl_gpu, config* data, size_t* global_work_size, s
 	{
 		*(gpu_W+i) = *(W+i);
 	}
-	int partsum_num = data->weight_size * data->weight_size * *(local_work_size) * 4;
+	int partsum_num = data->input_c * data->output_size * data->output_size * data->output_c;
 	printf("partsum_num=%d\n", partsum_num);
 	float* gpu_partsum = malloc_gpu_space(cl_gpu, sizeof(float)*partsum_num);
 	float* gpu_O = malloc_gpu_space(cl_gpu, sizeof(float)*total_value(data, 'O'));
@@ -111,7 +109,6 @@ void run_direct_conv(cl_param* cl_gpu, config* data, size_t* global_work_size, s
 	// the result of cpu computation
 	//==================================================================================================//
 	start = clock();
-	#pragma omp parallel for
 	for(int oc = 0; oc < 384; oc++)
 	{
 		for(int ic = 0; ic < 192; ic++)

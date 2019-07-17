@@ -8,9 +8,11 @@ __kernel void convolution(
 	int o_offset
 	)
 {
-	int oc_id = get_group_id(0) / 169;
-	int ohow_id = get_group_id(0) % 169;
-	int ic_id = get_local_id(0);
+	int global_id = get_global_id(0);
+	int o_id = global_id / 192;
+	int oc_id = o_id / 169;
+	int ohow_id = o_id % 169;
+	int ic_id = global_id % 192;
 	int ihiw_id = ohow_id + (ohow_id/13)*2;
 
 	float sum1 = *(input + i_offset + ic_id*225 + ihiw_id) * *(weight + w_offset + oc_id*1728 + ic_id*9);
@@ -23,16 +25,16 @@ __kernel void convolution(
 	float sum8 = *(input + i_offset +ic_id*225 + ihiw_id + 31) * *(weight + w_offset + oc_id*1728 + ic_id*9 + 7);
 	float sum9 = *(input + i_offset +ic_id*225 + ihiw_id + 32) * *(weight + w_offset + oc_id*1728 + ic_id*9 + 8);
 
-	*(partsum + get_group_id(0)/4 + get_local_id(0)*9) = (sum1+sum2+sum3+sum4+sum5+sum6+sum7+sum8+sum9);
+	*(partsum + global_id) = (sum1+sum2+sum3+sum4+sum5+sum6+sum7+sum8+sum9);
 
 	barrier(CLK_GLOBAL_MEM_FENCE);
 
 	if(ic_id == 0)
 	{
 		int i = 0;
-		for(; i < 1728; i++)
+		for(; i < 192; i++)
 		{
-			*(output + o_offset + oc_id*169 + ohow_id) += *(partsum + get_group_id(0)/4 + i);
+			*(output + o_offset + oc_id*169 + ohow_id) += *(partsum + o_id*192 + i);
 		}
 	}
 }
