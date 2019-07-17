@@ -75,6 +75,10 @@ void print_device_info(cl_param* cl_gpu)
 	clGetDeviceInfo(cl_gpu->gpu_device, CL_DEVICE_LOCAL_MEM_TYPE, sizeof(cl_device_local_mem_type), &local_mem_type, NULL);
 	cout << "\tlocal memory type : " << local_mem_type << endl;
 
+	cl_ulong mem_alloc_size;
+	clGetDeviceInfo(cl->gpu_device, CL_DEVICE_MAX_MEM_ALLOC_SIZE, sizeof(cl_ulong), &mem_alloc_size, NULL);
+	cout << "\tMaximum memory object allocation : " << mem_alloc_size <<　" Bytes" << endl;
+
 	cl_uint compute_units;
 	clGetDeviceInfo(cl_gpu->gpu_device, CL_DEVICE_MAX_COMPUTE_UNITS, sizeof(cl_uint), &compute_units, NULL);
 	cout << "\tThe number of parallel compute cores on the OpenCL device : " << compute_units << endl;
@@ -91,7 +95,7 @@ void print_device_info(cl_param* cl_gpu)
 	clGetDeviceInfo(cl_gpu->gpu_device, CL_DEVICE_MAX_WORK_ITEM_SIZES, 0, NULL, &num);
 	vector<size_t> max_work_item_size(num);
 	clGetDeviceInfo(cl_gpu->gpu_device, CL_DEVICE_MAX_WORK_ITEM_SIZES, num, &max_work_item_size[0], NULL);
-	cout << "\tMaximum work item for each dimensions : " << max_work_item_size[0] << "\t" << max_work_item_size[1] << "\t" << max_work_item_size[2] << endl;
+	cout << "\tMaximum work item for each dimensions : " << "(" << max_work_item_size[0] << ", " << max_work_item_size[1] << ", " << max_work_item_size[2] << ")" << endl;
 
 	cl_device_type device_type;
 	clGetDeviceInfo(cl_gpu->gpu_device, CL_DEVICE_TYPE, sizeof(cl_device_type), &device_type, NULL);
@@ -203,7 +207,7 @@ float* ptr_to_clmem_map(cl_param* cl_gpu, void* ptr)
 	return new_ptr;
 }
 
-void run_gpu_program(cl_param* cl_gpu, size_t* global_work_size, size_t* local_work_size, float* I, float* W, float* partsum, float* O, config* data, int i_offset, int w_offset, int o_offset)
+void run_gpu_program(cl_param* cl_gpu, size_t* global_work_size, size_t* local_work_size, float* I, float* W, float* partsum, float* O, int i_offset, int w_offset, int o_offset)
 {
 	cl_int err;
 
@@ -264,6 +268,11 @@ void tile_conv(cl_param* cl_gpu, float* I, float* W, float* partsum, float* O, c
 			}
 		}
 	}
+}
+
+void direct_conv(cl_param* cl_gpu, float* I, float* W, float* partsum, float* O, config* data, size_t* global_work_size, size_t* local_work_size)
+{
+	run_gpu_program(cl_gpu, global_work_size, local_work_size, I, W, partsum, O, data, 0, 0, 0);
 }
 
 void clean_objects(cl_param* cl_gpu, float* I, float* W, float* O)

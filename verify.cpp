@@ -131,7 +131,7 @@ void run()
 {
 	int* rd = (int*)malloc(6 * sizeof(int));
 	uint64_t* num = (uint64_t*)malloc(6 * sizeof(uint64_t));
-	int cache_size = 64*1024/4;
+	int cache_size = 256*1024/4;
 
 	for(int tr = 1; tr <= conv_config[3]; tr++)
 	{
@@ -162,7 +162,7 @@ void run()
 											sum += *(num+i);
 										}
 									}
-									printf("sum = %lld\n", sum);
+									printf("sum = %ld\n", sum);
 								}
 							}
 						}
