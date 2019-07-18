@@ -127,6 +127,41 @@ void IR(int* tile, int* rd, uint64_t* num)
 	*(num+2) = (*(num+2))*conv_config[3]*conv_config[3]*conv_config[4];
 }
 
+void mali_gpu_constraints(int* tile, int* rd, uint64_t* num, int cache_size)
+{
+	int partsum_space = 0;
+	int available_cache_size = cache_size;
+
+	if((conv_config[2] * conv_config[2] * tile[2]) <= 256)
+	{
+		printf("can unroll kw kh ic\n");
+		partsum_space = conv_config[2] * conv_config[2] * tile[2] * 4;
+	}
+	else if((conv_config[2] * tile[2]) <= 256)
+	{
+		printf("can unroll kh ic\n");
+		partsum_space = conv_config[2] * tile[2] * 4;
+	}
+	else if(tile[2] <= 256)
+	{
+		printf("can unroll ic\n");
+		partsum_space = tile[2] * 4;
+	}
+
+	printf("the total number of registers = %dx3 (%d)\n", partsum_space, 3*partsum_space);
+	available_cache_size = cache_size - partsum_space;
+
+	uint64_t sum = 0;
+	for(int i = 0; i < 6; i++)
+	{
+		if(*(rd+i) < available_cache_size)
+		{
+			sum += *(num+i);
+		}
+	}
+	printf("sum = %lu\n", sum);
+}
+
 void run()
 {
 	int* rd = (int*)malloc(6 * sizeof(int));
@@ -154,15 +189,8 @@ void run()
 									tile[3] = tm;
 									printf("<tr, tc, tn, tm> = <%d, %d, %d, %d>\n", tr, tr, tn, tm);
 									IR(&tile[0], rd, num);
-									uint64_t sum = 0;
-									for(int i = 0; i < 6; i++)
-									{
-										if(*(rd+i) < cache_size)
-										{
-											sum += *(num+i);
-										}
-									}
-									printf("sum = %ld\n", sum);
+									mali_gpu_constraints(&tile[0], rd, num, cache_size);
+									printf("\n");
 								}
 							}
 						}

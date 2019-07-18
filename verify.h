@@ -24,4 +24,5 @@ void get_access_number(int* tile, char two_type, char data_type, uint64_t* num);
 void IR(int* tile, int* rd, uint64_t* num);
 
 bool greater50(int tr, int tc, int tn, int tm, int k_size, char reuse_type);
+void mali_gpu_constraints(int* tile, int* rd, uint64_t* num, int cache_size);
 void run();
