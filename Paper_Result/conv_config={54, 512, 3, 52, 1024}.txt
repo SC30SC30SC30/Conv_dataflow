@@ -1,0 +1,960 @@
+<tr, tc, tn, tm> = <2, 2, 1, 1>
+can unroll kw kh ic
+the total number of registers = 36x3 (108)
+available_cache_size=65500
+============> sum = 12511541248
+
+<tr, tc, tn, tm> = <2, 2, 2, 1>
+can unroll kw kh ic
+the total number of registers = 72x3 (216)
+available_cache_size=65464
+============> sum = 12511541248
+
+<tr, tc, tn, tm> = <2, 2, 4, 1>
+can unroll kw kh ic
+the total number of registers = 144x3 (432)
+available_cache_size=65392
+============> sum = 12511541248
+
+<tr, tc, tn, tm> = <2, 2, 8, 1>
+can unroll kw kh ic
+the total number of registers = 288x3 (864)
+available_cache_size=65248
+============> sum = 12337100800
+
+<tr, tc, tn, tm> = <2, 2, 16, 1>
+can unroll kh ic
+the total number of registers = 192x3 (576)
+available_cache_size=65344
+============> sum = 12425705472
+
+<tr, tc, tn, tm> = <2, 2, 32, 1>
+can unroll ic
+the total number of registers = 128x3 (384)
+available_cache_size=65408
+============> sum = 12470007808
+
+<tr, tc, tn, tm> = <2, 2, 64, 1>
+can unroll ic
+the total number of registers = 256x3 (768)
+available_cache_size=65280
+============> sum = 12492158976
+
+<tr, tc, tn, tm> = <2, 2, 128, 1>
+can unroll kh kw
+the total number of registers = 36x3 (108)
+available_cache_size=65500
+============> sum = 12503234560
+
+<tr, tc, tn, tm> = <2, 2, 256, 1>
+can unroll kh kw
+the total number of registers = 36x3 (108)
+available_cache_size=65500
+============> sum = 12508772352
+
+<tr, tc, tn, tm> = <2, 2, 512, 1>
+can unroll kh kw
+the total number of registers = 36x3 (108)
+available_cache_size=65500
+============> sum = 12511541248
+
+<tr, tc, tn, tm> = <4, 4, 1, 1>
+can unroll kw kh ic
+the total number of registers = 36x3 (108)
+available_cache_size=65500
+============> sum = 14903867392
+
+<tr, tc, tn, tm> = <4, 4, 2, 1>
+can unroll kw kh ic
+the total number of registers = 72x3 (216)
+available_cache_size=65464
+============> sum = 14903867392
+
+<tr, tc, tn, tm> = <4, 4, 2, 2>
+can unroll kw kh ic
+the total number of registers = 72x3 (216)
+available_cache_size=65464
+============> sum = 14903867392
+
+<tr, tc, tn, tm> = <4, 4, 4, 1>
+can unroll kw kh ic
+the total number of registers = 144x3 (432)
+available_cache_size=65392
+============> sum = 14903867392
+
+<tr, tc, tn, tm> = <4, 4, 4, 2>
+can unroll kw kh ic
+the total number of registers = 144x3 (432)
+available_cache_size=65392
+============> sum = 14903867392
+
+<tr, tc, tn, tm> = <4, 4, 8, 1>
+can unroll kw kh ic
+the total number of registers = 288x3 (864)
+available_cache_size=65248
+============> sum = 14729426944
+
+<tr, tc, tn, tm> = <4, 4, 8, 2>
+can unroll kw kh ic
+the total number of registers = 288x3 (864)
+available_cache_size=65248
+============> sum = 14729426944
+
+<tr, tc, tn, tm> = <4, 4, 16, 1>
+can unroll kh ic
+the total number of registers = 192x3 (576)
+available_cache_size=65344
+============> sum = 14818031616
+
+<tr, tc, tn, tm> = <4, 4, 16, 2>
+can unroll kh ic
+the total number of registers = 192x3 (576)
+available_cache_size=65344
+============> sum = 14818031616
+
+<tr, tc, tn, tm> = <4, 4, 32, 1>
+can unroll ic
+the total number of registers = 128x3 (384)
+available_cache_size=65408
+============> sum = 14862333952
+
+<tr, tc, tn, tm> = <4, 4, 32, 2>
+can unroll ic
+the total number of registers = 128x3 (384)
+available_cache_size=65408
+============> sum = 14862333952
+
+<tr, tc, tn, tm> = <4, 4, 64, 1>
+can unroll ic
+the total number of registers = 256x3 (768)
+available_cache_size=65280
+============> sum = 14884485120
+
+<tr, tc, tn, tm> = <4, 4, 64, 2>
+can unroll ic
+the total number of registers = 256x3 (768)
+available_cache_size=65280
+============> sum = 14884485120
+
+<tr, tc, tn, tm> = <4, 4, 128, 1>
+can unroll kh kw
+the total number of registers = 36x3 (108)
+available_cache_size=65500
+============> sum = 14895560704
+
+<tr, tc, tn, tm> = <4, 4, 128, 2>
+can unroll kh kw
+the total number of registers = 36x3 (108)
+available_cache_size=65500
+============> sum = 14895560704
+
+<tr, tc, tn, tm> = <4, 4, 256, 1>
+can unroll kh kw
+the total number of registers = 36x3 (108)
+available_cache_size=65500
+============> sum = 14901098496
+
+<tr, tc, tn, tm> = <4, 4, 256, 2>
+can unroll kh kw
+the total number of registers = 36x3 (108)
+available_cache_size=65500
+============> sum = 14901098496
+
+<tr, tc, tn, tm> = <4, 4, 512, 1>
+can unroll kh kw
+the total number of registers = 36x3 (108)
+available_cache_size=65500
+============> sum = 14903867392
+
+<tr, tc, tn, tm> = <4, 4, 512, 2>
+can unroll kh kw
+the total number of registers = 36x3 (108)
+available_cache_size=65500
+============> sum = 14903867392
+
+<tr, tc, tn, tm> = <13, 13, 1, 1>
+can unroll kw kh ic
+the total number of registers = 36x3 (108)
+available_cache_size=65500
+============> sum = 14210906112
+
+<tr, tc, tn, tm> = <13, 13, 2, 1>
+can unroll kw kh ic
+the total number of registers = 72x3 (216)
+available_cache_size=65464
+============> sum = 14919743488
+
+<tr, tc, tn, tm> = <13, 13, 2, 2>
+can unroll kw kh ic
+the total number of registers = 72x3 (216)
+available_cache_size=65464
+============> sum = 14919743488
+
+<tr, tc, tn, tm> = <13, 13, 4, 1>
+can unroll kw kh ic
+the total number of registers = 144x3 (432)
+available_cache_size=65392
+============> sum = 15274162176
+
+<tr, tc, tn, tm> = <13, 13, 4, 2>
+can unroll kw kh ic
+the total number of registers = 144x3 (432)
+available_cache_size=65392
+============> sum = 15274162176
+
+<tr, tc, tn, tm> = <13, 13, 4, 4>
+can unroll kw kh ic
+the total number of registers = 144x3 (432)
+available_cache_size=65392
+============> sum = 15274162176
+
+<tr, tc, tn, tm> = <13, 13, 8, 1>
+can unroll kw kh ic
+the total number of registers = 288x3 (864)
+available_cache_size=65248
+============> sum = 15451371520
+
+<tr, tc, tn, tm> = <13, 13, 8, 2>
+can unroll kw kh ic
+the total number of registers = 288x3 (864)
+available_cache_size=65248
+============> sum = 15451371520
+
+<tr, tc, tn, tm> = <13, 13, 8, 4>
+can unroll kw kh ic
+the total number of registers = 288x3 (864)
+available_cache_size=65248
+============> sum = 15451371520
+
+<tr, tc, tn, tm> = <13, 13, 16, 1>
+can unroll kh ic
+the total number of registers = 192x3 (576)
+available_cache_size=65344
+============> sum = 15539976192
+
+<tr, tc, tn, tm> = <13, 13, 16, 2>
+can unroll kh ic
+the total number of registers = 192x3 (576)
+available_cache_size=65344
+============> sum = 15539976192
+
+<tr, tc, tn, tm> = <13, 13, 16, 4>
+can unroll kh ic
+the total number of registers = 192x3 (576)
+available_cache_size=65344
+============> sum = 15539976192
+
+<tr, tc, tn, tm> = <13, 13, 16, 8>
+can unroll kh ic
+the total number of registers = 192x3 (576)
+available_cache_size=65344
+============> sum = 15539976192
+
+<tr, tc, tn, tm> = <13, 13, 32, 1>
+can unroll ic
+the total number of registers = 128x3 (384)
+available_cache_size=65408
+============> sum = 15584278528
+
+<tr, tc, tn, tm> = <13, 13, 32, 2>
+can unroll ic
+the total number of registers = 128x3 (384)
+available_cache_size=65408
+============> sum = 15584278528
+
+<tr, tc, tn, tm> = <13, 13, 32, 4>
+can unroll ic
+the total number of registers = 128x3 (384)
+available_cache_size=65408
+============> sum = 15584278528
+
+<tr, tc, tn, tm> = <13, 13, 32, 8>
+can unroll ic
+the total number of registers = 128x3 (384)
+available_cache_size=65408
+============> sum = 15584278528
+
+<tr, tc, tn, tm> = <13, 13, 64, 1>
+can unroll ic
+the total number of registers = 256x3 (768)
+available_cache_size=65280
+============> sum = 15606429696
+
+<tr, tc, tn, tm> = <13, 13, 64, 2>
+can unroll ic
+the total number of registers = 256x3 (768)
+available_cache_size=65280
+============> sum = 15606429696
+
+<tr, tc, tn, tm> = <13, 13, 64, 4>
+can unroll ic
+the total number of registers = 256x3 (768)
+available_cache_size=65280
+============> sum = 15606429696
+
+<tr, tc, tn, tm> = <13, 13, 64, 8>
+can unroll ic
+the total number of registers = 256x3 (768)
+available_cache_size=65280
+============> sum = 15606429696
+
+<tr, tc, tn, tm> = <13, 13, 64, 16>
+can unroll ic
+the total number of registers = 256x3 (768)
+available_cache_size=65280
+============> sum = 15606429696
+
+<tr, tc, tn, tm> = <13, 13, 128, 1>
+can unroll kh kw
+the total number of registers = 36x3 (108)
+available_cache_size=65500
+============> sum = 15617505280
+
+<tr, tc, tn, tm> = <13, 13, 128, 2>
+can unroll kh kw
+the total number of registers = 36x3 (108)
+available_cache_size=65500
+============> sum = 15617505280
+
+<tr, tc, tn, tm> = <13, 13, 128, 4>
+can unroll kh kw
+the total number of registers = 36x3 (108)
+available_cache_size=65500
+============> sum = 15617505280
+
+<tr, tc, tn, tm> = <13, 13, 128, 8>
+can unroll kh kw
+the total number of registers = 36x3 (108)
+available_cache_size=65500
+============> sum = 15617505280
+
+<tr, tc, tn, tm> = <13, 13, 128, 16>
+can unroll kh kw
+the total number of registers = 36x3 (108)
+available_cache_size=65500
+============> sum = 15617505280
+
+<tr, tc, tn, tm> = <13, 13, 256, 1>
+can unroll kh kw
+the total number of registers = 36x3 (108)
+available_cache_size=65500
+============> sum = 15623043072
+
+<tr, tc, tn, tm> = <13, 13, 256, 2>
+can unroll kh kw
+the total number of registers = 36x3 (108)
+available_cache_size=65500
+============> sum = 15623043072
+
+<tr, tc, tn, tm> = <13, 13, 256, 4>
+can unroll kh kw
+the total number of registers = 36x3 (108)
+available_cache_size=65500
+============> sum = 15623043072
+
+<tr, tc, tn, tm> = <13, 13, 256, 8>
+can unroll kh kw
+the total number of registers = 36x3 (108)
+available_cache_size=65500
+============> sum = 15623043072
+
+<tr, tc, tn, tm> = <13, 13, 256, 16>
+can unroll kh kw
+the total number of registers = 36x3 (108)
+available_cache_size=65500
+============> sum = 15623043072
+
+<tr, tc, tn, tm> = <13, 13, 512, 1>
+can unroll kh kw
+the total number of registers = 36x3 (108)
+available_cache_size=65500
+============> sum = 14098481152
+
+<tr, tc, tn, tm> = <13, 13, 512, 2>
+can unroll kh kw
+the total number of registers = 36x3 (108)
+available_cache_size=65500
+============> sum = 14098481152
+
+<tr, tc, tn, tm> = <13, 13, 512, 4>
+can unroll kh kw
+the total number of registers = 36x3 (108)
+available_cache_size=65500
+============> sum = 14098481152
+
+<tr, tc, tn, tm> = <13, 13, 512, 8>
+can unroll kh kw
+the total number of registers = 36x3 (108)
+available_cache_size=65500
+============> sum = 14098481152
+
+<tr, tc, tn, tm> = <13, 13, 512, 16>
+can unroll kh kw
+the total number of registers = 36x3 (108)
+available_cache_size=65500
+============> sum = 14098481152
+
+<tr, tc, tn, tm> = <26, 26, 1, 1>
+can unroll kw kh ic
+the total number of registers = 36x3 (108)
+available_cache_size=65500
+============> sum = 14267529216
+
+<tr, tc, tn, tm> = <26, 26, 2, 1>
+can unroll kw kh ic
+the total number of registers = 72x3 (216)
+available_cache_size=65464
+============> sum = 14976366592
+
+<tr, tc, tn, tm> = <26, 26, 2, 2>
+can unroll kw kh ic
+the total number of registers = 72x3 (216)
+available_cache_size=65464
+============> sum = 14976366592
+
+<tr, tc, tn, tm> = <26, 26, 4, 1>
+can unroll kw kh ic
+the total number of registers = 144x3 (432)
+available_cache_size=65392
+============> sum = 15330785280
+
+<tr, tc, tn, tm> = <26, 26, 4, 2>
+can unroll kw kh ic
+the total number of registers = 144x3 (432)
+available_cache_size=65392
+============> sum = 15330785280
+
+<tr, tc, tn, tm> = <26, 26, 4, 4>
+can unroll kw kh ic
+the total number of registers = 144x3 (432)
+available_cache_size=65392
+============> sum = 15330785280
+
+<tr, tc, tn, tm> = <26, 26, 8, 1>
+can unroll kw kh ic
+the total number of registers = 288x3 (864)
+available_cache_size=65248
+============> sum = 15507994624
+
+<tr, tc, tn, tm> = <26, 26, 8, 2>
+can unroll kw kh ic
+the total number of registers = 288x3 (864)
+available_cache_size=65248
+============> sum = 15507994624
+
+<tr, tc, tn, tm> = <26, 26, 8, 4>
+can unroll kw kh ic
+the total number of registers = 288x3 (864)
+available_cache_size=65248
+============> sum = 15507994624
+
+<tr, tc, tn, tm> = <26, 26, 8, 8>
+can unroll kw kh ic
+the total number of registers = 288x3 (864)
+available_cache_size=65248
+============> sum = 15507994624
+
+<tr, tc, tn, tm> = <26, 26, 16, 1>
+can unroll kh ic
+the total number of registers = 192x3 (576)
+available_cache_size=65344
+============> sum = 15596599296
+
+<tr, tc, tn, tm> = <26, 26, 16, 2>
+can unroll kh ic
+the total number of registers = 192x3 (576)
+available_cache_size=65344
+============> sum = 15596599296
+
+<tr, tc, tn, tm> = <26, 26, 16, 4>
+can unroll kh ic
+the total number of registers = 192x3 (576)
+available_cache_size=65344
+============> sum = 15596599296
+
+<tr, tc, tn, tm> = <26, 26, 16, 8>
+can unroll kh ic
+the total number of registers = 192x3 (576)
+available_cache_size=65344
+============> sum = 15596599296
+
+<tr, tc, tn, tm> = <26, 26, 32, 1>
+can unroll ic
+the total number of registers = 128x3 (384)
+available_cache_size=65408
+============> sum = 15640901632
+
+<tr, tc, tn, tm> = <26, 26, 32, 2>
+can unroll ic
+the total number of registers = 128x3 (384)
+available_cache_size=65408
+============> sum = 15640901632
+
+<tr, tc, tn, tm> = <26, 26, 32, 4>
+can unroll ic
+the total number of registers = 128x3 (384)
+available_cache_size=65408
+============> sum = 15640901632
+
+<tr, tc, tn, tm> = <26, 26, 32, 8>
+can unroll ic
+the total number of registers = 128x3 (384)
+available_cache_size=65408
+============> sum = 15640901632
+
+<tr, tc, tn, tm> = <26, 26, 32, 16>
+can unroll ic
+the total number of registers = 128x3 (384)
+available_cache_size=65408
+============> sum = 15640901632
+
+<tr, tc, tn, tm> = <26, 26, 64, 1>
+can unroll ic
+the total number of registers = 256x3 (768)
+available_cache_size=65280
+============> sum = 15663052800
+
+<tr, tc, tn, tm> = <26, 26, 64, 2>
+can unroll ic
+the total number of registers = 256x3 (768)
+available_cache_size=65280
+============> sum = 15663052800
+
+<tr, tc, tn, tm> = <26, 26, 64, 4>
+can unroll ic
+the total number of registers = 256x3 (768)
+available_cache_size=65280
+============> sum = 15663052800
+
+<tr, tc, tn, tm> = <26, 26, 64, 8>
+can unroll ic
+the total number of registers = 256x3 (768)
+available_cache_size=65280
+============> sum = 15663052800
+
+<tr, tc, tn, tm> = <26, 26, 64, 16>
+can unroll ic
+the total number of registers = 256x3 (768)
+available_cache_size=65280
+============> sum = 15663052800
+
+<tr, tc, tn, tm> = <26, 26, 64, 32>
+can unroll ic
+the total number of registers = 256x3 (768)
+available_cache_size=65280
+============> sum = 15663052800
+
+<tr, tc, tn, tm> = <26, 26, 128, 1>
+can unroll kh kw
+the total number of registers = 36x3 (108)
+available_cache_size=65500
+============> sum = 14146797568
+
+<tr, tc, tn, tm> = <26, 26, 128, 2>
+can unroll kh kw
+the total number of registers = 36x3 (108)
+available_cache_size=65500
+============> sum = 14146797568
+
+<tr, tc, tn, tm> = <26, 26, 128, 4>
+can unroll kh kw
+the total number of registers = 36x3 (108)
+available_cache_size=65500
+============> sum = 14146797568
+
+<tr, tc, tn, tm> = <26, 26, 128, 8>
+can unroll kh kw
+the total number of registers = 36x3 (108)
+available_cache_size=65500
+============> sum = 14146797568
+
+<tr, tc, tn, tm> = <26, 26, 128, 16>
+can unroll kh kw
+the total number of registers = 36x3 (108)
+available_cache_size=65500
+============> sum = 14146797568
+
+<tr, tc, tn, tm> = <26, 26, 128, 32>
+can unroll kh kw
+the total number of registers = 36x3 (108)
+available_cache_size=65500
+============> sum = 14146797568
+
+<tr, tc, tn, tm> = <26, 26, 256, 1>
+can unroll kh kw
+the total number of registers = 36x3 (108)
+available_cache_size=65500
+============> sum = 14152335360
+
+<tr, tc, tn, tm> = <26, 26, 256, 2>
+can unroll kh kw
+the total number of registers = 36x3 (108)
+available_cache_size=65500
+============> sum = 14152335360
+
+<tr, tc, tn, tm> = <26, 26, 256, 4>
+can unroll kh kw
+the total number of registers = 36x3 (108)
+available_cache_size=65500
+============> sum = 14152335360
+
+<tr, tc, tn, tm> = <26, 26, 256, 8>
+can unroll kh kw
+the total number of registers = 36x3 (108)
+available_cache_size=65500
+============> sum = 14152335360
+
+<tr, tc, tn, tm> = <26, 26, 256, 16>
+can unroll kh kw
+the total number of registers = 36x3 (108)
+available_cache_size=65500
+============> sum = 14152335360
+
+<tr, tc, tn, tm> = <26, 26, 256, 32>
+can unroll kh kw
+the total number of registers = 36x3 (108)
+available_cache_size=65500
+============> sum = 14152335360
+
+<tr, tc, tn, tm> = <26, 26, 256, 64>
+can unroll kh kw
+the total number of registers = 36x3 (108)
+available_cache_size=65500
+============> sum = 14152335360
+
+<tr, tc, tn, tm> = <26, 26, 512, 1>
+can unroll kh kw
+the total number of registers = 36x3 (108)
+available_cache_size=65500
+============> sum = 14155104256
+
+<tr, tc, tn, tm> = <26, 26, 512, 2>
+can unroll kh kw
+the total number of registers = 36x3 (108)
+available_cache_size=65500
+============> sum = 14155104256
+
+<tr, tc, tn, tm> = <26, 26, 512, 4>
+can unroll kh kw
+the total number of registers = 36x3 (108)
+available_cache_size=65500
+============> sum = 14155104256
+
+<tr, tc, tn, tm> = <26, 26, 512, 8>
+can unroll kh kw
+the total number of registers = 36x3 (108)
+available_cache_size=65500
+============> sum = 14155104256
+
+<tr, tc, tn, tm> = <26, 26, 512, 16>
+can unroll kh kw
+the total number of registers = 36x3 (108)
+available_cache_size=65500
+============> sum = 14155104256
+
+<tr, tc, tn, tm> = <26, 26, 512, 32>
+can unroll kh kw
+the total number of registers = 36x3 (108)
+available_cache_size=65500
+============> sum = 14155104256
+
+<tr, tc, tn, tm> = <26, 26, 512, 64>
+can unroll kh kw
+the total number of registers = 36x3 (108)
+available_cache_size=65500
+============> sum = 14155104256
+
+<tr, tc, tn, tm> = <52, 52, 1, 1>
+can unroll kw kh ic
+the total number of registers = 36x3 (108)
+available_cache_size=65500
+============> sum = 14281684992
+
+<tr, tc, tn, tm> = <52, 52, 2, 1>
+can unroll kw kh ic
+the total number of registers = 72x3 (216)
+available_cache_size=65464
+============> sum = 14990522368
+
+<tr, tc, tn, tm> = <52, 52, 2, 2>
+can unroll kw kh ic
+the total number of registers = 72x3 (216)
+available_cache_size=65464
+============> sum = 14990522368
+
+<tr, tc, tn, tm> = <52, 52, 4, 1>
+can unroll kw kh ic
+the total number of registers = 144x3 (432)
+available_cache_size=65392
+============> sum = 15344941056
+
+<tr, tc, tn, tm> = <52, 52, 4, 2>
+can unroll kw kh ic
+the total number of registers = 144x3 (432)
+available_cache_size=65392
+============> sum = 15344941056
+
+<tr, tc, tn, tm> = <52, 52, 4, 4>
+can unroll kw kh ic
+the total number of registers = 144x3 (432)
+available_cache_size=65392
+============> sum = 15344941056
+
+<tr, tc, tn, tm> = <52, 52, 8, 1>
+can unroll kw kh ic
+the total number of registers = 288x3 (864)
+available_cache_size=65248
+============> sum = 15522150400
+
+<tr, tc, tn, tm> = <52, 52, 8, 2>
+can unroll kw kh ic
+the total number of registers = 288x3 (864)
+available_cache_size=65248
+============> sum = 15522150400
+
+<tr, tc, tn, tm> = <52, 52, 8, 4>
+can unroll kw kh ic
+the total number of registers = 288x3 (864)
+available_cache_size=65248
+============> sum = 15522150400
+
+<tr, tc, tn, tm> = <52, 52, 8, 8>
+can unroll kw kh ic
+the total number of registers = 288x3 (864)
+available_cache_size=65248
+============> sum = 15522150400
+
+<tr, tc, tn, tm> = <52, 52, 16, 1>
+can unroll kh ic
+the total number of registers = 192x3 (576)
+available_cache_size=65344
+============> sum = 15610755072
+
+<tr, tc, tn, tm> = <52, 52, 16, 2>
+can unroll kh ic
+the total number of registers = 192x3 (576)
+available_cache_size=65344
+============> sum = 15610755072
+
+<tr, tc, tn, tm> = <52, 52, 16, 4>
+can unroll kh ic
+the total number of registers = 192x3 (576)
+available_cache_size=65344
+============> sum = 15610755072
+
+<tr, tc, tn, tm> = <52, 52, 16, 8>
+can unroll kh ic
+the total number of registers = 192x3 (576)
+available_cache_size=65344
+============> sum = 15610755072
+
+<tr, tc, tn, tm> = <52, 52, 16, 16>
+can unroll kh ic
+the total number of registers = 192x3 (576)
+available_cache_size=65344
+============> sum = 15610755072
+
+<tr, tc, tn, tm> = <52, 52, 32, 1>
+can unroll ic
+the total number of registers = 128x3 (384)
+available_cache_size=65408
+============> sum = 14127726592
+
+<tr, tc, tn, tm> = <52, 52, 32, 2>
+can unroll ic
+the total number of registers = 128x3 (384)
+available_cache_size=65408
+============> sum = 14127726592
+
+<tr, tc, tn, tm> = <52, 52, 32, 4>
+can unroll ic
+the total number of registers = 128x3 (384)
+available_cache_size=65408
+============> sum = 14127726592
+
+<tr, tc, tn, tm> = <52, 52, 32, 8>
+can unroll ic
+the total number of registers = 128x3 (384)
+available_cache_size=65408
+============> sum = 14127726592
+
+<tr, tc, tn, tm> = <52, 52, 32, 16>
+can unroll ic
+the total number of registers = 128x3 (384)
+available_cache_size=65408
+============> sum = 14127726592
+
+<tr, tc, tn, tm> = <52, 52, 64, 1>
+can unroll ic
+the total number of registers = 256x3 (768)
+available_cache_size=65280
+============> sum = 14149877760
+
+<tr, tc, tn, tm> = <52, 52, 64, 2>
+can unroll ic
+the total number of registers = 256x3 (768)
+available_cache_size=65280
+============> sum = 14149877760
+
+<tr, tc, tn, tm> = <52, 52, 64, 4>
+can unroll ic
+the total number of registers = 256x3 (768)
+available_cache_size=65280
+============> sum = 14149877760
+
+<tr, tc, tn, tm> = <52, 52, 64, 8>
+can unroll ic
+the total number of registers = 256x3 (768)
+available_cache_size=65280
+============> sum = 14149877760
+
+<tr, tc, tn, tm> = <52, 52, 64, 16>
+can unroll ic
+the total number of registers = 256x3 (768)
+available_cache_size=65280
+============> sum = 14149877760
+
+<tr, tc, tn, tm> = <52, 52, 64, 32>
+can unroll ic
+the total number of registers = 256x3 (768)
+available_cache_size=65280
+============> sum = 14149877760
+
+<tr, tc, tn, tm> = <52, 52, 128, 1>
+can unroll kh kw
+the total number of registers = 36x3 (108)
+available_cache_size=65500
+============> sum = 14160953344
+
+<tr, tc, tn, tm> = <52, 52, 128, 2>
+can unroll kh kw
+the total number of registers = 36x3 (108)
+available_cache_size=65500
+============> sum = 14160953344
+
+<tr, tc, tn, tm> = <52, 52, 128, 4>
+can unroll kh kw
+the total number of registers = 36x3 (108)
+available_cache_size=65500
+============> sum = 14160953344
+
+<tr, tc, tn, tm> = <52, 52, 128, 8>
+can unroll kh kw
+the total number of registers = 36x3 (108)
+available_cache_size=65500
+============> sum = 14160953344
+
+<tr, tc, tn, tm> = <52, 52, 128, 16>
+can unroll kh kw
+the total number of registers = 36x3 (108)
+available_cache_size=65500
+============> sum = 14160953344
+
+<tr, tc, tn, tm> = <52, 52, 128, 32>
+can unroll kh kw
+the total number of registers = 36x3 (108)
+available_cache_size=65500
+============> sum = 14160953344
+
+<tr, tc, tn, tm> = <52, 52, 128, 64>
+can unroll kh kw
+the total number of registers = 36x3 (108)
+available_cache_size=65500
+============> sum = 14160953344
+
+<tr, tc, tn, tm> = <52, 52, 256, 1>
+can unroll kh kw
+the total number of registers = 36x3 (108)
+available_cache_size=65500
+============> sum = 14166491136
+
+<tr, tc, tn, tm> = <52, 52, 256, 2>
+can unroll kh kw
+the total number of registers = 36x3 (108)
+available_cache_size=65500
+============> sum = 14166491136
+
+<tr, tc, tn, tm> = <52, 52, 256, 4>
+can unroll kh kw
+the total number of registers = 36x3 (108)
+available_cache_size=65500
+============> sum = 14166491136
+
+<tr, tc, tn, tm> = <52, 52, 256, 8>
+can unroll kh kw
+the total number of registers = 36x3 (108)
+available_cache_size=65500
+============> sum = 14166491136
+
+<tr, tc, tn, tm> = <52, 52, 256, 16>
+can unroll kh kw
+the total number of registers = 36x3 (108)
+available_cache_size=65500
+============> sum = 14166491136
+
+<tr, tc, tn, tm> = <52, 52, 256, 32>
+can unroll kh kw
+the total number of registers = 36x3 (108)
+available_cache_size=65500
+============> sum = 14166491136
+
+<tr, tc, tn, tm> = <52, 52, 256, 64>
+can unroll kh kw
+the total number of registers = 36x3 (108)
+available_cache_size=65500
+============> sum = 14166491136
+
+<tr, tc, tn, tm> = <52, 52, 256, 128>
+can unroll kh kw
+the total number of registers = 36x3 (108)
+available_cache_size=65500
+============> sum = 14166491136
+
+<tr, tc, tn, tm> = <52, 52, 512, 1>
+can unroll kh kw
+the total number of registers = 36x3 (108)
+available_cache_size=65500
+============> sum = 14169260032
+
+<tr, tc, tn, tm> = <52, 52, 512, 2>
+can unroll kh kw
+the total number of registers = 36x3 (108)
+available_cache_size=65500
+============> sum = 14169260032
+
+<tr, tc, tn, tm> = <52, 52, 512, 4>
+can unroll kh kw
+the total number of registers = 36x3 (108)
+available_cache_size=65500
+============> sum = 14169260032
+
+<tr, tc, tn, tm> = <52, 52, 512, 8>
+can unroll kh kw
+the total number of registers = 36x3 (108)
+available_cache_size=65500
+============> sum = 14169260032
+
+<tr, tc, tn, tm> = <52, 52, 512, 16>
+can unroll kh kw
+the total number of registers = 36x3 (108)
+available_cache_size=65500
+============> sum = 14169260032
+
+<tr, tc, tn, tm> = <52, 52, 512, 32>
+can unroll kh kw
+the total number of registers = 36x3 (108)
+available_cache_size=65500
+============> sum = 14169260032
+
+<tr, tc, tn, tm> = <52, 52, 512, 64>
+can unroll kh kw
+the total number of registers = 36x3 (108)
+available_cache_size=65500
+============> sum = 14169260032
+
+<tr, tc, tn, tm> = <52, 52, 512, 128>
+can unroll kh kw
+the total number of registers = 36x3 (108)
+available_cache_size=65500
+============> sum = 14169260032
+

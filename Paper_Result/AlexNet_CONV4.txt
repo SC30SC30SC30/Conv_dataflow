@@ -1,0 +1,250 @@
+<tr, tc, tn, tm> = <13, 13, 1, 1>
+can unroll kw kh ic
+the total number of registers = 36x3 (108)
+sum = 93597248
+
+<tr, tc, tn, tm> = <13, 13, 2, 1>
+can unroll kw kh ic
+the total number of registers = 72x3 (216)
+sum = 93597248
+
+<tr, tc, tn, tm> = <13, 13, 2, 2>
+can unroll kw kh ic
+the total number of registers = 72x3 (216)
+sum = 93597248
+
+<tr, tc, tn, tm> = <13, 13, 3, 1>
+can unroll kw kh ic
+the total number of registers = 108x3 (324)
+sum = 93597248
+
+<tr, tc, tn, tm> = <13, 13, 3, 2>
+can unroll kw kh ic
+the total number of registers = 108x3 (324)
+sum = 93597248
+
+<tr, tc, tn, tm> = <13, 13, 4, 1>
+can unroll kw kh ic
+the total number of registers = 144x3 (432)
+sum = 93597248
+
+<tr, tc, tn, tm> = <13, 13, 4, 2>
+can unroll kw kh ic
+the total number of registers = 144x3 (432)
+sum = 93597248
+
+<tr, tc, tn, tm> = <13, 13, 4, 4>
+can unroll kw kh ic
+the total number of registers = 144x3 (432)
+sum = 93597248
+
+<tr, tc, tn, tm> = <13, 13, 6, 1>
+can unroll kw kh ic
+the total number of registers = 216x3 (648)
+sum = 93597248
+
+<tr, tc, tn, tm> = <13, 13, 6, 2>
+can unroll kw kh ic
+the total number of registers = 216x3 (648)
+sum = 93597248
+
+<tr, tc, tn, tm> = <13, 13, 6, 4>
+can unroll kw kh ic
+the total number of registers = 216x3 (648)
+sum = 93597248
+
+<tr, tc, tn, tm> = <13, 13, 8, 1>
+can unroll kw kh ic
+the total number of registers = 288x3 (864)
+sum = 93597248
+
+<tr, tc, tn, tm> = <13, 13, 8, 2>
+can unroll kw kh ic
+the total number of registers = 288x3 (864)
+sum = 93597248
+
+<tr, tc, tn, tm> = <13, 13, 8, 4>
+can unroll kw kh ic
+the total number of registers = 288x3 (864)
+sum = 93597248
+
+<tr, tc, tn, tm> = <13, 13, 12, 1>
+can unroll kh ic
+the total number of registers = 144x3 (432)
+sum = 92948288
+
+<tr, tc, tn, tm> = <13, 13, 12, 2>
+can unroll kh ic
+the total number of registers = 144x3 (432)
+sum = 92948288
+
+<tr, tc, tn, tm> = <13, 13, 12, 4>
+can unroll kh ic
+the total number of registers = 144x3 (432)
+sum = 92948288
+
+<tr, tc, tn, tm> = <13, 13, 12, 8>
+can unroll kh ic
+the total number of registers = 144x3 (432)
+sum = 92948288
+
+<tr, tc, tn, tm> = <13, 13, 16, 1>
+can unroll kh ic
+the total number of registers = 192x3 (576)
+sum = 93121344
+
+<tr, tc, tn, tm> = <13, 13, 16, 2>
+can unroll kh ic
+the total number of registers = 192x3 (576)
+sum = 93121344
+
+<tr, tc, tn, tm> = <13, 13, 16, 4>
+can unroll kh ic
+the total number of registers = 192x3 (576)
+sum = 93121344
+
+<tr, tc, tn, tm> = <13, 13, 16, 8>
+can unroll kh ic
+the total number of registers = 192x3 (576)
+sum = 93121344
+
+<tr, tc, tn, tm> = <13, 13, 24, 1>
+can unroll kh ic
+the total number of registers = 288x3 (864)
+sum = 93294400
+
+<tr, tc, tn, tm> = <13, 13, 24, 2>
+can unroll kh ic
+the total number of registers = 288x3 (864)
+sum = 93294400
+
+<tr, tc, tn, tm> = <13, 13, 24, 4>
+can unroll kh ic
+the total number of registers = 288x3 (864)
+sum = 93294400
+
+<tr, tc, tn, tm> = <13, 13, 24, 8>
+can unroll kh ic
+the total number of registers = 288x3 (864)
+sum = 93294400
+
+<tr, tc, tn, tm> = <13, 13, 32, 1>
+can unroll ic
+the total number of registers = 128x3 (384)
+sum = 93380928
+
+<tr, tc, tn, tm> = <13, 13, 32, 2>
+can unroll ic
+the total number of registers = 128x3 (384)
+sum = 93380928
+
+<tr, tc, tn, tm> = <13, 13, 32, 4>
+can unroll ic
+the total number of registers = 128x3 (384)
+sum = 93380928
+
+<tr, tc, tn, tm> = <13, 13, 32, 8>
+can unroll ic
+the total number of registers = 128x3 (384)
+sum = 93380928
+
+<tr, tc, tn, tm> = <13, 13, 48, 1>
+can unroll ic
+the total number of registers = 192x3 (576)
+sum = 93467456
+
+<tr, tc, tn, tm> = <13, 13, 48, 2>
+can unroll ic
+the total number of registers = 192x3 (576)
+sum = 93467456
+
+<tr, tc, tn, tm> = <13, 13, 48, 4>
+can unroll ic
+the total number of registers = 192x3 (576)
+sum = 93467456
+
+<tr, tc, tn, tm> = <13, 13, 48, 8>
+can unroll ic
+the total number of registers = 192x3 (576)
+sum = 93467456
+
+<tr, tc, tn, tm> = <13, 13, 48, 16>
+can unroll ic
+the total number of registers = 192x3 (576)
+sum = 93467456
+
+<tr, tc, tn, tm> = <13, 13, 64, 1>
+can unroll ic
+the total number of registers = 256x3 (768)
+sum = 93510720
+
+<tr, tc, tn, tm> = <13, 13, 64, 2>
+can unroll ic
+the total number of registers = 256x3 (768)
+sum = 93510720
+
+<tr, tc, tn, tm> = <13, 13, 64, 4>
+can unroll ic
+the total number of registers = 256x3 (768)
+sum = 93510720
+
+<tr, tc, tn, tm> = <13, 13, 64, 8>
+can unroll ic
+the total number of registers = 256x3 (768)
+sum = 93510720
+
+<tr, tc, tn, tm> = <13, 13, 64, 16>
+can unroll ic
+the total number of registers = 256x3 (768)
+sum = 93510720
+
+<tr, tc, tn, tm> = <13, 13, 96, 1>
+can unroll kh kw
+the total number of registers = 36x3 (108)
+sum = 93553984
+
+<tr, tc, tn, tm> = <13, 13, 96, 2>
+can unroll kh kw
+the total number of registers = 36x3 (108)
+sum = 93553984
+
+<tr, tc, tn, tm> = <13, 13, 96, 4>
+can unroll kh kw
+the total number of registers = 36x3 (108)
+sum = 93553984
+
+<tr, tc, tn, tm> = <13, 13, 96, 8>
+can unroll kh kw
+the total number of registers = 36x3 (108)
+sum = 93553984
+
+<tr, tc, tn, tm> = <13, 13, 96, 16>
+can unroll kh kw
+the total number of registers = 36x3 (108)
+sum = 93553984
+
+<tr, tc, tn, tm> = <13, 13, 192, 1>
+can unroll kh kw
+the total number of registers = 36x3 (108)
+sum = 93597248
+
+<tr, tc, tn, tm> = <13, 13, 192, 2>
+can unroll kh kw
+the total number of registers = 36x3 (108)
+sum = 93597248
+
+<tr, tc, tn, tm> = <13, 13, 192, 4>
+can unroll kh kw
+the total number of registers = 36x3 (108)
+sum = 93597248
+
+<tr, tc, tn, tm> = <13, 13, 192, 8>
+can unroll kh kw
+the total number of registers = 36x3 (108)
+sum = 93597248
+
+<tr, tc, tn, tm> = <13, 13, 192, 16>
+can unroll kh kw
+the total number of registers = 36x3 (108)
+sum = 93597248
+

@@ -12,7 +12,7 @@ __kernel void convolution(
 	int local_id = global_id % 96;
 	int o_id = global_id / 96;
 
-	int o_channel_id = 	o_id / 169;
+	int o_channel_id = o_id / 169;
 	int ohow_id = o_id % 169;
 	int i_channel_id = local_id / 3;
 	int ihiw_id = ohow_id + (ohow_id/13)*2;

@@ -9,7 +9,7 @@ void run_tile_conv(cl_param* cl_gpu, config* data, tile_param* tile, size_t* glo
 	clear_data(O, total_value(data, 'O'));
 	printf("total_I=%d\ttotal_W=%d\ttotal_O=%d\n", total_value(data, 'I'), total_value(data, 'W'), total_value(data, 'O'));
 
-	prepare_to_execute(cl_gpu, true, "OpenCL/conv_no_unroll_k.cl", "convolution");
+	prepare_to_execute(cl_gpu, false, "OpenCL/conv_no_unroll_ic.cl", "convolution");
 
 	float* gpu_I = malloc_gpu_space(cl_gpu, sizeof(float)*total_value(data, 'I'));
 	for(int i = 0; i < total_value(data, 'I'); i++)
@@ -21,7 +21,7 @@ void run_tile_conv(cl_param* cl_gpu, config* data, tile_param* tile, size_t* glo
 	{
 		*(gpu_W+i) = *(W+i);
 	}
-	int partsum_num = data->weight_size * tile->tn * data->output_size * data->output_size * tile->tm;
+	int partsum_num = *(global_work_size);
 	printf("partsum_num=%d\n", partsum_num);
 	float* gpu_partsum = malloc_gpu_space(cl_gpu, sizeof(float)*partsum_num);
 	float* gpu_O = malloc_gpu_space(cl_gpu, sizeof(float)*total_value(data, 'O'));
@@ -153,11 +153,11 @@ int main(int argc, char* argv[])
 	config* data = (config*)malloc(sizeof(config));
 	tile_param* tile = (tile_param*)malloc(sizeof(tile_param));
 
-	int a[10] = {15, 192, 3, 13, 384, 13, 13, 32, 8, 1};   // simple test 
+	int a[10] = {15, 192, 3, 13, 384, 13, 13, 192, 16, 1};   // simple test 
 	set_configuration(data, tile, a);
 
-	size_t local_work_size = data->weight_size * tile->tn;
-	size_t global_work_size = local_work_size * data->output_size * data->output_size * tile->tm;
+	size_t local_work_size = data->weight_size * data->weight_size;
+	size_t global_work_size = local_work_size * tile->tr * tile->tc * tile->tm;
 	printf("global_work_size=%ld\n", global_work_size);
 	printf("local_work_size=%ld\n", local_work_size);
 	printf("work_group_num=%ld\n", (global_work_size/local_work_size));

@@ -77,7 +77,7 @@ void print_device_info(cl_param* cl_gpu)
 
 	cl_ulong mem_alloc_size;
 	clGetDeviceInfo(cl_gpu->gpu_device, CL_DEVICE_MAX_MEM_ALLOC_SIZE, sizeof(cl_ulong), &mem_alloc_size, NULL);
-	cout << "\tMaximum memory object allocation : " << mem_alloc_size <<　" Bytes" << endl;
+	cout << "\tMaximum memory object allocation : " << mem_alloc_size << " Bytes" << endl;
 
 	cl_uint compute_units;
 	clGetDeviceInfo(cl_gpu->gpu_device, CL_DEVICE_MAX_COMPUTE_UNITS, sizeof(cl_uint), &compute_units, NULL);
@@ -96,6 +96,10 @@ void print_device_info(cl_param* cl_gpu)
 	vector<size_t> max_work_item_size(num);
 	clGetDeviceInfo(cl_gpu->gpu_device, CL_DEVICE_MAX_WORK_ITEM_SIZES, num, &max_work_item_size[0], NULL);
 	cout << "\tMaximum work item for each dimensions : " << "(" << max_work_item_size[0] << ", " << max_work_item_size[1] << ", " << max_work_item_size[2] << ")" << endl;
+
+	cl_uint max_clock_frequency;
+	clGetDeviceInfo(cl_gpu->gpu_device, CL_DEVICE_MAX_CLOCK_FREQUENCY, sizeof(cl_uint), &max_clock_frequency, NULL);
+	cout << "\tMaximum clock frequency : " << max_clock_frequency << " MHz" << endl;
 
 	cl_device_type device_type;
 	clGetDeviceInfo(cl_gpu->gpu_device, CL_DEVICE_TYPE, sizeof(cl_device_type), &device_type, NULL);

@@ -1,9 +1,10 @@
+#include <time.h>
 #include "verify.h"
 
 using namespace std;
 
-int conv_config[5] = {15, 192, 3, 13, 256};
-int tile[4] = {2, 2, 4, 2};
+int conv_config[5] = {54, 512, 3, 52, 1024};
+int tile[4] = {13, 13, 4, 4};
 
 void initialization(int* rd, uint64_t* num, int size)
 {
@@ -132,24 +133,30 @@ void mali_gpu_constraints(int* tile, int* rd, uint64_t* num, int cache_size)
 	int partsum_space = 0;
 	int available_cache_size = cache_size;
 
-	if((conv_config[2] * conv_config[2] * tile[2]) <= 256)
+	if((conv_config[2] * conv_config[2] * tile[2]) <= (256/3))
 	{
 		printf("can unroll kw kh ic\n");
 		partsum_space = conv_config[2] * conv_config[2] * tile[2] * 4;
 	}
-	else if((conv_config[2] * tile[2]) <= 256)
+	else if((conv_config[2] * tile[2]) <= (256/3))
 	{
 		printf("can unroll kh ic\n");
 		partsum_space = conv_config[2] * tile[2] * 4;
 	}
-	else if(tile[2] <= 256)
+	else if(tile[2] <= (256/3))
 	{
 		printf("can unroll ic\n");
 		partsum_space = tile[2] * 4;
 	}
+	else if((conv_config[2] * conv_config[2]) <= (256/3))
+	{
+		printf("can unroll kh kw\n");
+		partsum_space = conv_config[2] * conv_config[2] * 4;
+	}
 
 	printf("the total number of registers = %dx3 (%d)\n", partsum_space, 3*partsum_space);
 	available_cache_size = cache_size - partsum_space;
+	printf("available_cache_size=%d\n", available_cache_size);
 
 	uint64_t sum = 0;
 	for(int i = 0; i < 6; i++)
@@ -159,7 +166,7 @@ void mali_gpu_constraints(int* tile, int* rd, uint64_t* num, int cache_size)
 			sum += *(num+i);
 		}
 	}
-	printf("sum = %lu\n", sum);
+	printf("============> sum = %lu\n", sum);
 }
 
 void run()
@@ -206,6 +213,10 @@ void run()
 
 int main(int argc, char* argv[])
 {
-	run(); 
+	// clock_t start, end;
+	// start = clock();
+	run();
+	// end = clock();
+	// printf("The time = %ld ms\n", (end-start)*1000000000/CLOCKS_PER_SEC);
 	return 0;
 }
