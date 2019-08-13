@@ -18,7 +18,7 @@ using namespace std;
 // VGG_CONV9&CONV10 : {30, 512, 3, 28, 512}
 // VGG_CONV11&CONV12&CONV13 : {16, 512, 3, 14, 512}
 
-int conv_config[5] = {16, 512, 3, 14, 512};
+int conv_config[5] = {226, 3, 3, 224, 64};
 int tile[4] = {13, 13, 4, 4};
 
 void initialization(int* rd, uint64_t* num, int size)
@@ -240,15 +240,20 @@ void mali_gpu_constraints(int* tile, int* rd, uint64_t* num, int cache_size)
 	available_cache_size = cache_size - partsum_space;
 	printf("available_cache_size=%d\n", available_cache_size);
 
-	uint64_t sum = 0;
+	uint64_t hit_sum = 0;
+	uint64_t miss_sum = 0;
 	for(int i = 0; i < 6; i++)
 	{
 		if(*(rd+i) < available_cache_size)
 		{
-			sum += *(num+i);
+			hit_sum += *(num+i);
+		}
+		else
+		{
+			miss_sum += *(num+i);
 		}
 	}
-	printf("============> sum = %lu\n", sum);
+	printf("============> hit_sum = %lu\tmiss_sum = %lu\n", hit_sum, miss_sum);
 }
 
 void run()

@@ -36,20 +36,20 @@ void run_tile_conv(cl_param* cl_gpu, config* data, tile_param* tile, size_t* glo
 	// the result of cpu computation
 	//==================================================================================================//
 	start = clock();
-	for(int oc = 0; oc < 384; oc++)
+	for(int oc = 0; oc < 64; oc++)
 	{
-		for(int ic = 0; ic < 192; ic++)
+		for(int ic = 0; ic < 3; ic++)
 		{
-			for(int oh = 0; oh < 13; oh++)
+			for(int oh = 0; oh < 224; oh++)
 			{
-				for(int ow = 0; ow < 13; ow++)
+				for(int ow = 0; ow < 224; ow++)
 				{
 					for(int kh = 0; kh < 3; kh++)
 					{
 						for(int kw = 0; kw < 3; kw++)
 						{
-							float partsum = *(I+ic*15*15+oh*15+ow+kh*15+kw) * *(W+oc*192*3*3+ic*3*3+kh*3+kw);
-							*(O+oc*13*13+oh*13+ow) += partsum;
+							float partsum = *(I+ic*226*226+oh*226+ow+kh*226+kw) * *(W+oc*3*3*3+ic*3*3+kh*3+kw);
+							*(O+oc*224*224+oh*224+ow) += partsum;
 						}
 					}
 				}
@@ -153,7 +153,7 @@ int main(int argc, char* argv[])
 	config* data = (config*)malloc(sizeof(config));
 	tile_param* tile = (tile_param*)malloc(sizeof(tile_param));
 
-	int a[10] = {15, 192, 3, 13, 384, 13, 13, 192, 16, 1};   // simple test 
+	int a[10] = {226, 3, 3, 224, 64, 28, 28, 3, 2, 1};   // simple test 
 	set_configuration(data, tile, a);
 
 	size_t local_work_size = data->weight_size * data->weight_size;

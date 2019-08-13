@@ -31,4 +31,4 @@ compile_conv_mali_on_MAC:splay_tree.o
 	g++ -g conv_mali_test.cpp conv_mali.o dataflow.o splay_tree.o -o conv_gpu -framework opencl
 
 clean:
-	rm -f *.o log_rd dataflow test verify conv_gpu
+	rm -f *.o log_rd dataflow test estimation conv_gpu
