@@ -1,9 +1,24 @@
 #include <time.h>
-#include "verify.h"
+#include "estimation.h"
 
 using namespace std;
 
-int conv_config[5] = {54, 512, 3, 52, 1024};
+// AlexNet_CONV2 : {31, 48, 5, 27, 256};
+// AlexNet_CONV3 : {15, 256, 3, 13, 384};
+// AlexNet_CONV4 : {15, 192, 3, 13, 384};
+// AlexNet_CONV5 : {15, 192, 3, 13, 256};
+
+// VGG_CONV1 : {226, 3, 3, 224, 64}
+// VGG_CONV2 : {226, 64, 3, 224, 64}
+// VGG_CONV3 : {114, 64, 3, 112, 128}
+// VGG_CONV4 : {114, 128, 3, 112, 128}
+// VGG_CONV5 : {58, 128, 3, 56, 256}
+// VGG_CONV6&CONV7 : {58, 256, 3, 56, 256}
+// VGG_CONV8 : {30, 256, 3, 28, 512}
+// VGG_CONV9&CONV10 : {30, 512, 3, 28, 512}
+// VGG_CONV11&CONV12&CONV13 : {16, 512, 3, 14, 512}
+
+int conv_config[5] = {16, 512, 3, 14, 512};
 int tile[4] = {13, 13, 4, 4};
 
 void initialization(int* rd, uint64_t* num, int size)
@@ -15,8 +30,13 @@ void initialization(int* rd, uint64_t* num, int size)
 	}
 }
 
-// oc -> ic -> oh -> ow -> kh -> kw
-void get_tile_inside_rd_IR1(int* tile, char reuse_type, int* rd)
+// 1 : oc -> ic -> oh -> ow -> kh -> kw
+// 2 : oc -> ic -> kh -> kw -> oh -> ow
+// 3 : oc -> oh -> ow -> ic -> kh -> kw
+// 4 : oc -> oh -> ow -> kh -> kw -> ic
+// 5 : oc -> kh -> kw -> ic -> oh -> ow
+// 6 : oc -> kh -> kw -> oh -> ow -> ic
+void get_tile_inside_rd_IR(int* tile, int loop_type, char reuse_type, int* rd)
 {
 	if(reuse_type == 'I')
 	{
@@ -27,17 +47,73 @@ void get_tile_inside_rd_IR1(int* tile, char reuse_type, int* rd)
 	}
 	else if(reuse_type == 'W')
 	{
-		*(rd+1) = conv_config[2]*conv_config[2] + 
-				  conv_config[2]*conv_config[2] + 
-				  1;
+		if(loop_type == 1)
+		{
+			*(rd+1) = conv_config[2]*conv_config[2] + 
+					  conv_config[2]*conv_config[2] + 
+					  1;
+		}
+		else if((loop_type == 2) || (loop_type == 5))
+		{
+			*(rd+1) = 3;
+		}
+		else if((loop_type == 3) || (loop_type == 4))
+		{
+			*(rd+1) = conv_config[2]*conv_config[2]*tile[2] + 
+					  conv_config[2]*conv_config[2]*tile[2] + 
+					  1;
+		}
+		else if(loop_type == 6)
+		{
+			*(rd+1) = tile[2] + tile[2] + 1;
+		}
 	}
 	else if(reuse_type == 'O')
 	{
-		int t_isize = tile[0]-1+conv_config[2];
-		*(rd+2) = t_isize*t_isize + 
-				  conv_config[2]*conv_config[2] + 
-				  tile[0]*tile[1];
+		if((loop_type == 1) || (loop_type == 2))
+		{
+			int t_isize = tile[0]-1+conv_config[2];
+			*(rd+2) = t_isize*t_isize + 
+					  conv_config[2]*conv_config[2] + 
+					  tile[0]*tile[1];
+		}
+		else if((loop_type == 3) || (loop_type == 4) || (loop_type == 6))
+		{
+			*(rd+2) = 3;
+		}
+		else if(loop_type == 5)
+		{
+			int t_isize = tile[0]-1+conv_config[2];
+			*(rd+2) = t_isize*t_isize + 1 + tile[0]*tile[1];
+		}
 	}
+}
+
+// 1 : oh -> ow -> oc -> ic -> kh -> kw
+// 2 : oh -> ow -> oc -> kh -> kw -> ic
+// 3 : oh -> ow -> ic -> oc -> kh -> kw
+// 4 : oh -> ow -> ic -> kh -> kw -> oc
+// 5 : oh -> ow -> kh -> kw -> oc -> ic
+// 6 : oh -> ow -> kh -> kw -> ic -> oc
+void get_tile_inside_rd_WR(int* tile, int loop_type, char reuse_type, int* rd)
+{
+	if(reuse_type == 'I')
+	{
+
+	}
+	else if(reuse_type == 'W')
+	{
+
+	}
+	else if(reuse_type == 'O')
+	{
+
+	}
+}
+
+void get_tile_inside_rd_OR(int* tile, int loop_type, char reuse_type, int* rd)
+{
+	// think
 }
 
 void get_access_number(int* tile, char two_type, char data_type, uint64_t* num)
@@ -103,9 +179,9 @@ void IR(int* tile, int* rd, uint64_t* num)
 	int t_isize = tile[0]-1+conv_config[2];
 
 	// reuse distance
-	get_tile_inside_rd_IR1(tile, 'I', rd);
-	get_tile_inside_rd_IR1(tile, 'W', rd);
-	get_tile_inside_rd_IR1(tile, 'O', rd);
+	get_tile_inside_rd_IR(tile, 1, 'I', rd);
+	get_tile_inside_rd_IR(tile, 1, 'W', rd);
+	get_tile_inside_rd_IR(tile, 1, 'O', rd);
 	*(rd+3) = -1;
 	*(rd+4) = t_isize*t_isize*conv_config[1] + 
 			  conv_config[2]*conv_config[2]*conv_config[1]*conv_config[4] + 
@@ -126,6 +202,12 @@ void IR(int* tile, int* rd, uint64_t* num)
 	*(num) = (*(num))*conv_config[0]*conv_config[0]*conv_config[1];
 	*(num+1) = (*(num+1))*conv_config[2]*conv_config[2]*conv_config[1]*conv_config[4];
 	*(num+2) = (*(num+2))*conv_config[3]*conv_config[3]*conv_config[4];
+
+	// print
+	for(int i = 0; i < 6; i++)
+	{
+		printf("rd=%d\tnum=%lu\n", *(rd+i), *(num+i));
+	}
 }
 
 void mali_gpu_constraints(int* tile, int* rd, uint64_t* num, int cache_size)
@@ -174,6 +256,7 @@ void run()
 	int* rd = (int*)malloc(6 * sizeof(int));
 	uint64_t* num = (uint64_t*)malloc(6 * sizeof(uint64_t));
 	int cache_size = 256*1024/4;
+	int count = 1;
 
 	for(int tr = 1; tr <= conv_config[3]; tr++)
 	{
@@ -194,10 +277,11 @@ void run()
 									tile[1] = tr;
 									tile[2] = tn;
 									tile[3] = tm;
-									printf("<tr, tc, tn, tm> = <%d, %d, %d, %d>\n", tr, tr, tn, tm);
+									printf("%d\t<tr, tc, tn, tm> = <%d, %d, %d, %d>\n", count, tr, tr, tn, tm);
 									IR(&tile[0], rd, num);
 									mali_gpu_constraints(&tile[0], rd, num, cache_size);
 									printf("\n");
+									count++;
 								}
 							}
 						}

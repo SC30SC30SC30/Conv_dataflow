@@ -1,0 +1,2820 @@
+1	<tr, tc, tn, tm> = <2, 2, 1, 1>
+rd=29	num=205938432
+rd=19	num=1387266048
+rd=29	num=0
+rd=-1	num=0
+rd=38144	num=462385152
+rd=848	num=202309632
+can unroll kw kh ic
+the total number of registers = 36x3 (108)
+available_cache_size=65500
+============> sum = 2257899264
+
+2	<tr, tc, tn, tm> = <2, 2, 2, 1>
+rd=54	num=205938432
+rd=19	num=1387266048
+rd=29	num=102760448
+rd=-1	num=0
+rd=38144	num=462385152
+rd=1440	num=99549184
+can unroll kw kh ic
+the total number of registers = 72x3 (216)
+available_cache_size=65464
+============> sum = 2257899264
+
+3	<tr, tc, tn, tm> = <2, 2, 4, 1>
+rd=104	num=205938432
+rd=19	num=1387266048
+rd=29	num=154140672
+rd=-1	num=0
+rd=38144	num=462385152
+rd=2624	num=48168960
+can unroll kw kh ic
+the total number of registers = 144x3 (432)
+available_cache_size=65392
+============> sum = 2257899264
+
+4	<tr, tc, tn, tm> = <2, 2, 8, 1>
+rd=204	num=205938432
+rd=19	num=1387266048
+rd=29	num=179830784
+rd=-1	num=0
+rd=38144	num=462385152
+rd=4992	num=22478848
+can unroll kw kh ic
+the total number of registers = 288x3 (864)
+available_cache_size=65248
+============> sum = 2257899264
+
+5	<tr, tc, tn, tm> = <2, 2, 16, 1>
+rd=404	num=205938432
+rd=19	num=1387266048
+rd=29	num=192675840
+rd=-1	num=0
+rd=38144	num=462385152
+rd=9728	num=9633792
+can unroll kh ic
+the total number of registers = 192x3 (576)
+available_cache_size=65344
+============> sum = 2257899264
+
+6	<tr, tc, tn, tm> = <2, 2, 32, 1>
+rd=804	num=205938432
+rd=19	num=1387266048
+rd=29	num=199098368
+rd=-1	num=0
+rd=38144	num=462385152
+rd=19200	num=3211264
+can unroll ic
+the total number of registers = 128x3 (384)
+available_cache_size=65408
+============> sum = 2257899264
+
+7	<tr, tc, tn, tm> = <2, 2, 64, 1>
+rd=1604	num=205938432
+rd=19	num=1387266048
+rd=29	num=202309632
+rd=-1	num=0
+rd=38144	num=462385152
+rd=38144	num=0
+can unroll ic
+the total number of registers = 256x3 (768)
+available_cache_size=65280
+============> sum = 2257899264
+
+8	<tr, tc, tn, tm> = <4, 4, 1, 1>
+rd=61	num=205938432
+rd=19	num=1734082560
+rd=61	num=0
+rd=-1	num=0
+rd=40192	num=115568640
+rd=1636	num=202309632
+can unroll kw kh ic
+the total number of registers = 36x3 (108)
+available_cache_size=65500
+============> sum = 2257899264
+
+9	<tr, tc, tn, tm> = <4, 4, 2, 1>
+rd=106	num=205938432
+rd=19	num=1734082560
+rd=61	num=102760448
+rd=-1	num=0
+rd=40192	num=115568640
+rd=2248	num=99549184
+can unroll kw kh ic
+the total number of registers = 72x3 (216)
+available_cache_size=65464
+============> sum = 2257899264
+
+10	<tr, tc, tn, tm> = <4, 4, 2, 2>
+rd=106	num=205938432
+rd=19	num=1734082560
+rd=61	num=102760448
+rd=-1	num=0
+rd=40192	num=115568640
+rd=2248	num=99549184
+can unroll kw kh ic
+the total number of registers = 72x3 (216)
+available_cache_size=65464
+============> sum = 2257899264
+
+11	<tr, tc, tn, tm> = <4, 4, 4, 1>
+rd=196	num=205938432
+rd=19	num=1734082560
+rd=61	num=154140672
+rd=-1	num=0
+rd=40192	num=115568640
+rd=3472	num=48168960
+can unroll kw kh ic
+the total number of registers = 144x3 (432)
+available_cache_size=65392
+============> sum = 2257899264
+
+12	<tr, tc, tn, tm> = <4, 4, 4, 2>
+rd=196	num=205938432
+rd=19	num=1734082560
+rd=61	num=154140672
+rd=-1	num=0
+rd=40192	num=115568640
+rd=3472	num=48168960
+can unroll kw kh ic
+the total number of registers = 144x3 (432)
+available_cache_size=65392
+============> sum = 2257899264
+
+13	<tr, tc, tn, tm> = <4, 4, 8, 1>
+rd=376	num=205938432
+rd=19	num=1734082560
+rd=61	num=179830784
+rd=-1	num=0
+rd=40192	num=115568640
+rd=5920	num=22478848
+can unroll kw kh ic
+the total number of registers = 288x3 (864)
+available_cache_size=65248
+============> sum = 2257899264
+
+14	<tr, tc, tn, tm> = <4, 4, 8, 2>
+rd=376	num=205938432
+rd=19	num=1734082560
+rd=61	num=179830784
+rd=-1	num=0
+rd=40192	num=115568640
+rd=5920	num=22478848
+can unroll kw kh ic
+the total number of registers = 288x3 (864)
+available_cache_size=65248
+============> sum = 2257899264
+
+15	<tr, tc, tn, tm> = <4, 4, 16, 1>
+rd=736	num=205938432
+rd=19	num=1734082560
+rd=61	num=192675840
+rd=-1	num=0
+rd=40192	num=115568640
+rd=10816	num=9633792
+can unroll kh ic
+the total number of registers = 192x3 (576)
+available_cache_size=65344
+============> sum = 2257899264
+
+16	<tr, tc, tn, tm> = <4, 4, 16, 2>
+rd=736	num=205938432
+rd=19	num=1734082560
+rd=61	num=192675840
+rd=-1	num=0
+rd=40192	num=115568640
+rd=10816	num=9633792
+can unroll kh ic
+the total number of registers = 192x3 (576)
+available_cache_size=65344
+============> sum = 2257899264
+
+17	<tr, tc, tn, tm> = <4, 4, 32, 1>
+rd=1456	num=205938432
+rd=19	num=1734082560
+rd=61	num=199098368
+rd=-1	num=0
+rd=40192	num=115568640
+rd=20608	num=3211264
+can unroll ic
+the total number of registers = 128x3 (384)
+available_cache_size=65408
+============> sum = 2257899264
+
+18	<tr, tc, tn, tm> = <4, 4, 32, 2>
+rd=1456	num=205938432
+rd=19	num=1734082560
+rd=61	num=199098368
+rd=-1	num=0
+rd=40192	num=115568640
+rd=20608	num=3211264
+can unroll ic
+the total number of registers = 128x3 (384)
+available_cache_size=65408
+============> sum = 2257899264
+
+19	<tr, tc, tn, tm> = <4, 4, 64, 1>
+rd=2896	num=205938432
+rd=19	num=1734082560
+rd=61	num=202309632
+rd=-1	num=0
+rd=40192	num=115568640
+rd=40192	num=0
+can unroll ic
+the total number of registers = 256x3 (768)
+available_cache_size=65280
+============> sum = 2257899264
+
+20	<tr, tc, tn, tm> = <4, 4, 64, 2>
+rd=2896	num=205938432
+rd=19	num=1734082560
+rd=61	num=202309632
+rd=-1	num=0
+rd=40192	num=115568640
+rd=40192	num=0
+can unroll ic
+the total number of registers = 256x3 (768)
+available_cache_size=65280
+============> sum = 2257899264
+
+21	<tr, tc, tn, tm> = <7, 7, 1, 1>
+rd=139	num=205938432
+rd=19	num=1811939328
+rd=139	num=0
+rd=-1	num=0
+rd=45184	num=37711872
+rd=3793	num=202309632
+can unroll kw kh ic
+the total number of registers = 36x3 (108)
+available_cache_size=65500
+============> sum = 2257899264
+
+22	<tr, tc, tn, tm> = <7, 7, 2, 1>
+rd=229	num=205938432
+rd=19	num=1811939328
+rd=139	num=102760448
+rd=-1	num=0
+rd=45184	num=37711872
+rd=4450	num=99549184
+can unroll kw kh ic
+the total number of registers = 72x3 (216)
+available_cache_size=65464
+============> sum = 2257899264
+
+23	<tr, tc, tn, tm> = <7, 7, 2, 2>
+rd=229	num=205938432
+rd=19	num=1811939328
+rd=139	num=102760448
+rd=-1	num=0
+rd=45184	num=37711872
+rd=4450	num=99549184
+can unroll kw kh ic
+the total number of registers = 72x3 (216)
+available_cache_size=65464
+============> sum = 2257899264
+
+24	<tr, tc, tn, tm> = <7, 7, 4, 1>
+rd=409	num=205938432
+rd=19	num=1811939328
+rd=139	num=154140672
+rd=-1	num=0
+rd=45184	num=37711872
+rd=5764	num=48168960
+can unroll kw kh ic
+the total number of registers = 144x3 (432)
+available_cache_size=65392
+============> sum = 2257899264
+
+25	<tr, tc, tn, tm> = <7, 7, 4, 2>
+rd=409	num=205938432
+rd=19	num=1811939328
+rd=139	num=154140672
+rd=-1	num=0
+rd=45184	num=37711872
+rd=5764	num=48168960
+can unroll kw kh ic
+the total number of registers = 144x3 (432)
+available_cache_size=65392
+============> sum = 2257899264
+
+26	<tr, tc, tn, tm> = <7, 7, 8, 1>
+rd=769	num=205938432
+rd=19	num=1811939328
+rd=139	num=179830784
+rd=-1	num=0
+rd=45184	num=37711872
+rd=8392	num=22478848
+can unroll kw kh ic
+the total number of registers = 288x3 (864)
+available_cache_size=65248
+============> sum = 2257899264
+
+27	<tr, tc, tn, tm> = <7, 7, 8, 2>
+rd=769	num=205938432
+rd=19	num=1811939328
+rd=139	num=179830784
+rd=-1	num=0
+rd=45184	num=37711872
+rd=8392	num=22478848
+can unroll kw kh ic
+the total number of registers = 288x3 (864)
+available_cache_size=65248
+============> sum = 2257899264
+
+28	<tr, tc, tn, tm> = <7, 7, 8, 4>
+rd=769	num=205938432
+rd=19	num=1811939328
+rd=139	num=179830784
+rd=-1	num=0
+rd=45184	num=37711872
+rd=8392	num=22478848
+can unroll kw kh ic
+the total number of registers = 288x3 (864)
+available_cache_size=65248
+============> sum = 2257899264
+
+29	<tr, tc, tn, tm> = <7, 7, 16, 1>
+rd=1489	num=205938432
+rd=19	num=1811939328
+rd=139	num=192675840
+rd=-1	num=0
+rd=45184	num=37711872
+rd=13648	num=9633792
+can unroll kh ic
+the total number of registers = 192x3 (576)
+available_cache_size=65344
+============> sum = 2257899264
+
+30	<tr, tc, tn, tm> = <7, 7, 16, 2>
+rd=1489	num=205938432
+rd=19	num=1811939328
+rd=139	num=192675840
+rd=-1	num=0
+rd=45184	num=37711872
+rd=13648	num=9633792
+can unroll kh ic
+the total number of registers = 192x3 (576)
+available_cache_size=65344
+============> sum = 2257899264
+
+31	<tr, tc, tn, tm> = <7, 7, 16, 4>
+rd=1489	num=205938432
+rd=19	num=1811939328
+rd=139	num=192675840
+rd=-1	num=0
+rd=45184	num=37711872
+rd=13648	num=9633792
+can unroll kh ic
+the total number of registers = 192x3 (576)
+available_cache_size=65344
+============> sum = 2257899264
+
+32	<tr, tc, tn, tm> = <7, 7, 32, 1>
+rd=2929	num=205938432
+rd=19	num=1811939328
+rd=139	num=199098368
+rd=-1	num=0
+rd=45184	num=37711872
+rd=24160	num=3211264
+can unroll ic
+the total number of registers = 128x3 (384)
+available_cache_size=65408
+============> sum = 2257899264
+
+33	<tr, tc, tn, tm> = <7, 7, 32, 2>
+rd=2929	num=205938432
+rd=19	num=1811939328
+rd=139	num=199098368
+rd=-1	num=0
+rd=45184	num=37711872
+rd=24160	num=3211264
+can unroll ic
+the total number of registers = 128x3 (384)
+available_cache_size=65408
+============> sum = 2257899264
+
+34	<tr, tc, tn, tm> = <7, 7, 32, 4>
+rd=2929	num=205938432
+rd=19	num=1811939328
+rd=139	num=199098368
+rd=-1	num=0
+rd=45184	num=37711872
+rd=24160	num=3211264
+can unroll ic
+the total number of registers = 128x3 (384)
+available_cache_size=65408
+============> sum = 2257899264
+
+35	<tr, tc, tn, tm> = <7, 7, 64, 1>
+rd=5809	num=205938432
+rd=19	num=1811939328
+rd=139	num=202309632
+rd=-1	num=0
+rd=45184	num=37711872
+rd=45184	num=0
+can unroll ic
+the total number of registers = 256x3 (768)
+available_cache_size=65280
+============> sum = 2257899264
+
+36	<tr, tc, tn, tm> = <7, 7, 64, 2>
+rd=5809	num=205938432
+rd=19	num=1811939328
+rd=139	num=202309632
+rd=-1	num=0
+rd=45184	num=37711872
+rd=45184	num=0
+can unroll ic
+the total number of registers = 256x3 (768)
+available_cache_size=65280
+============> sum = 2257899264
+
+37	<tr, tc, tn, tm> = <7, 7, 64, 4>
+rd=5809	num=205938432
+rd=19	num=1811939328
+rd=139	num=202309632
+rd=-1	num=0
+rd=45184	num=37711872
+rd=45184	num=0
+can unroll ic
+the total number of registers = 256x3 (768)
+available_cache_size=65280
+============> sum = 2257899264
+
+38	<tr, tc, tn, tm> = <7, 7, 64, 8>
+rd=5809	num=205938432
+rd=19	num=1811939328
+rd=139	num=202309632
+rd=-1	num=0
+rd=45184	num=37711872
+rd=45184	num=0
+can unroll ic
+the total number of registers = 256x3 (768)
+available_cache_size=65280
+============> sum = 2257899264
+
+39	<tr, tc, tn, tm> = <8, 8, 1, 1>
+rd=173	num=205938432
+rd=19	num=1820786688
+rd=173	num=0
+rd=-1	num=0
+rd=47360	num=28864512
+rd=4772	num=202309632
+can unroll kw kh ic
+the total number of registers = 36x3 (108)
+available_cache_size=65500
+============> sum = 2257899264
+
+40	<tr, tc, tn, tm> = <8, 8, 2, 1>
+rd=282	num=205938432
+rd=19	num=1820786688
+rd=173	num=102760448
+rd=-1	num=0
+rd=47360	num=28864512
+rd=5448	num=99549184
+can unroll kw kh ic
+the total number of registers = 72x3 (216)
+available_cache_size=65464
+============> sum = 2257899264
+
+41	<tr, tc, tn, tm> = <8, 8, 2, 2>
+rd=282	num=205938432
+rd=19	num=1820786688
+rd=173	num=102760448
+rd=-1	num=0
+rd=47360	num=28864512
+rd=5448	num=99549184
+can unroll kw kh ic
+the total number of registers = 72x3 (216)
+available_cache_size=65464
+============> sum = 2257899264
+
+42	<tr, tc, tn, tm> = <8, 8, 4, 1>
+rd=500	num=205938432
+rd=19	num=1820786688
+rd=173	num=154140672
+rd=-1	num=0
+rd=47360	num=28864512
+rd=6800	num=48168960
+can unroll kw kh ic
+the total number of registers = 144x3 (432)
+available_cache_size=65392
+============> sum = 2257899264
+
+43	<tr, tc, tn, tm> = <8, 8, 4, 2>
+rd=500	num=205938432
+rd=19	num=1820786688
+rd=173	num=154140672
+rd=-1	num=0
+rd=47360	num=28864512
+rd=6800	num=48168960
+can unroll kw kh ic
+the total number of registers = 144x3 (432)
+available_cache_size=65392
+============> sum = 2257899264
+
+44	<tr, tc, tn, tm> = <8, 8, 4, 4>
+rd=500	num=205938432
+rd=19	num=1820786688
+rd=173	num=154140672
+rd=-1	num=0
+rd=47360	num=28864512
+rd=6800	num=48168960
+can unroll kw kh ic
+the total number of registers = 144x3 (432)
+available_cache_size=65392
+============> sum = 2257899264
+
+45	<tr, tc, tn, tm> = <8, 8, 8, 1>
+rd=936	num=205938432
+rd=19	num=1820786688
+rd=173	num=179830784
+rd=-1	num=0
+rd=47360	num=28864512
+rd=9504	num=22478848
+can unroll kw kh ic
+the total number of registers = 288x3 (864)
+available_cache_size=65248
+============> sum = 2257899264
+
+46	<tr, tc, tn, tm> = <8, 8, 8, 2>
+rd=936	num=205938432
+rd=19	num=1820786688
+rd=173	num=179830784
+rd=-1	num=0
+rd=47360	num=28864512
+rd=9504	num=22478848
+can unroll kw kh ic
+the total number of registers = 288x3 (864)
+available_cache_size=65248
+============> sum = 2257899264
+
+47	<tr, tc, tn, tm> = <8, 8, 8, 4>
+rd=936	num=205938432
+rd=19	num=1820786688
+rd=173	num=179830784
+rd=-1	num=0
+rd=47360	num=28864512
+rd=9504	num=22478848
+can unroll kw kh ic
+the total number of registers = 288x3 (864)
+available_cache_size=65248
+============> sum = 2257899264
+
+48	<tr, tc, tn, tm> = <8, 8, 16, 1>
+rd=1808	num=205938432
+rd=19	num=1820786688
+rd=173	num=192675840
+rd=-1	num=0
+rd=47360	num=28864512
+rd=14912	num=9633792
+can unroll kh ic
+the total number of registers = 192x3 (576)
+available_cache_size=65344
+============> sum = 2257899264
+
+49	<tr, tc, tn, tm> = <8, 8, 16, 2>
+rd=1808	num=205938432
+rd=19	num=1820786688
+rd=173	num=192675840
+rd=-1	num=0
+rd=47360	num=28864512
+rd=14912	num=9633792
+can unroll kh ic
+the total number of registers = 192x3 (576)
+available_cache_size=65344
+============> sum = 2257899264
+
+50	<tr, tc, tn, tm> = <8, 8, 16, 4>
+rd=1808	num=205938432
+rd=19	num=1820786688
+rd=173	num=192675840
+rd=-1	num=0
+rd=47360	num=28864512
+rd=14912	num=9633792
+can unroll kh ic
+the total number of registers = 192x3 (576)
+available_cache_size=65344
+============> sum = 2257899264
+
+51	<tr, tc, tn, tm> = <8, 8, 32, 1>
+rd=3552	num=205938432
+rd=19	num=1820786688
+rd=173	num=199098368
+rd=-1	num=0
+rd=47360	num=28864512
+rd=25728	num=3211264
+can unroll ic
+the total number of registers = 128x3 (384)
+available_cache_size=65408
+============> sum = 2257899264
+
+52	<tr, tc, tn, tm> = <8, 8, 32, 2>
+rd=3552	num=205938432
+rd=19	num=1820786688
+rd=173	num=199098368
+rd=-1	num=0
+rd=47360	num=28864512
+rd=25728	num=3211264
+can unroll ic
+the total number of registers = 128x3 (384)
+available_cache_size=65408
+============> sum = 2257899264
+
+53	<tr, tc, tn, tm> = <8, 8, 32, 4>
+rd=3552	num=205938432
+rd=19	num=1820786688
+rd=173	num=199098368
+rd=-1	num=0
+rd=47360	num=28864512
+rd=25728	num=3211264
+can unroll ic
+the total number of registers = 128x3 (384)
+available_cache_size=65408
+============> sum = 2257899264
+
+54	<tr, tc, tn, tm> = <8, 8, 32, 8>
+rd=3552	num=205938432
+rd=19	num=1820786688
+rd=173	num=199098368
+rd=-1	num=0
+rd=47360	num=28864512
+rd=25728	num=3211264
+can unroll ic
+the total number of registers = 128x3 (384)
+available_cache_size=65408
+============> sum = 2257899264
+
+55	<tr, tc, tn, tm> = <8, 8, 64, 1>
+rd=7040	num=205938432
+rd=19	num=1820786688
+rd=173	num=202309632
+rd=-1	num=0
+rd=47360	num=28864512
+rd=47360	num=0
+can unroll ic
+the total number of registers = 256x3 (768)
+available_cache_size=65280
+============> sum = 2257899264
+
+56	<tr, tc, tn, tm> = <8, 8, 64, 2>
+rd=7040	num=205938432
+rd=19	num=1820786688
+rd=173	num=202309632
+rd=-1	num=0
+rd=47360	num=28864512
+rd=47360	num=0
+can unroll ic
+the total number of registers = 256x3 (768)
+available_cache_size=65280
+============> sum = 2257899264
+
+57	<tr, tc, tn, tm> = <8, 8, 64, 4>
+rd=7040	num=205938432
+rd=19	num=1820786688
+rd=173	num=202309632
+rd=-1	num=0
+rd=47360	num=28864512
+rd=47360	num=0
+can unroll ic
+the total number of registers = 256x3 (768)
+available_cache_size=65280
+============> sum = 2257899264
+
+58	<tr, tc, tn, tm> = <8, 8, 64, 8>
+rd=7040	num=205938432
+rd=19	num=1820786688
+rd=173	num=202309632
+rd=-1	num=0
+rd=47360	num=28864512
+rd=47360	num=0
+can unroll ic
+the total number of registers = 256x3 (768)
+available_cache_size=65280
+============> sum = 2257899264
+
+59	<tr, tc, tn, tm> = <14, 14, 1, 1>
+rd=461	num=205938432
+rd=19	num=1840250880
+rd=461	num=0
+rd=-1	num=0
+rd=65792	num=9400320
+rd=13376	num=202309632
+can unroll kw kh ic
+the total number of registers = 36x3 (108)
+available_cache_size=65500
+============> sum = 2248498944
+
+60	<tr, tc, tn, tm> = <14, 14, 2, 1>
+rd=726	num=205938432
+rd=19	num=1840250880
+rd=461	num=102760448
+rd=-1	num=0
+rd=65792	num=9400320
+rd=14208	num=99549184
+can unroll kw kh ic
+the total number of registers = 72x3 (216)
+available_cache_size=65464
+============> sum = 2248498944
+
+61	<tr, tc, tn, tm> = <14, 14, 2, 2>
+rd=726	num=205938432
+rd=19	num=1840250880
+rd=461	num=102760448
+rd=-1	num=0
+rd=65792	num=9400320
+rd=14208	num=99549184
+can unroll kw kh ic
+the total number of registers = 72x3 (216)
+available_cache_size=65464
+============> sum = 2248498944
+
+62	<tr, tc, tn, tm> = <14, 14, 4, 1>
+rd=1256	num=205938432
+rd=19	num=1840250880
+rd=461	num=154140672
+rd=-1	num=0
+rd=65792	num=9400320
+rd=15872	num=48168960
+can unroll kw kh ic
+the total number of registers = 144x3 (432)
+available_cache_size=65392
+============> sum = 2248498944
+
+63	<tr, tc, tn, tm> = <14, 14, 4, 2>
+rd=1256	num=205938432
+rd=19	num=1840250880
+rd=461	num=154140672
+rd=-1	num=0
+rd=65792	num=9400320
+rd=15872	num=48168960
+can unroll kw kh ic
+the total number of registers = 144x3 (432)
+available_cache_size=65392
+============> sum = 2248498944
+
+64	<tr, tc, tn, tm> = <14, 14, 4, 4>
+rd=1256	num=205938432
+rd=19	num=1840250880
+rd=461	num=154140672
+rd=-1	num=0
+rd=65792	num=9400320
+rd=15872	num=48168960
+can unroll kw kh ic
+the total number of registers = 144x3 (432)
+available_cache_size=65392
+============> sum = 2248498944
+
+65	<tr, tc, tn, tm> = <14, 14, 8, 1>
+rd=2316	num=205938432
+rd=19	num=1840250880
+rd=461	num=179830784
+rd=-1	num=0
+rd=65792	num=9400320
+rd=19200	num=22478848
+can unroll kw kh ic
+the total number of registers = 288x3 (864)
+available_cache_size=65248
+============> sum = 2248498944
+
+66	<tr, tc, tn, tm> = <14, 14, 8, 2>
+rd=2316	num=205938432
+rd=19	num=1840250880
+rd=461	num=179830784
+rd=-1	num=0
+rd=65792	num=9400320
+rd=19200	num=22478848
+can unroll kw kh ic
+the total number of registers = 288x3 (864)
+available_cache_size=65248
+============> sum = 2248498944
+
+67	<tr, tc, tn, tm> = <14, 14, 8, 4>
+rd=2316	num=205938432
+rd=19	num=1840250880
+rd=461	num=179830784
+rd=-1	num=0
+rd=65792	num=9400320
+rd=19200	num=22478848
+can unroll kw kh ic
+the total number of registers = 288x3 (864)
+available_cache_size=65248
+============> sum = 2248498944
+
+68	<tr, tc, tn, tm> = <14, 14, 16, 1>
+rd=4436	num=205938432
+rd=19	num=1840250880
+rd=461	num=192675840
+rd=-1	num=0
+rd=65792	num=9400320
+rd=25856	num=9633792
+can unroll kh ic
+the total number of registers = 192x3 (576)
+available_cache_size=65344
+============> sum = 2248498944
+
+69	<tr, tc, tn, tm> = <14, 14, 16, 2>
+rd=4436	num=205938432
+rd=19	num=1840250880
+rd=461	num=192675840
+rd=-1	num=0
+rd=65792	num=9400320
+rd=25856	num=9633792
+can unroll kh ic
+the total number of registers = 192x3 (576)
+available_cache_size=65344
+============> sum = 2248498944
+
+70	<tr, tc, tn, tm> = <14, 14, 16, 4>
+rd=4436	num=205938432
+rd=19	num=1840250880
+rd=461	num=192675840
+rd=-1	num=0
+rd=65792	num=9400320
+rd=25856	num=9633792
+can unroll kh ic
+the total number of registers = 192x3 (576)
+available_cache_size=65344
+============> sum = 2248498944
+
+71	<tr, tc, tn, tm> = <14, 14, 16, 8>
+rd=4436	num=205938432
+rd=19	num=1840250880
+rd=461	num=192675840
+rd=-1	num=0
+rd=65792	num=9400320
+rd=25856	num=9633792
+can unroll kh ic
+the total number of registers = 192x3 (576)
+available_cache_size=65344
+============> sum = 2248498944
+
+72	<tr, tc, tn, tm> = <14, 14, 32, 1>
+rd=8676	num=205938432
+rd=19	num=1840250880
+rd=461	num=199098368
+rd=-1	num=0
+rd=65792	num=9400320
+rd=39168	num=3211264
+can unroll ic
+the total number of registers = 128x3 (384)
+available_cache_size=65408
+============> sum = 2248498944
+
+73	<tr, tc, tn, tm> = <14, 14, 32, 2>
+rd=8676	num=205938432
+rd=19	num=1840250880
+rd=461	num=199098368
+rd=-1	num=0
+rd=65792	num=9400320
+rd=39168	num=3211264
+can unroll ic
+the total number of registers = 128x3 (384)
+available_cache_size=65408
+============> sum = 2248498944
+
+74	<tr, tc, tn, tm> = <14, 14, 32, 4>
+rd=8676	num=205938432
+rd=19	num=1840250880
+rd=461	num=199098368
+rd=-1	num=0
+rd=65792	num=9400320
+rd=39168	num=3211264
+can unroll ic
+the total number of registers = 128x3 (384)
+available_cache_size=65408
+============> sum = 2248498944
+
+75	<tr, tc, tn, tm> = <14, 14, 32, 8>
+rd=8676	num=205938432
+rd=19	num=1840250880
+rd=461	num=199098368
+rd=-1	num=0
+rd=65792	num=9400320
+rd=39168	num=3211264
+can unroll ic
+the total number of registers = 128x3 (384)
+available_cache_size=65408
+============> sum = 2248498944
+
+76	<tr, tc, tn, tm> = <14, 14, 32, 16>
+rd=8676	num=205938432
+rd=19	num=1840250880
+rd=461	num=199098368
+rd=-1	num=0
+rd=65792	num=9400320
+rd=39168	num=3211264
+can unroll ic
+the total number of registers = 128x3 (384)
+available_cache_size=65408
+============> sum = 2248498944
+
+77	<tr, tc, tn, tm> = <14, 14, 64, 1>
+rd=17156	num=205938432
+rd=19	num=1840250880
+rd=461	num=202309632
+rd=-1	num=0
+rd=65792	num=9400320
+rd=65792	num=0
+can unroll ic
+the total number of registers = 256x3 (768)
+available_cache_size=65280
+============> sum = 2248498944
+
+78	<tr, tc, tn, tm> = <14, 14, 64, 2>
+rd=17156	num=205938432
+rd=19	num=1840250880
+rd=461	num=202309632
+rd=-1	num=0
+rd=65792	num=9400320
+rd=65792	num=0
+can unroll ic
+the total number of registers = 256x3 (768)
+available_cache_size=65280
+============> sum = 2248498944
+
+79	<tr, tc, tn, tm> = <14, 14, 64, 4>
+rd=17156	num=205938432
+rd=19	num=1840250880
+rd=461	num=202309632
+rd=-1	num=0
+rd=65792	num=9400320
+rd=65792	num=0
+can unroll ic
+the total number of registers = 256x3 (768)
+available_cache_size=65280
+============> sum = 2248498944
+
+80	<tr, tc, tn, tm> = <14, 14, 64, 8>
+rd=17156	num=205938432
+rd=19	num=1840250880
+rd=461	num=202309632
+rd=-1	num=0
+rd=65792	num=9400320
+rd=65792	num=0
+can unroll ic
+the total number of registers = 256x3 (768)
+available_cache_size=65280
+============> sum = 2248498944
+
+81	<tr, tc, tn, tm> = <14, 14, 64, 16>
+rd=17156	num=205938432
+rd=19	num=1840250880
+rd=461	num=202309632
+rd=-1	num=0
+rd=65792	num=9400320
+rd=65792	num=0
+can unroll ic
+the total number of registers = 256x3 (768)
+available_cache_size=65280
+============> sum = 2248498944
+
+82	<tr, tc, tn, tm> = <16, 16, 1, 1>
+rd=589	num=205938432
+rd=19	num=1842462720
+rd=589	num=0
+rd=-1	num=0
+rd=73984	num=7188480
+rd=17284	num=202309632
+can unroll kw kh ic
+the total number of registers = 36x3 (108)
+available_cache_size=65500
+============> sum = 2250710784
+
+83	<tr, tc, tn, tm> = <16, 16, 2, 1>
+rd=922	num=205938432
+rd=19	num=1842462720
+rd=589	num=102760448
+rd=-1	num=0
+rd=73984	num=7188480
+rd=18184	num=99549184
+can unroll kw kh ic
+the total number of registers = 72x3 (216)
+available_cache_size=65464
+============> sum = 2250710784
+
+84	<tr, tc, tn, tm> = <16, 16, 2, 2>
+rd=922	num=205938432
+rd=19	num=1842462720
+rd=589	num=102760448
+rd=-1	num=0
+rd=73984	num=7188480
+rd=18184	num=99549184
+can unroll kw kh ic
+the total number of registers = 72x3 (216)
+available_cache_size=65464
+============> sum = 2250710784
+
+85	<tr, tc, tn, tm> = <16, 16, 4, 1>
+rd=1588	num=205938432
+rd=19	num=1842462720
+rd=589	num=154140672
+rd=-1	num=0
+rd=73984	num=7188480
+rd=19984	num=48168960
+can unroll kw kh ic
+the total number of registers = 144x3 (432)
+available_cache_size=65392
+============> sum = 2250710784
+
+86	<tr, tc, tn, tm> = <16, 16, 4, 2>
+rd=1588	num=205938432
+rd=19	num=1842462720
+rd=589	num=154140672
+rd=-1	num=0
+rd=73984	num=7188480
+rd=19984	num=48168960
+can unroll kw kh ic
+the total number of registers = 144x3 (432)
+available_cache_size=65392
+============> sum = 2250710784
+
+87	<tr, tc, tn, tm> = <16, 16, 4, 4>
+rd=1588	num=205938432
+rd=19	num=1842462720
+rd=589	num=154140672
+rd=-1	num=0
+rd=73984	num=7188480
+rd=19984	num=48168960
+can unroll kw kh ic
+the total number of registers = 144x3 (432)
+available_cache_size=65392
+============> sum = 2250710784
+
+88	<tr, tc, tn, tm> = <16, 16, 8, 1>
+rd=2920	num=205938432
+rd=19	num=1842462720
+rd=589	num=179830784
+rd=-1	num=0
+rd=73984	num=7188480
+rd=23584	num=22478848
+can unroll kw kh ic
+the total number of registers = 288x3 (864)
+available_cache_size=65248
+============> sum = 2250710784
+
+89	<tr, tc, tn, tm> = <16, 16, 8, 2>
+rd=2920	num=205938432
+rd=19	num=1842462720
+rd=589	num=179830784
+rd=-1	num=0
+rd=73984	num=7188480
+rd=23584	num=22478848
+can unroll kw kh ic
+the total number of registers = 288x3 (864)
+available_cache_size=65248
+============> sum = 2250710784
+
+90	<tr, tc, tn, tm> = <16, 16, 8, 4>
+rd=2920	num=205938432
+rd=19	num=1842462720
+rd=589	num=179830784
+rd=-1	num=0
+rd=73984	num=7188480
+rd=23584	num=22478848
+can unroll kw kh ic
+the total number of registers = 288x3 (864)
+available_cache_size=65248
+============> sum = 2250710784
+
+91	<tr, tc, tn, tm> = <16, 16, 16, 1>
+rd=5584	num=205938432
+rd=19	num=1842462720
+rd=589	num=192675840
+rd=-1	num=0
+rd=73984	num=7188480
+rd=30784	num=9633792
+can unroll kh ic
+the total number of registers = 192x3 (576)
+available_cache_size=65344
+============> sum = 2250710784
+
+92	<tr, tc, tn, tm> = <16, 16, 16, 2>
+rd=5584	num=205938432
+rd=19	num=1842462720
+rd=589	num=192675840
+rd=-1	num=0
+rd=73984	num=7188480
+rd=30784	num=9633792
+can unroll kh ic
+the total number of registers = 192x3 (576)
+available_cache_size=65344
+============> sum = 2250710784
+
+93	<tr, tc, tn, tm> = <16, 16, 16, 4>
+rd=5584	num=205938432
+rd=19	num=1842462720
+rd=589	num=192675840
+rd=-1	num=0
+rd=73984	num=7188480
+rd=30784	num=9633792
+can unroll kh ic
+the total number of registers = 192x3 (576)
+available_cache_size=65344
+============> sum = 2250710784
+
+94	<tr, tc, tn, tm> = <16, 16, 16, 8>
+rd=5584	num=205938432
+rd=19	num=1842462720
+rd=589	num=192675840
+rd=-1	num=0
+rd=73984	num=7188480
+rd=30784	num=9633792
+can unroll kh ic
+the total number of registers = 192x3 (576)
+available_cache_size=65344
+============> sum = 2250710784
+
+95	<tr, tc, tn, tm> = <16, 16, 32, 1>
+rd=10912	num=205938432
+rd=19	num=1842462720
+rd=589	num=199098368
+rd=-1	num=0
+rd=73984	num=7188480
+rd=45184	num=3211264
+can unroll ic
+the total number of registers = 128x3 (384)
+available_cache_size=65408
+============> sum = 2250710784
+
+96	<tr, tc, tn, tm> = <16, 16, 32, 2>
+rd=10912	num=205938432
+rd=19	num=1842462720
+rd=589	num=199098368
+rd=-1	num=0
+rd=73984	num=7188480
+rd=45184	num=3211264
+can unroll ic
+the total number of registers = 128x3 (384)
+available_cache_size=65408
+============> sum = 2250710784
+
+97	<tr, tc, tn, tm> = <16, 16, 32, 4>
+rd=10912	num=205938432
+rd=19	num=1842462720
+rd=589	num=199098368
+rd=-1	num=0
+rd=73984	num=7188480
+rd=45184	num=3211264
+can unroll ic
+the total number of registers = 128x3 (384)
+available_cache_size=65408
+============> sum = 2250710784
+
+98	<tr, tc, tn, tm> = <16, 16, 32, 8>
+rd=10912	num=205938432
+rd=19	num=1842462720
+rd=589	num=199098368
+rd=-1	num=0
+rd=73984	num=7188480
+rd=45184	num=3211264
+can unroll ic
+the total number of registers = 128x3 (384)
+available_cache_size=65408
+============> sum = 2250710784
+
+99	<tr, tc, tn, tm> = <16, 16, 32, 16>
+rd=10912	num=205938432
+rd=19	num=1842462720
+rd=589	num=199098368
+rd=-1	num=0
+rd=73984	num=7188480
+rd=45184	num=3211264
+can unroll ic
+the total number of registers = 128x3 (384)
+available_cache_size=65408
+============> sum = 2250710784
+
+100	<tr, tc, tn, tm> = <16, 16, 64, 1>
+rd=21568	num=205938432
+rd=19	num=1842462720
+rd=589	num=202309632
+rd=-1	num=0
+rd=73984	num=7188480
+rd=73984	num=0
+can unroll ic
+the total number of registers = 256x3 (768)
+available_cache_size=65280
+============> sum = 2250710784
+
+101	<tr, tc, tn, tm> = <16, 16, 64, 2>
+rd=21568	num=205938432
+rd=19	num=1842462720
+rd=589	num=202309632
+rd=-1	num=0
+rd=73984	num=7188480
+rd=73984	num=0
+can unroll ic
+the total number of registers = 256x3 (768)
+available_cache_size=65280
+============> sum = 2250710784
+
+102	<tr, tc, tn, tm> = <16, 16, 64, 4>
+rd=21568	num=205938432
+rd=19	num=1842462720
+rd=589	num=202309632
+rd=-1	num=0
+rd=73984	num=7188480
+rd=73984	num=0
+can unroll ic
+the total number of registers = 256x3 (768)
+available_cache_size=65280
+============> sum = 2250710784
+
+103	<tr, tc, tn, tm> = <16, 16, 64, 8>
+rd=21568	num=205938432
+rd=19	num=1842462720
+rd=589	num=202309632
+rd=-1	num=0
+rd=73984	num=7188480
+rd=73984	num=0
+can unroll ic
+the total number of registers = 256x3 (768)
+available_cache_size=65280
+============> sum = 2250710784
+
+104	<tr, tc, tn, tm> = <16, 16, 64, 16>
+rd=21568	num=205938432
+rd=19	num=1842462720
+rd=589	num=202309632
+rd=-1	num=0
+rd=73984	num=7188480
+rd=73984	num=0
+can unroll ic
+the total number of registers = 256x3 (768)
+available_cache_size=65280
+============> sum = 2250710784
+
+105	<tr, tc, tn, tm> = <28, 28, 1, 1>
+rd=1693	num=205938432
+rd=19	num=1847328768
+rd=1693	num=0
+rd=-1	num=0
+rd=144640	num=2322432
+rd=51652	num=202309632
+can unroll kw kh ic
+the total number of registers = 36x3 (108)
+available_cache_size=65500
+============> sum = 2255576832
+
+106	<tr, tc, tn, tm> = <28, 28, 2, 1>
+rd=2602	num=205938432
+rd=19	num=1847328768
+rd=1693	num=102760448
+rd=-1	num=0
+rd=144640	num=2322432
+rd=53128	num=99549184
+can unroll kw kh ic
+the total number of registers = 72x3 (216)
+available_cache_size=65464
+============> sum = 2255576832
+
+107	<tr, tc, tn, tm> = <28, 28, 2, 2>
+rd=2602	num=205938432
+rd=19	num=1847328768
+rd=1693	num=102760448
+rd=-1	num=0
+rd=144640	num=2322432
+rd=53128	num=99549184
+can unroll kw kh ic
+the total number of registers = 72x3 (216)
+available_cache_size=65464
+============> sum = 2255576832
+
+108	<tr, tc, tn, tm> = <28, 28, 4, 1>
+rd=4420	num=205938432
+rd=19	num=1847328768
+rd=1693	num=154140672
+rd=-1	num=0
+rd=144640	num=2322432
+rd=56080	num=48168960
+can unroll kw kh ic
+the total number of registers = 144x3 (432)
+available_cache_size=65392
+============> sum = 2255576832
+
+109	<tr, tc, tn, tm> = <28, 28, 4, 2>
+rd=4420	num=205938432
+rd=19	num=1847328768
+rd=1693	num=154140672
+rd=-1	num=0
+rd=144640	num=2322432
+rd=56080	num=48168960
+can unroll kw kh ic
+the total number of registers = 144x3 (432)
+available_cache_size=65392
+============> sum = 2255576832
+
+110	<tr, tc, tn, tm> = <28, 28, 4, 4>
+rd=4420	num=205938432
+rd=19	num=1847328768
+rd=1693	num=154140672
+rd=-1	num=0
+rd=144640	num=2322432
+rd=56080	num=48168960
+can unroll kw kh ic
+the total number of registers = 144x3 (432)
+available_cache_size=65392
+============> sum = 2255576832
+
+111	<tr, tc, tn, tm> = <28, 28, 8, 1>
+rd=8056	num=205938432
+rd=19	num=1847328768
+rd=1693	num=179830784
+rd=-1	num=0
+rd=144640	num=2322432
+rd=61984	num=22478848
+can unroll kw kh ic
+the total number of registers = 288x3 (864)
+available_cache_size=65248
+============> sum = 2255576832
+
+112	<tr, tc, tn, tm> = <28, 28, 8, 2>
+rd=8056	num=205938432
+rd=19	num=1847328768
+rd=1693	num=179830784
+rd=-1	num=0
+rd=144640	num=2322432
+rd=61984	num=22478848
+can unroll kw kh ic
+the total number of registers = 288x3 (864)
+available_cache_size=65248
+============> sum = 2255576832
+
+113	<tr, tc, tn, tm> = <28, 28, 8, 4>
+rd=8056	num=205938432
+rd=19	num=1847328768
+rd=1693	num=179830784
+rd=-1	num=0
+rd=144640	num=2322432
+rd=61984	num=22478848
+can unroll kw kh ic
+the total number of registers = 288x3 (864)
+available_cache_size=65248
+============> sum = 2255576832
+
+114	<tr, tc, tn, tm> = <28, 28, 8, 8>
+rd=8056	num=205938432
+rd=19	num=1847328768
+rd=1693	num=179830784
+rd=-1	num=0
+rd=144640	num=2322432
+rd=61984	num=22478848
+can unroll kw kh ic
+the total number of registers = 288x3 (864)
+available_cache_size=65248
+============> sum = 2255576832
+
+115	<tr, tc, tn, tm> = <28, 28, 16, 1>
+rd=15328	num=205938432
+rd=19	num=1847328768
+rd=1693	num=192675840
+rd=-1	num=0
+rd=144640	num=2322432
+rd=73792	num=9633792
+can unroll kh ic
+the total number of registers = 192x3 (576)
+available_cache_size=65344
+============> sum = 2245943040
+
+116	<tr, tc, tn, tm> = <28, 28, 16, 2>
+rd=15328	num=205938432
+rd=19	num=1847328768
+rd=1693	num=192675840
+rd=-1	num=0
+rd=144640	num=2322432
+rd=73792	num=9633792
+can unroll kh ic
+the total number of registers = 192x3 (576)
+available_cache_size=65344
+============> sum = 2245943040
+
+117	<tr, tc, tn, tm> = <28, 28, 16, 4>
+rd=15328	num=205938432
+rd=19	num=1847328768
+rd=1693	num=192675840
+rd=-1	num=0
+rd=144640	num=2322432
+rd=73792	num=9633792
+can unroll kh ic
+the total number of registers = 192x3 (576)
+available_cache_size=65344
+============> sum = 2245943040
+
+118	<tr, tc, tn, tm> = <28, 28, 16, 8>
+rd=15328	num=205938432
+rd=19	num=1847328768
+rd=1693	num=192675840
+rd=-1	num=0
+rd=144640	num=2322432
+rd=73792	num=9633792
+can unroll kh ic
+the total number of registers = 192x3 (576)
+available_cache_size=65344
+============> sum = 2245943040
+
+119	<tr, tc, tn, tm> = <28, 28, 32, 1>
+rd=29872	num=205938432
+rd=19	num=1847328768
+rd=1693	num=199098368
+rd=-1	num=0
+rd=144640	num=2322432
+rd=97408	num=3211264
+can unroll ic
+the total number of registers = 128x3 (384)
+available_cache_size=65408
+============> sum = 2252365568
+
+120	<tr, tc, tn, tm> = <28, 28, 32, 2>
+rd=29872	num=205938432
+rd=19	num=1847328768
+rd=1693	num=199098368
+rd=-1	num=0
+rd=144640	num=2322432
+rd=97408	num=3211264
+can unroll ic
+the total number of registers = 128x3 (384)
+available_cache_size=65408
+============> sum = 2252365568
+
+121	<tr, tc, tn, tm> = <28, 28, 32, 4>
+rd=29872	num=205938432
+rd=19	num=1847328768
+rd=1693	num=199098368
+rd=-1	num=0
+rd=144640	num=2322432
+rd=97408	num=3211264
+can unroll ic
+the total number of registers = 128x3 (384)
+available_cache_size=65408
+============> sum = 2252365568
+
+122	<tr, tc, tn, tm> = <28, 28, 32, 8>
+rd=29872	num=205938432
+rd=19	num=1847328768
+rd=1693	num=199098368
+rd=-1	num=0
+rd=144640	num=2322432
+rd=97408	num=3211264
+can unroll ic
+the total number of registers = 128x3 (384)
+available_cache_size=65408
+============> sum = 2252365568
+
+123	<tr, tc, tn, tm> = <28, 28, 32, 16>
+rd=29872	num=205938432
+rd=19	num=1847328768
+rd=1693	num=199098368
+rd=-1	num=0
+rd=144640	num=2322432
+rd=97408	num=3211264
+can unroll ic
+the total number of registers = 128x3 (384)
+available_cache_size=65408
+============> sum = 2252365568
+
+124	<tr, tc, tn, tm> = <28, 28, 64, 1>
+rd=58960	num=205938432
+rd=19	num=1847328768
+rd=1693	num=202309632
+rd=-1	num=0
+rd=144640	num=2322432
+rd=144640	num=0
+can unroll ic
+the total number of registers = 256x3 (768)
+available_cache_size=65280
+============> sum = 2255576832
+
+125	<tr, tc, tn, tm> = <28, 28, 64, 2>
+rd=58960	num=205938432
+rd=19	num=1847328768
+rd=1693	num=202309632
+rd=-1	num=0
+rd=144640	num=2322432
+rd=144640	num=0
+can unroll ic
+the total number of registers = 256x3 (768)
+available_cache_size=65280
+============> sum = 2255576832
+
+126	<tr, tc, tn, tm> = <28, 28, 64, 4>
+rd=58960	num=205938432
+rd=19	num=1847328768
+rd=1693	num=202309632
+rd=-1	num=0
+rd=144640	num=2322432
+rd=144640	num=0
+can unroll ic
+the total number of registers = 256x3 (768)
+available_cache_size=65280
+============> sum = 2255576832
+
+127	<tr, tc, tn, tm> = <28, 28, 64, 8>
+rd=58960	num=205938432
+rd=19	num=1847328768
+rd=1693	num=202309632
+rd=-1	num=0
+rd=144640	num=2322432
+rd=144640	num=0
+can unroll ic
+the total number of registers = 256x3 (768)
+available_cache_size=65280
+============> sum = 2255576832
+
+128	<tr, tc, tn, tm> = <28, 28, 64, 16>
+rd=58960	num=205938432
+rd=19	num=1847328768
+rd=1693	num=202309632
+rd=-1	num=0
+rd=144640	num=2322432
+rd=144640	num=0
+can unroll ic
+the total number of registers = 256x3 (768)
+available_cache_size=65280
+============> sum = 2255576832
+
+129	<tr, tc, tn, tm> = <28, 28, 64, 32>
+rd=58960	num=205938432
+rd=19	num=1847328768
+rd=1693	num=202309632
+rd=-1	num=0
+rd=144640	num=2322432
+rd=144640	num=0
+can unroll ic
+the total number of registers = 256x3 (768)
+available_cache_size=65280
+============> sum = 2255576832
+
+130	<tr, tc, tn, tm> = <32, 32, 1, 1>
+rd=2189	num=205938432
+rd=19	num=1847881728
+rd=2189	num=0
+rd=-1	num=0
+rd=176384	num=1769472
+rd=67268	num=202309632
+can unroll kw kh ic
+the total number of registers = 36x3 (108)
+available_cache_size=65500
+============> sum = 2053820160
+
+131	<tr, tc, tn, tm> = <32, 32, 2, 1>
+rd=3354	num=205938432
+rd=19	num=1847881728
+rd=2189	num=102760448
+rd=-1	num=0
+rd=176384	num=1769472
+rd=69000	num=99549184
+can unroll kw kh ic
+the total number of registers = 72x3 (216)
+available_cache_size=65464
+============> sum = 2156580608
+
+132	<tr, tc, tn, tm> = <32, 32, 2, 2>
+rd=3354	num=205938432
+rd=19	num=1847881728
+rd=2189	num=102760448
+rd=-1	num=0
+rd=176384	num=1769472
+rd=69000	num=99549184
+can unroll kw kh ic
+the total number of registers = 72x3 (216)
+available_cache_size=65464
+============> sum = 2156580608
+
+133	<tr, tc, tn, tm> = <32, 32, 4, 1>
+rd=5684	num=205938432
+rd=19	num=1847881728
+rd=2189	num=154140672
+rd=-1	num=0
+rd=176384	num=1769472
+rd=72464	num=48168960
+can unroll kw kh ic
+the total number of registers = 144x3 (432)
+available_cache_size=65392
+============> sum = 2207960832
+
+134	<tr, tc, tn, tm> = <32, 32, 4, 2>
+rd=5684	num=205938432
+rd=19	num=1847881728
+rd=2189	num=154140672
+rd=-1	num=0
+rd=176384	num=1769472
+rd=72464	num=48168960
+can unroll kw kh ic
+the total number of registers = 144x3 (432)
+available_cache_size=65392
+============> sum = 2207960832
+
+135	<tr, tc, tn, tm> = <32, 32, 4, 4>
+rd=5684	num=205938432
+rd=19	num=1847881728
+rd=2189	num=154140672
+rd=-1	num=0
+rd=176384	num=1769472
+rd=72464	num=48168960
+can unroll kw kh ic
+the total number of registers = 144x3 (432)
+available_cache_size=65392
+============> sum = 2207960832
+
+136	<tr, tc, tn, tm> = <32, 32, 8, 1>
+rd=10344	num=205938432
+rd=19	num=1847881728
+rd=2189	num=179830784
+rd=-1	num=0
+rd=176384	num=1769472
+rd=79392	num=22478848
+can unroll kw kh ic
+the total number of registers = 288x3 (864)
+available_cache_size=65248
+============> sum = 2233650944
+
+137	<tr, tc, tn, tm> = <32, 32, 8, 2>
+rd=10344	num=205938432
+rd=19	num=1847881728
+rd=2189	num=179830784
+rd=-1	num=0
+rd=176384	num=1769472
+rd=79392	num=22478848
+can unroll kw kh ic
+the total number of registers = 288x3 (864)
+available_cache_size=65248
+============> sum = 2233650944
+
+138	<tr, tc, tn, tm> = <32, 32, 8, 4>
+rd=10344	num=205938432
+rd=19	num=1847881728
+rd=2189	num=179830784
+rd=-1	num=0
+rd=176384	num=1769472
+rd=79392	num=22478848
+can unroll kw kh ic
+the total number of registers = 288x3 (864)
+available_cache_size=65248
+============> sum = 2233650944
+
+139	<tr, tc, tn, tm> = <32, 32, 8, 8>
+rd=10344	num=205938432
+rd=19	num=1847881728
+rd=2189	num=179830784
+rd=-1	num=0
+rd=176384	num=1769472
+rd=79392	num=22478848
+can unroll kw kh ic
+the total number of registers = 288x3 (864)
+available_cache_size=65248
+============> sum = 2233650944
+
+140	<tr, tc, tn, tm> = <32, 32, 16, 1>
+rd=19664	num=205938432
+rd=19	num=1847881728
+rd=2189	num=192675840
+rd=-1	num=0
+rd=176384	num=1769472
+rd=93248	num=9633792
+can unroll kh ic
+the total number of registers = 192x3 (576)
+available_cache_size=65344
+============> sum = 2246496000
+
+141	<tr, tc, tn, tm> = <32, 32, 16, 2>
+rd=19664	num=205938432
+rd=19	num=1847881728
+rd=2189	num=192675840
+rd=-1	num=0
+rd=176384	num=1769472
+rd=93248	num=9633792
+can unroll kh ic
+the total number of registers = 192x3 (576)
+available_cache_size=65344
+============> sum = 2246496000
+
+142	<tr, tc, tn, tm> = <32, 32, 16, 4>
+rd=19664	num=205938432
+rd=19	num=1847881728
+rd=2189	num=192675840
+rd=-1	num=0
+rd=176384	num=1769472
+rd=93248	num=9633792
+can unroll kh ic
+the total number of registers = 192x3 (576)
+available_cache_size=65344
+============> sum = 2246496000
+
+143	<tr, tc, tn, tm> = <32, 32, 16, 8>
+rd=19664	num=205938432
+rd=19	num=1847881728
+rd=2189	num=192675840
+rd=-1	num=0
+rd=176384	num=1769472
+rd=93248	num=9633792
+can unroll kh ic
+the total number of registers = 192x3 (576)
+available_cache_size=65344
+============> sum = 2246496000
+
+144	<tr, tc, tn, tm> = <32, 32, 32, 1>
+rd=38304	num=205938432
+rd=19	num=1847881728
+rd=2189	num=199098368
+rd=-1	num=0
+rd=176384	num=1769472
+rd=120960	num=3211264
+can unroll ic
+the total number of registers = 128x3 (384)
+available_cache_size=65408
+============> sum = 2252918528
+
+145	<tr, tc, tn, tm> = <32, 32, 32, 2>
+rd=38304	num=205938432
+rd=19	num=1847881728
+rd=2189	num=199098368
+rd=-1	num=0
+rd=176384	num=1769472
+rd=120960	num=3211264
+can unroll ic
+the total number of registers = 128x3 (384)
+available_cache_size=65408
+============> sum = 2252918528
+
+146	<tr, tc, tn, tm> = <32, 32, 32, 4>
+rd=38304	num=205938432
+rd=19	num=1847881728
+rd=2189	num=199098368
+rd=-1	num=0
+rd=176384	num=1769472
+rd=120960	num=3211264
+can unroll ic
+the total number of registers = 128x3 (384)
+available_cache_size=65408
+============> sum = 2252918528
+
+147	<tr, tc, tn, tm> = <32, 32, 32, 8>
+rd=38304	num=205938432
+rd=19	num=1847881728
+rd=2189	num=199098368
+rd=-1	num=0
+rd=176384	num=1769472
+rd=120960	num=3211264
+can unroll ic
+the total number of registers = 128x3 (384)
+available_cache_size=65408
+============> sum = 2252918528
+
+148	<tr, tc, tn, tm> = <32, 32, 32, 16>
+rd=38304	num=205938432
+rd=19	num=1847881728
+rd=2189	num=199098368
+rd=-1	num=0
+rd=176384	num=1769472
+rd=120960	num=3211264
+can unroll ic
+the total number of registers = 128x3 (384)
+available_cache_size=65408
+============> sum = 2252918528
+
+149	<tr, tc, tn, tm> = <32, 32, 64, 1>
+rd=75584	num=205938432
+rd=19	num=1847881728
+rd=2189	num=202309632
+rd=-1	num=0
+rd=176384	num=1769472
+rd=176384	num=0
+can unroll ic
+the total number of registers = 256x3 (768)
+available_cache_size=65280
+============> sum = 2050191360
+
+150	<tr, tc, tn, tm> = <32, 32, 64, 2>
+rd=75584	num=205938432
+rd=19	num=1847881728
+rd=2189	num=202309632
+rd=-1	num=0
+rd=176384	num=1769472
+rd=176384	num=0
+can unroll ic
+the total number of registers = 256x3 (768)
+available_cache_size=65280
+============> sum = 2050191360
+
+151	<tr, tc, tn, tm> = <32, 32, 64, 4>
+rd=75584	num=205938432
+rd=19	num=1847881728
+rd=2189	num=202309632
+rd=-1	num=0
+rd=176384	num=1769472
+rd=176384	num=0
+can unroll ic
+the total number of registers = 256x3 (768)
+available_cache_size=65280
+============> sum = 2050191360
+
+152	<tr, tc, tn, tm> = <32, 32, 64, 8>
+rd=75584	num=205938432
+rd=19	num=1847881728
+rd=2189	num=202309632
+rd=-1	num=0
+rd=176384	num=1769472
+rd=176384	num=0
+can unroll ic
+the total number of registers = 256x3 (768)
+available_cache_size=65280
+============> sum = 2050191360
+
+153	<tr, tc, tn, tm> = <32, 32, 64, 16>
+rd=75584	num=205938432
+rd=19	num=1847881728
+rd=2189	num=202309632
+rd=-1	num=0
+rd=176384	num=1769472
+rd=176384	num=0
+can unroll ic
+the total number of registers = 256x3 (768)
+available_cache_size=65280
+============> sum = 2050191360
+
+154	<tr, tc, tn, tm> = <32, 32, 64, 32>
+rd=75584	num=205938432
+rd=19	num=1847881728
+rd=2189	num=202309632
+rd=-1	num=0
+rd=176384	num=1769472
+rd=176384	num=0
+can unroll ic
+the total number of registers = 256x3 (768)
+available_cache_size=65280
+============> sum = 2050191360
+
+155	<tr, tc, tn, tm> = <56, 56, 1, 1>
+rd=6509	num=205938432
+rd=19	num=1849098240
+rd=6509	num=0
+rd=-1	num=0
+rd=452864	num=552960
+rd=204644	num=202309632
+can unroll kw kh ic
+the total number of registers = 36x3 (108)
+available_cache_size=65500
+============> sum = 2055036672
+
+156	<tr, tc, tn, tm> = <56, 56, 2, 1>
+rd=9882	num=205938432
+rd=19	num=1849098240
+rd=6509	num=102760448
+rd=-1	num=0
+rd=452864	num=552960
+rd=208584	num=99549184
+can unroll kw kh ic
+the total number of registers = 72x3 (216)
+available_cache_size=65464
+============> sum = 2157797120
+
+157	<tr, tc, tn, tm> = <56, 56, 2, 2>
+rd=9882	num=205938432
+rd=19	num=1849098240
+rd=6509	num=102760448
+rd=-1	num=0
+rd=452864	num=552960
+rd=208584	num=99549184
+can unroll kw kh ic
+the total number of registers = 72x3 (216)
+available_cache_size=65464
+============> sum = 2157797120
+
+158	<tr, tc, tn, tm> = <56, 56, 4, 1>
+rd=16628	num=205938432
+rd=19	num=1849098240
+rd=6509	num=154140672
+rd=-1	num=0
+rd=452864	num=552960
+rd=216464	num=48168960
+can unroll kw kh ic
+the total number of registers = 144x3 (432)
+available_cache_size=65392
+============> sum = 2209177344
+
+159	<tr, tc, tn, tm> = <56, 56, 4, 2>
+rd=16628	num=205938432
+rd=19	num=1849098240
+rd=6509	num=154140672
+rd=-1	num=0
+rd=452864	num=552960
+rd=216464	num=48168960
+can unroll kw kh ic
+the total number of registers = 144x3 (432)
+available_cache_size=65392
+============> sum = 2209177344
+
+160	<tr, tc, tn, tm> = <56, 56, 4, 4>
+rd=16628	num=205938432
+rd=19	num=1849098240
+rd=6509	num=154140672
+rd=-1	num=0
+rd=452864	num=552960
+rd=216464	num=48168960
+can unroll kw kh ic
+the total number of registers = 144x3 (432)
+available_cache_size=65392
+============> sum = 2209177344
+
+161	<tr, tc, tn, tm> = <56, 56, 8, 1>
+rd=30120	num=205938432
+rd=19	num=1849098240
+rd=6509	num=179830784
+rd=-1	num=0
+rd=452864	num=552960
+rd=232224	num=22478848
+can unroll kw kh ic
+the total number of registers = 288x3 (864)
+available_cache_size=65248
+============> sum = 2234867456
+
+162	<tr, tc, tn, tm> = <56, 56, 8, 2>
+rd=30120	num=205938432
+rd=19	num=1849098240
+rd=6509	num=179830784
+rd=-1	num=0
+rd=452864	num=552960
+rd=232224	num=22478848
+can unroll kw kh ic
+the total number of registers = 288x3 (864)
+available_cache_size=65248
+============> sum = 2234867456
+
+163	<tr, tc, tn, tm> = <56, 56, 8, 4>
+rd=30120	num=205938432
+rd=19	num=1849098240
+rd=6509	num=179830784
+rd=-1	num=0
+rd=452864	num=552960
+rd=232224	num=22478848
+can unroll kw kh ic
+the total number of registers = 288x3 (864)
+available_cache_size=65248
+============> sum = 2234867456
+
+164	<tr, tc, tn, tm> = <56, 56, 8, 8>
+rd=30120	num=205938432
+rd=19	num=1849098240
+rd=6509	num=179830784
+rd=-1	num=0
+rd=452864	num=552960
+rd=232224	num=22478848
+can unroll kw kh ic
+the total number of registers = 288x3 (864)
+available_cache_size=65248
+============> sum = 2234867456
+
+165	<tr, tc, tn, tm> = <56, 56, 16, 1>
+rd=57104	num=205938432
+rd=19	num=1849098240
+rd=6509	num=192675840
+rd=-1	num=0
+rd=452864	num=552960
+rd=263744	num=9633792
+can unroll kh ic
+the total number of registers = 192x3 (576)
+available_cache_size=65344
+============> sum = 2247712512
+
+166	<tr, tc, tn, tm> = <56, 56, 16, 2>
+rd=57104	num=205938432
+rd=19	num=1849098240
+rd=6509	num=192675840
+rd=-1	num=0
+rd=452864	num=552960
+rd=263744	num=9633792
+can unroll kh ic
+the total number of registers = 192x3 (576)
+available_cache_size=65344
+============> sum = 2247712512
+
+167	<tr, tc, tn, tm> = <56, 56, 16, 4>
+rd=57104	num=205938432
+rd=19	num=1849098240
+rd=6509	num=192675840
+rd=-1	num=0
+rd=452864	num=552960
+rd=263744	num=9633792
+can unroll kh ic
+the total number of registers = 192x3 (576)
+available_cache_size=65344
+============> sum = 2247712512
+
+168	<tr, tc, tn, tm> = <56, 56, 16, 8>
+rd=57104	num=205938432
+rd=19	num=1849098240
+rd=6509	num=192675840
+rd=-1	num=0
+rd=452864	num=552960
+rd=263744	num=9633792
+can unroll kh ic
+the total number of registers = 192x3 (576)
+available_cache_size=65344
+============> sum = 2247712512
+
+169	<tr, tc, tn, tm> = <56, 56, 16, 16>
+rd=57104	num=205938432
+rd=19	num=1849098240
+rd=6509	num=192675840
+rd=-1	num=0
+rd=452864	num=552960
+rd=263744	num=9633792
+can unroll kh ic
+the total number of registers = 192x3 (576)
+available_cache_size=65344
+============> sum = 2247712512
+
+170	<tr, tc, tn, tm> = <56, 56, 32, 1>
+rd=111072	num=205938432
+rd=19	num=1849098240
+rd=6509	num=199098368
+rd=-1	num=0
+rd=452864	num=552960
+rd=326784	num=3211264
+can unroll ic
+the total number of registers = 128x3 (384)
+available_cache_size=65408
+============> sum = 2048196608
+
+171	<tr, tc, tn, tm> = <56, 56, 32, 2>
+rd=111072	num=205938432
+rd=19	num=1849098240
+rd=6509	num=199098368
+rd=-1	num=0
+rd=452864	num=552960
+rd=326784	num=3211264
+can unroll ic
+the total number of registers = 128x3 (384)
+available_cache_size=65408
+============> sum = 2048196608
+
+172	<tr, tc, tn, tm> = <56, 56, 32, 4>
+rd=111072	num=205938432
+rd=19	num=1849098240
+rd=6509	num=199098368
+rd=-1	num=0
+rd=452864	num=552960
+rd=326784	num=3211264
+can unroll ic
+the total number of registers = 128x3 (384)
+available_cache_size=65408
+============> sum = 2048196608
+
+173	<tr, tc, tn, tm> = <56, 56, 32, 8>
+rd=111072	num=205938432
+rd=19	num=1849098240
+rd=6509	num=199098368
+rd=-1	num=0
+rd=452864	num=552960
+rd=326784	num=3211264
+can unroll ic
+the total number of registers = 128x3 (384)
+available_cache_size=65408
+============> sum = 2048196608
+
+174	<tr, tc, tn, tm> = <56, 56, 32, 16>
+rd=111072	num=205938432
+rd=19	num=1849098240
+rd=6509	num=199098368
+rd=-1	num=0
+rd=452864	num=552960
+rd=326784	num=3211264
+can unroll ic
+the total number of registers = 128x3 (384)
+available_cache_size=65408
+============> sum = 2048196608
+
+175	<tr, tc, tn, tm> = <56, 56, 64, 1>
+rd=219008	num=205938432
+rd=19	num=1849098240
+rd=6509	num=202309632
+rd=-1	num=0
+rd=452864	num=552960
+rd=452864	num=0
+can unroll ic
+the total number of registers = 256x3 (768)
+available_cache_size=65280
+============> sum = 2051407872
+
+176	<tr, tc, tn, tm> = <56, 56, 64, 2>
+rd=219008	num=205938432
+rd=19	num=1849098240
+rd=6509	num=202309632
+rd=-1	num=0
+rd=452864	num=552960
+rd=452864	num=0
+can unroll ic
+the total number of registers = 256x3 (768)
+available_cache_size=65280
+============> sum = 2051407872
+
+177	<tr, tc, tn, tm> = <56, 56, 64, 4>
+rd=219008	num=205938432
+rd=19	num=1849098240
+rd=6509	num=202309632
+rd=-1	num=0
+rd=452864	num=552960
+rd=452864	num=0
+can unroll ic
+the total number of registers = 256x3 (768)
+available_cache_size=65280
+============> sum = 2051407872
+
+178	<tr, tc, tn, tm> = <56, 56, 64, 8>
+rd=219008	num=205938432
+rd=19	num=1849098240
+rd=6509	num=202309632
+rd=-1	num=0
+rd=452864	num=552960
+rd=452864	num=0
+can unroll ic
+the total number of registers = 256x3 (768)
+available_cache_size=65280
+============> sum = 2051407872
+
+179	<tr, tc, tn, tm> = <56, 56, 64, 16>
+rd=219008	num=205938432
+rd=19	num=1849098240
+rd=6509	num=202309632
+rd=-1	num=0
+rd=452864	num=552960
+rd=452864	num=0
+can unroll ic
+the total number of registers = 256x3 (768)
+available_cache_size=65280
+============> sum = 2051407872
+
+180	<tr, tc, tn, tm> = <56, 56, 64, 32>
+rd=219008	num=205938432
+rd=19	num=1849098240
+rd=6509	num=202309632
+rd=-1	num=0
+rd=452864	num=552960
+rd=452864	num=0
+can unroll ic
+the total number of registers = 256x3 (768)
+available_cache_size=65280
+============> sum = 2051407872
+
+181	<tr, tc, tn, tm> = <112, 112, 1, 1>
+rd=25549	num=205938432
+rd=19	num=1849540608
+rd=25549	num=0
+rd=-1	num=0
+rd=1671424	num=110592
+rd=816388	num=202309632
+can unroll kw kh ic
+the total number of registers = 36x3 (108)
+available_cache_size=65500
+============> sum = 2055479040
+
+182	<tr, tc, tn, tm> = <112, 112, 2, 1>
+rd=38554	num=205938432
+rd=19	num=1849540608
+rd=25549	num=102760448
+rd=-1	num=0
+rd=1671424	num=110592
+rd=829960	num=99549184
+can unroll kw kh ic
+the total number of registers = 72x3 (216)
+available_cache_size=65464
+============> sum = 2158239488
+
+183	<tr, tc, tn, tm> = <112, 112, 2, 2>
+rd=38554	num=205938432
+rd=19	num=1849540608
+rd=25549	num=102760448
+rd=-1	num=0
+rd=1671424	num=110592
+rd=829960	num=99549184
+can unroll kw kh ic
+the total number of registers = 72x3 (216)
+available_cache_size=65464
+============> sum = 2158239488
+
+184	<tr, tc, tn, tm> = <112, 112, 4, 1>
+rd=64564	num=205938432
+rd=19	num=1849540608
+rd=25549	num=154140672
+rd=-1	num=0
+rd=1671424	num=110592
+rd=857104	num=48168960
+can unroll kw kh ic
+the total number of registers = 144x3 (432)
+available_cache_size=65392
+============> sum = 2209619712
+
+185	<tr, tc, tn, tm> = <112, 112, 4, 2>
+rd=64564	num=205938432
+rd=19	num=1849540608
+rd=25549	num=154140672
+rd=-1	num=0
+rd=1671424	num=110592
+rd=857104	num=48168960
+can unroll kw kh ic
+the total number of registers = 144x3 (432)
+available_cache_size=65392
+============> sum = 2209619712
+
+186	<tr, tc, tn, tm> = <112, 112, 4, 4>
+rd=64564	num=205938432
+rd=19	num=1849540608
+rd=25549	num=154140672
+rd=-1	num=0
+rd=1671424	num=110592
+rd=857104	num=48168960
+can unroll kw kh ic
+the total number of registers = 144x3 (432)
+available_cache_size=65392
+============> sum = 2209619712
+
+187	<tr, tc, tn, tm> = <112, 112, 8, 1>
+rd=116584	num=205938432
+rd=19	num=1849540608
+rd=25549	num=179830784
+rd=-1	num=0
+rd=1671424	num=110592
+rd=911392	num=22478848
+can unroll kw kh ic
+the total number of registers = 288x3 (864)
+available_cache_size=65248
+============> sum = 2029371392
+
+188	<tr, tc, tn, tm> = <112, 112, 8, 2>
+rd=116584	num=205938432
+rd=19	num=1849540608
+rd=25549	num=179830784
+rd=-1	num=0
+rd=1671424	num=110592
+rd=911392	num=22478848
+can unroll kw kh ic
+the total number of registers = 288x3 (864)
+available_cache_size=65248
+============> sum = 2029371392
+
+189	<tr, tc, tn, tm> = <112, 112, 8, 4>
+rd=116584	num=205938432
+rd=19	num=1849540608
+rd=25549	num=179830784
+rd=-1	num=0
+rd=1671424	num=110592
+rd=911392	num=22478848
+can unroll kw kh ic
+the total number of registers = 288x3 (864)
+available_cache_size=65248
+============> sum = 2029371392
+
+190	<tr, tc, tn, tm> = <112, 112, 8, 8>
+rd=116584	num=205938432
+rd=19	num=1849540608
+rd=25549	num=179830784
+rd=-1	num=0
+rd=1671424	num=110592
+rd=911392	num=22478848
+can unroll kw kh ic
+the total number of registers = 288x3 (864)
+available_cache_size=65248
+============> sum = 2029371392
+
+191	<tr, tc, tn, tm> = <112, 112, 16, 1>
+rd=220624	num=205938432
+rd=19	num=1849540608
+rd=25549	num=192675840
+rd=-1	num=0
+rd=1671424	num=110592
+rd=1019968	num=9633792
+can unroll kh ic
+the total number of registers = 192x3 (576)
+available_cache_size=65344
+============> sum = 2042216448
+
+192	<tr, tc, tn, tm> = <112, 112, 16, 2>
+rd=220624	num=205938432
+rd=19	num=1849540608
+rd=25549	num=192675840
+rd=-1	num=0
+rd=1671424	num=110592
+rd=1019968	num=9633792
+can unroll kh ic
+the total number of registers = 192x3 (576)
+available_cache_size=65344
+============> sum = 2042216448
+
+193	<tr, tc, tn, tm> = <112, 112, 16, 4>
+rd=220624	num=205938432
+rd=19	num=1849540608
+rd=25549	num=192675840
+rd=-1	num=0
+rd=1671424	num=110592
+rd=1019968	num=9633792
+can unroll kh ic
+the total number of registers = 192x3 (576)
+available_cache_size=65344
+============> sum = 2042216448
+
+194	<tr, tc, tn, tm> = <112, 112, 16, 8>
+rd=220624	num=205938432
+rd=19	num=1849540608
+rd=25549	num=192675840
+rd=-1	num=0
+rd=1671424	num=110592
+rd=1019968	num=9633792
+can unroll kh ic
+the total number of registers = 192x3 (576)
+available_cache_size=65344
+============> sum = 2042216448
+
+195	<tr, tc, tn, tm> = <112, 112, 16, 16>
+rd=220624	num=205938432
+rd=19	num=1849540608
+rd=25549	num=192675840
+rd=-1	num=0
+rd=1671424	num=110592
+rd=1019968	num=9633792
+can unroll kh ic
+the total number of registers = 192x3 (576)
+available_cache_size=65344
+============> sum = 2042216448
+
+196	<tr, tc, tn, tm> = <112, 112, 32, 1>
+rd=428704	num=205938432
+rd=19	num=1849540608
+rd=25549	num=199098368
+rd=-1	num=0
+rd=1671424	num=110592
+rd=1237120	num=3211264
+can unroll ic
+the total number of registers = 128x3 (384)
+available_cache_size=65408
+============> sum = 2048638976
+
+197	<tr, tc, tn, tm> = <112, 112, 32, 2>
+rd=428704	num=205938432
+rd=19	num=1849540608
+rd=25549	num=199098368
+rd=-1	num=0
+rd=1671424	num=110592
+rd=1237120	num=3211264
+can unroll ic
+the total number of registers = 128x3 (384)
+available_cache_size=65408
+============> sum = 2048638976
+
+198	<tr, tc, tn, tm> = <112, 112, 32, 4>
+rd=428704	num=205938432
+rd=19	num=1849540608
+rd=25549	num=199098368
+rd=-1	num=0
+rd=1671424	num=110592
+rd=1237120	num=3211264
+can unroll ic
+the total number of registers = 128x3 (384)
+available_cache_size=65408
+============> sum = 2048638976
+
+199	<tr, tc, tn, tm> = <112, 112, 32, 8>
+rd=428704	num=205938432
+rd=19	num=1849540608
+rd=25549	num=199098368
+rd=-1	num=0
+rd=1671424	num=110592
+rd=1237120	num=3211264
+can unroll ic
+the total number of registers = 128x3 (384)
+available_cache_size=65408
+============> sum = 2048638976
+
+200	<tr, tc, tn, tm> = <112, 112, 32, 16>
+rd=428704	num=205938432
+rd=19	num=1849540608
+rd=25549	num=199098368
+rd=-1	num=0
+rd=1671424	num=110592
+rd=1237120	num=3211264
+can unroll ic
+the total number of registers = 128x3 (384)
+available_cache_size=65408
+============> sum = 2048638976
+
+201	<tr, tc, tn, tm> = <112, 112, 32, 32>
+rd=428704	num=205938432
+rd=19	num=1849540608
+rd=25549	num=199098368
+rd=-1	num=0
+rd=1671424	num=110592
+rd=1237120	num=3211264
+can unroll ic
+the total number of registers = 128x3 (384)
+available_cache_size=65408
+============> sum = 2048638976
+
+202	<tr, tc, tn, tm> = <112, 112, 64, 1>
+rd=844864	num=205938432
+rd=19	num=1849540608
+rd=25549	num=202309632
+rd=-1	num=0
+rd=1671424	num=110592
+rd=1671424	num=0
+can unroll ic
+the total number of registers = 256x3 (768)
+available_cache_size=65280
+============> sum = 2051850240
+
+203	<tr, tc, tn, tm> = <112, 112, 64, 2>
+rd=844864	num=205938432
+rd=19	num=1849540608
+rd=25549	num=202309632
+rd=-1	num=0
+rd=1671424	num=110592
+rd=1671424	num=0
+can unroll ic
+the total number of registers = 256x3 (768)
+available_cache_size=65280
+============> sum = 2051850240
+
+204	<tr, tc, tn, tm> = <112, 112, 64, 4>
+rd=844864	num=205938432
+rd=19	num=1849540608
+rd=25549	num=202309632
+rd=-1	num=0
+rd=1671424	num=110592
+rd=1671424	num=0
+can unroll ic
+the total number of registers = 256x3 (768)
+available_cache_size=65280
+============> sum = 2051850240
+
+205	<tr, tc, tn, tm> = <112, 112, 64, 8>
+rd=844864	num=205938432
+rd=19	num=1849540608
+rd=25549	num=202309632
+rd=-1	num=0
+rd=1671424	num=110592
+rd=1671424	num=0
+can unroll ic
+the total number of registers = 256x3 (768)
+available_cache_size=65280
+============> sum = 2051850240
+
+206	<tr, tc, tn, tm> = <112, 112, 64, 16>
+rd=844864	num=205938432
+rd=19	num=1849540608
+rd=25549	num=202309632
+rd=-1	num=0
+rd=1671424	num=110592
+rd=1671424	num=0
+can unroll ic
+the total number of registers = 256x3 (768)
+available_cache_size=65280
+============> sum = 2051850240
+
+207	<tr, tc, tn, tm> = <112, 112, 64, 32>
+rd=844864	num=205938432
+rd=19	num=1849540608
+rd=25549	num=202309632
+rd=-1	num=0
+rd=1671424	num=110592
+rd=1671424	num=0
+can unroll ic
+the total number of registers = 256x3 (768)
+available_cache_size=65280
+============> sum = 2051850240
+
+208	<tr, tc, tn, tm> = <224, 224, 1, 1>
+rd=101261	num=205938432
+rd=19	num=1849651200
+rd=101261	num=0
+rd=-1	num=0
+rd=6516992	num=0
+rd=3262916	num=202309632
+can unroll kw kh ic
+the total number of registers = 36x3 (108)
+available_cache_size=65500
+============> sum = 1849651200
+
+209	<tr, tc, tn, tm> = <224, 224, 2, 1>
+rd=152346	num=205938432
+rd=19	num=1849651200
+rd=101261	num=102760448
+rd=-1	num=0
+rd=6516992	num=0
+rd=3314568	num=99549184
+can unroll kw kh ic
+the total number of registers = 72x3 (216)
+available_cache_size=65464
+============> sum = 1849651200
+
+210	<tr, tc, tn, tm> = <224, 224, 2, 2>
+rd=152346	num=205938432
+rd=19	num=1849651200
+rd=101261	num=102760448
+rd=-1	num=0
+rd=6516992	num=0
+rd=3314568	num=99549184
+can unroll kw kh ic
+the total number of registers = 72x3 (216)
+available_cache_size=65464
+============> sum = 1849651200
+
+211	<tr, tc, tn, tm> = <224, 224, 4, 1>
+rd=254516	num=205938432
+rd=19	num=1849651200
+rd=101261	num=154140672
+rd=-1	num=0
+rd=6516992	num=0
+rd=3417872	num=48168960
+can unroll kw kh ic
+the total number of registers = 144x3 (432)
+available_cache_size=65392
+============> sum = 1849651200
+
+212	<tr, tc, tn, tm> = <224, 224, 4, 2>
+rd=254516	num=205938432
+rd=19	num=1849651200
+rd=101261	num=154140672
+rd=-1	num=0
+rd=6516992	num=0
+rd=3417872	num=48168960
+can unroll kw kh ic
+the total number of registers = 144x3 (432)
+available_cache_size=65392
+============> sum = 1849651200
+
+213	<tr, tc, tn, tm> = <224, 224, 4, 4>
+rd=254516	num=205938432
+rd=19	num=1849651200
+rd=101261	num=154140672
+rd=-1	num=0
+rd=6516992	num=0
+rd=3417872	num=48168960
+can unroll kw kh ic
+the total number of registers = 144x3 (432)
+available_cache_size=65392
+============> sum = 1849651200
+
+214	<tr, tc, tn, tm> = <224, 224, 8, 1>
+rd=458856	num=205938432
+rd=19	num=1849651200
+rd=101261	num=179830784
+rd=-1	num=0
+rd=6516992	num=0
+rd=3624480	num=22478848
+can unroll kw kh ic
+the total number of registers = 288x3 (864)
+available_cache_size=65248
+============> sum = 1849651200
+
+215	<tr, tc, tn, tm> = <224, 224, 8, 2>
+rd=458856	num=205938432
+rd=19	num=1849651200
+rd=101261	num=179830784
+rd=-1	num=0
+rd=6516992	num=0
+rd=3624480	num=22478848
+can unroll kw kh ic
+the total number of registers = 288x3 (864)
+available_cache_size=65248
+============> sum = 1849651200
+
+216	<tr, tc, tn, tm> = <224, 224, 8, 4>
+rd=458856	num=205938432
+rd=19	num=1849651200
+rd=101261	num=179830784
+rd=-1	num=0
+rd=6516992	num=0
+rd=3624480	num=22478848
+can unroll kw kh ic
+the total number of registers = 288x3 (864)
+available_cache_size=65248
+============> sum = 1849651200
+
+217	<tr, tc, tn, tm> = <224, 224, 8, 8>
+rd=458856	num=205938432
+rd=19	num=1849651200
+rd=101261	num=179830784
+rd=-1	num=0
+rd=6516992	num=0
+rd=3624480	num=22478848
+can unroll kw kh ic
+the total number of registers = 288x3 (864)
+available_cache_size=65248
+============> sum = 1849651200
+
+218	<tr, tc, tn, tm> = <224, 224, 16, 1>
+rd=867536	num=205938432
+rd=19	num=1849651200
+rd=101261	num=192675840
+rd=-1	num=0
+rd=6516992	num=0
+rd=4037696	num=9633792
+can unroll kh ic
+the total number of registers = 192x3 (576)
+available_cache_size=65344
+============> sum = 1849651200
+
+219	<tr, tc, tn, tm> = <224, 224, 16, 2>
+rd=867536	num=205938432
+rd=19	num=1849651200
+rd=101261	num=192675840
+rd=-1	num=0
+rd=6516992	num=0
+rd=4037696	num=9633792
+can unroll kh ic
+the total number of registers = 192x3 (576)
+available_cache_size=65344
+============> sum = 1849651200
+
+220	<tr, tc, tn, tm> = <224, 224, 16, 4>
+rd=867536	num=205938432
+rd=19	num=1849651200
+rd=101261	num=192675840
+rd=-1	num=0
+rd=6516992	num=0
+rd=4037696	num=9633792
+can unroll kh ic
+the total number of registers = 192x3 (576)
+available_cache_size=65344
+============> sum = 1849651200
+
+221	<tr, tc, tn, tm> = <224, 224, 16, 8>
+rd=867536	num=205938432
+rd=19	num=1849651200
+rd=101261	num=192675840
+rd=-1	num=0
+rd=6516992	num=0
+rd=4037696	num=9633792
+can unroll kh ic
+the total number of registers = 192x3 (576)
+available_cache_size=65344
+============> sum = 1849651200
+
+222	<tr, tc, tn, tm> = <224, 224, 16, 16>
+rd=867536	num=205938432
+rd=19	num=1849651200
+rd=101261	num=192675840
+rd=-1	num=0
+rd=6516992	num=0
+rd=4037696	num=9633792
+can unroll kh ic
+the total number of registers = 192x3 (576)
+available_cache_size=65344
+============> sum = 1849651200
+
+223	<tr, tc, tn, tm> = <224, 224, 32, 1>
+rd=1684896	num=205938432
+rd=19	num=1849651200
+rd=101261	num=199098368
+rd=-1	num=0
+rd=6516992	num=0
+rd=4864128	num=3211264
+can unroll ic
+the total number of registers = 128x3 (384)
+available_cache_size=65408
+============> sum = 1849651200
+
+224	<tr, tc, tn, tm> = <224, 224, 32, 2>
+rd=1684896	num=205938432
+rd=19	num=1849651200
+rd=101261	num=199098368
+rd=-1	num=0
+rd=6516992	num=0
+rd=4864128	num=3211264
+can unroll ic
+the total number of registers = 128x3 (384)
+available_cache_size=65408
+============> sum = 1849651200
+
+225	<tr, tc, tn, tm> = <224, 224, 32, 4>
+rd=1684896	num=205938432
+rd=19	num=1849651200
+rd=101261	num=199098368
+rd=-1	num=0
+rd=6516992	num=0
+rd=4864128	num=3211264
+can unroll ic
+the total number of registers = 128x3 (384)
+available_cache_size=65408
+============> sum = 1849651200
+
+226	<tr, tc, tn, tm> = <224, 224, 32, 8>
+rd=1684896	num=205938432
+rd=19	num=1849651200
+rd=101261	num=199098368
+rd=-1	num=0
+rd=6516992	num=0
+rd=4864128	num=3211264
+can unroll ic
+the total number of registers = 128x3 (384)
+available_cache_size=65408
+============> sum = 1849651200
+
+227	<tr, tc, tn, tm> = <224, 224, 32, 16>
+rd=1684896	num=205938432
+rd=19	num=1849651200
+rd=101261	num=199098368
+rd=-1	num=0
+rd=6516992	num=0
+rd=4864128	num=3211264
+can unroll ic
+the total number of registers = 128x3 (384)
+available_cache_size=65408
+============> sum = 1849651200
+
+228	<tr, tc, tn, tm> = <224, 224, 32, 32>
+rd=1684896	num=205938432
+rd=19	num=1849651200
+rd=101261	num=199098368
+rd=-1	num=0
+rd=6516992	num=0
+rd=4864128	num=3211264
+can unroll ic
+the total number of registers = 128x3 (384)
+available_cache_size=65408
+============> sum = 1849651200
+
+229	<tr, tc, tn, tm> = <224, 224, 64, 1>
+rd=3319616	num=205938432
+rd=19	num=1849651200
+rd=101261	num=202309632
+rd=-1	num=0
+rd=6516992	num=0
+rd=6516992	num=0
+can unroll ic
+the total number of registers = 256x3 (768)
+available_cache_size=65280
+============> sum = 1849651200
+
+230	<tr, tc, tn, tm> = <224, 224, 64, 2>
+rd=3319616	num=205938432
+rd=19	num=1849651200
+rd=101261	num=202309632
+rd=-1	num=0
+rd=6516992	num=0
+rd=6516992	num=0
+can unroll ic
+the total number of registers = 256x3 (768)
+available_cache_size=65280
+============> sum = 1849651200
+
+231	<tr, tc, tn, tm> = <224, 224, 64, 4>
+rd=3319616	num=205938432
+rd=19	num=1849651200
+rd=101261	num=202309632
+rd=-1	num=0
+rd=6516992	num=0
+rd=6516992	num=0
+can unroll ic
+the total number of registers = 256x3 (768)
+available_cache_size=65280
+============> sum = 1849651200
+
+232	<tr, tc, tn, tm> = <224, 224, 64, 8>
+rd=3319616	num=205938432
+rd=19	num=1849651200
+rd=101261	num=202309632
+rd=-1	num=0
+rd=6516992	num=0
+rd=6516992	num=0
+can unroll ic
+the total number of registers = 256x3 (768)
+available_cache_size=65280
+============> sum = 1849651200
+
+233	<tr, tc, tn, tm> = <224, 224, 64, 16>
+rd=3319616	num=205938432
+rd=19	num=1849651200
+rd=101261	num=202309632
+rd=-1	num=0
+rd=6516992	num=0
+rd=6516992	num=0
+can unroll ic
+the total number of registers = 256x3 (768)
+available_cache_size=65280
+============> sum = 1849651200
+
+234	<tr, tc, tn, tm> = <224, 224, 64, 32>
+rd=3319616	num=205938432
+rd=19	num=1849651200
+rd=101261	num=202309632
+rd=-1	num=0
+rd=6516992	num=0
+rd=6516992	num=0
+can unroll ic
+the total number of registers = 256x3 (768)
+available_cache_size=65280
+============> sum = 1849651200
+
+235	<tr, tc, tn, tm> = <224, 224, 64, 64>
+rd=3319616	num=205938432
+rd=19	num=1849651200
+rd=101261	num=202309632
+rd=-1	num=0
+rd=6516992	num=0
+rd=6516992	num=0
+can unroll ic
+the total number of registers = 256x3 (768)
+available_cache_size=65280
+============> sum = 1849651200
+

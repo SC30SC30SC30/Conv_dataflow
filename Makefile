@@ -17,8 +17,8 @@ compile_log_rd:
 run_log_rd:
 	./log_rd ${LOG_RD_INPUT_FILE_NAME} ${LOG_RD_OUTPUT_FILE_NAME}
 
-compile_verify:
-	g++ -g verify.cpp -o verify
+compile_estimation:
+	g++ -g estimation.cpp -o estimation
 
 compile_conv_mali:splay_tree.o
 	g++ -g -c dataflow.cpp
