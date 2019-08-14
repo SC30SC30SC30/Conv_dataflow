@@ -207,7 +207,12 @@ void write_trace_result(char* file_name, char* data_type, uint64_t* data_addr, i
 	fp = fopen(file_name, "w");
 	for(int i = 0; i < addr_count; i++)
 	{
-		fprintf(fp, "%c\t%lx\n", *(data_type + i), *(data_addr + i));
+		if(*(data_type + i) == 'o')
+			fprintf(fp, "1 %lx\n", *(data_addr + i));
+		else
+			fprintf(fp, "0 %lx\n", *(data_addr + i));
+
+		// fprintf(fp, "%c\t%lx\n", *(data_type + i), *(data_addr + i));
 	}
 	fclose(fp);
 	printf("Write %s Finish !!!\n", file_name);

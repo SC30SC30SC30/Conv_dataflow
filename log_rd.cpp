@@ -78,46 +78,6 @@ void trace_file_add_rd(char* input_file_name, char* output_file_name)
 	printf("Write file finish !!!\n");
 }
 
-void statistics(char* file_name, uint64_t target)
-{
-	FILE *fp;
-	fp = fopen(file_name, "r");
-	if(!fp)
-	{
-		printf("open file error !!!\n");
-		exit(1);
-	}
-
-	char c;
-	uint64_t m_address;
-	int rd;
-	map<int,int> rd_kind;
-	map<int,int>::iterator iter; 
-	while(fscanf(fp,"%c %lx %d\n", &c, &m_address, &rd) != EOF )
-	{
-		// printf("%c %lx\n", c, m_address);
-		if(m_address == target)
-		{
-			iter = rd_kind.find(rd);
-			if(iter != rd_kind.end())
-			{
-				iter->second++;
-			}
-			else
-			{
-				rd_kind[rd] = 1;
-			}
-		}
-	}
-	fclose(fp);
-	printf("Read file finish !!!\n");
-
-	for (iter = rd_kind.begin(); iter != rd_kind.end(); iter++)
-	{
-		printf("%d\t%d\n", iter->first, iter->second);
-	}
-}
-
 void clear_global_variable()
 {
 	data_type.clear();
@@ -127,16 +87,7 @@ void clear_global_variable()
 
 int main(int argc, char* argv[])
 {
-	// trace_file_add_rd(argv[1], argv[2]);
-	uint64_t target_begin_addr = 0x7fca8c402820;
-	int num = 6*6;
-	for (int i = 0; i < num; i++)
-	{
-		printf("%dth input (%llx) : \n", i+1, target_begin_addr);
-		statistics(argv[2], target_begin_addr);
-		target_begin_addr += 4;
-		printf("\n");
-	}
+	trace_file_add_rd(argv[1], argv[2]);
 
 	return 0;
 }
