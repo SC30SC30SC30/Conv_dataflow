@@ -1,5 +1,6 @@
 #include <iostream>
 #include <fstream>
+#include <time.h>
 #ifdef __APPLE__
 #include <OpenCL/opencl.h>
 #else
@@ -28,8 +29,7 @@ float* malloc_gpu_space(cl_param* cl_gpu, size_t sz);
 cl_mem ptr_to_clmem_unmap(cl_param* cl_gpu, void* ptr);
 float* ptr_to_clmem_map(cl_param* cl_gpu, void* ptr);
 
-void run_gpu_program(cl_param* cl_gpu, size_t* global_work_size, size_t* local_work_size, float* I, float* W, float* partsum, float* O, int i_offset, int w_offset, int o_offset);
-void tile_conv(cl_param* cl_gpu, float* I, float* W, float* partsum, float* O, config* data, tile_param* tile, size_t* global_work_size, size_t* local_work_size);
-void direct_conv(cl_param* cl_gpu, float* I, float* W, float* partsum, float* O, config* data, size_t* global_work_size, size_t* local_work_size);
+void tile_conv(cl_param* cl_gpu, float* I, float* W, float* O, config* data, tile_param* tile, size_t* global_work_size, size_t* local_work_size);
+void direct_conv(cl_param* cl_gpu, size_t* global_work_size, size_t* local_work_size, float* I, float* W, float* partsum, float* O);
 
 void clean_objects(cl_param* cl_gpu, float* I, float* W, float* O);

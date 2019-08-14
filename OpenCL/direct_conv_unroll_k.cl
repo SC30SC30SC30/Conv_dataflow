@@ -2,10 +2,7 @@ __kernel void convolution(
 	__global const float* input, 
 	__global const float* weight, 
 	__global float* partsum, 
-	__global float* output, 
-	int i_offset, 
-	int w_offset, 
-	int o_offset
+	__global float* output
 	)
 {
 	int global_id = get_global_id(0);

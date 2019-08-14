@@ -1,5 +1,8 @@
+#include <stdlib.h>
+#include <stdio.h>
+#include <stdint.h>
+#include <string>
 #include <time.h>
-#include "estimation.h"
 
 using namespace std;
 
@@ -19,7 +22,7 @@ using namespace std;
 // VGG_CONV11&CONV12&CONV13 : {16, 512, 3, 14, 512}
 
 int conv_config[5] = {226, 3, 3, 224, 64};
-int tile[4] = {13, 13, 4, 4};
+int tile[4] = {0, 0, 0, 0};
 
 void initialization(int* rd, uint64_t* num, int size)
 {
@@ -139,39 +142,13 @@ void get_access_number(int* tile, char two_type, char data_type, uint64_t* num)
 			*(num+2) = (conv_config[1]-1)-(*(num+5));
 	}
 }
-bool greater50(int tr, int tc, int tn, int tm, int k_size, char reuse_type)
+bool tile_size(int tr, int tc, int tn, int tm, int k_size, int cache_size)
 {
-	int tile_ih = tr - 1 + k_size;
-	int tile_iw = tc - 1 + k_size;
-	int total_I = tile_ih * tile_iw * tn;
-	int total_W = k_size * k_size * tn * tm;
-	int total_O = tr * tc * tm;
+	int tile_I = (tr-1+k_size) * (tc-1+k_size) * tn;
+	int tile_W = k_size * k_size * tn * tm;
+	int tile_O = tr * tc * tm;
 
-	if(reuse_type == 'I')
-	{
-		int sum = total_W + total_O;
-		if(total_I >= sum)
-			return true;
-		else
-			return false;
-	}
-	else if(reuse_type == 'W')
-	{
-		int sum = total_I + total_O;
-		if(total_W >= sum)
-			return true;
-		else 
-			return false;
-	}
-	else if(reuse_type == 'O')
-	{
-		int sum = total_I + total_W;
-		if(total_O >= sum)
-			return true;
-		else 
-			return false;
-	}
-	return false;
+	return ((tile_I + tile_W + tile_O) < cache_size);
 }
 
 void IR(int* tile, int* rd, uint64_t* num)
@@ -210,41 +187,14 @@ void IR(int* tile, int* rd, uint64_t* num)
 	}
 }
 
-void mali_gpu_constraints(int* tile, int* rd, uint64_t* num, int cache_size)
+void compute_hit_miss(int* rd, uint64_t* num, int cache_size)
 {
-	int partsum_space = 0;
-	int available_cache_size = cache_size;
-
-	if((conv_config[2] * conv_config[2] * tile[2]) <= (256/3))
-	{
-		printf("can unroll kw kh ic\n");
-		partsum_space = conv_config[2] * conv_config[2] * tile[2] * 4;
-	}
-	else if((conv_config[2] * tile[2]) <= (256/3))
-	{
-		printf("can unroll kh ic\n");
-		partsum_space = conv_config[2] * tile[2] * 4;
-	}
-	else if(tile[2] <= (256/3))
-	{
-		printf("can unroll ic\n");
-		partsum_space = tile[2] * 4;
-	}
-	else if((conv_config[2] * conv_config[2]) <= (256/3))
-	{
-		printf("can unroll kh kw\n");
-		partsum_space = conv_config[2] * conv_config[2] * 4;
-	}
-
-	printf("the total number of registers = %dx3 (%d)\n", partsum_space, 3*partsum_space);
-	available_cache_size = cache_size - partsum_space;
-	printf("available_cache_size=%d\n", available_cache_size);
-
 	uint64_t hit_sum = 0;
 	uint64_t miss_sum = 0;
+
 	for(int i = 0; i < 6; i++)
 	{
-		if(*(rd+i) < available_cache_size)
+		if(*(rd+i) < cache_size)
 		{
 			hit_sum += *(num+i);
 		}
@@ -253,6 +203,7 @@ void mali_gpu_constraints(int* tile, int* rd, uint64_t* num, int cache_size)
 			miss_sum += *(num+i);
 		}
 	}
+
 	printf("============> hit_sum = %lu\tmiss_sum = %lu\n", hit_sum, miss_sum);
 }
 
@@ -260,10 +211,11 @@ void run()
 {
 	int* rd = (int*)malloc(6 * sizeof(int));
 	uint64_t* num = (uint64_t*)malloc(6 * sizeof(uint64_t));
+	int cache_block_size = 64/4;
 	int cache_size = 256*1024/4;
 	int count = 1;
 
-	for(int tr = 1; tr <= conv_config[3]; tr++)
+	for(int tr = cache_block_size; tr <= conv_config[3]; tr++)
 	{
 		if((conv_config[3]%tr) == 0)
 		{
@@ -275,7 +227,7 @@ void run()
 						{
 							if((conv_config[4]%tm) == 0)
 							{
-								if(greater50(tr, tr, tn, tm, conv_config[2], 'I'))
+								if(tile_size(tr, tr, tn, tm, conv_config[2], cache_size))
 								{
 									initialization(rd, num, 6);
 									tile[0] = tr;
@@ -284,7 +236,7 @@ void run()
 									tile[3] = tm;
 									printf("%d\t<tr, tc, tn, tm> = <%d, %d, %d, %d>\n", count, tr, tr, tn, tm);
 									IR(&tile[0], rd, num);
-									mali_gpu_constraints(&tile[0], rd, num, cache_size);
+									compute_hit_miss(rd, num, cache_size);
 									printf("\n");
 									count++;
 								}

@@ -211,7 +211,7 @@ float* ptr_to_clmem_map(cl_param* cl_gpu, void* ptr)
 	return new_ptr;
 }
 
-void run_gpu_program(cl_param* cl_gpu, size_t* global_work_size, size_t* local_work_size, float* I, float* W, float* partsum, float* O, int i_offset, int w_offset, int o_offset)
+void direct_conv(cl_param* cl_gpu, size_t* global_work_size, size_t* local_work_size, float* I, float* W, float* partsum, float* O)
 {
 	cl_int err;
 
@@ -224,9 +224,6 @@ void run_gpu_program(cl_param* cl_gpu, size_t* global_work_size, size_t* local_w
 	clSetKernelArg(cl_gpu->kernel, 1, sizeof(cl_mem), &buffer_W);
 	clSetKernelArg(cl_gpu->kernel, 2, sizeof(cl_mem), &buffer_partsum);
 	clSetKernelArg(cl_gpu->kernel, 3, sizeof(cl_mem), &buffer_O);
-	clSetKernelArg(cl_gpu->kernel, 4, sizeof(int), &i_offset);
-	clSetKernelArg(cl_gpu->kernel, 5, sizeof(int), &w_offset);
-	clSetKernelArg(cl_gpu->kernel, 6, sizeof(int), &o_offset);
 
 	err = clEnqueueNDRangeKernel(cl_gpu->queue, cl_gpu->kernel, 1, NULL, global_work_size, local_work_size, 0, NULL, NULL);
 	if(err != CL_SUCCESS)
@@ -246,37 +243,41 @@ void run_gpu_program(cl_param* cl_gpu, size_t* global_work_size, size_t* local_w
 		print_error_message(err);
 }
 
-void tile_conv(cl_param* cl_gpu, float* I, float* W, float* partsum, float* O, config* data, tile_param* tile, size_t* global_work_size, size_t* local_work_size)
+void tile_conv(cl_param* cl_gpu, float* I, float* W, float* O, config* data, tile_param* tile, size_t* global_work_size, size_t* local_work_size)
 {
-	for(int oh = 0; (oh+(tile->tr)-1) < data->output_size; oh += (tile->tr))
-	{
-		for(int ow = 0; (ow+(tile->tc)-1) < data->output_size; ow += (tile->tc))
-		{
-			for(int ic = 0; ic < data->input_c; ic += (tile->tn))
-			{
-				for(int oc = 0; oc < data->output_c; oc += (tile->tm))
-				{
-					float* i_base_addr = (I + ic*(data->input_size)*(data->input_size) + oh*(data->input_size) + ow);
-					float* w_base_addr = (W + oc*(data->weight_size)*(data->weight_size)*data->input_c + ic*(data->weight_size)*(data->weight_size));
-					float* o_base_addr = (O + oc*data->output_size*data->output_size + oh*data->output_size + ow);
+	cl_int err;
 
-					int i_offset = ((uint64_t)i_base_addr - (uint64_t)I)/4;
-					int w_offset = ((uint64_t)w_base_addr - (uint64_t)W)/4;
-					int o_offset = ((uint64_t)o_base_addr - (uint64_t)O)/4;
+	cl_mem buffer_I = ptr_to_clmem_unmap(cl_gpu, (void*)I);
+	cl_mem buffer_W = ptr_to_clmem_unmap(cl_gpu, (void*)W);
+	cl_mem buffer_O = ptr_to_clmem_unmap(cl_gpu, (void*)O);
 
-					// printf("i_offset=%d\tw_offset=%d\to_offset=%d\n", i_offset, w_offset, o_offset);
-					// printf("oh=%d\tow=%d\tic=%d\toc=%d\n", oh, ow, ic, oc);
+	clSetKernelArg(cl_gpu->kernel, 0, sizeof(cl_mem), &buffer_I);
+	clSetKernelArg(cl_gpu->kernel, 1, sizeof(cl_mem), &buffer_W);
+	clSetKernelArg(cl_gpu->kernel, 2, sizeof(cl_mem), &buffer_O);
+	clSetKernelArg(cl_gpu->kernel, 3, sizeof(int), &(tile->tr));
+	clSetKernelArg(cl_gpu->kernel, 4, sizeof(int), &(tile->tc));
+	clSetKernelArg(cl_gpu->kernel, 5, sizeof(int), &(tile->tn));
+	clSetKernelArg(cl_gpu->kernel, 6, sizeof(int), &(tile->tm));
 
-					run_gpu_program(cl_gpu, global_work_size, local_work_size, I, W, partsum, O, i_offset, w_offset, o_offset);
-				}
-			}
-		}
-	}
-}
+	clock_t start, end;
+	start = clock();
+	err = clEnqueueNDRangeKernel(cl_gpu->queue, cl_gpu->kernel, 1, NULL, global_work_size, local_work_size, 0, NULL, NULL);
+	end = clock();
+	printf("gpu execution time = %ld clock cycle (CLOCKS_PER_SEC=%ld)\n", (end-start), CLOCKS_PER_SEC);
+	if(err != CL_SUCCESS)
+		print_error_message(err);
 
-void direct_conv(cl_param* cl_gpu, float* I, float* W, float* partsum, float* O, config* data, size_t* global_work_size, size_t* local_work_size)
-{
-	run_gpu_program(cl_gpu, global_work_size, local_work_size, I, W, partsum, O, 0, 0, 0);
+	err = clFinish(cl_gpu->queue);
+	if(err != CL_SUCCESS)
+		print_error_message(err);
+
+	I = ptr_to_clmem_map(cl_gpu, (void*)I);
+	W = ptr_to_clmem_map(cl_gpu, (void*)W);
+	O = ptr_to_clmem_map(cl_gpu, (void*)O);
+
+	err = clFinish(cl_gpu->queue);
+	if(err != CL_SUCCESS)
+		print_error_message(err);
 }
 
 void clean_objects(cl_param* cl_gpu, float* I, float* W, float* O)
