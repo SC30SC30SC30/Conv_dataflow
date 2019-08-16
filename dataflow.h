@@ -45,7 +45,7 @@ void compute_rd(bool write_file, tile_param* tile, char* data_type, uint64_t* da
 void a_2d_conv(float* input, float* kernel, float* output, config* data, tile_param* tile, bool trace_flag, char* data_type, uint64_t* data_addr, int* addr_idx);
 
 // 不同的convolution dataflow的執行順序
-void direct_conv_oc_ic_oh_ow(float* input, float* kernel, float* output, config* data, tile_param* tile, bool tile_flag, bool trace_flag, char* data_type, uint64_t* data_addr, int* addr_idx);
+void direct_conv_oc_ic_oh_ow(float* input, float* kernel, float* output, config* data, tile_param* tile, bool tile_flag, bool trace_flag, char* data_type, uint64_t* data_addr, int* addr_idx);//1
 void direct_conv_ic_oc_oh_ow(float* input, float* kernel, float* output, config* data, tile_param* tile, bool tile_flag, bool trace_flag, char* data_type, uint64_t* data_addr, int* addr_idx);//2
 void direct_conv_oc_oh_ow_ic(float* input, float* kernel, float* output, config* data, tile_param* tile, bool tile_flag, bool trace_flag, char* data_type, uint64_t* data_addr, int* addr_idx);//3
 void direct_conv_oh_ow_oc_ic(float* input, float* kernel, float* output, config* data, tile_param* tile, bool tile_flag, bool trace_flag, char* data_type, uint64_t* data_addr, int* addr_idx);//4

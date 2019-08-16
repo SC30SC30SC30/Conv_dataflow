@@ -1,7 +1,6 @@
-#include <time.h>
 #include "dataflow.h"
 
-bool greater50(int tr, int tc, int tn, int tm, int k_size, char reuse_type)
+bool tile_smaller_cache(int tr, int tc, int tn, int tm, int k_size, int cache_size)
 {
 	int tile_ih = tr - 1 + k_size;
 	int tile_iw = tc - 1 + k_size;
@@ -9,33 +8,10 @@ bool greater50(int tr, int tc, int tn, int tm, int k_size, char reuse_type)
 	int total_W = k_size * k_size * tn * tm;
 	int total_O = tr * tc * tm;
 
-	if(reuse_type == 'I')
-	{
-		int sum = total_W + total_O;
-		if(total_I >= sum)
-			return true;
-		else
-			return false;
-	}
-	else if(reuse_type == 'W')
-	{
-		int sum = total_I + total_O;
-		if(total_W >= sum)
-			return true;
-		else 
-			return false;
-	}
-	else if(reuse_type == 'O')
-	{
-		int sum = total_I + total_W;
-		if(total_O >= sum)
-			return true;
-		else 
-			return false;
-	}
+	return ((total_I + total_W + total_O) < cache_size);
 }
 
-void run_one_case(config* data, tile_param* tile)
+void run_one_case(config* data, tile_param* tile, int cache_size)
 {
 	float* I = create_data(total_value(data, 'I'));
 	float* W = create_data(total_value(data, 'W'));
@@ -49,29 +25,28 @@ void run_one_case(config* data, tile_param* tile)
 	uint64_t* data_addr = (uint64_t*)malloc(total_access * sizeof(uint64_t));
 	int addr_idx = 0;
 
-	if(greater50(tile->tr, tile->tc, tile->tn, tile->tm, data->weight_size, 'I'))
+	if(tile_smaller_cache(tile->tr, tile->tc, tile->tn, tile->tm, data->weight_size, cache_size))
 	{
-		// clock_t start, end;
-		// start = clock();
-		tile_conv_oh_ow_ic_oc(I, W, O, data, tile, 1, true, data_type, data_addr, &addr_idx);//IR
-		// tile_conv_oc_ic_oh_ow(I, W, O, data, tile, 1, true, data_type, data_addr, &addr_idx);//WR
-		// direct_conv_oc_ic_oh_ow(I, W, O, data, tile, false, true, data_type, data_addr, &addr_idx);
-		// end = clock();
-		// printf("The time = %ld ms\n", (end-start)/**1000/CLOCKS_PER_SEC*/);
-		compute_rd(true, tile, data_type, data_addr, total_access);
-
-		// write_trace_result("mem_trace.out", data_type, data_addr, total_access);
-
-		// clear_data(O, total_O);
-		// reorder_data_layout(I, W, data, tile);
-	}
-	else
-	{
-		printf("Not greater 50\n");
+		printf("<tr, tc, tn, tm> = <%d, %d, %d, %d>\n", tile->tr, tile->tc, tile->tn, tile->tm);
 		int tile_I = (tile->tr-1+data->weight_size) * (tile->tr-1+data->weight_size) * (tile->tn);
 		int tile_W = data->weight_size * data->weight_size * tile->tn * tile->tm;
 		int tile_O = tile->tr * tile->tc * tile->tm;
 		printf("tile_I=%d\ttile_W=%d\ttile_O=%d\n", tile_I, tile_W, tile_O);
+
+		tile_conv_oh_ow_ic_oc(I, W, O, data, tile, 1, true, data_type, data_addr, &addr_idx);//IR
+		// tile_conv_oc_ic_oh_ow(I, W, O, data, tile, 4, true, data_type, data_addr, &addr_idx);//WR
+		// direct_conv_oc_ic_oh_ow(I, W, O, data, tile, false, true, data_type, data_addr, &addr_idx);
+
+		// compute_rd(true, tile, data_type, data_addr, total_access);
+
+		write_trace_result("mem_trace.out", data_type, data_addr, total_access);
+
+		clear_data(O, total_value(data, 'O'));
+		// reorder_data_layout(I, W, data, tile);
+	}
+	else
+	{
+		printf("tile size doesn't smaller than cache_size\n");
 	}
 
 	free(data_addr);
@@ -82,7 +57,7 @@ void run_one_case(config* data, tile_param* tile)
 }
 
 // Deep Convolutional Neural Network Architecture With Reconfigurable Computation Patterns, 2017
-void verify_IR(config* data, tile_param* tile)
+void verify_IR(config* data, tile_param* tile, int cache_size, int block_size)
 {
 	float* I = create_data(total_value(data, 'I'));
 	float* W = create_data(total_value(data, 'W'));
@@ -95,7 +70,7 @@ void verify_IR(config* data, tile_param* tile)
 	int addr_idx = 0;
 
 	// exhaustively search
-	for(int TR = 1; TR <= (data->output_size); TR++)
+	for(int TR = block_size; TR <= (data->output_size); TR++)
 	{
 		if(((data->output_size) % TR) == 0)
 		{
@@ -111,7 +86,7 @@ void verify_IR(config* data, tile_param* tile)
 							tile->tc = TR;
 							tile->tn = TN;
 							tile->tm = TM;
-							if(greater50(tile->tr, tile->tc, tile->tn, tile->tm, data->weight_size, 'I'))
+							if(tile_smaller_cache(tile->tr, tile->tc, tile->tn, tile->tm, data->weight_size, cache_size))
 							{
 								printf("<tr, tc, tn, tm> = <%d, %d, %d, %d>\n", tile->tr, tile->tc, tile->tn, tile->tm);
 
@@ -134,8 +109,7 @@ void verify_IR(config* data, tile_param* tile)
 	free(I);
 }
 
-// Deep Convolutional Neural Network Architecture With Reconfigurable Computation Patterns, 2017
-void verify_WR(config* data, tile_param* tile)
+void verify_WR(config* data, tile_param* tile, int cache_size, int block_size)
 {
 	float* I = create_data(total_value(data, 'I'));
 	float* W = create_data(total_value(data, 'W'));
@@ -147,7 +121,7 @@ void verify_WR(config* data, tile_param* tile)
 	uint64_t* data_addr = (uint64_t*)malloc(total_access * sizeof(uint64_t));
 	int addr_idx = 0;
 
-	for(int TR = 1; TR <= (data->output_size); TR++)
+	for(int TR = block_size; TR <= (data->output_size); TR++)
 	{
 		if(((data->output_size) % TR) == 0)
 		{
@@ -163,12 +137,12 @@ void verify_WR(config* data, tile_param* tile)
 							tile->tc = TR;
 							tile->tn = TN;
 							tile->tm = TM;
-							if(greater50(tile->tr, tile->tc, tile->tn, tile->tm, data->weight_size, 'W'))
+							if(tile_smaller_cache(tile->tr, tile->tc, tile->tn, tile->tm, data->weight_size, cache_size))
 							{
 								printf("<tr, tc, tn, tm> = <%d, %d, %d, %d>\n", tile->tr, tile->tc, tile->tn, tile->tm);
 
-								tile_conv_oc_ic_oh_ow(I, W, O, data, tile, 1, true, data_type, data_addr, &addr_idx);
-								compute_rd(true, tile, data_type, data_addr, total_access);
+								tile_conv_oc_ic_oh_ow(I, W, O, data, tile, 4, true, data_type, data_addr, &addr_idx);
+								// compute_rd(true, tile, data_type, data_addr, total_access);
 								clear_data(O, total_value(data, 'O'));
 								addr_idx = 0;
 							}
@@ -193,8 +167,8 @@ int main(int argc, char* argv[])
 	// int a[10] = {31, 48, 5, 27, 256, 16, 16, 4, 4, 1};   // AlexNet的CONV2
 	// int a[10] = {15, 256, 3, 13, 384, 4, 4, 64, 3, 1};   // AlexNet的CONV3
 	// int a[10] = {15, 192, 3, 13, 384, 13, 13, 4, 4, 1};   // AlexNet的CONV4
-	// int a[10] = {15, 192, 3, 13, 256, 13, 13, 4, 4, 1};   // AlexNet的CONV5
-	int a[10] = {8, 8, 1, 8, 16, 2, 2, 4, 2, 1};   // simple test 
+	int a[10] = {15, 192, 3, 13, 256, 13, 13, 192, 8, 1};   // AlexNet的CONV5
+	// int a[10] = {8, 8, 1, 8, 16, 2, 2, 4, 2, 1};   // simple test 
 	set_configuration(data, tile, a);
 
 	printf("Input : %d x %d x %d\n", data->input_size, data->input_size, data->input_c);
@@ -203,7 +177,7 @@ int main(int argc, char* argv[])
 
 	// verify_IR(data, tile);
 	// verify_WR(data, tile);
-	run_one_case(data, tile);
+	run_one_case(data, tile, (256*1024/4));
 	
 	free(data);
 	free(tile);

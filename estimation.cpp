@@ -21,7 +21,7 @@ using namespace std;
 // VGG_CONV9&CONV10 : {30, 512, 3, 28, 512}
 // VGG_CONV11&CONV12&CONV13 : {16, 512, 3, 14, 512}
 
-int conv_config[5] = {226, 3, 3, 224, 64};
+int conv_config[5] = {15, 192, 3, 13, 256};
 int tile[4] = {0, 0, 0, 0};
 
 void initialization(int* rd, uint64_t* num, int size)
@@ -142,7 +142,7 @@ void get_access_number(int* tile, char two_type, char data_type, uint64_t* num)
 			*(num+2) = (conv_config[1]-1)-(*(num+5));
 	}
 }
-bool tile_size(int tr, int tc, int tn, int tm, int k_size, int cache_size)
+bool tile_smaller_cache(int tr, int tc, int tn, int tm, int k_size, int cache_size)
 {
 	int tile_I = (tr-1+k_size) * (tc-1+k_size) * tn;
 	int tile_W = k_size * k_size * tn * tm;
@@ -204,7 +204,12 @@ void compute_hit_miss(int* rd, uint64_t* num, int cache_size)
 		}
 	}
 
-	printf("============> hit_sum = %lu\tmiss_sum = %lu\n", hit_sum, miss_sum);
+	int tile_I = (tile[0]-1+conv_config[2]) * (tile[1]-1+conv_config[2]) * tile[2];
+	int tile_W = conv_config[2] * conv_config[2] * tile[2] * tile[3];
+	int tile_O = tile[0] * tile[1] * tile[3];
+	int tile_size = tile_I + tile_W + tile_O;
+
+	printf("============> tile_size = %d\thit_sum = %lu\tmiss_sum = %lu\n", tile_size, hit_sum, miss_sum);
 }
 
 void run()
@@ -215,7 +220,7 @@ void run()
 	int cache_size = 256*1024/4;
 	int count = 1;
 
-	for(int tr = cache_block_size; tr <= conv_config[3]; tr++)
+	for(int tr = 1; tr <= conv_config[3]; tr++)
 	{
 		if((conv_config[3]%tr) == 0)
 		{
@@ -227,7 +232,7 @@ void run()
 						{
 							if((conv_config[4]%tm) == 0)
 							{
-								if(tile_size(tr, tr, tn, tm, conv_config[2], cache_size))
+								if(tile_smaller_cache(tr, tr, tn, tm, conv_config[2], cache_size))
 								{
 									initialization(rd, num, 6);
 									tile[0] = tr;

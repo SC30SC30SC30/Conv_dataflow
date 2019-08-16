@@ -259,11 +259,7 @@ void tile_conv(cl_param* cl_gpu, float* I, float* W, float* O, config* data, til
 	clSetKernelArg(cl_gpu->kernel, 5, sizeof(int), &(tile->tn));
 	clSetKernelArg(cl_gpu->kernel, 6, sizeof(int), &(tile->tm));
 
-	clock_t start, end;
-	start = clock();
 	err = clEnqueueNDRangeKernel(cl_gpu->queue, cl_gpu->kernel, 1, NULL, global_work_size, local_work_size, 0, NULL, NULL);
-	end = clock();
-	printf("gpu execution time = %ld clock cycle (CLOCKS_PER_SEC=%ld)\n", (end-start), CLOCKS_PER_SEC);
 	if(err != CL_SUCCESS)
 		print_error_message(err);
 
