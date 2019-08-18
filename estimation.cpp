@@ -21,7 +21,7 @@ using namespace std;
 // VGG_CONV9&CONV10 : {30, 512, 3, 28, 512}
 // VGG_CONV11&CONV12&CONV13 : {16, 512, 3, 14, 512}
 
-int conv_config[5] = {15, 192, 3, 13, 256};
+int conv_config[5] = {15, 192, 3, 13, 384};
 int tile[4] = {0, 0, 0, 0};
 
 void initialization(int* rd, uint64_t* num, int size)

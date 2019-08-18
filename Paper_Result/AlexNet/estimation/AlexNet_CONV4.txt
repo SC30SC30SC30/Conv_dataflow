@@ -1,0 +1,3546 @@
+1	<tr, tc, tn, tm> = <1, 1, 1, 1>
+rd=19	num=16545600
+rd=19	num=0
+rd=19	num=0
+rd=-1	num=0
+rd=665664	num=111476736
+rd=3849	num=12395136
+============> tile_size = 19	hit_sum = 28940736	miss_sum = 111476736
+
+2	<tr, tc, tn, tm> = <1, 1, 1, 2>
+rd=19	num=16545600
+rd=19	num=0
+rd=19	num=0
+rd=-1	num=0
+rd=665664	num=111476736
+rd=3849	num=12395136
+============> tile_size = 29	hit_sum = 28940736	miss_sum = 111476736
+
+3	<tr, tc, tn, tm> = <1, 1, 1, 3>
+rd=19	num=16545600
+rd=19	num=0
+rd=19	num=0
+rd=-1	num=0
+rd=665664	num=111476736
+rd=3849	num=12395136
+============> tile_size = 39	hit_sum = 28940736	miss_sum = 111476736
+
+4	<tr, tc, tn, tm> = <1, 1, 1, 4>
+rd=19	num=16545600
+rd=19	num=0
+rd=19	num=0
+rd=-1	num=0
+rd=665664	num=111476736
+rd=3849	num=12395136
+============> tile_size = 49	hit_sum = 28940736	miss_sum = 111476736
+
+5	<tr, tc, tn, tm> = <1, 1, 1, 6>
+rd=19	num=16545600
+rd=19	num=0
+rd=19	num=0
+rd=-1	num=0
+rd=665664	num=111476736
+rd=3849	num=12395136
+============> tile_size = 69	hit_sum = 28940736	miss_sum = 111476736
+
+6	<tr, tc, tn, tm> = <1, 1, 1, 8>
+rd=19	num=16545600
+rd=19	num=0
+rd=19	num=0
+rd=-1	num=0
+rd=665664	num=111476736
+rd=3849	num=12395136
+============> tile_size = 89	hit_sum = 28940736	miss_sum = 111476736
+
+7	<tr, tc, tn, tm> = <1, 1, 1, 12>
+rd=19	num=16545600
+rd=19	num=0
+rd=19	num=0
+rd=-1	num=0
+rd=665664	num=111476736
+rd=3849	num=12395136
+============> tile_size = 129	hit_sum = 28940736	miss_sum = 111476736
+
+8	<tr, tc, tn, tm> = <1, 1, 1, 16>
+rd=19	num=16545600
+rd=19	num=0
+rd=19	num=0
+rd=-1	num=0
+rd=665664	num=111476736
+rd=3849	num=12395136
+============> tile_size = 169	hit_sum = 28940736	miss_sum = 111476736
+
+9	<tr, tc, tn, tm> = <1, 1, 1, 24>
+rd=19	num=16545600
+rd=19	num=0
+rd=19	num=0
+rd=-1	num=0
+rd=665664	num=111476736
+rd=3849	num=12395136
+============> tile_size = 249	hit_sum = 28940736	miss_sum = 111476736
+
+10	<tr, tc, tn, tm> = <1, 1, 1, 32>
+rd=19	num=16545600
+rd=19	num=0
+rd=19	num=0
+rd=-1	num=0
+rd=665664	num=111476736
+rd=3849	num=12395136
+============> tile_size = 329	hit_sum = 28940736	miss_sum = 111476736
+
+11	<tr, tc, tn, tm> = <1, 1, 1, 48>
+rd=19	num=16545600
+rd=19	num=0
+rd=19	num=0
+rd=-1	num=0
+rd=665664	num=111476736
+rd=3849	num=12395136
+============> tile_size = 489	hit_sum = 28940736	miss_sum = 111476736
+
+12	<tr, tc, tn, tm> = <1, 1, 1, 64>
+rd=19	num=16545600
+rd=19	num=0
+rd=19	num=0
+rd=-1	num=0
+rd=665664	num=111476736
+rd=3849	num=12395136
+============> tile_size = 649	hit_sum = 28940736	miss_sum = 111476736
+
+13	<tr, tc, tn, tm> = <1, 1, 1, 96>
+rd=19	num=16545600
+rd=19	num=0
+rd=19	num=0
+rd=-1	num=0
+rd=665664	num=111476736
+rd=3849	num=12395136
+============> tile_size = 969	hit_sum = 28940736	miss_sum = 111476736
+
+14	<tr, tc, tn, tm> = <1, 1, 1, 128>
+rd=19	num=16545600
+rd=19	num=0
+rd=19	num=0
+rd=-1	num=0
+rd=665664	num=111476736
+rd=3849	num=12395136
+============> tile_size = 1289	hit_sum = 28940736	miss_sum = 111476736
+
+15	<tr, tc, tn, tm> = <1, 1, 1, 192>
+rd=19	num=16545600
+rd=19	num=0
+rd=19	num=0
+rd=-1	num=0
+rd=665664	num=111476736
+rd=3849	num=12395136
+============> tile_size = 1929	hit_sum = 28940736	miss_sum = 111476736
+
+16	<tr, tc, tn, tm> = <1, 1, 1, 384>
+rd=19	num=16545600
+rd=19	num=0
+rd=19	num=0
+rd=-1	num=0
+rd=665664	num=111476736
+rd=3849	num=12395136
+============> tile_size = 3849	hit_sum = 28940736	miss_sum = 111476736
+
+17	<tr, tc, tn, tm> = <1, 1, 2, 1>
+rd=37	num=16545600
+rd=19	num=0
+rd=19	num=6230016
+rd=-1	num=0
+rd=665664	num=111476736
+rd=7314	num=6165120
+============> tile_size = 37	hit_sum = 28940736	miss_sum = 111476736
+
+18	<tr, tc, tn, tm> = <1, 1, 2, 2>
+rd=37	num=16545600
+rd=19	num=0
+rd=19	num=6230016
+rd=-1	num=0
+rd=665664	num=111476736
+rd=7314	num=6165120
+============> tile_size = 56	hit_sum = 28940736	miss_sum = 111476736
+
+19	<tr, tc, tn, tm> = <1, 1, 2, 3>
+rd=37	num=16545600
+rd=19	num=0
+rd=19	num=6230016
+rd=-1	num=0
+rd=665664	num=111476736
+rd=7314	num=6165120
+============> tile_size = 75	hit_sum = 28940736	miss_sum = 111476736
+
+20	<tr, tc, tn, tm> = <1, 1, 2, 4>
+rd=37	num=16545600
+rd=19	num=0
+rd=19	num=6230016
+rd=-1	num=0
+rd=665664	num=111476736
+rd=7314	num=6165120
+============> tile_size = 94	hit_sum = 28940736	miss_sum = 111476736
+
+21	<tr, tc, tn, tm> = <1, 1, 2, 6>
+rd=37	num=16545600
+rd=19	num=0
+rd=19	num=6230016
+rd=-1	num=0
+rd=665664	num=111476736
+rd=7314	num=6165120
+============> tile_size = 132	hit_sum = 28940736	miss_sum = 111476736
+
+22	<tr, tc, tn, tm> = <1, 1, 2, 8>
+rd=37	num=16545600
+rd=19	num=0
+rd=19	num=6230016
+rd=-1	num=0
+rd=665664	num=111476736
+rd=7314	num=6165120
+============> tile_size = 170	hit_sum = 28940736	miss_sum = 111476736
+
+23	<tr, tc, tn, tm> = <1, 1, 2, 12>
+rd=37	num=16545600
+rd=19	num=0
+rd=19	num=6230016
+rd=-1	num=0
+rd=665664	num=111476736
+rd=7314	num=6165120
+============> tile_size = 246	hit_sum = 28940736	miss_sum = 111476736
+
+24	<tr, tc, tn, tm> = <1, 1, 2, 16>
+rd=37	num=16545600
+rd=19	num=0
+rd=19	num=6230016
+rd=-1	num=0
+rd=665664	num=111476736
+rd=7314	num=6165120
+============> tile_size = 322	hit_sum = 28940736	miss_sum = 111476736
+
+25	<tr, tc, tn, tm> = <1, 1, 2, 24>
+rd=37	num=16545600
+rd=19	num=0
+rd=19	num=6230016
+rd=-1	num=0
+rd=665664	num=111476736
+rd=7314	num=6165120
+============> tile_size = 474	hit_sum = 28940736	miss_sum = 111476736
+
+26	<tr, tc, tn, tm> = <1, 1, 2, 32>
+rd=37	num=16545600
+rd=19	num=0
+rd=19	num=6230016
+rd=-1	num=0
+rd=665664	num=111476736
+rd=7314	num=6165120
+============> tile_size = 626	hit_sum = 28940736	miss_sum = 111476736
+
+27	<tr, tc, tn, tm> = <1, 1, 2, 48>
+rd=37	num=16545600
+rd=19	num=0
+rd=19	num=6230016
+rd=-1	num=0
+rd=665664	num=111476736
+rd=7314	num=6165120
+============> tile_size = 930	hit_sum = 28940736	miss_sum = 111476736
+
+28	<tr, tc, tn, tm> = <1, 1, 2, 64>
+rd=37	num=16545600
+rd=19	num=0
+rd=19	num=6230016
+rd=-1	num=0
+rd=665664	num=111476736
+rd=7314	num=6165120
+============> tile_size = 1234	hit_sum = 28940736	miss_sum = 111476736
+
+29	<tr, tc, tn, tm> = <1, 1, 2, 96>
+rd=37	num=16545600
+rd=19	num=0
+rd=19	num=6230016
+rd=-1	num=0
+rd=665664	num=111476736
+rd=7314	num=6165120
+============> tile_size = 1842	hit_sum = 28940736	miss_sum = 111476736
+
+30	<tr, tc, tn, tm> = <1, 1, 2, 128>
+rd=37	num=16545600
+rd=19	num=0
+rd=19	num=6230016
+rd=-1	num=0
+rd=665664	num=111476736
+rd=7314	num=6165120
+============> tile_size = 2450	hit_sum = 28940736	miss_sum = 111476736
+
+31	<tr, tc, tn, tm> = <1, 1, 2, 192>
+rd=37	num=16545600
+rd=19	num=0
+rd=19	num=6230016
+rd=-1	num=0
+rd=665664	num=111476736
+rd=7314	num=6165120
+============> tile_size = 3666	hit_sum = 28940736	miss_sum = 111476736
+
+32	<tr, tc, tn, tm> = <1, 1, 2, 384>
+rd=37	num=16545600
+rd=19	num=0
+rd=19	num=6230016
+rd=-1	num=0
+rd=665664	num=111476736
+rd=7314	num=6165120
+============> tile_size = 7314	hit_sum = 28940736	miss_sum = 111476736
+
+33	<tr, tc, tn, tm> = <1, 1, 3, 1>
+rd=55	num=16545600
+rd=19	num=0
+rd=19	num=8306688
+rd=-1	num=0
+rd=665664	num=111476736
+rd=10779	num=4088448
+============> tile_size = 55	hit_sum = 28940736	miss_sum = 111476736
+
+34	<tr, tc, tn, tm> = <1, 1, 3, 2>
+rd=55	num=16545600
+rd=19	num=0
+rd=19	num=8306688
+rd=-1	num=0
+rd=665664	num=111476736
+rd=10779	num=4088448
+============> tile_size = 83	hit_sum = 28940736	miss_sum = 111476736
+
+35	<tr, tc, tn, tm> = <1, 1, 3, 3>
+rd=55	num=16545600
+rd=19	num=0
+rd=19	num=8306688
+rd=-1	num=0
+rd=665664	num=111476736
+rd=10779	num=4088448
+============> tile_size = 111	hit_sum = 28940736	miss_sum = 111476736
+
+36	<tr, tc, tn, tm> = <1, 1, 3, 4>
+rd=55	num=16545600
+rd=19	num=0
+rd=19	num=8306688
+rd=-1	num=0
+rd=665664	num=111476736
+rd=10779	num=4088448
+============> tile_size = 139	hit_sum = 28940736	miss_sum = 111476736
+
+37	<tr, tc, tn, tm> = <1, 1, 3, 6>
+rd=55	num=16545600
+rd=19	num=0
+rd=19	num=8306688
+rd=-1	num=0
+rd=665664	num=111476736
+rd=10779	num=4088448
+============> tile_size = 195	hit_sum = 28940736	miss_sum = 111476736
+
+38	<tr, tc, tn, tm> = <1, 1, 3, 8>
+rd=55	num=16545600
+rd=19	num=0
+rd=19	num=8306688
+rd=-1	num=0
+rd=665664	num=111476736
+rd=10779	num=4088448
+============> tile_size = 251	hit_sum = 28940736	miss_sum = 111476736
+
+39	<tr, tc, tn, tm> = <1, 1, 3, 12>
+rd=55	num=16545600
+rd=19	num=0
+rd=19	num=8306688
+rd=-1	num=0
+rd=665664	num=111476736
+rd=10779	num=4088448
+============> tile_size = 363	hit_sum = 28940736	miss_sum = 111476736
+
+40	<tr, tc, tn, tm> = <1, 1, 3, 16>
+rd=55	num=16545600
+rd=19	num=0
+rd=19	num=8306688
+rd=-1	num=0
+rd=665664	num=111476736
+rd=10779	num=4088448
+============> tile_size = 475	hit_sum = 28940736	miss_sum = 111476736
+
+41	<tr, tc, tn, tm> = <1, 1, 3, 24>
+rd=55	num=16545600
+rd=19	num=0
+rd=19	num=8306688
+rd=-1	num=0
+rd=665664	num=111476736
+rd=10779	num=4088448
+============> tile_size = 699	hit_sum = 28940736	miss_sum = 111476736
+
+42	<tr, tc, tn, tm> = <1, 1, 3, 32>
+rd=55	num=16545600
+rd=19	num=0
+rd=19	num=8306688
+rd=-1	num=0
+rd=665664	num=111476736
+rd=10779	num=4088448
+============> tile_size = 923	hit_sum = 28940736	miss_sum = 111476736
+
+43	<tr, tc, tn, tm> = <1, 1, 3, 48>
+rd=55	num=16545600
+rd=19	num=0
+rd=19	num=8306688
+rd=-1	num=0
+rd=665664	num=111476736
+rd=10779	num=4088448
+============> tile_size = 1371	hit_sum = 28940736	miss_sum = 111476736
+
+44	<tr, tc, tn, tm> = <1, 1, 3, 64>
+rd=55	num=16545600
+rd=19	num=0
+rd=19	num=8306688
+rd=-1	num=0
+rd=665664	num=111476736
+rd=10779	num=4088448
+============> tile_size = 1819	hit_sum = 28940736	miss_sum = 111476736
+
+45	<tr, tc, tn, tm> = <1, 1, 3, 96>
+rd=55	num=16545600
+rd=19	num=0
+rd=19	num=8306688
+rd=-1	num=0
+rd=665664	num=111476736
+rd=10779	num=4088448
+============> tile_size = 2715	hit_sum = 28940736	miss_sum = 111476736
+
+46	<tr, tc, tn, tm> = <1, 1, 3, 128>
+rd=55	num=16545600
+rd=19	num=0
+rd=19	num=8306688
+rd=-1	num=0
+rd=665664	num=111476736
+rd=10779	num=4088448
+============> tile_size = 3611	hit_sum = 28940736	miss_sum = 111476736
+
+47	<tr, tc, tn, tm> = <1, 1, 3, 192>
+rd=55	num=16545600
+rd=19	num=0
+rd=19	num=8306688
+rd=-1	num=0
+rd=665664	num=111476736
+rd=10779	num=4088448
+============> tile_size = 5403	hit_sum = 28940736	miss_sum = 111476736
+
+48	<tr, tc, tn, tm> = <1, 1, 3, 384>
+rd=55	num=16545600
+rd=19	num=0
+rd=19	num=8306688
+rd=-1	num=0
+rd=665664	num=111476736
+rd=10779	num=4088448
+============> tile_size = 10779	hit_sum = 28940736	miss_sum = 111476736
+
+49	<tr, tc, tn, tm> = <1, 1, 4, 1>
+rd=73	num=16545600
+rd=19	num=0
+rd=19	num=9345024
+rd=-1	num=0
+rd=665664	num=111476736
+rd=14244	num=3050112
+============> tile_size = 73	hit_sum = 28940736	miss_sum = 111476736
+
+50	<tr, tc, tn, tm> = <1, 1, 4, 2>
+rd=73	num=16545600
+rd=19	num=0
+rd=19	num=9345024
+rd=-1	num=0
+rd=665664	num=111476736
+rd=14244	num=3050112
+============> tile_size = 110	hit_sum = 28940736	miss_sum = 111476736
+
+51	<tr, tc, tn, tm> = <1, 1, 4, 3>
+rd=73	num=16545600
+rd=19	num=0
+rd=19	num=9345024
+rd=-1	num=0
+rd=665664	num=111476736
+rd=14244	num=3050112
+============> tile_size = 147	hit_sum = 28940736	miss_sum = 111476736
+
+52	<tr, tc, tn, tm> = <1, 1, 4, 4>
+rd=73	num=16545600
+rd=19	num=0
+rd=19	num=9345024
+rd=-1	num=0
+rd=665664	num=111476736
+rd=14244	num=3050112
+============> tile_size = 184	hit_sum = 28940736	miss_sum = 111476736
+
+53	<tr, tc, tn, tm> = <1, 1, 4, 6>
+rd=73	num=16545600
+rd=19	num=0
+rd=19	num=9345024
+rd=-1	num=0
+rd=665664	num=111476736
+rd=14244	num=3050112
+============> tile_size = 258	hit_sum = 28940736	miss_sum = 111476736
+
+54	<tr, tc, tn, tm> = <1, 1, 4, 8>
+rd=73	num=16545600
+rd=19	num=0
+rd=19	num=9345024
+rd=-1	num=0
+rd=665664	num=111476736
+rd=14244	num=3050112
+============> tile_size = 332	hit_sum = 28940736	miss_sum = 111476736
+
+55	<tr, tc, tn, tm> = <1, 1, 4, 12>
+rd=73	num=16545600
+rd=19	num=0
+rd=19	num=9345024
+rd=-1	num=0
+rd=665664	num=111476736
+rd=14244	num=3050112
+============> tile_size = 480	hit_sum = 28940736	miss_sum = 111476736
+
+56	<tr, tc, tn, tm> = <1, 1, 4, 16>
+rd=73	num=16545600
+rd=19	num=0
+rd=19	num=9345024
+rd=-1	num=0
+rd=665664	num=111476736
+rd=14244	num=3050112
+============> tile_size = 628	hit_sum = 28940736	miss_sum = 111476736
+
+57	<tr, tc, tn, tm> = <1, 1, 4, 24>
+rd=73	num=16545600
+rd=19	num=0
+rd=19	num=9345024
+rd=-1	num=0
+rd=665664	num=111476736
+rd=14244	num=3050112
+============> tile_size = 924	hit_sum = 28940736	miss_sum = 111476736
+
+58	<tr, tc, tn, tm> = <1, 1, 4, 32>
+rd=73	num=16545600
+rd=19	num=0
+rd=19	num=9345024
+rd=-1	num=0
+rd=665664	num=111476736
+rd=14244	num=3050112
+============> tile_size = 1220	hit_sum = 28940736	miss_sum = 111476736
+
+59	<tr, tc, tn, tm> = <1, 1, 4, 48>
+rd=73	num=16545600
+rd=19	num=0
+rd=19	num=9345024
+rd=-1	num=0
+rd=665664	num=111476736
+rd=14244	num=3050112
+============> tile_size = 1812	hit_sum = 28940736	miss_sum = 111476736
+
+60	<tr, tc, tn, tm> = <1, 1, 4, 64>
+rd=73	num=16545600
+rd=19	num=0
+rd=19	num=9345024
+rd=-1	num=0
+rd=665664	num=111476736
+rd=14244	num=3050112
+============> tile_size = 2404	hit_sum = 28940736	miss_sum = 111476736
+
+61	<tr, tc, tn, tm> = <1, 1, 4, 96>
+rd=73	num=16545600
+rd=19	num=0
+rd=19	num=9345024
+rd=-1	num=0
+rd=665664	num=111476736
+rd=14244	num=3050112
+============> tile_size = 3588	hit_sum = 28940736	miss_sum = 111476736
+
+62	<tr, tc, tn, tm> = <1, 1, 4, 128>
+rd=73	num=16545600
+rd=19	num=0
+rd=19	num=9345024
+rd=-1	num=0
+rd=665664	num=111476736
+rd=14244	num=3050112
+============> tile_size = 4772	hit_sum = 28940736	miss_sum = 111476736
+
+63	<tr, tc, tn, tm> = <1, 1, 4, 192>
+rd=73	num=16545600
+rd=19	num=0
+rd=19	num=9345024
+rd=-1	num=0
+rd=665664	num=111476736
+rd=14244	num=3050112
+============> tile_size = 7140	hit_sum = 28940736	miss_sum = 111476736
+
+64	<tr, tc, tn, tm> = <1, 1, 4, 384>
+rd=73	num=16545600
+rd=19	num=0
+rd=19	num=9345024
+rd=-1	num=0
+rd=665664	num=111476736
+rd=14244	num=3050112
+============> tile_size = 14244	hit_sum = 28940736	miss_sum = 111476736
+
+65	<tr, tc, tn, tm> = <1, 1, 6, 1>
+rd=109	num=16545600
+rd=19	num=0
+rd=19	num=10383360
+rd=-1	num=0
+rd=665664	num=111476736
+rd=21174	num=2011776
+============> tile_size = 109	hit_sum = 28940736	miss_sum = 111476736
+
+66	<tr, tc, tn, tm> = <1, 1, 6, 2>
+rd=109	num=16545600
+rd=19	num=0
+rd=19	num=10383360
+rd=-1	num=0
+rd=665664	num=111476736
+rd=21174	num=2011776
+============> tile_size = 164	hit_sum = 28940736	miss_sum = 111476736
+
+67	<tr, tc, tn, tm> = <1, 1, 6, 3>
+rd=109	num=16545600
+rd=19	num=0
+rd=19	num=10383360
+rd=-1	num=0
+rd=665664	num=111476736
+rd=21174	num=2011776
+============> tile_size = 219	hit_sum = 28940736	miss_sum = 111476736
+
+68	<tr, tc, tn, tm> = <1, 1, 6, 4>
+rd=109	num=16545600
+rd=19	num=0
+rd=19	num=10383360
+rd=-1	num=0
+rd=665664	num=111476736
+rd=21174	num=2011776
+============> tile_size = 274	hit_sum = 28940736	miss_sum = 111476736
+
+69	<tr, tc, tn, tm> = <1, 1, 6, 6>
+rd=109	num=16545600
+rd=19	num=0
+rd=19	num=10383360
+rd=-1	num=0
+rd=665664	num=111476736
+rd=21174	num=2011776
+============> tile_size = 384	hit_sum = 28940736	miss_sum = 111476736
+
+70	<tr, tc, tn, tm> = <1, 1, 6, 8>
+rd=109	num=16545600
+rd=19	num=0
+rd=19	num=10383360
+rd=-1	num=0
+rd=665664	num=111476736
+rd=21174	num=2011776
+============> tile_size = 494	hit_sum = 28940736	miss_sum = 111476736
+
+71	<tr, tc, tn, tm> = <1, 1, 6, 12>
+rd=109	num=16545600
+rd=19	num=0
+rd=19	num=10383360
+rd=-1	num=0
+rd=665664	num=111476736
+rd=21174	num=2011776
+============> tile_size = 714	hit_sum = 28940736	miss_sum = 111476736
+
+72	<tr, tc, tn, tm> = <1, 1, 6, 16>
+rd=109	num=16545600
+rd=19	num=0
+rd=19	num=10383360
+rd=-1	num=0
+rd=665664	num=111476736
+rd=21174	num=2011776
+============> tile_size = 934	hit_sum = 28940736	miss_sum = 111476736
+
+73	<tr, tc, tn, tm> = <1, 1, 6, 24>
+rd=109	num=16545600
+rd=19	num=0
+rd=19	num=10383360
+rd=-1	num=0
+rd=665664	num=111476736
+rd=21174	num=2011776
+============> tile_size = 1374	hit_sum = 28940736	miss_sum = 111476736
+
+74	<tr, tc, tn, tm> = <1, 1, 6, 32>
+rd=109	num=16545600
+rd=19	num=0
+rd=19	num=10383360
+rd=-1	num=0
+rd=665664	num=111476736
+rd=21174	num=2011776
+============> tile_size = 1814	hit_sum = 28940736	miss_sum = 111476736
+
+75	<tr, tc, tn, tm> = <1, 1, 6, 48>
+rd=109	num=16545600
+rd=19	num=0
+rd=19	num=10383360
+rd=-1	num=0
+rd=665664	num=111476736
+rd=21174	num=2011776
+============> tile_size = 2694	hit_sum = 28940736	miss_sum = 111476736
+
+76	<tr, tc, tn, tm> = <1, 1, 6, 64>
+rd=109	num=16545600
+rd=19	num=0
+rd=19	num=10383360
+rd=-1	num=0
+rd=665664	num=111476736
+rd=21174	num=2011776
+============> tile_size = 3574	hit_sum = 28940736	miss_sum = 111476736
+
+77	<tr, tc, tn, tm> = <1, 1, 6, 96>
+rd=109	num=16545600
+rd=19	num=0
+rd=19	num=10383360
+rd=-1	num=0
+rd=665664	num=111476736
+rd=21174	num=2011776
+============> tile_size = 5334	hit_sum = 28940736	miss_sum = 111476736
+
+78	<tr, tc, tn, tm> = <1, 1, 6, 128>
+rd=109	num=16545600
+rd=19	num=0
+rd=19	num=10383360
+rd=-1	num=0
+rd=665664	num=111476736
+rd=21174	num=2011776
+============> tile_size = 7094	hit_sum = 28940736	miss_sum = 111476736
+
+79	<tr, tc, tn, tm> = <1, 1, 6, 192>
+rd=109	num=16545600
+rd=19	num=0
+rd=19	num=10383360
+rd=-1	num=0
+rd=665664	num=111476736
+rd=21174	num=2011776
+============> tile_size = 10614	hit_sum = 28940736	miss_sum = 111476736
+
+80	<tr, tc, tn, tm> = <1, 1, 6, 384>
+rd=109	num=16545600
+rd=19	num=0
+rd=19	num=10383360
+rd=-1	num=0
+rd=665664	num=111476736
+rd=21174	num=2011776
+============> tile_size = 21174	hit_sum = 28940736	miss_sum = 111476736
+
+81	<tr, tc, tn, tm> = <1, 1, 8, 1>
+rd=145	num=16545600
+rd=19	num=0
+rd=19	num=10902528
+rd=-1	num=0
+rd=665664	num=111476736
+rd=28104	num=1492608
+============> tile_size = 145	hit_sum = 28940736	miss_sum = 111476736
+
+82	<tr, tc, tn, tm> = <1, 1, 8, 2>
+rd=145	num=16545600
+rd=19	num=0
+rd=19	num=10902528
+rd=-1	num=0
+rd=665664	num=111476736
+rd=28104	num=1492608
+============> tile_size = 218	hit_sum = 28940736	miss_sum = 111476736
+
+83	<tr, tc, tn, tm> = <1, 1, 8, 3>
+rd=145	num=16545600
+rd=19	num=0
+rd=19	num=10902528
+rd=-1	num=0
+rd=665664	num=111476736
+rd=28104	num=1492608
+============> tile_size = 291	hit_sum = 28940736	miss_sum = 111476736
+
+84	<tr, tc, tn, tm> = <1, 1, 8, 4>
+rd=145	num=16545600
+rd=19	num=0
+rd=19	num=10902528
+rd=-1	num=0
+rd=665664	num=111476736
+rd=28104	num=1492608
+============> tile_size = 364	hit_sum = 28940736	miss_sum = 111476736
+
+85	<tr, tc, tn, tm> = <1, 1, 8, 6>
+rd=145	num=16545600
+rd=19	num=0
+rd=19	num=10902528
+rd=-1	num=0
+rd=665664	num=111476736
+rd=28104	num=1492608
+============> tile_size = 510	hit_sum = 28940736	miss_sum = 111476736
+
+86	<tr, tc, tn, tm> = <1, 1, 8, 8>
+rd=145	num=16545600
+rd=19	num=0
+rd=19	num=10902528
+rd=-1	num=0
+rd=665664	num=111476736
+rd=28104	num=1492608
+============> tile_size = 656	hit_sum = 28940736	miss_sum = 111476736
+
+87	<tr, tc, tn, tm> = <1, 1, 8, 12>
+rd=145	num=16545600
+rd=19	num=0
+rd=19	num=10902528
+rd=-1	num=0
+rd=665664	num=111476736
+rd=28104	num=1492608
+============> tile_size = 948	hit_sum = 28940736	miss_sum = 111476736
+
+88	<tr, tc, tn, tm> = <1, 1, 8, 16>
+rd=145	num=16545600
+rd=19	num=0
+rd=19	num=10902528
+rd=-1	num=0
+rd=665664	num=111476736
+rd=28104	num=1492608
+============> tile_size = 1240	hit_sum = 28940736	miss_sum = 111476736
+
+89	<tr, tc, tn, tm> = <1, 1, 8, 24>
+rd=145	num=16545600
+rd=19	num=0
+rd=19	num=10902528
+rd=-1	num=0
+rd=665664	num=111476736
+rd=28104	num=1492608
+============> tile_size = 1824	hit_sum = 28940736	miss_sum = 111476736
+
+90	<tr, tc, tn, tm> = <1, 1, 8, 32>
+rd=145	num=16545600
+rd=19	num=0
+rd=19	num=10902528
+rd=-1	num=0
+rd=665664	num=111476736
+rd=28104	num=1492608
+============> tile_size = 2408	hit_sum = 28940736	miss_sum = 111476736
+
+91	<tr, tc, tn, tm> = <1, 1, 8, 48>
+rd=145	num=16545600
+rd=19	num=0
+rd=19	num=10902528
+rd=-1	num=0
+rd=665664	num=111476736
+rd=28104	num=1492608
+============> tile_size = 3576	hit_sum = 28940736	miss_sum = 111476736
+
+92	<tr, tc, tn, tm> = <1, 1, 8, 64>
+rd=145	num=16545600
+rd=19	num=0
+rd=19	num=10902528
+rd=-1	num=0
+rd=665664	num=111476736
+rd=28104	num=1492608
+============> tile_size = 4744	hit_sum = 28940736	miss_sum = 111476736
+
+93	<tr, tc, tn, tm> = <1, 1, 8, 96>
+rd=145	num=16545600
+rd=19	num=0
+rd=19	num=10902528
+rd=-1	num=0
+rd=665664	num=111476736
+rd=28104	num=1492608
+============> tile_size = 7080	hit_sum = 28940736	miss_sum = 111476736
+
+94	<tr, tc, tn, tm> = <1, 1, 8, 128>
+rd=145	num=16545600
+rd=19	num=0
+rd=19	num=10902528
+rd=-1	num=0
+rd=665664	num=111476736
+rd=28104	num=1492608
+============> tile_size = 9416	hit_sum = 28940736	miss_sum = 111476736
+
+95	<tr, tc, tn, tm> = <1, 1, 8, 192>
+rd=145	num=16545600
+rd=19	num=0
+rd=19	num=10902528
+rd=-1	num=0
+rd=665664	num=111476736
+rd=28104	num=1492608
+============> tile_size = 14088	hit_sum = 28940736	miss_sum = 111476736
+
+96	<tr, tc, tn, tm> = <1, 1, 8, 384>
+rd=145	num=16545600
+rd=19	num=0
+rd=19	num=10902528
+rd=-1	num=0
+rd=665664	num=111476736
+rd=28104	num=1492608
+============> tile_size = 28104	hit_sum = 28940736	miss_sum = 111476736
+
+97	<tr, tc, tn, tm> = <1, 1, 12, 1>
+rd=217	num=16545600
+rd=19	num=0
+rd=19	num=11421696
+rd=-1	num=0
+rd=665664	num=111476736
+rd=41964	num=973440
+============> tile_size = 217	hit_sum = 28940736	miss_sum = 111476736
+
+98	<tr, tc, tn, tm> = <1, 1, 12, 2>
+rd=217	num=16545600
+rd=19	num=0
+rd=19	num=11421696
+rd=-1	num=0
+rd=665664	num=111476736
+rd=41964	num=973440
+============> tile_size = 326	hit_sum = 28940736	miss_sum = 111476736
+
+99	<tr, tc, tn, tm> = <1, 1, 12, 3>
+rd=217	num=16545600
+rd=19	num=0
+rd=19	num=11421696
+rd=-1	num=0
+rd=665664	num=111476736
+rd=41964	num=973440
+============> tile_size = 435	hit_sum = 28940736	miss_sum = 111476736
+
+100	<tr, tc, tn, tm> = <1, 1, 12, 4>
+rd=217	num=16545600
+rd=19	num=0
+rd=19	num=11421696
+rd=-1	num=0
+rd=665664	num=111476736
+rd=41964	num=973440
+============> tile_size = 544	hit_sum = 28940736	miss_sum = 111476736
+
+101	<tr, tc, tn, tm> = <1, 1, 12, 6>
+rd=217	num=16545600
+rd=19	num=0
+rd=19	num=11421696
+rd=-1	num=0
+rd=665664	num=111476736
+rd=41964	num=973440
+============> tile_size = 762	hit_sum = 28940736	miss_sum = 111476736
+
+102	<tr, tc, tn, tm> = <1, 1, 12, 8>
+rd=217	num=16545600
+rd=19	num=0
+rd=19	num=11421696
+rd=-1	num=0
+rd=665664	num=111476736
+rd=41964	num=973440
+============> tile_size = 980	hit_sum = 28940736	miss_sum = 111476736
+
+103	<tr, tc, tn, tm> = <1, 1, 12, 12>
+rd=217	num=16545600
+rd=19	num=0
+rd=19	num=11421696
+rd=-1	num=0
+rd=665664	num=111476736
+rd=41964	num=973440
+============> tile_size = 1416	hit_sum = 28940736	miss_sum = 111476736
+
+104	<tr, tc, tn, tm> = <1, 1, 12, 16>
+rd=217	num=16545600
+rd=19	num=0
+rd=19	num=11421696
+rd=-1	num=0
+rd=665664	num=111476736
+rd=41964	num=973440
+============> tile_size = 1852	hit_sum = 28940736	miss_sum = 111476736
+
+105	<tr, tc, tn, tm> = <1, 1, 12, 24>
+rd=217	num=16545600
+rd=19	num=0
+rd=19	num=11421696
+rd=-1	num=0
+rd=665664	num=111476736
+rd=41964	num=973440
+============> tile_size = 2724	hit_sum = 28940736	miss_sum = 111476736
+
+106	<tr, tc, tn, tm> = <1, 1, 12, 32>
+rd=217	num=16545600
+rd=19	num=0
+rd=19	num=11421696
+rd=-1	num=0
+rd=665664	num=111476736
+rd=41964	num=973440
+============> tile_size = 3596	hit_sum = 28940736	miss_sum = 111476736
+
+107	<tr, tc, tn, tm> = <1, 1, 12, 48>
+rd=217	num=16545600
+rd=19	num=0
+rd=19	num=11421696
+rd=-1	num=0
+rd=665664	num=111476736
+rd=41964	num=973440
+============> tile_size = 5340	hit_sum = 28940736	miss_sum = 111476736
+
+108	<tr, tc, tn, tm> = <1, 1, 12, 64>
+rd=217	num=16545600
+rd=19	num=0
+rd=19	num=11421696
+rd=-1	num=0
+rd=665664	num=111476736
+rd=41964	num=973440
+============> tile_size = 7084	hit_sum = 28940736	miss_sum = 111476736
+
+109	<tr, tc, tn, tm> = <1, 1, 12, 96>
+rd=217	num=16545600
+rd=19	num=0
+rd=19	num=11421696
+rd=-1	num=0
+rd=665664	num=111476736
+rd=41964	num=973440
+============> tile_size = 10572	hit_sum = 28940736	miss_sum = 111476736
+
+110	<tr, tc, tn, tm> = <1, 1, 12, 128>
+rd=217	num=16545600
+rd=19	num=0
+rd=19	num=11421696
+rd=-1	num=0
+rd=665664	num=111476736
+rd=41964	num=973440
+============> tile_size = 14060	hit_sum = 28940736	miss_sum = 111476736
+
+111	<tr, tc, tn, tm> = <1, 1, 12, 192>
+rd=217	num=16545600
+rd=19	num=0
+rd=19	num=11421696
+rd=-1	num=0
+rd=665664	num=111476736
+rd=41964	num=973440
+============> tile_size = 21036	hit_sum = 28940736	miss_sum = 111476736
+
+112	<tr, tc, tn, tm> = <1, 1, 12, 384>
+rd=217	num=16545600
+rd=19	num=0
+rd=19	num=11421696
+rd=-1	num=0
+rd=665664	num=111476736
+rd=41964	num=973440
+============> tile_size = 41964	hit_sum = 28940736	miss_sum = 111476736
+
+113	<tr, tc, tn, tm> = <1, 1, 16, 1>
+rd=289	num=16545600
+rd=19	num=0
+rd=19	num=11681280
+rd=-1	num=0
+rd=665664	num=111476736
+rd=55824	num=713856
+============> tile_size = 289	hit_sum = 28940736	miss_sum = 111476736
+
+114	<tr, tc, tn, tm> = <1, 1, 16, 2>
+rd=289	num=16545600
+rd=19	num=0
+rd=19	num=11681280
+rd=-1	num=0
+rd=665664	num=111476736
+rd=55824	num=713856
+============> tile_size = 434	hit_sum = 28940736	miss_sum = 111476736
+
+115	<tr, tc, tn, tm> = <1, 1, 16, 3>
+rd=289	num=16545600
+rd=19	num=0
+rd=19	num=11681280
+rd=-1	num=0
+rd=665664	num=111476736
+rd=55824	num=713856
+============> tile_size = 579	hit_sum = 28940736	miss_sum = 111476736
+
+116	<tr, tc, tn, tm> = <1, 1, 16, 4>
+rd=289	num=16545600
+rd=19	num=0
+rd=19	num=11681280
+rd=-1	num=0
+rd=665664	num=111476736
+rd=55824	num=713856
+============> tile_size = 724	hit_sum = 28940736	miss_sum = 111476736
+
+117	<tr, tc, tn, tm> = <1, 1, 16, 6>
+rd=289	num=16545600
+rd=19	num=0
+rd=19	num=11681280
+rd=-1	num=0
+rd=665664	num=111476736
+rd=55824	num=713856
+============> tile_size = 1014	hit_sum = 28940736	miss_sum = 111476736
+
+118	<tr, tc, tn, tm> = <1, 1, 16, 8>
+rd=289	num=16545600
+rd=19	num=0
+rd=19	num=11681280
+rd=-1	num=0
+rd=665664	num=111476736
+rd=55824	num=713856
+============> tile_size = 1304	hit_sum = 28940736	miss_sum = 111476736
+
+119	<tr, tc, tn, tm> = <1, 1, 16, 12>
+rd=289	num=16545600
+rd=19	num=0
+rd=19	num=11681280
+rd=-1	num=0
+rd=665664	num=111476736
+rd=55824	num=713856
+============> tile_size = 1884	hit_sum = 28940736	miss_sum = 111476736
+
+120	<tr, tc, tn, tm> = <1, 1, 16, 16>
+rd=289	num=16545600
+rd=19	num=0
+rd=19	num=11681280
+rd=-1	num=0
+rd=665664	num=111476736
+rd=55824	num=713856
+============> tile_size = 2464	hit_sum = 28940736	miss_sum = 111476736
+
+121	<tr, tc, tn, tm> = <1, 1, 16, 24>
+rd=289	num=16545600
+rd=19	num=0
+rd=19	num=11681280
+rd=-1	num=0
+rd=665664	num=111476736
+rd=55824	num=713856
+============> tile_size = 3624	hit_sum = 28940736	miss_sum = 111476736
+
+122	<tr, tc, tn, tm> = <1, 1, 16, 32>
+rd=289	num=16545600
+rd=19	num=0
+rd=19	num=11681280
+rd=-1	num=0
+rd=665664	num=111476736
+rd=55824	num=713856
+============> tile_size = 4784	hit_sum = 28940736	miss_sum = 111476736
+
+123	<tr, tc, tn, tm> = <1, 1, 16, 48>
+rd=289	num=16545600
+rd=19	num=0
+rd=19	num=11681280
+rd=-1	num=0
+rd=665664	num=111476736
+rd=55824	num=713856
+============> tile_size = 7104	hit_sum = 28940736	miss_sum = 111476736
+
+124	<tr, tc, tn, tm> = <1, 1, 16, 64>
+rd=289	num=16545600
+rd=19	num=0
+rd=19	num=11681280
+rd=-1	num=0
+rd=665664	num=111476736
+rd=55824	num=713856
+============> tile_size = 9424	hit_sum = 28940736	miss_sum = 111476736
+
+125	<tr, tc, tn, tm> = <1, 1, 16, 96>
+rd=289	num=16545600
+rd=19	num=0
+rd=19	num=11681280
+rd=-1	num=0
+rd=665664	num=111476736
+rd=55824	num=713856
+============> tile_size = 14064	hit_sum = 28940736	miss_sum = 111476736
+
+126	<tr, tc, tn, tm> = <1, 1, 16, 128>
+rd=289	num=16545600
+rd=19	num=0
+rd=19	num=11681280
+rd=-1	num=0
+rd=665664	num=111476736
+rd=55824	num=713856
+============> tile_size = 18704	hit_sum = 28940736	miss_sum = 111476736
+
+127	<tr, tc, tn, tm> = <1, 1, 16, 192>
+rd=289	num=16545600
+rd=19	num=0
+rd=19	num=11681280
+rd=-1	num=0
+rd=665664	num=111476736
+rd=55824	num=713856
+============> tile_size = 27984	hit_sum = 28940736	miss_sum = 111476736
+
+128	<tr, tc, tn, tm> = <1, 1, 16, 384>
+rd=289	num=16545600
+rd=19	num=0
+rd=19	num=11681280
+rd=-1	num=0
+rd=665664	num=111476736
+rd=55824	num=713856
+============> tile_size = 55824	hit_sum = 28940736	miss_sum = 111476736
+
+129	<tr, tc, tn, tm> = <1, 1, 24, 1>
+rd=433	num=16545600
+rd=19	num=0
+rd=19	num=11940864
+rd=-1	num=0
+rd=665664	num=111476736
+rd=83544	num=454272
+============> tile_size = 433	hit_sum = 28486464	miss_sum = 111931008
+
+130	<tr, tc, tn, tm> = <1, 1, 24, 2>
+rd=433	num=16545600
+rd=19	num=0
+rd=19	num=11940864
+rd=-1	num=0
+rd=665664	num=111476736
+rd=83544	num=454272
+============> tile_size = 650	hit_sum = 28486464	miss_sum = 111931008
+
+131	<tr, tc, tn, tm> = <1, 1, 24, 3>
+rd=433	num=16545600
+rd=19	num=0
+rd=19	num=11940864
+rd=-1	num=0
+rd=665664	num=111476736
+rd=83544	num=454272
+============> tile_size = 867	hit_sum = 28486464	miss_sum = 111931008
+
+132	<tr, tc, tn, tm> = <1, 1, 24, 4>
+rd=433	num=16545600
+rd=19	num=0
+rd=19	num=11940864
+rd=-1	num=0
+rd=665664	num=111476736
+rd=83544	num=454272
+============> tile_size = 1084	hit_sum = 28486464	miss_sum = 111931008
+
+133	<tr, tc, tn, tm> = <1, 1, 24, 6>
+rd=433	num=16545600
+rd=19	num=0
+rd=19	num=11940864
+rd=-1	num=0
+rd=665664	num=111476736
+rd=83544	num=454272
+============> tile_size = 1518	hit_sum = 28486464	miss_sum = 111931008
+
+134	<tr, tc, tn, tm> = <1, 1, 24, 8>
+rd=433	num=16545600
+rd=19	num=0
+rd=19	num=11940864
+rd=-1	num=0
+rd=665664	num=111476736
+rd=83544	num=454272
+============> tile_size = 1952	hit_sum = 28486464	miss_sum = 111931008
+
+135	<tr, tc, tn, tm> = <1, 1, 24, 12>
+rd=433	num=16545600
+rd=19	num=0
+rd=19	num=11940864
+rd=-1	num=0
+rd=665664	num=111476736
+rd=83544	num=454272
+============> tile_size = 2820	hit_sum = 28486464	miss_sum = 111931008
+
+136	<tr, tc, tn, tm> = <1, 1, 24, 16>
+rd=433	num=16545600
+rd=19	num=0
+rd=19	num=11940864
+rd=-1	num=0
+rd=665664	num=111476736
+rd=83544	num=454272
+============> tile_size = 3688	hit_sum = 28486464	miss_sum = 111931008
+
+137	<tr, tc, tn, tm> = <1, 1, 24, 24>
+rd=433	num=16545600
+rd=19	num=0
+rd=19	num=11940864
+rd=-1	num=0
+rd=665664	num=111476736
+rd=83544	num=454272
+============> tile_size = 5424	hit_sum = 28486464	miss_sum = 111931008
+
+138	<tr, tc, tn, tm> = <1, 1, 24, 32>
+rd=433	num=16545600
+rd=19	num=0
+rd=19	num=11940864
+rd=-1	num=0
+rd=665664	num=111476736
+rd=83544	num=454272
+============> tile_size = 7160	hit_sum = 28486464	miss_sum = 111931008
+
+139	<tr, tc, tn, tm> = <1, 1, 24, 48>
+rd=433	num=16545600
+rd=19	num=0
+rd=19	num=11940864
+rd=-1	num=0
+rd=665664	num=111476736
+rd=83544	num=454272
+============> tile_size = 10632	hit_sum = 28486464	miss_sum = 111931008
+
+140	<tr, tc, tn, tm> = <1, 1, 24, 64>
+rd=433	num=16545600
+rd=19	num=0
+rd=19	num=11940864
+rd=-1	num=0
+rd=665664	num=111476736
+rd=83544	num=454272
+============> tile_size = 14104	hit_sum = 28486464	miss_sum = 111931008
+
+141	<tr, tc, tn, tm> = <1, 1, 24, 96>
+rd=433	num=16545600
+rd=19	num=0
+rd=19	num=11940864
+rd=-1	num=0
+rd=665664	num=111476736
+rd=83544	num=454272
+============> tile_size = 21048	hit_sum = 28486464	miss_sum = 111931008
+
+142	<tr, tc, tn, tm> = <1, 1, 24, 128>
+rd=433	num=16545600
+rd=19	num=0
+rd=19	num=11940864
+rd=-1	num=0
+rd=665664	num=111476736
+rd=83544	num=454272
+============> tile_size = 27992	hit_sum = 28486464	miss_sum = 111931008
+
+143	<tr, tc, tn, tm> = <1, 1, 24, 192>
+rd=433	num=16545600
+rd=19	num=0
+rd=19	num=11940864
+rd=-1	num=0
+rd=665664	num=111476736
+rd=83544	num=454272
+============> tile_size = 41880	hit_sum = 28486464	miss_sum = 111931008
+
+144	<tr, tc, tn, tm> = <1, 1, 32, 1>
+rd=577	num=16545600
+rd=19	num=0
+rd=19	num=12070656
+rd=-1	num=0
+rd=665664	num=111476736
+rd=111264	num=324480
+============> tile_size = 577	hit_sum = 28616256	miss_sum = 111801216
+
+145	<tr, tc, tn, tm> = <1, 1, 32, 2>
+rd=577	num=16545600
+rd=19	num=0
+rd=19	num=12070656
+rd=-1	num=0
+rd=665664	num=111476736
+rd=111264	num=324480
+============> tile_size = 866	hit_sum = 28616256	miss_sum = 111801216
+
+146	<tr, tc, tn, tm> = <1, 1, 32, 3>
+rd=577	num=16545600
+rd=19	num=0
+rd=19	num=12070656
+rd=-1	num=0
+rd=665664	num=111476736
+rd=111264	num=324480
+============> tile_size = 1155	hit_sum = 28616256	miss_sum = 111801216
+
+147	<tr, tc, tn, tm> = <1, 1, 32, 4>
+rd=577	num=16545600
+rd=19	num=0
+rd=19	num=12070656
+rd=-1	num=0
+rd=665664	num=111476736
+rd=111264	num=324480
+============> tile_size = 1444	hit_sum = 28616256	miss_sum = 111801216
+
+148	<tr, tc, tn, tm> = <1, 1, 32, 6>
+rd=577	num=16545600
+rd=19	num=0
+rd=19	num=12070656
+rd=-1	num=0
+rd=665664	num=111476736
+rd=111264	num=324480
+============> tile_size = 2022	hit_sum = 28616256	miss_sum = 111801216
+
+149	<tr, tc, tn, tm> = <1, 1, 32, 8>
+rd=577	num=16545600
+rd=19	num=0
+rd=19	num=12070656
+rd=-1	num=0
+rd=665664	num=111476736
+rd=111264	num=324480
+============> tile_size = 2600	hit_sum = 28616256	miss_sum = 111801216
+
+150	<tr, tc, tn, tm> = <1, 1, 32, 12>
+rd=577	num=16545600
+rd=19	num=0
+rd=19	num=12070656
+rd=-1	num=0
+rd=665664	num=111476736
+rd=111264	num=324480
+============> tile_size = 3756	hit_sum = 28616256	miss_sum = 111801216
+
+151	<tr, tc, tn, tm> = <1, 1, 32, 16>
+rd=577	num=16545600
+rd=19	num=0
+rd=19	num=12070656
+rd=-1	num=0
+rd=665664	num=111476736
+rd=111264	num=324480
+============> tile_size = 4912	hit_sum = 28616256	miss_sum = 111801216
+
+152	<tr, tc, tn, tm> = <1, 1, 32, 24>
+rd=577	num=16545600
+rd=19	num=0
+rd=19	num=12070656
+rd=-1	num=0
+rd=665664	num=111476736
+rd=111264	num=324480
+============> tile_size = 7224	hit_sum = 28616256	miss_sum = 111801216
+
+153	<tr, tc, tn, tm> = <1, 1, 32, 32>
+rd=577	num=16545600
+rd=19	num=0
+rd=19	num=12070656
+rd=-1	num=0
+rd=665664	num=111476736
+rd=111264	num=324480
+============> tile_size = 9536	hit_sum = 28616256	miss_sum = 111801216
+
+154	<tr, tc, tn, tm> = <1, 1, 32, 48>
+rd=577	num=16545600
+rd=19	num=0
+rd=19	num=12070656
+rd=-1	num=0
+rd=665664	num=111476736
+rd=111264	num=324480
+============> tile_size = 14160	hit_sum = 28616256	miss_sum = 111801216
+
+155	<tr, tc, tn, tm> = <1, 1, 32, 64>
+rd=577	num=16545600
+rd=19	num=0
+rd=19	num=12070656
+rd=-1	num=0
+rd=665664	num=111476736
+rd=111264	num=324480
+============> tile_size = 18784	hit_sum = 28616256	miss_sum = 111801216
+
+156	<tr, tc, tn, tm> = <1, 1, 32, 96>
+rd=577	num=16545600
+rd=19	num=0
+rd=19	num=12070656
+rd=-1	num=0
+rd=665664	num=111476736
+rd=111264	num=324480
+============> tile_size = 28032	hit_sum = 28616256	miss_sum = 111801216
+
+157	<tr, tc, tn, tm> = <1, 1, 32, 128>
+rd=577	num=16545600
+rd=19	num=0
+rd=19	num=12070656
+rd=-1	num=0
+rd=665664	num=111476736
+rd=111264	num=324480
+============> tile_size = 37280	hit_sum = 28616256	miss_sum = 111801216
+
+158	<tr, tc, tn, tm> = <1, 1, 32, 192>
+rd=577	num=16545600
+rd=19	num=0
+rd=19	num=12070656
+rd=-1	num=0
+rd=665664	num=111476736
+rd=111264	num=324480
+============> tile_size = 55776	hit_sum = 28616256	miss_sum = 111801216
+
+159	<tr, tc, tn, tm> = <1, 1, 48, 1>
+rd=865	num=16545600
+rd=19	num=0
+rd=19	num=12200448
+rd=-1	num=0
+rd=665664	num=111476736
+rd=166704	num=194688
+============> tile_size = 865	hit_sum = 28746048	miss_sum = 111671424
+
+160	<tr, tc, tn, tm> = <1, 1, 48, 2>
+rd=865	num=16545600
+rd=19	num=0
+rd=19	num=12200448
+rd=-1	num=0
+rd=665664	num=111476736
+rd=166704	num=194688
+============> tile_size = 1298	hit_sum = 28746048	miss_sum = 111671424
+
+161	<tr, tc, tn, tm> = <1, 1, 48, 3>
+rd=865	num=16545600
+rd=19	num=0
+rd=19	num=12200448
+rd=-1	num=0
+rd=665664	num=111476736
+rd=166704	num=194688
+============> tile_size = 1731	hit_sum = 28746048	miss_sum = 111671424
+
+162	<tr, tc, tn, tm> = <1, 1, 48, 4>
+rd=865	num=16545600
+rd=19	num=0
+rd=19	num=12200448
+rd=-1	num=0
+rd=665664	num=111476736
+rd=166704	num=194688
+============> tile_size = 2164	hit_sum = 28746048	miss_sum = 111671424
+
+163	<tr, tc, tn, tm> = <1, 1, 48, 6>
+rd=865	num=16545600
+rd=19	num=0
+rd=19	num=12200448
+rd=-1	num=0
+rd=665664	num=111476736
+rd=166704	num=194688
+============> tile_size = 3030	hit_sum = 28746048	miss_sum = 111671424
+
+164	<tr, tc, tn, tm> = <1, 1, 48, 8>
+rd=865	num=16545600
+rd=19	num=0
+rd=19	num=12200448
+rd=-1	num=0
+rd=665664	num=111476736
+rd=166704	num=194688
+============> tile_size = 3896	hit_sum = 28746048	miss_sum = 111671424
+
+165	<tr, tc, tn, tm> = <1, 1, 48, 12>
+rd=865	num=16545600
+rd=19	num=0
+rd=19	num=12200448
+rd=-1	num=0
+rd=665664	num=111476736
+rd=166704	num=194688
+============> tile_size = 5628	hit_sum = 28746048	miss_sum = 111671424
+
+166	<tr, tc, tn, tm> = <1, 1, 48, 16>
+rd=865	num=16545600
+rd=19	num=0
+rd=19	num=12200448
+rd=-1	num=0
+rd=665664	num=111476736
+rd=166704	num=194688
+============> tile_size = 7360	hit_sum = 28746048	miss_sum = 111671424
+
+167	<tr, tc, tn, tm> = <1, 1, 48, 24>
+rd=865	num=16545600
+rd=19	num=0
+rd=19	num=12200448
+rd=-1	num=0
+rd=665664	num=111476736
+rd=166704	num=194688
+============> tile_size = 10824	hit_sum = 28746048	miss_sum = 111671424
+
+168	<tr, tc, tn, tm> = <1, 1, 48, 32>
+rd=865	num=16545600
+rd=19	num=0
+rd=19	num=12200448
+rd=-1	num=0
+rd=665664	num=111476736
+rd=166704	num=194688
+============> tile_size = 14288	hit_sum = 28746048	miss_sum = 111671424
+
+169	<tr, tc, tn, tm> = <1, 1, 48, 48>
+rd=865	num=16545600
+rd=19	num=0
+rd=19	num=12200448
+rd=-1	num=0
+rd=665664	num=111476736
+rd=166704	num=194688
+============> tile_size = 21216	hit_sum = 28746048	miss_sum = 111671424
+
+170	<tr, tc, tn, tm> = <1, 1, 48, 64>
+rd=865	num=16545600
+rd=19	num=0
+rd=19	num=12200448
+rd=-1	num=0
+rd=665664	num=111476736
+rd=166704	num=194688
+============> tile_size = 28144	hit_sum = 28746048	miss_sum = 111671424
+
+171	<tr, tc, tn, tm> = <1, 1, 48, 96>
+rd=865	num=16545600
+rd=19	num=0
+rd=19	num=12200448
+rd=-1	num=0
+rd=665664	num=111476736
+rd=166704	num=194688
+============> tile_size = 42000	hit_sum = 28746048	miss_sum = 111671424
+
+172	<tr, tc, tn, tm> = <1, 1, 48, 128>
+rd=865	num=16545600
+rd=19	num=0
+rd=19	num=12200448
+rd=-1	num=0
+rd=665664	num=111476736
+rd=166704	num=194688
+============> tile_size = 55856	hit_sum = 28746048	miss_sum = 111671424
+
+173	<tr, tc, tn, tm> = <1, 1, 64, 1>
+rd=1153	num=16545600
+rd=19	num=0
+rd=19	num=12265344
+rd=-1	num=0
+rd=665664	num=111476736
+rd=222144	num=129792
+============> tile_size = 1153	hit_sum = 28810944	miss_sum = 111606528
+
+174	<tr, tc, tn, tm> = <1, 1, 64, 2>
+rd=1153	num=16545600
+rd=19	num=0
+rd=19	num=12265344
+rd=-1	num=0
+rd=665664	num=111476736
+rd=222144	num=129792
+============> tile_size = 1730	hit_sum = 28810944	miss_sum = 111606528
+
+175	<tr, tc, tn, tm> = <1, 1, 64, 3>
+rd=1153	num=16545600
+rd=19	num=0
+rd=19	num=12265344
+rd=-1	num=0
+rd=665664	num=111476736
+rd=222144	num=129792
+============> tile_size = 2307	hit_sum = 28810944	miss_sum = 111606528
+
+176	<tr, tc, tn, tm> = <1, 1, 64, 4>
+rd=1153	num=16545600
+rd=19	num=0
+rd=19	num=12265344
+rd=-1	num=0
+rd=665664	num=111476736
+rd=222144	num=129792
+============> tile_size = 2884	hit_sum = 28810944	miss_sum = 111606528
+
+177	<tr, tc, tn, tm> = <1, 1, 64, 6>
+rd=1153	num=16545600
+rd=19	num=0
+rd=19	num=12265344
+rd=-1	num=0
+rd=665664	num=111476736
+rd=222144	num=129792
+============> tile_size = 4038	hit_sum = 28810944	miss_sum = 111606528
+
+178	<tr, tc, tn, tm> = <1, 1, 64, 8>
+rd=1153	num=16545600
+rd=19	num=0
+rd=19	num=12265344
+rd=-1	num=0
+rd=665664	num=111476736
+rd=222144	num=129792
+============> tile_size = 5192	hit_sum = 28810944	miss_sum = 111606528
+
+179	<tr, tc, tn, tm> = <1, 1, 64, 12>
+rd=1153	num=16545600
+rd=19	num=0
+rd=19	num=12265344
+rd=-1	num=0
+rd=665664	num=111476736
+rd=222144	num=129792
+============> tile_size = 7500	hit_sum = 28810944	miss_sum = 111606528
+
+180	<tr, tc, tn, tm> = <1, 1, 64, 16>
+rd=1153	num=16545600
+rd=19	num=0
+rd=19	num=12265344
+rd=-1	num=0
+rd=665664	num=111476736
+rd=222144	num=129792
+============> tile_size = 9808	hit_sum = 28810944	miss_sum = 111606528
+
+181	<tr, tc, tn, tm> = <1, 1, 64, 24>
+rd=1153	num=16545600
+rd=19	num=0
+rd=19	num=12265344
+rd=-1	num=0
+rd=665664	num=111476736
+rd=222144	num=129792
+============> tile_size = 14424	hit_sum = 28810944	miss_sum = 111606528
+
+182	<tr, tc, tn, tm> = <1, 1, 64, 32>
+rd=1153	num=16545600
+rd=19	num=0
+rd=19	num=12265344
+rd=-1	num=0
+rd=665664	num=111476736
+rd=222144	num=129792
+============> tile_size = 19040	hit_sum = 28810944	miss_sum = 111606528
+
+183	<tr, tc, tn, tm> = <1, 1, 64, 48>
+rd=1153	num=16545600
+rd=19	num=0
+rd=19	num=12265344
+rd=-1	num=0
+rd=665664	num=111476736
+rd=222144	num=129792
+============> tile_size = 28272	hit_sum = 28810944	miss_sum = 111606528
+
+184	<tr, tc, tn, tm> = <1, 1, 64, 64>
+rd=1153	num=16545600
+rd=19	num=0
+rd=19	num=12265344
+rd=-1	num=0
+rd=665664	num=111476736
+rd=222144	num=129792
+============> tile_size = 37504	hit_sum = 28810944	miss_sum = 111606528
+
+185	<tr, tc, tn, tm> = <1, 1, 64, 96>
+rd=1153	num=16545600
+rd=19	num=0
+rd=19	num=12265344
+rd=-1	num=0
+rd=665664	num=111476736
+rd=222144	num=129792
+============> tile_size = 55968	hit_sum = 28810944	miss_sum = 111606528
+
+186	<tr, tc, tn, tm> = <1, 1, 96, 1>
+rd=1729	num=16545600
+rd=19	num=0
+rd=19	num=12330240
+rd=-1	num=0
+rd=665664	num=111476736
+rd=333024	num=64896
+============> tile_size = 1729	hit_sum = 28875840	miss_sum = 111541632
+
+187	<tr, tc, tn, tm> = <1, 1, 96, 2>
+rd=1729	num=16545600
+rd=19	num=0
+rd=19	num=12330240
+rd=-1	num=0
+rd=665664	num=111476736
+rd=333024	num=64896
+============> tile_size = 2594	hit_sum = 28875840	miss_sum = 111541632
+
+188	<tr, tc, tn, tm> = <1, 1, 96, 3>
+rd=1729	num=16545600
+rd=19	num=0
+rd=19	num=12330240
+rd=-1	num=0
+rd=665664	num=111476736
+rd=333024	num=64896
+============> tile_size = 3459	hit_sum = 28875840	miss_sum = 111541632
+
+189	<tr, tc, tn, tm> = <1, 1, 96, 4>
+rd=1729	num=16545600
+rd=19	num=0
+rd=19	num=12330240
+rd=-1	num=0
+rd=665664	num=111476736
+rd=333024	num=64896
+============> tile_size = 4324	hit_sum = 28875840	miss_sum = 111541632
+
+190	<tr, tc, tn, tm> = <1, 1, 96, 6>
+rd=1729	num=16545600
+rd=19	num=0
+rd=19	num=12330240
+rd=-1	num=0
+rd=665664	num=111476736
+rd=333024	num=64896
+============> tile_size = 6054	hit_sum = 28875840	miss_sum = 111541632
+
+191	<tr, tc, tn, tm> = <1, 1, 96, 8>
+rd=1729	num=16545600
+rd=19	num=0
+rd=19	num=12330240
+rd=-1	num=0
+rd=665664	num=111476736
+rd=333024	num=64896
+============> tile_size = 7784	hit_sum = 28875840	miss_sum = 111541632
+
+192	<tr, tc, tn, tm> = <1, 1, 96, 12>
+rd=1729	num=16545600
+rd=19	num=0
+rd=19	num=12330240
+rd=-1	num=0
+rd=665664	num=111476736
+rd=333024	num=64896
+============> tile_size = 11244	hit_sum = 28875840	miss_sum = 111541632
+
+193	<tr, tc, tn, tm> = <1, 1, 96, 16>
+rd=1729	num=16545600
+rd=19	num=0
+rd=19	num=12330240
+rd=-1	num=0
+rd=665664	num=111476736
+rd=333024	num=64896
+============> tile_size = 14704	hit_sum = 28875840	miss_sum = 111541632
+
+194	<tr, tc, tn, tm> = <1, 1, 96, 24>
+rd=1729	num=16545600
+rd=19	num=0
+rd=19	num=12330240
+rd=-1	num=0
+rd=665664	num=111476736
+rd=333024	num=64896
+============> tile_size = 21624	hit_sum = 28875840	miss_sum = 111541632
+
+195	<tr, tc, tn, tm> = <1, 1, 96, 32>
+rd=1729	num=16545600
+rd=19	num=0
+rd=19	num=12330240
+rd=-1	num=0
+rd=665664	num=111476736
+rd=333024	num=64896
+============> tile_size = 28544	hit_sum = 28875840	miss_sum = 111541632
+
+196	<tr, tc, tn, tm> = <1, 1, 96, 48>
+rd=1729	num=16545600
+rd=19	num=0
+rd=19	num=12330240
+rd=-1	num=0
+rd=665664	num=111476736
+rd=333024	num=64896
+============> tile_size = 42384	hit_sum = 28875840	miss_sum = 111541632
+
+197	<tr, tc, tn, tm> = <1, 1, 96, 64>
+rd=1729	num=16545600
+rd=19	num=0
+rd=19	num=12330240
+rd=-1	num=0
+rd=665664	num=111476736
+rd=333024	num=64896
+============> tile_size = 56224	hit_sum = 28875840	miss_sum = 111541632
+
+198	<tr, tc, tn, tm> = <1, 1, 192, 1>
+rd=3457	num=16545600
+rd=19	num=0
+rd=19	num=12395136
+rd=-1	num=0
+rd=665664	num=111476736
+rd=665664	num=0
+============> tile_size = 3457	hit_sum = 28940736	miss_sum = 111476736
+
+199	<tr, tc, tn, tm> = <1, 1, 192, 2>
+rd=3457	num=16545600
+rd=19	num=0
+rd=19	num=12395136
+rd=-1	num=0
+rd=665664	num=111476736
+rd=665664	num=0
+============> tile_size = 5186	hit_sum = 28940736	miss_sum = 111476736
+
+200	<tr, tc, tn, tm> = <1, 1, 192, 3>
+rd=3457	num=16545600
+rd=19	num=0
+rd=19	num=12395136
+rd=-1	num=0
+rd=665664	num=111476736
+rd=665664	num=0
+============> tile_size = 6915	hit_sum = 28940736	miss_sum = 111476736
+
+201	<tr, tc, tn, tm> = <1, 1, 192, 4>
+rd=3457	num=16545600
+rd=19	num=0
+rd=19	num=12395136
+rd=-1	num=0
+rd=665664	num=111476736
+rd=665664	num=0
+============> tile_size = 8644	hit_sum = 28940736	miss_sum = 111476736
+
+202	<tr, tc, tn, tm> = <1, 1, 192, 6>
+rd=3457	num=16545600
+rd=19	num=0
+rd=19	num=12395136
+rd=-1	num=0
+rd=665664	num=111476736
+rd=665664	num=0
+============> tile_size = 12102	hit_sum = 28940736	miss_sum = 111476736
+
+203	<tr, tc, tn, tm> = <1, 1, 192, 8>
+rd=3457	num=16545600
+rd=19	num=0
+rd=19	num=12395136
+rd=-1	num=0
+rd=665664	num=111476736
+rd=665664	num=0
+============> tile_size = 15560	hit_sum = 28940736	miss_sum = 111476736
+
+204	<tr, tc, tn, tm> = <1, 1, 192, 12>
+rd=3457	num=16545600
+rd=19	num=0
+rd=19	num=12395136
+rd=-1	num=0
+rd=665664	num=111476736
+rd=665664	num=0
+============> tile_size = 22476	hit_sum = 28940736	miss_sum = 111476736
+
+205	<tr, tc, tn, tm> = <1, 1, 192, 16>
+rd=3457	num=16545600
+rd=19	num=0
+rd=19	num=12395136
+rd=-1	num=0
+rd=665664	num=111476736
+rd=665664	num=0
+============> tile_size = 29392	hit_sum = 28940736	miss_sum = 111476736
+
+206	<tr, tc, tn, tm> = <1, 1, 192, 24>
+rd=3457	num=16545600
+rd=19	num=0
+rd=19	num=12395136
+rd=-1	num=0
+rd=665664	num=111476736
+rd=665664	num=0
+============> tile_size = 43224	hit_sum = 28940736	miss_sum = 111476736
+
+207	<tr, tc, tn, tm> = <1, 1, 192, 32>
+rd=3457	num=16545600
+rd=19	num=0
+rd=19	num=12395136
+rd=-1	num=0
+rd=665664	num=111476736
+rd=665664	num=0
+============> tile_size = 57056	hit_sum = 28940736	miss_sum = 111476736
+
+208	<tr, tc, tn, tm> = <13, 13, 1, 1>
+rd=403	num=16545600
+rd=19	num=111476736
+rd=403	num=0
+rd=-1	num=0
+rd=771648	num=0
+rd=68577	num=12395136
+============> tile_size = 403	hit_sum = 128022336	miss_sum = 12395136
+
+209	<tr, tc, tn, tm> = <13, 13, 1, 2>
+rd=403	num=16545600
+rd=19	num=111476736
+rd=403	num=0
+rd=-1	num=0
+rd=771648	num=0
+rd=68577	num=12395136
+============> tile_size = 581	hit_sum = 128022336	miss_sum = 12395136
+
+210	<tr, tc, tn, tm> = <13, 13, 1, 3>
+rd=403	num=16545600
+rd=19	num=111476736
+rd=403	num=0
+rd=-1	num=0
+rd=771648	num=0
+rd=68577	num=12395136
+============> tile_size = 759	hit_sum = 128022336	miss_sum = 12395136
+
+211	<tr, tc, tn, tm> = <13, 13, 1, 4>
+rd=403	num=16545600
+rd=19	num=111476736
+rd=403	num=0
+rd=-1	num=0
+rd=771648	num=0
+rd=68577	num=12395136
+============> tile_size = 937	hit_sum = 128022336	miss_sum = 12395136
+
+212	<tr, tc, tn, tm> = <13, 13, 1, 6>
+rd=403	num=16545600
+rd=19	num=111476736
+rd=403	num=0
+rd=-1	num=0
+rd=771648	num=0
+rd=68577	num=12395136
+============> tile_size = 1293	hit_sum = 128022336	miss_sum = 12395136
+
+213	<tr, tc, tn, tm> = <13, 13, 1, 8>
+rd=403	num=16545600
+rd=19	num=111476736
+rd=403	num=0
+rd=-1	num=0
+rd=771648	num=0
+rd=68577	num=12395136
+============> tile_size = 1649	hit_sum = 128022336	miss_sum = 12395136
+
+214	<tr, tc, tn, tm> = <13, 13, 1, 12>
+rd=403	num=16545600
+rd=19	num=111476736
+rd=403	num=0
+rd=-1	num=0
+rd=771648	num=0
+rd=68577	num=12395136
+============> tile_size = 2361	hit_sum = 128022336	miss_sum = 12395136
+
+215	<tr, tc, tn, tm> = <13, 13, 1, 16>
+rd=403	num=16545600
+rd=19	num=111476736
+rd=403	num=0
+rd=-1	num=0
+rd=771648	num=0
+rd=68577	num=12395136
+============> tile_size = 3073	hit_sum = 128022336	miss_sum = 12395136
+
+216	<tr, tc, tn, tm> = <13, 13, 1, 24>
+rd=403	num=16545600
+rd=19	num=111476736
+rd=403	num=0
+rd=-1	num=0
+rd=771648	num=0
+rd=68577	num=12395136
+============> tile_size = 4497	hit_sum = 128022336	miss_sum = 12395136
+
+217	<tr, tc, tn, tm> = <13, 13, 1, 32>
+rd=403	num=16545600
+rd=19	num=111476736
+rd=403	num=0
+rd=-1	num=0
+rd=771648	num=0
+rd=68577	num=12395136
+============> tile_size = 5921	hit_sum = 128022336	miss_sum = 12395136
+
+218	<tr, tc, tn, tm> = <13, 13, 1, 48>
+rd=403	num=16545600
+rd=19	num=111476736
+rd=403	num=0
+rd=-1	num=0
+rd=771648	num=0
+rd=68577	num=12395136
+============> tile_size = 8769	hit_sum = 128022336	miss_sum = 12395136
+
+219	<tr, tc, tn, tm> = <13, 13, 1, 64>
+rd=403	num=16545600
+rd=19	num=111476736
+rd=403	num=0
+rd=-1	num=0
+rd=771648	num=0
+rd=68577	num=12395136
+============> tile_size = 11617	hit_sum = 128022336	miss_sum = 12395136
+
+220	<tr, tc, tn, tm> = <13, 13, 1, 96>
+rd=403	num=16545600
+rd=19	num=111476736
+rd=403	num=0
+rd=-1	num=0
+rd=771648	num=0
+rd=68577	num=12395136
+============> tile_size = 17313	hit_sum = 128022336	miss_sum = 12395136
+
+221	<tr, tc, tn, tm> = <13, 13, 1, 128>
+rd=403	num=16545600
+rd=19	num=111476736
+rd=403	num=0
+rd=-1	num=0
+rd=771648	num=0
+rd=68577	num=12395136
+============> tile_size = 23009	hit_sum = 128022336	miss_sum = 12395136
+
+222	<tr, tc, tn, tm> = <13, 13, 1, 192>
+rd=403	num=16545600
+rd=19	num=111476736
+rd=403	num=0
+rd=-1	num=0
+rd=771648	num=0
+rd=68577	num=12395136
+============> tile_size = 34401	hit_sum = 128022336	miss_sum = 12395136
+
+223	<tr, tc, tn, tm> = <13, 13, 2, 1>
+rd=637	num=16545600
+rd=19	num=111476736
+rd=403	num=6230016
+rd=-1	num=0
+rd=771648	num=0
+rd=72258	num=6165120
+============> tile_size = 637	hit_sum = 134252352	miss_sum = 6165120
+
+224	<tr, tc, tn, tm> = <13, 13, 2, 2>
+rd=637	num=16545600
+rd=19	num=111476736
+rd=403	num=6230016
+rd=-1	num=0
+rd=771648	num=0
+rd=72258	num=6165120
+============> tile_size = 824	hit_sum = 134252352	miss_sum = 6165120
+
+225	<tr, tc, tn, tm> = <13, 13, 2, 3>
+rd=637	num=16545600
+rd=19	num=111476736
+rd=403	num=6230016
+rd=-1	num=0
+rd=771648	num=0
+rd=72258	num=6165120
+============> tile_size = 1011	hit_sum = 134252352	miss_sum = 6165120
+
+226	<tr, tc, tn, tm> = <13, 13, 2, 4>
+rd=637	num=16545600
+rd=19	num=111476736
+rd=403	num=6230016
+rd=-1	num=0
+rd=771648	num=0
+rd=72258	num=6165120
+============> tile_size = 1198	hit_sum = 134252352	miss_sum = 6165120
+
+227	<tr, tc, tn, tm> = <13, 13, 2, 6>
+rd=637	num=16545600
+rd=19	num=111476736
+rd=403	num=6230016
+rd=-1	num=0
+rd=771648	num=0
+rd=72258	num=6165120
+============> tile_size = 1572	hit_sum = 134252352	miss_sum = 6165120
+
+228	<tr, tc, tn, tm> = <13, 13, 2, 8>
+rd=637	num=16545600
+rd=19	num=111476736
+rd=403	num=6230016
+rd=-1	num=0
+rd=771648	num=0
+rd=72258	num=6165120
+============> tile_size = 1946	hit_sum = 134252352	miss_sum = 6165120
+
+229	<tr, tc, tn, tm> = <13, 13, 2, 12>
+rd=637	num=16545600
+rd=19	num=111476736
+rd=403	num=6230016
+rd=-1	num=0
+rd=771648	num=0
+rd=72258	num=6165120
+============> tile_size = 2694	hit_sum = 134252352	miss_sum = 6165120
+
+230	<tr, tc, tn, tm> = <13, 13, 2, 16>
+rd=637	num=16545600
+rd=19	num=111476736
+rd=403	num=6230016
+rd=-1	num=0
+rd=771648	num=0
+rd=72258	num=6165120
+============> tile_size = 3442	hit_sum = 134252352	miss_sum = 6165120
+
+231	<tr, tc, tn, tm> = <13, 13, 2, 24>
+rd=637	num=16545600
+rd=19	num=111476736
+rd=403	num=6230016
+rd=-1	num=0
+rd=771648	num=0
+rd=72258	num=6165120
+============> tile_size = 4938	hit_sum = 134252352	miss_sum = 6165120
+
+232	<tr, tc, tn, tm> = <13, 13, 2, 32>
+rd=637	num=16545600
+rd=19	num=111476736
+rd=403	num=6230016
+rd=-1	num=0
+rd=771648	num=0
+rd=72258	num=6165120
+============> tile_size = 6434	hit_sum = 134252352	miss_sum = 6165120
+
+233	<tr, tc, tn, tm> = <13, 13, 2, 48>
+rd=637	num=16545600
+rd=19	num=111476736
+rd=403	num=6230016
+rd=-1	num=0
+rd=771648	num=0
+rd=72258	num=6165120
+============> tile_size = 9426	hit_sum = 134252352	miss_sum = 6165120
+
+234	<tr, tc, tn, tm> = <13, 13, 2, 64>
+rd=637	num=16545600
+rd=19	num=111476736
+rd=403	num=6230016
+rd=-1	num=0
+rd=771648	num=0
+rd=72258	num=6165120
+============> tile_size = 12418	hit_sum = 134252352	miss_sum = 6165120
+
+235	<tr, tc, tn, tm> = <13, 13, 2, 96>
+rd=637	num=16545600
+rd=19	num=111476736
+rd=403	num=6230016
+rd=-1	num=0
+rd=771648	num=0
+rd=72258	num=6165120
+============> tile_size = 18402	hit_sum = 134252352	miss_sum = 6165120
+
+236	<tr, tc, tn, tm> = <13, 13, 2, 128>
+rd=637	num=16545600
+rd=19	num=111476736
+rd=403	num=6230016
+rd=-1	num=0
+rd=771648	num=0
+rd=72258	num=6165120
+============> tile_size = 24386	hit_sum = 134252352	miss_sum = 6165120
+
+237	<tr, tc, tn, tm> = <13, 13, 2, 192>
+rd=637	num=16545600
+rd=19	num=111476736
+rd=403	num=6230016
+rd=-1	num=0
+rd=771648	num=0
+rd=72258	num=6165120
+============> tile_size = 36354	hit_sum = 134252352	miss_sum = 6165120
+
+238	<tr, tc, tn, tm> = <13, 13, 3, 1>
+rd=871	num=16545600
+rd=19	num=111476736
+rd=403	num=8306688
+rd=-1	num=0
+rd=771648	num=0
+rd=75939	num=4088448
+============> tile_size = 871	hit_sum = 136329024	miss_sum = 4088448
+
+239	<tr, tc, tn, tm> = <13, 13, 3, 2>
+rd=871	num=16545600
+rd=19	num=111476736
+rd=403	num=8306688
+rd=-1	num=0
+rd=771648	num=0
+rd=75939	num=4088448
+============> tile_size = 1067	hit_sum = 136329024	miss_sum = 4088448
+
+240	<tr, tc, tn, tm> = <13, 13, 3, 3>
+rd=871	num=16545600
+rd=19	num=111476736
+rd=403	num=8306688
+rd=-1	num=0
+rd=771648	num=0
+rd=75939	num=4088448
+============> tile_size = 1263	hit_sum = 136329024	miss_sum = 4088448
+
+241	<tr, tc, tn, tm> = <13, 13, 3, 4>
+rd=871	num=16545600
+rd=19	num=111476736
+rd=403	num=8306688
+rd=-1	num=0
+rd=771648	num=0
+rd=75939	num=4088448
+============> tile_size = 1459	hit_sum = 136329024	miss_sum = 4088448
+
+242	<tr, tc, tn, tm> = <13, 13, 3, 6>
+rd=871	num=16545600
+rd=19	num=111476736
+rd=403	num=8306688
+rd=-1	num=0
+rd=771648	num=0
+rd=75939	num=4088448
+============> tile_size = 1851	hit_sum = 136329024	miss_sum = 4088448
+
+243	<tr, tc, tn, tm> = <13, 13, 3, 8>
+rd=871	num=16545600
+rd=19	num=111476736
+rd=403	num=8306688
+rd=-1	num=0
+rd=771648	num=0
+rd=75939	num=4088448
+============> tile_size = 2243	hit_sum = 136329024	miss_sum = 4088448
+
+244	<tr, tc, tn, tm> = <13, 13, 3, 12>
+rd=871	num=16545600
+rd=19	num=111476736
+rd=403	num=8306688
+rd=-1	num=0
+rd=771648	num=0
+rd=75939	num=4088448
+============> tile_size = 3027	hit_sum = 136329024	miss_sum = 4088448
+
+245	<tr, tc, tn, tm> = <13, 13, 3, 16>
+rd=871	num=16545600
+rd=19	num=111476736
+rd=403	num=8306688
+rd=-1	num=0
+rd=771648	num=0
+rd=75939	num=4088448
+============> tile_size = 3811	hit_sum = 136329024	miss_sum = 4088448
+
+246	<tr, tc, tn, tm> = <13, 13, 3, 24>
+rd=871	num=16545600
+rd=19	num=111476736
+rd=403	num=8306688
+rd=-1	num=0
+rd=771648	num=0
+rd=75939	num=4088448
+============> tile_size = 5379	hit_sum = 136329024	miss_sum = 4088448
+
+247	<tr, tc, tn, tm> = <13, 13, 3, 32>
+rd=871	num=16545600
+rd=19	num=111476736
+rd=403	num=8306688
+rd=-1	num=0
+rd=771648	num=0
+rd=75939	num=4088448
+============> tile_size = 6947	hit_sum = 136329024	miss_sum = 4088448
+
+248	<tr, tc, tn, tm> = <13, 13, 3, 48>
+rd=871	num=16545600
+rd=19	num=111476736
+rd=403	num=8306688
+rd=-1	num=0
+rd=771648	num=0
+rd=75939	num=4088448
+============> tile_size = 10083	hit_sum = 136329024	miss_sum = 4088448
+
+249	<tr, tc, tn, tm> = <13, 13, 3, 64>
+rd=871	num=16545600
+rd=19	num=111476736
+rd=403	num=8306688
+rd=-1	num=0
+rd=771648	num=0
+rd=75939	num=4088448
+============> tile_size = 13219	hit_sum = 136329024	miss_sum = 4088448
+
+250	<tr, tc, tn, tm> = <13, 13, 3, 96>
+rd=871	num=16545600
+rd=19	num=111476736
+rd=403	num=8306688
+rd=-1	num=0
+rd=771648	num=0
+rd=75939	num=4088448
+============> tile_size = 19491	hit_sum = 136329024	miss_sum = 4088448
+
+251	<tr, tc, tn, tm> = <13, 13, 3, 128>
+rd=871	num=16545600
+rd=19	num=111476736
+rd=403	num=8306688
+rd=-1	num=0
+rd=771648	num=0
+rd=75939	num=4088448
+============> tile_size = 25763	hit_sum = 136329024	miss_sum = 4088448
+
+252	<tr, tc, tn, tm> = <13, 13, 3, 192>
+rd=871	num=16545600
+rd=19	num=111476736
+rd=403	num=8306688
+rd=-1	num=0
+rd=771648	num=0
+rd=75939	num=4088448
+============> tile_size = 38307	hit_sum = 136329024	miss_sum = 4088448
+
+253	<tr, tc, tn, tm> = <13, 13, 4, 1>
+rd=1105	num=16545600
+rd=19	num=111476736
+rd=403	num=9345024
+rd=-1	num=0
+rd=771648	num=0
+rd=79620	num=3050112
+============> tile_size = 1105	hit_sum = 137367360	miss_sum = 3050112
+
+254	<tr, tc, tn, tm> = <13, 13, 4, 2>
+rd=1105	num=16545600
+rd=19	num=111476736
+rd=403	num=9345024
+rd=-1	num=0
+rd=771648	num=0
+rd=79620	num=3050112
+============> tile_size = 1310	hit_sum = 137367360	miss_sum = 3050112
+
+255	<tr, tc, tn, tm> = <13, 13, 4, 3>
+rd=1105	num=16545600
+rd=19	num=111476736
+rd=403	num=9345024
+rd=-1	num=0
+rd=771648	num=0
+rd=79620	num=3050112
+============> tile_size = 1515	hit_sum = 137367360	miss_sum = 3050112
+
+256	<tr, tc, tn, tm> = <13, 13, 4, 4>
+rd=1105	num=16545600
+rd=19	num=111476736
+rd=403	num=9345024
+rd=-1	num=0
+rd=771648	num=0
+rd=79620	num=3050112
+============> tile_size = 1720	hit_sum = 137367360	miss_sum = 3050112
+
+257	<tr, tc, tn, tm> = <13, 13, 4, 6>
+rd=1105	num=16545600
+rd=19	num=111476736
+rd=403	num=9345024
+rd=-1	num=0
+rd=771648	num=0
+rd=79620	num=3050112
+============> tile_size = 2130	hit_sum = 137367360	miss_sum = 3050112
+
+258	<tr, tc, tn, tm> = <13, 13, 4, 8>
+rd=1105	num=16545600
+rd=19	num=111476736
+rd=403	num=9345024
+rd=-1	num=0
+rd=771648	num=0
+rd=79620	num=3050112
+============> tile_size = 2540	hit_sum = 137367360	miss_sum = 3050112
+
+259	<tr, tc, tn, tm> = <13, 13, 4, 12>
+rd=1105	num=16545600
+rd=19	num=111476736
+rd=403	num=9345024
+rd=-1	num=0
+rd=771648	num=0
+rd=79620	num=3050112
+============> tile_size = 3360	hit_sum = 137367360	miss_sum = 3050112
+
+260	<tr, tc, tn, tm> = <13, 13, 4, 16>
+rd=1105	num=16545600
+rd=19	num=111476736
+rd=403	num=9345024
+rd=-1	num=0
+rd=771648	num=0
+rd=79620	num=3050112
+============> tile_size = 4180	hit_sum = 137367360	miss_sum = 3050112
+
+261	<tr, tc, tn, tm> = <13, 13, 4, 24>
+rd=1105	num=16545600
+rd=19	num=111476736
+rd=403	num=9345024
+rd=-1	num=0
+rd=771648	num=0
+rd=79620	num=3050112
+============> tile_size = 5820	hit_sum = 137367360	miss_sum = 3050112
+
+262	<tr, tc, tn, tm> = <13, 13, 4, 32>
+rd=1105	num=16545600
+rd=19	num=111476736
+rd=403	num=9345024
+rd=-1	num=0
+rd=771648	num=0
+rd=79620	num=3050112
+============> tile_size = 7460	hit_sum = 137367360	miss_sum = 3050112
+
+263	<tr, tc, tn, tm> = <13, 13, 4, 48>
+rd=1105	num=16545600
+rd=19	num=111476736
+rd=403	num=9345024
+rd=-1	num=0
+rd=771648	num=0
+rd=79620	num=3050112
+============> tile_size = 10740	hit_sum = 137367360	miss_sum = 3050112
+
+264	<tr, tc, tn, tm> = <13, 13, 4, 64>
+rd=1105	num=16545600
+rd=19	num=111476736
+rd=403	num=9345024
+rd=-1	num=0
+rd=771648	num=0
+rd=79620	num=3050112
+============> tile_size = 14020	hit_sum = 137367360	miss_sum = 3050112
+
+265	<tr, tc, tn, tm> = <13, 13, 4, 96>
+rd=1105	num=16545600
+rd=19	num=111476736
+rd=403	num=9345024
+rd=-1	num=0
+rd=771648	num=0
+rd=79620	num=3050112
+============> tile_size = 20580	hit_sum = 137367360	miss_sum = 3050112
+
+266	<tr, tc, tn, tm> = <13, 13, 4, 128>
+rd=1105	num=16545600
+rd=19	num=111476736
+rd=403	num=9345024
+rd=-1	num=0
+rd=771648	num=0
+rd=79620	num=3050112
+============> tile_size = 27140	hit_sum = 137367360	miss_sum = 3050112
+
+267	<tr, tc, tn, tm> = <13, 13, 4, 192>
+rd=1105	num=16545600
+rd=19	num=111476736
+rd=403	num=9345024
+rd=-1	num=0
+rd=771648	num=0
+rd=79620	num=3050112
+============> tile_size = 40260	hit_sum = 137367360	miss_sum = 3050112
+
+268	<tr, tc, tn, tm> = <13, 13, 6, 1>
+rd=1573	num=16545600
+rd=19	num=111476736
+rd=403	num=10383360
+rd=-1	num=0
+rd=771648	num=0
+rd=86982	num=2011776
+============> tile_size = 1573	hit_sum = 138405696	miss_sum = 2011776
+
+269	<tr, tc, tn, tm> = <13, 13, 6, 2>
+rd=1573	num=16545600
+rd=19	num=111476736
+rd=403	num=10383360
+rd=-1	num=0
+rd=771648	num=0
+rd=86982	num=2011776
+============> tile_size = 1796	hit_sum = 138405696	miss_sum = 2011776
+
+270	<tr, tc, tn, tm> = <13, 13, 6, 3>
+rd=1573	num=16545600
+rd=19	num=111476736
+rd=403	num=10383360
+rd=-1	num=0
+rd=771648	num=0
+rd=86982	num=2011776
+============> tile_size = 2019	hit_sum = 138405696	miss_sum = 2011776
+
+271	<tr, tc, tn, tm> = <13, 13, 6, 4>
+rd=1573	num=16545600
+rd=19	num=111476736
+rd=403	num=10383360
+rd=-1	num=0
+rd=771648	num=0
+rd=86982	num=2011776
+============> tile_size = 2242	hit_sum = 138405696	miss_sum = 2011776
+
+272	<tr, tc, tn, tm> = <13, 13, 6, 6>
+rd=1573	num=16545600
+rd=19	num=111476736
+rd=403	num=10383360
+rd=-1	num=0
+rd=771648	num=0
+rd=86982	num=2011776
+============> tile_size = 2688	hit_sum = 138405696	miss_sum = 2011776
+
+273	<tr, tc, tn, tm> = <13, 13, 6, 8>
+rd=1573	num=16545600
+rd=19	num=111476736
+rd=403	num=10383360
+rd=-1	num=0
+rd=771648	num=0
+rd=86982	num=2011776
+============> tile_size = 3134	hit_sum = 138405696	miss_sum = 2011776
+
+274	<tr, tc, tn, tm> = <13, 13, 6, 12>
+rd=1573	num=16545600
+rd=19	num=111476736
+rd=403	num=10383360
+rd=-1	num=0
+rd=771648	num=0
+rd=86982	num=2011776
+============> tile_size = 4026	hit_sum = 138405696	miss_sum = 2011776
+
+275	<tr, tc, tn, tm> = <13, 13, 6, 16>
+rd=1573	num=16545600
+rd=19	num=111476736
+rd=403	num=10383360
+rd=-1	num=0
+rd=771648	num=0
+rd=86982	num=2011776
+============> tile_size = 4918	hit_sum = 138405696	miss_sum = 2011776
+
+276	<tr, tc, tn, tm> = <13, 13, 6, 24>
+rd=1573	num=16545600
+rd=19	num=111476736
+rd=403	num=10383360
+rd=-1	num=0
+rd=771648	num=0
+rd=86982	num=2011776
+============> tile_size = 6702	hit_sum = 138405696	miss_sum = 2011776
+
+277	<tr, tc, tn, tm> = <13, 13, 6, 32>
+rd=1573	num=16545600
+rd=19	num=111476736
+rd=403	num=10383360
+rd=-1	num=0
+rd=771648	num=0
+rd=86982	num=2011776
+============> tile_size = 8486	hit_sum = 138405696	miss_sum = 2011776
+
+278	<tr, tc, tn, tm> = <13, 13, 6, 48>
+rd=1573	num=16545600
+rd=19	num=111476736
+rd=403	num=10383360
+rd=-1	num=0
+rd=771648	num=0
+rd=86982	num=2011776
+============> tile_size = 12054	hit_sum = 138405696	miss_sum = 2011776
+
+279	<tr, tc, tn, tm> = <13, 13, 6, 64>
+rd=1573	num=16545600
+rd=19	num=111476736
+rd=403	num=10383360
+rd=-1	num=0
+rd=771648	num=0
+rd=86982	num=2011776
+============> tile_size = 15622	hit_sum = 138405696	miss_sum = 2011776
+
+280	<tr, tc, tn, tm> = <13, 13, 6, 96>
+rd=1573	num=16545600
+rd=19	num=111476736
+rd=403	num=10383360
+rd=-1	num=0
+rd=771648	num=0
+rd=86982	num=2011776
+============> tile_size = 22758	hit_sum = 138405696	miss_sum = 2011776
+
+281	<tr, tc, tn, tm> = <13, 13, 6, 128>
+rd=1573	num=16545600
+rd=19	num=111476736
+rd=403	num=10383360
+rd=-1	num=0
+rd=771648	num=0
+rd=86982	num=2011776
+============> tile_size = 29894	hit_sum = 138405696	miss_sum = 2011776
+
+282	<tr, tc, tn, tm> = <13, 13, 6, 192>
+rd=1573	num=16545600
+rd=19	num=111476736
+rd=403	num=10383360
+rd=-1	num=0
+rd=771648	num=0
+rd=86982	num=2011776
+============> tile_size = 44166	hit_sum = 138405696	miss_sum = 2011776
+
+283	<tr, tc, tn, tm> = <13, 13, 8, 1>
+rd=2041	num=16545600
+rd=19	num=111476736
+rd=403	num=10902528
+rd=-1	num=0
+rd=771648	num=0
+rd=94344	num=1492608
+============> tile_size = 2041	hit_sum = 138924864	miss_sum = 1492608
+
+284	<tr, tc, tn, tm> = <13, 13, 8, 2>
+rd=2041	num=16545600
+rd=19	num=111476736
+rd=403	num=10902528
+rd=-1	num=0
+rd=771648	num=0
+rd=94344	num=1492608
+============> tile_size = 2282	hit_sum = 138924864	miss_sum = 1492608
+
+285	<tr, tc, tn, tm> = <13, 13, 8, 3>
+rd=2041	num=16545600
+rd=19	num=111476736
+rd=403	num=10902528
+rd=-1	num=0
+rd=771648	num=0
+rd=94344	num=1492608
+============> tile_size = 2523	hit_sum = 138924864	miss_sum = 1492608
+
+286	<tr, tc, tn, tm> = <13, 13, 8, 4>
+rd=2041	num=16545600
+rd=19	num=111476736
+rd=403	num=10902528
+rd=-1	num=0
+rd=771648	num=0
+rd=94344	num=1492608
+============> tile_size = 2764	hit_sum = 138924864	miss_sum = 1492608
+
+287	<tr, tc, tn, tm> = <13, 13, 8, 6>
+rd=2041	num=16545600
+rd=19	num=111476736
+rd=403	num=10902528
+rd=-1	num=0
+rd=771648	num=0
+rd=94344	num=1492608
+============> tile_size = 3246	hit_sum = 138924864	miss_sum = 1492608
+
+288	<tr, tc, tn, tm> = <13, 13, 8, 8>
+rd=2041	num=16545600
+rd=19	num=111476736
+rd=403	num=10902528
+rd=-1	num=0
+rd=771648	num=0
+rd=94344	num=1492608
+============> tile_size = 3728	hit_sum = 138924864	miss_sum = 1492608
+
+289	<tr, tc, tn, tm> = <13, 13, 8, 12>
+rd=2041	num=16545600
+rd=19	num=111476736
+rd=403	num=10902528
+rd=-1	num=0
+rd=771648	num=0
+rd=94344	num=1492608
+============> tile_size = 4692	hit_sum = 138924864	miss_sum = 1492608
+
+290	<tr, tc, tn, tm> = <13, 13, 8, 16>
+rd=2041	num=16545600
+rd=19	num=111476736
+rd=403	num=10902528
+rd=-1	num=0
+rd=771648	num=0
+rd=94344	num=1492608
+============> tile_size = 5656	hit_sum = 138924864	miss_sum = 1492608
+
+291	<tr, tc, tn, tm> = <13, 13, 8, 24>
+rd=2041	num=16545600
+rd=19	num=111476736
+rd=403	num=10902528
+rd=-1	num=0
+rd=771648	num=0
+rd=94344	num=1492608
+============> tile_size = 7584	hit_sum = 138924864	miss_sum = 1492608
+
+292	<tr, tc, tn, tm> = <13, 13, 8, 32>
+rd=2041	num=16545600
+rd=19	num=111476736
+rd=403	num=10902528
+rd=-1	num=0
+rd=771648	num=0
+rd=94344	num=1492608
+============> tile_size = 9512	hit_sum = 138924864	miss_sum = 1492608
+
+293	<tr, tc, tn, tm> = <13, 13, 8, 48>
+rd=2041	num=16545600
+rd=19	num=111476736
+rd=403	num=10902528
+rd=-1	num=0
+rd=771648	num=0
+rd=94344	num=1492608
+============> tile_size = 13368	hit_sum = 138924864	miss_sum = 1492608
+
+294	<tr, tc, tn, tm> = <13, 13, 8, 64>
+rd=2041	num=16545600
+rd=19	num=111476736
+rd=403	num=10902528
+rd=-1	num=0
+rd=771648	num=0
+rd=94344	num=1492608
+============> tile_size = 17224	hit_sum = 138924864	miss_sum = 1492608
+
+295	<tr, tc, tn, tm> = <13, 13, 8, 96>
+rd=2041	num=16545600
+rd=19	num=111476736
+rd=403	num=10902528
+rd=-1	num=0
+rd=771648	num=0
+rd=94344	num=1492608
+============> tile_size = 24936	hit_sum = 138924864	miss_sum = 1492608
+
+296	<tr, tc, tn, tm> = <13, 13, 8, 128>
+rd=2041	num=16545600
+rd=19	num=111476736
+rd=403	num=10902528
+rd=-1	num=0
+rd=771648	num=0
+rd=94344	num=1492608
+============> tile_size = 32648	hit_sum = 138924864	miss_sum = 1492608
+
+297	<tr, tc, tn, tm> = <13, 13, 8, 192>
+rd=2041	num=16545600
+rd=19	num=111476736
+rd=403	num=10902528
+rd=-1	num=0
+rd=771648	num=0
+rd=94344	num=1492608
+============> tile_size = 48072	hit_sum = 138924864	miss_sum = 1492608
+
+298	<tr, tc, tn, tm> = <13, 13, 12, 1>
+rd=2977	num=16545600
+rd=19	num=111476736
+rd=403	num=11421696
+rd=-1	num=0
+rd=771648	num=0
+rd=109068	num=973440
+============> tile_size = 2977	hit_sum = 139444032	miss_sum = 973440
+
+299	<tr, tc, tn, tm> = <13, 13, 12, 2>
+rd=2977	num=16545600
+rd=19	num=111476736
+rd=403	num=11421696
+rd=-1	num=0
+rd=771648	num=0
+rd=109068	num=973440
+============> tile_size = 3254	hit_sum = 139444032	miss_sum = 973440
+
+300	<tr, tc, tn, tm> = <13, 13, 12, 3>
+rd=2977	num=16545600
+rd=19	num=111476736
+rd=403	num=11421696
+rd=-1	num=0
+rd=771648	num=0
+rd=109068	num=973440
+============> tile_size = 3531	hit_sum = 139444032	miss_sum = 973440
+
+301	<tr, tc, tn, tm> = <13, 13, 12, 4>
+rd=2977	num=16545600
+rd=19	num=111476736
+rd=403	num=11421696
+rd=-1	num=0
+rd=771648	num=0
+rd=109068	num=973440
+============> tile_size = 3808	hit_sum = 139444032	miss_sum = 973440
+
+302	<tr, tc, tn, tm> = <13, 13, 12, 6>
+rd=2977	num=16545600
+rd=19	num=111476736
+rd=403	num=11421696
+rd=-1	num=0
+rd=771648	num=0
+rd=109068	num=973440
+============> tile_size = 4362	hit_sum = 139444032	miss_sum = 973440
+
+303	<tr, tc, tn, tm> = <13, 13, 12, 8>
+rd=2977	num=16545600
+rd=19	num=111476736
+rd=403	num=11421696
+rd=-1	num=0
+rd=771648	num=0
+rd=109068	num=973440
+============> tile_size = 4916	hit_sum = 139444032	miss_sum = 973440
+
+304	<tr, tc, tn, tm> = <13, 13, 12, 12>
+rd=2977	num=16545600
+rd=19	num=111476736
+rd=403	num=11421696
+rd=-1	num=0
+rd=771648	num=0
+rd=109068	num=973440
+============> tile_size = 6024	hit_sum = 139444032	miss_sum = 973440
+
+305	<tr, tc, tn, tm> = <13, 13, 12, 16>
+rd=2977	num=16545600
+rd=19	num=111476736
+rd=403	num=11421696
+rd=-1	num=0
+rd=771648	num=0
+rd=109068	num=973440
+============> tile_size = 7132	hit_sum = 139444032	miss_sum = 973440
+
+306	<tr, tc, tn, tm> = <13, 13, 12, 24>
+rd=2977	num=16545600
+rd=19	num=111476736
+rd=403	num=11421696
+rd=-1	num=0
+rd=771648	num=0
+rd=109068	num=973440
+============> tile_size = 9348	hit_sum = 139444032	miss_sum = 973440
+
+307	<tr, tc, tn, tm> = <13, 13, 12, 32>
+rd=2977	num=16545600
+rd=19	num=111476736
+rd=403	num=11421696
+rd=-1	num=0
+rd=771648	num=0
+rd=109068	num=973440
+============> tile_size = 11564	hit_sum = 139444032	miss_sum = 973440
+
+308	<tr, tc, tn, tm> = <13, 13, 12, 48>
+rd=2977	num=16545600
+rd=19	num=111476736
+rd=403	num=11421696
+rd=-1	num=0
+rd=771648	num=0
+rd=109068	num=973440
+============> tile_size = 15996	hit_sum = 139444032	miss_sum = 973440
+
+309	<tr, tc, tn, tm> = <13, 13, 12, 64>
+rd=2977	num=16545600
+rd=19	num=111476736
+rd=403	num=11421696
+rd=-1	num=0
+rd=771648	num=0
+rd=109068	num=973440
+============> tile_size = 20428	hit_sum = 139444032	miss_sum = 973440
+
+310	<tr, tc, tn, tm> = <13, 13, 12, 96>
+rd=2977	num=16545600
+rd=19	num=111476736
+rd=403	num=11421696
+rd=-1	num=0
+rd=771648	num=0
+rd=109068	num=973440
+============> tile_size = 29292	hit_sum = 139444032	miss_sum = 973440
+
+311	<tr, tc, tn, tm> = <13, 13, 12, 128>
+rd=2977	num=16545600
+rd=19	num=111476736
+rd=403	num=11421696
+rd=-1	num=0
+rd=771648	num=0
+rd=109068	num=973440
+============> tile_size = 38156	hit_sum = 139444032	miss_sum = 973440
+
+312	<tr, tc, tn, tm> = <13, 13, 12, 192>
+rd=2977	num=16545600
+rd=19	num=111476736
+rd=403	num=11421696
+rd=-1	num=0
+rd=771648	num=0
+rd=109068	num=973440
+============> tile_size = 55884	hit_sum = 139444032	miss_sum = 973440
+
+313	<tr, tc, tn, tm> = <13, 13, 16, 1>
+rd=3913	num=16545600
+rd=19	num=111476736
+rd=403	num=11681280
+rd=-1	num=0
+rd=771648	num=0
+rd=123792	num=713856
+============> tile_size = 3913	hit_sum = 139703616	miss_sum = 713856
+
+314	<tr, tc, tn, tm> = <13, 13, 16, 2>
+rd=3913	num=16545600
+rd=19	num=111476736
+rd=403	num=11681280
+rd=-1	num=0
+rd=771648	num=0
+rd=123792	num=713856
+============> tile_size = 4226	hit_sum = 139703616	miss_sum = 713856
+
+315	<tr, tc, tn, tm> = <13, 13, 16, 3>
+rd=3913	num=16545600
+rd=19	num=111476736
+rd=403	num=11681280
+rd=-1	num=0
+rd=771648	num=0
+rd=123792	num=713856
+============> tile_size = 4539	hit_sum = 139703616	miss_sum = 713856
+
+316	<tr, tc, tn, tm> = <13, 13, 16, 4>
+rd=3913	num=16545600
+rd=19	num=111476736
+rd=403	num=11681280
+rd=-1	num=0
+rd=771648	num=0
+rd=123792	num=713856
+============> tile_size = 4852	hit_sum = 139703616	miss_sum = 713856
+
+317	<tr, tc, tn, tm> = <13, 13, 16, 6>
+rd=3913	num=16545600
+rd=19	num=111476736
+rd=403	num=11681280
+rd=-1	num=0
+rd=771648	num=0
+rd=123792	num=713856
+============> tile_size = 5478	hit_sum = 139703616	miss_sum = 713856
+
+318	<tr, tc, tn, tm> = <13, 13, 16, 8>
+rd=3913	num=16545600
+rd=19	num=111476736
+rd=403	num=11681280
+rd=-1	num=0
+rd=771648	num=0
+rd=123792	num=713856
+============> tile_size = 6104	hit_sum = 139703616	miss_sum = 713856
+
+319	<tr, tc, tn, tm> = <13, 13, 16, 12>
+rd=3913	num=16545600
+rd=19	num=111476736
+rd=403	num=11681280
+rd=-1	num=0
+rd=771648	num=0
+rd=123792	num=713856
+============> tile_size = 7356	hit_sum = 139703616	miss_sum = 713856
+
+320	<tr, tc, tn, tm> = <13, 13, 16, 16>
+rd=3913	num=16545600
+rd=19	num=111476736
+rd=403	num=11681280
+rd=-1	num=0
+rd=771648	num=0
+rd=123792	num=713856
+============> tile_size = 8608	hit_sum = 139703616	miss_sum = 713856
+
+321	<tr, tc, tn, tm> = <13, 13, 16, 24>
+rd=3913	num=16545600
+rd=19	num=111476736
+rd=403	num=11681280
+rd=-1	num=0
+rd=771648	num=0
+rd=123792	num=713856
+============> tile_size = 11112	hit_sum = 139703616	miss_sum = 713856
+
+322	<tr, tc, tn, tm> = <13, 13, 16, 32>
+rd=3913	num=16545600
+rd=19	num=111476736
+rd=403	num=11681280
+rd=-1	num=0
+rd=771648	num=0
+rd=123792	num=713856
+============> tile_size = 13616	hit_sum = 139703616	miss_sum = 713856
+
+323	<tr, tc, tn, tm> = <13, 13, 16, 48>
+rd=3913	num=16545600
+rd=19	num=111476736
+rd=403	num=11681280
+rd=-1	num=0
+rd=771648	num=0
+rd=123792	num=713856
+============> tile_size = 18624	hit_sum = 139703616	miss_sum = 713856
+
+324	<tr, tc, tn, tm> = <13, 13, 16, 64>
+rd=3913	num=16545600
+rd=19	num=111476736
+rd=403	num=11681280
+rd=-1	num=0
+rd=771648	num=0
+rd=123792	num=713856
+============> tile_size = 23632	hit_sum = 139703616	miss_sum = 713856
+
+325	<tr, tc, tn, tm> = <13, 13, 16, 96>
+rd=3913	num=16545600
+rd=19	num=111476736
+rd=403	num=11681280
+rd=-1	num=0
+rd=771648	num=0
+rd=123792	num=713856
+============> tile_size = 33648	hit_sum = 139703616	miss_sum = 713856
+
+326	<tr, tc, tn, tm> = <13, 13, 16, 128>
+rd=3913	num=16545600
+rd=19	num=111476736
+rd=403	num=11681280
+rd=-1	num=0
+rd=771648	num=0
+rd=123792	num=713856
+============> tile_size = 43664	hit_sum = 139703616	miss_sum = 713856
+
+327	<tr, tc, tn, tm> = <13, 13, 16, 192>
+rd=3913	num=16545600
+rd=19	num=111476736
+rd=403	num=11681280
+rd=-1	num=0
+rd=771648	num=0
+rd=123792	num=713856
+============> tile_size = 63696	hit_sum = 139703616	miss_sum = 713856
+
+328	<tr, tc, tn, tm> = <13, 13, 24, 1>
+rd=5785	num=16545600
+rd=19	num=111476736
+rd=403	num=11940864
+rd=-1	num=0
+rd=771648	num=0
+rd=153240	num=454272
+============> tile_size = 5785	hit_sum = 139963200	miss_sum = 454272
+
+329	<tr, tc, tn, tm> = <13, 13, 24, 2>
+rd=5785	num=16545600
+rd=19	num=111476736
+rd=403	num=11940864
+rd=-1	num=0
+rd=771648	num=0
+rd=153240	num=454272
+============> tile_size = 6170	hit_sum = 139963200	miss_sum = 454272
+
+330	<tr, tc, tn, tm> = <13, 13, 24, 3>
+rd=5785	num=16545600
+rd=19	num=111476736
+rd=403	num=11940864
+rd=-1	num=0
+rd=771648	num=0
+rd=153240	num=454272
+============> tile_size = 6555	hit_sum = 139963200	miss_sum = 454272
+
+331	<tr, tc, tn, tm> = <13, 13, 24, 4>
+rd=5785	num=16545600
+rd=19	num=111476736
+rd=403	num=11940864
+rd=-1	num=0
+rd=771648	num=0
+rd=153240	num=454272
+============> tile_size = 6940	hit_sum = 139963200	miss_sum = 454272
+
+332	<tr, tc, tn, tm> = <13, 13, 24, 6>
+rd=5785	num=16545600
+rd=19	num=111476736
+rd=403	num=11940864
+rd=-1	num=0
+rd=771648	num=0
+rd=153240	num=454272
+============> tile_size = 7710	hit_sum = 139963200	miss_sum = 454272
+
+333	<tr, tc, tn, tm> = <13, 13, 24, 8>
+rd=5785	num=16545600
+rd=19	num=111476736
+rd=403	num=11940864
+rd=-1	num=0
+rd=771648	num=0
+rd=153240	num=454272
+============> tile_size = 8480	hit_sum = 139963200	miss_sum = 454272
+
+334	<tr, tc, tn, tm> = <13, 13, 24, 12>
+rd=5785	num=16545600
+rd=19	num=111476736
+rd=403	num=11940864
+rd=-1	num=0
+rd=771648	num=0
+rd=153240	num=454272
+============> tile_size = 10020	hit_sum = 139963200	miss_sum = 454272
+
+335	<tr, tc, tn, tm> = <13, 13, 24, 16>
+rd=5785	num=16545600
+rd=19	num=111476736
+rd=403	num=11940864
+rd=-1	num=0
+rd=771648	num=0
+rd=153240	num=454272
+============> tile_size = 11560	hit_sum = 139963200	miss_sum = 454272
+
+336	<tr, tc, tn, tm> = <13, 13, 24, 24>
+rd=5785	num=16545600
+rd=19	num=111476736
+rd=403	num=11940864
+rd=-1	num=0
+rd=771648	num=0
+rd=153240	num=454272
+============> tile_size = 14640	hit_sum = 139963200	miss_sum = 454272
+
+337	<tr, tc, tn, tm> = <13, 13, 24, 32>
+rd=5785	num=16545600
+rd=19	num=111476736
+rd=403	num=11940864
+rd=-1	num=0
+rd=771648	num=0
+rd=153240	num=454272
+============> tile_size = 17720	hit_sum = 139963200	miss_sum = 454272
+
+338	<tr, tc, tn, tm> = <13, 13, 24, 48>
+rd=5785	num=16545600
+rd=19	num=111476736
+rd=403	num=11940864
+rd=-1	num=0
+rd=771648	num=0
+rd=153240	num=454272
+============> tile_size = 23880	hit_sum = 139963200	miss_sum = 454272
+
+339	<tr, tc, tn, tm> = <13, 13, 24, 64>
+rd=5785	num=16545600
+rd=19	num=111476736
+rd=403	num=11940864
+rd=-1	num=0
+rd=771648	num=0
+rd=153240	num=454272
+============> tile_size = 30040	hit_sum = 139963200	miss_sum = 454272
+
+340	<tr, tc, tn, tm> = <13, 13, 24, 96>
+rd=5785	num=16545600
+rd=19	num=111476736
+rd=403	num=11940864
+rd=-1	num=0
+rd=771648	num=0
+rd=153240	num=454272
+============> tile_size = 42360	hit_sum = 139963200	miss_sum = 454272
+
+341	<tr, tc, tn, tm> = <13, 13, 24, 128>
+rd=5785	num=16545600
+rd=19	num=111476736
+rd=403	num=11940864
+rd=-1	num=0
+rd=771648	num=0
+rd=153240	num=454272
+============> tile_size = 54680	hit_sum = 139963200	miss_sum = 454272
+
+342	<tr, tc, tn, tm> = <13, 13, 32, 1>
+rd=7657	num=16545600
+rd=19	num=111476736
+rd=403	num=12070656
+rd=-1	num=0
+rd=771648	num=0
+rd=182688	num=324480
+============> tile_size = 7657	hit_sum = 140092992	miss_sum = 324480
+
+343	<tr, tc, tn, tm> = <13, 13, 32, 2>
+rd=7657	num=16545600
+rd=19	num=111476736
+rd=403	num=12070656
+rd=-1	num=0
+rd=771648	num=0
+rd=182688	num=324480
+============> tile_size = 8114	hit_sum = 140092992	miss_sum = 324480
+
+344	<tr, tc, tn, tm> = <13, 13, 32, 3>
+rd=7657	num=16545600
+rd=19	num=111476736
+rd=403	num=12070656
+rd=-1	num=0
+rd=771648	num=0
+rd=182688	num=324480
+============> tile_size = 8571	hit_sum = 140092992	miss_sum = 324480
+
+345	<tr, tc, tn, tm> = <13, 13, 32, 4>
+rd=7657	num=16545600
+rd=19	num=111476736
+rd=403	num=12070656
+rd=-1	num=0
+rd=771648	num=0
+rd=182688	num=324480
+============> tile_size = 9028	hit_sum = 140092992	miss_sum = 324480
+
+346	<tr, tc, tn, tm> = <13, 13, 32, 6>
+rd=7657	num=16545600
+rd=19	num=111476736
+rd=403	num=12070656
+rd=-1	num=0
+rd=771648	num=0
+rd=182688	num=324480
+============> tile_size = 9942	hit_sum = 140092992	miss_sum = 324480
+
+347	<tr, tc, tn, tm> = <13, 13, 32, 8>
+rd=7657	num=16545600
+rd=19	num=111476736
+rd=403	num=12070656
+rd=-1	num=0
+rd=771648	num=0
+rd=182688	num=324480
+============> tile_size = 10856	hit_sum = 140092992	miss_sum = 324480
+
+348	<tr, tc, tn, tm> = <13, 13, 32, 12>
+rd=7657	num=16545600
+rd=19	num=111476736
+rd=403	num=12070656
+rd=-1	num=0
+rd=771648	num=0
+rd=182688	num=324480
+============> tile_size = 12684	hit_sum = 140092992	miss_sum = 324480
+
+349	<tr, tc, tn, tm> = <13, 13, 32, 16>
+rd=7657	num=16545600
+rd=19	num=111476736
+rd=403	num=12070656
+rd=-1	num=0
+rd=771648	num=0
+rd=182688	num=324480
+============> tile_size = 14512	hit_sum = 140092992	miss_sum = 324480
+
+350	<tr, tc, tn, tm> = <13, 13, 32, 24>
+rd=7657	num=16545600
+rd=19	num=111476736
+rd=403	num=12070656
+rd=-1	num=0
+rd=771648	num=0
+rd=182688	num=324480
+============> tile_size = 18168	hit_sum = 140092992	miss_sum = 324480
+
+351	<tr, tc, tn, tm> = <13, 13, 32, 32>
+rd=7657	num=16545600
+rd=19	num=111476736
+rd=403	num=12070656
+rd=-1	num=0
+rd=771648	num=0
+rd=182688	num=324480
+============> tile_size = 21824	hit_sum = 140092992	miss_sum = 324480
+
+352	<tr, tc, tn, tm> = <13, 13, 32, 48>
+rd=7657	num=16545600
+rd=19	num=111476736
+rd=403	num=12070656
+rd=-1	num=0
+rd=771648	num=0
+rd=182688	num=324480
+============> tile_size = 29136	hit_sum = 140092992	miss_sum = 324480
+
+353	<tr, tc, tn, tm> = <13, 13, 32, 64>
+rd=7657	num=16545600
+rd=19	num=111476736
+rd=403	num=12070656
+rd=-1	num=0
+rd=771648	num=0
+rd=182688	num=324480
+============> tile_size = 36448	hit_sum = 140092992	miss_sum = 324480
+
+354	<tr, tc, tn, tm> = <13, 13, 32, 96>
+rd=7657	num=16545600
+rd=19	num=111476736
+rd=403	num=12070656
+rd=-1	num=0
+rd=771648	num=0
+rd=182688	num=324480
+============> tile_size = 51072	hit_sum = 140092992	miss_sum = 324480
+
+355	<tr, tc, tn, tm> = <13, 13, 48, 1>
+rd=11401	num=16545600
+rd=19	num=111476736
+rd=403	num=12200448
+rd=-1	num=0
+rd=771648	num=0
+rd=241584	num=194688
+============> tile_size = 11401	hit_sum = 140222784	miss_sum = 194688
+
+356	<tr, tc, tn, tm> = <13, 13, 48, 2>
+rd=11401	num=16545600
+rd=19	num=111476736
+rd=403	num=12200448
+rd=-1	num=0
+rd=771648	num=0
+rd=241584	num=194688
+============> tile_size = 12002	hit_sum = 140222784	miss_sum = 194688
+
+357	<tr, tc, tn, tm> = <13, 13, 48, 3>
+rd=11401	num=16545600
+rd=19	num=111476736
+rd=403	num=12200448
+rd=-1	num=0
+rd=771648	num=0
+rd=241584	num=194688
+============> tile_size = 12603	hit_sum = 140222784	miss_sum = 194688
+
+358	<tr, tc, tn, tm> = <13, 13, 48, 4>
+rd=11401	num=16545600
+rd=19	num=111476736
+rd=403	num=12200448
+rd=-1	num=0
+rd=771648	num=0
+rd=241584	num=194688
+============> tile_size = 13204	hit_sum = 140222784	miss_sum = 194688
+
+359	<tr, tc, tn, tm> = <13, 13, 48, 6>
+rd=11401	num=16545600
+rd=19	num=111476736
+rd=403	num=12200448
+rd=-1	num=0
+rd=771648	num=0
+rd=241584	num=194688
+============> tile_size = 14406	hit_sum = 140222784	miss_sum = 194688
+
+360	<tr, tc, tn, tm> = <13, 13, 48, 8>
+rd=11401	num=16545600
+rd=19	num=111476736
+rd=403	num=12200448
+rd=-1	num=0
+rd=771648	num=0
+rd=241584	num=194688
+============> tile_size = 15608	hit_sum = 140222784	miss_sum = 194688
+
+361	<tr, tc, tn, tm> = <13, 13, 48, 12>
+rd=11401	num=16545600
+rd=19	num=111476736
+rd=403	num=12200448
+rd=-1	num=0
+rd=771648	num=0
+rd=241584	num=194688
+============> tile_size = 18012	hit_sum = 140222784	miss_sum = 194688
+
+362	<tr, tc, tn, tm> = <13, 13, 48, 16>
+rd=11401	num=16545600
+rd=19	num=111476736
+rd=403	num=12200448
+rd=-1	num=0
+rd=771648	num=0
+rd=241584	num=194688
+============> tile_size = 20416	hit_sum = 140222784	miss_sum = 194688
+
+363	<tr, tc, tn, tm> = <13, 13, 48, 24>
+rd=11401	num=16545600
+rd=19	num=111476736
+rd=403	num=12200448
+rd=-1	num=0
+rd=771648	num=0
+rd=241584	num=194688
+============> tile_size = 25224	hit_sum = 140222784	miss_sum = 194688
+
+364	<tr, tc, tn, tm> = <13, 13, 48, 32>
+rd=11401	num=16545600
+rd=19	num=111476736
+rd=403	num=12200448
+rd=-1	num=0
+rd=771648	num=0
+rd=241584	num=194688
+============> tile_size = 30032	hit_sum = 140222784	miss_sum = 194688
+
+365	<tr, tc, tn, tm> = <13, 13, 48, 48>
+rd=11401	num=16545600
+rd=19	num=111476736
+rd=403	num=12200448
+rd=-1	num=0
+rd=771648	num=0
+rd=241584	num=194688
+============> tile_size = 39648	hit_sum = 140222784	miss_sum = 194688
+
+366	<tr, tc, tn, tm> = <13, 13, 48, 64>
+rd=11401	num=16545600
+rd=19	num=111476736
+rd=403	num=12200448
+rd=-1	num=0
+rd=771648	num=0
+rd=241584	num=194688
+============> tile_size = 49264	hit_sum = 140222784	miss_sum = 194688
+
+367	<tr, tc, tn, tm> = <13, 13, 64, 1>
+rd=15145	num=16545600
+rd=19	num=111476736
+rd=403	num=12265344
+rd=-1	num=0
+rd=771648	num=0
+rd=300480	num=129792
+============> tile_size = 15145	hit_sum = 140287680	miss_sum = 129792
+
+368	<tr, tc, tn, tm> = <13, 13, 64, 2>
+rd=15145	num=16545600
+rd=19	num=111476736
+rd=403	num=12265344
+rd=-1	num=0
+rd=771648	num=0
+rd=300480	num=129792
+============> tile_size = 15890	hit_sum = 140287680	miss_sum = 129792
+
+369	<tr, tc, tn, tm> = <13, 13, 64, 3>
+rd=15145	num=16545600
+rd=19	num=111476736
+rd=403	num=12265344
+rd=-1	num=0
+rd=771648	num=0
+rd=300480	num=129792
+============> tile_size = 16635	hit_sum = 140287680	miss_sum = 129792
+
+370	<tr, tc, tn, tm> = <13, 13, 64, 4>
+rd=15145	num=16545600
+rd=19	num=111476736
+rd=403	num=12265344
+rd=-1	num=0
+rd=771648	num=0
+rd=300480	num=129792
+============> tile_size = 17380	hit_sum = 140287680	miss_sum = 129792
+
+371	<tr, tc, tn, tm> = <13, 13, 64, 6>
+rd=15145	num=16545600
+rd=19	num=111476736
+rd=403	num=12265344
+rd=-1	num=0
+rd=771648	num=0
+rd=300480	num=129792
+============> tile_size = 18870	hit_sum = 140287680	miss_sum = 129792
+
+372	<tr, tc, tn, tm> = <13, 13, 64, 8>
+rd=15145	num=16545600
+rd=19	num=111476736
+rd=403	num=12265344
+rd=-1	num=0
+rd=771648	num=0
+rd=300480	num=129792
+============> tile_size = 20360	hit_sum = 140287680	miss_sum = 129792
+
+373	<tr, tc, tn, tm> = <13, 13, 64, 12>
+rd=15145	num=16545600
+rd=19	num=111476736
+rd=403	num=12265344
+rd=-1	num=0
+rd=771648	num=0
+rd=300480	num=129792
+============> tile_size = 23340	hit_sum = 140287680	miss_sum = 129792
+
+374	<tr, tc, tn, tm> = <13, 13, 64, 16>
+rd=15145	num=16545600
+rd=19	num=111476736
+rd=403	num=12265344
+rd=-1	num=0
+rd=771648	num=0
+rd=300480	num=129792
+============> tile_size = 26320	hit_sum = 140287680	miss_sum = 129792
+
+375	<tr, tc, tn, tm> = <13, 13, 64, 24>
+rd=15145	num=16545600
+rd=19	num=111476736
+rd=403	num=12265344
+rd=-1	num=0
+rd=771648	num=0
+rd=300480	num=129792
+============> tile_size = 32280	hit_sum = 140287680	miss_sum = 129792
+
+376	<tr, tc, tn, tm> = <13, 13, 64, 32>
+rd=15145	num=16545600
+rd=19	num=111476736
+rd=403	num=12265344
+rd=-1	num=0
+rd=771648	num=0
+rd=300480	num=129792
+============> tile_size = 38240	hit_sum = 140287680	miss_sum = 129792
+
+377	<tr, tc, tn, tm> = <13, 13, 64, 48>
+rd=15145	num=16545600
+rd=19	num=111476736
+rd=403	num=12265344
+rd=-1	num=0
+rd=771648	num=0
+rd=300480	num=129792
+============> tile_size = 50160	hit_sum = 140287680	miss_sum = 129792
+
+378	<tr, tc, tn, tm> = <13, 13, 64, 64>
+rd=15145	num=16545600
+rd=19	num=111476736
+rd=403	num=12265344
+rd=-1	num=0
+rd=771648	num=0
+rd=300480	num=129792
+============> tile_size = 62080	hit_sum = 140287680	miss_sum = 129792
+
+379	<tr, tc, tn, tm> = <13, 13, 96, 1>
+rd=22633	num=16545600
+rd=19	num=111476736
+rd=403	num=12330240
+rd=-1	num=0
+rd=771648	num=0
+rd=418272	num=64896
+============> tile_size = 22633	hit_sum = 140352576	miss_sum = 64896
+
+380	<tr, tc, tn, tm> = <13, 13, 96, 2>
+rd=22633	num=16545600
+rd=19	num=111476736
+rd=403	num=12330240
+rd=-1	num=0
+rd=771648	num=0
+rd=418272	num=64896
+============> tile_size = 23666	hit_sum = 140352576	miss_sum = 64896
+
+381	<tr, tc, tn, tm> = <13, 13, 96, 3>
+rd=22633	num=16545600
+rd=19	num=111476736
+rd=403	num=12330240
+rd=-1	num=0
+rd=771648	num=0
+rd=418272	num=64896
+============> tile_size = 24699	hit_sum = 140352576	miss_sum = 64896
+
+382	<tr, tc, tn, tm> = <13, 13, 96, 4>
+rd=22633	num=16545600
+rd=19	num=111476736
+rd=403	num=12330240
+rd=-1	num=0
+rd=771648	num=0
+rd=418272	num=64896
+============> tile_size = 25732	hit_sum = 140352576	miss_sum = 64896
+
+383	<tr, tc, tn, tm> = <13, 13, 96, 6>
+rd=22633	num=16545600
+rd=19	num=111476736
+rd=403	num=12330240
+rd=-1	num=0
+rd=771648	num=0
+rd=418272	num=64896
+============> tile_size = 27798	hit_sum = 140352576	miss_sum = 64896
+
+384	<tr, tc, tn, tm> = <13, 13, 96, 8>
+rd=22633	num=16545600
+rd=19	num=111476736
+rd=403	num=12330240
+rd=-1	num=0
+rd=771648	num=0
+rd=418272	num=64896
+============> tile_size = 29864	hit_sum = 140352576	miss_sum = 64896
+
+385	<tr, tc, tn, tm> = <13, 13, 96, 12>
+rd=22633	num=16545600
+rd=19	num=111476736
+rd=403	num=12330240
+rd=-1	num=0
+rd=771648	num=0
+rd=418272	num=64896
+============> tile_size = 33996	hit_sum = 140352576	miss_sum = 64896
+
+386	<tr, tc, tn, tm> = <13, 13, 96, 16>
+rd=22633	num=16545600
+rd=19	num=111476736
+rd=403	num=12330240
+rd=-1	num=0
+rd=771648	num=0
+rd=418272	num=64896
+============> tile_size = 38128	hit_sum = 140352576	miss_sum = 64896
+
+387	<tr, tc, tn, tm> = <13, 13, 96, 24>
+rd=22633	num=16545600
+rd=19	num=111476736
+rd=403	num=12330240
+rd=-1	num=0
+rd=771648	num=0
+rd=418272	num=64896
+============> tile_size = 46392	hit_sum = 140352576	miss_sum = 64896
+
+388	<tr, tc, tn, tm> = <13, 13, 96, 32>
+rd=22633	num=16545600
+rd=19	num=111476736
+rd=403	num=12330240
+rd=-1	num=0
+rd=771648	num=0
+rd=418272	num=64896
+============> tile_size = 54656	hit_sum = 140352576	miss_sum = 64896
+
+389	<tr, tc, tn, tm> = <13, 13, 192, 1>
+rd=45097	num=16545600
+rd=19	num=111476736
+rd=403	num=12395136
+rd=-1	num=0
+rd=771648	num=0
+rd=771648	num=0
+============> tile_size = 45097	hit_sum = 140417472	miss_sum = 0
+
+390	<tr, tc, tn, tm> = <13, 13, 192, 2>
+rd=45097	num=16545600
+rd=19	num=111476736
+rd=403	num=12395136
+rd=-1	num=0
+rd=771648	num=0
+rd=771648	num=0
+============> tile_size = 46994	hit_sum = 140417472	miss_sum = 0
+
+391	<tr, tc, tn, tm> = <13, 13, 192, 3>
+rd=45097	num=16545600
+rd=19	num=111476736
+rd=403	num=12395136
+rd=-1	num=0
+rd=771648	num=0
+rd=771648	num=0
+============> tile_size = 48891	hit_sum = 140417472	miss_sum = 0
+
+392	<tr, tc, tn, tm> = <13, 13, 192, 4>
+rd=45097	num=16545600
+rd=19	num=111476736
+rd=403	num=12395136
+rd=-1	num=0
+rd=771648	num=0
+rd=771648	num=0
+============> tile_size = 50788	hit_sum = 140417472	miss_sum = 0
+
+393	<tr, tc, tn, tm> = <13, 13, 192, 6>
+rd=45097	num=16545600
+rd=19	num=111476736
+rd=403	num=12395136
+rd=-1	num=0
+rd=771648	num=0
+rd=771648	num=0
+============> tile_size = 54582	hit_sum = 140417472	miss_sum = 0
+
+394	<tr, tc, tn, tm> = <13, 13, 192, 8>
+rd=45097	num=16545600
+rd=19	num=111476736
+rd=403	num=12395136
+rd=-1	num=0
+rd=771648	num=0
+rd=771648	num=0
+============> tile_size = 58376	hit_sum = 140417472	miss_sum = 0
+
