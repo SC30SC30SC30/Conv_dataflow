@@ -21,7 +21,7 @@ using namespace std;
 // VGG_CONV9&CONV10 : {30, 512, 3, 28, 512}
 // VGG_CONV11&CONV12&CONV13 : {16, 512, 3, 14, 512}
 
-int conv_config[5] = {15, 256, 3, 13, 384};
+int conv_config[5] = {15, 192, 3, 13, 256};
 int tile[4] = {0, 0, 0, 0};
 
 void initialization(int* rd, uint64_t* num, int size)
@@ -167,6 +167,9 @@ void IR(int* tile, int* rd, uint64_t* num)
 			  conv_config[2]*conv_config[2]*tile[2]*conv_config[4] + 
 			  tile[0]*tile[1]*conv_config[4];
 
+	for(int i = 0; i < 6; i++)
+		*(rd+i) = *(rd+i) / 16;
+
 	// number
 	*(num+3) = 0;
 	get_access_number(tile, 'o', 'W', num);
@@ -241,7 +244,7 @@ void run()
 									tile[3] = tm;
 									printf("%d\t<tr, tc, tn, tm> = <%d, %d, %d, %d>\n", count, tr, tr, tn, tm);
 									IR(&tile[0], rd, num);
-									compute_hit_miss(rd, num, cache_size);
+									compute_hit_miss(rd, num, cache_size/cache_block_size);
 									printf("\n");
 									count++;
 								}
