@@ -33,12 +33,7 @@ void initialization(int* rd, uint64_t* num, int size)
 	}
 }
 
-// 1 : oc -> ic -> oh -> ow -> kh -> kw
-// 2 : oc -> ic -> kh -> kw -> oh -> ow
-// 3 : oc -> oh -> ow -> ic -> kh -> kw
-// 4 : oc -> oh -> ow -> kh -> kw -> ic
-// 5 : oc -> kh -> kw -> ic -> oh -> ow
-// 6 : oc -> kh -> kw -> oh -> ow -> ic
+// oc -> ic -> oh -> ow -> kh -> kw
 void get_tile_inside_rd_IR(int* tile, int loop_type, char reuse_type, int* rd)
 {
 	if(reuse_type == 'I')
@@ -90,33 +85,6 @@ void get_tile_inside_rd_IR(int* tile, int loop_type, char reuse_type, int* rd)
 			*(rd+2) = t_isize*t_isize + 1 + tile[0]*tile[1];
 		}
 	}
-}
-
-// 1 : oh -> ow -> oc -> ic -> kh -> kw
-// 2 : oh -> ow -> oc -> kh -> kw -> ic
-// 3 : oh -> ow -> ic -> oc -> kh -> kw
-// 4 : oh -> ow -> ic -> kh -> kw -> oc
-// 5 : oh -> ow -> kh -> kw -> oc -> ic
-// 6 : oh -> ow -> kh -> kw -> ic -> oc
-void get_tile_inside_rd_WR(int* tile, int loop_type, char reuse_type, int* rd)
-{
-	if(reuse_type == 'I')
-	{
-
-	}
-	else if(reuse_type == 'W')
-	{
-
-	}
-	else if(reuse_type == 'O')
-	{
-
-	}
-}
-
-void get_tile_inside_rd_OR(int* tile, int loop_type, char reuse_type, int* rd)
-{
-	// think
 }
 
 void get_access_number(int* tile, char two_type, char data_type, uint64_t* num)
@@ -190,6 +158,51 @@ void IR(int* tile, int* rd, uint64_t* num)
 	}
 }
 
+void OR(int* tile, int* rd, uint64_t* num)
+{
+	int t_isize = tile[0]-1+conv_config[2];
+
+	// reuse distance
+	*(rd) = t_isize*t_isize*tile[2] + 
+			conv_config[2]*conv_config[2]*tile[2] + 
+			tile[0]*tile[1];
+	*(rd+1) = conv_config[2]*conv_config[2] + 
+			  conv_config[2]*conv_config[2] + 
+			  1;
+	*(rd+2) = t_isize*t_isize + 
+			  conv_config[2]*conv_config[2] + 
+			  tile[0]*tile[1];
+	*(rd+3) = t_isize*t_isize*conv_config[1] + 
+			  conv_config[2]*conv_config[2]*conv_config[1]*tile[3] + 
+			  tile[0]*tile[1]*tile[3];
+	*(rd+4) = t_isize*t_isize*conv_config[1] + 
+			  conv_config[2]*conv_config[2]*conv_config[1]*conv_config[4] + 
+			  tile[0]*tile[1]*conv_config[4];
+	*(rd+5) = t_isize*t_isize*tile[2] + 
+			  conv_config[2]*conv_config[2]*tile[2]*tile[3] + 
+			  tile[0]*tile[1]*tile[3];
+
+	// number
+	get_access_number(tile, 'o', 'I', num);
+	get_access_number(tile, 'o', 'W', num);
+	get_access_number(tile, 'o', 'O', num);
+	get_access_number(tile, 'i', 'I', num);
+	get_access_number(tile, 'i', 'W', num);
+	get_access_number(tile, 'i', 'O', num);
+	*(num) = (*(num))*conv_config[0]*conv_config[0]*conv_config[1];
+	*(num+1) = (*(num+1))*conv_config[2]*conv_config[2]*conv_config[1]*conv_config[4];
+	*(num+2) = (*(num+2))*conv_config[3]*conv_config[3]*conv_config[4];
+	*(num+3) = (*(num+3))*conv_config[0]*conv_config[0]*conv_config[1];
+	*(num+4) = (*(num+4))*conv_config[2]*conv_config[2]*conv_config[1]*conv_config[4];
+	*(num+5) = (*(num+5))*conv_config[3]*conv_config[3]*conv_config[4];
+
+	// print
+	for(int i = 0; i < 6; i++)
+	{
+		printf("rd=%d\tnum=%lu\n", *(rd+i), *(num+i));
+	}
+}
+
 void compute_hit_miss(int* rd, uint64_t* num, int cache_size)
 {
 	uint64_t hit_sum = 0;
@@ -219,9 +232,11 @@ void run()
 {
 	int* rd = (int*)malloc(6 * sizeof(int));
 	uint64_t* num = (uint64_t*)malloc(6 * sizeof(uint64_t));
-	int cache_block_size = 64/4;
+	int cache_block_size = 4/4;
 	int cache_size = 256*1024/4;
 	int count = 1;
+
+	printf("on-chip buffer can hold %d data\n\n", (cache_size/cache_block_size));
 
 	for(int tr = 1; tr <= conv_config[3]; tr++)
 	{
@@ -243,7 +258,7 @@ void run()
 									tile[2] = tn;
 									tile[3] = tm;
 									printf("%d\t<tr, tc, tn, tm> = <%d, %d, %d, %d>\n", count, tr, tr, tn, tm);
-									IR(&tile[0], rd, num);
+									OR(&tile[0], rd, num);
 									compute_hit_miss(rd, num, cache_size/cache_block_size);
 									printf("\n");
 									count++;
