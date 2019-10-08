@@ -21,7 +21,7 @@ using namespace std;
 // VGG_CONV9&CONV10 : {30, 512, 3, 28, 512}
 // VGG_CONV11&CONV12&CONV13 : {16, 512, 3, 14, 512}
 
-int conv_config[5] = {15, 192, 3, 13, 384};
+int conv_config[5] = {15, 192, 3, 13, 256};
 int tile[4] = {0, 0, 0, 0};
 
 void initialization(int* rd, uint64_t* num, int size)
@@ -203,6 +203,51 @@ void OR(int* tile, int* rd, uint64_t* num)
 	}
 }
 
+void WR(int* tile, int* rd, uint64_t* num)
+{
+	int t_isize = tile[0]-1+conv_config[2];
+
+	// reuse distance
+	*(rd) = t_isize*t_isize*tile[2] + 
+			conv_config[2]*conv_config[2]*tile[2] + 
+			tile[0]*tile[1];
+	*(rd+1) = conv_config[2]*conv_config[2] + 
+			  conv_config[2]*conv_config[2] + 
+			  1;
+	*(rd+2) = t_isize*t_isize + 
+			  conv_config[2]*conv_config[2] + 
+			  tile[0]*tile[1];
+	*(rd+3) = conv_config[0]*conv_config[0]*conv_config[1] + 
+			  conv_config[2]*conv_config[2]*conv_config[1]*tile[3] + 
+			  conv_config[3]*conv_config[3]*tile[3];
+	*(rd+4) = t_isize*t_isize*tile[2] + 
+			  conv_config[2]*conv_config[2]*tile[2]*tile[3] + 
+			  tile[0]*tile[1]*tile[3];
+	*(rd+5) = conv_config[0]*conv_config[0]*tile[2] + 
+			  conv_config[2]*conv_config[2]*tile[2]*tile[3] + 
+			  conv_config[3]*conv_config[3]*tile[3];
+
+	// number
+	get_access_number(tile, 'o', 'I', num);
+	get_access_number(tile, 'o', 'W', num);
+	get_access_number(tile, 'o', 'O', num);
+	get_access_number(tile, 'i', 'I', num);
+	get_access_number(tile, 'i', 'W', num);
+	get_access_number(tile, 'i', 'O', num);
+	*(num) = (*(num))*conv_config[0]*conv_config[0]*conv_config[1];
+	*(num+1) = (*(num+1))*conv_config[2]*conv_config[2]*conv_config[1]*conv_config[4];
+	*(num+2) = (*(num+2))*conv_config[3]*conv_config[3]*conv_config[4];
+	*(num+3) = (*(num+3))*conv_config[0]*conv_config[0]*conv_config[1];
+	*(num+4) = (*(num+4))*conv_config[2]*conv_config[2]*conv_config[1]*conv_config[4];
+	*(num+5) = (*(num+5))*conv_config[3]*conv_config[3]*conv_config[4];
+
+	// print
+	for(int i = 0; i < 6; i++)
+	{
+		printf("rd=%d\tnum=%lu\n", *(rd+i), *(num+i));
+	}
+}
+
 void compute_hit_miss(int* rd, uint64_t* num, int cache_size)
 {
 	uint64_t hit_sum = 0;
@@ -258,7 +303,7 @@ void run()
 									tile[2] = tn;
 									tile[3] = tm;
 									printf("%d\t<tr, tc, tn, tm> = <%d, %d, %d, %d>\n", count, tr, tr, tn, tm);
-									OR(&tile[0], rd, num);
+									WR(&tile[0], rd, num);
 									compute_hit_miss(rd, num, cache_size/cache_block_size);
 									printf("\n");
 									count++;
