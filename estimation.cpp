@@ -278,7 +278,7 @@ void run()
 	int* rd = (int*)malloc(6 * sizeof(int));
 	uint64_t* num = (uint64_t*)malloc(6 * sizeof(uint64_t));
 	int cache_block_size = 4/4;
-	int cache_size = 256*1024/4;
+	int cache_size = /*256*/7*1024/4;
 	int count = 1;
 
 	printf("on-chip buffer can hold %d data\n\n", (cache_size/cache_block_size));
