@@ -21,7 +21,7 @@ using namespace std;
 // VGG_CONV9&CONV10 : {30, 512, 3, 28, 512}
 // VGG_CONV11&CONV12&CONV13 : {16, 512, 3, 14, 512}
 
-int conv_config[5] = {15, 192, 3, 13, 256};
+int conv_config[5] = {210, 32, 3, 208, 64};
 int tile[4] = {0, 0, 0, 0};
 
 void initialization(int* rd, uint64_t* num, int size)
@@ -248,6 +248,47 @@ void WR(int* tile, int* rd, uint64_t* num)
 	}
 }
 
+// oh -> ow -> oc -> ic -> kh -> kw -> tr -> tc -> tm -> tn
+void verify_yolo_conv2(int* tile, int* rd, uint64_t* num)
+{
+	int t_ihsize = tile[0]-1+conv_config[2];
+	int t_iwsize = tile[1]-1+conv_config[2];
+
+	// reuse distance
+	*(rd) = 0;
+	*(rd+1) = 0;
+	*(rd+2) = 0;
+	*(rd+3) = t_ihsize*t_iwsize*conv_config[1] + 
+			  conv_config[2]*conv_config[2]*conv_config[1]*tile[3] + 
+			  tile[0]*tile[1]*tile[3];
+	*(rd+4) = t_ihsize*t_iwsize*conv_config[1] + 
+			  conv_config[2]*conv_config[2]*conv_config[1]*conv_config[4] + 
+			  tile[0]*tile[1]*conv_config[4];
+	*(rd+5) = t_ihsize*t_iwsize*tile[2] + 
+			  conv_config[2]*conv_config[2]*tile[2]*tile[3] + 
+			  tile[0]*tile[1]*tile[3];
+
+	// number
+	get_access_number(tile, 'o', 'I', num);
+	get_access_number(tile, 'o', 'W', num);
+	get_access_number(tile, 'o', 'O', num);
+	get_access_number(tile, 'i', 'I', num);
+	get_access_number(tile, 'i', 'W', num);
+	get_access_number(tile, 'i', 'O', num);
+	*(num) = (*(num))*conv_config[0]*conv_config[0]*conv_config[1];
+	*(num+1) = (*(num+1))*conv_config[2]*conv_config[2]*conv_config[1]*conv_config[4];
+	*(num+2) = (*(num+2))*conv_config[3]*conv_config[3]*conv_config[4];
+	*(num+3) = (*(num+3))*conv_config[0]*conv_config[0]*conv_config[1];
+	*(num+4) = (*(num+4))*conv_config[2]*conv_config[2]*conv_config[1]*conv_config[4];
+	*(num+5) = (*(num+5))*conv_config[3]*conv_config[3]*conv_config[4];
+
+	// print
+	for(int i = 0; i < 6; i++)
+	{
+		printf("rd=%d\tnum=%lu\n", *(rd+i), *(num+i));
+	}
+}
+
 void compute_hit_miss(int* rd, uint64_t* num, int cache_size)
 {
 	uint64_t hit_sum = 0;
@@ -320,11 +361,65 @@ void run()
 	free(rd);
 }
 
+void run_verify()
+{
+	int* rd = (int*)malloc(6 * sizeof(int));
+	uint64_t* num = (uint64_t*)malloc(6 * sizeof(uint64_t));
+	int count = 1;
+
+	printf("on-chip buffer can hold %d data\n\n", (int)(4.9*1024*1024/8));
+
+	for(int tr = 1; tr <= conv_config[3]; tr++)
+	{
+		if((conv_config[3]%tr) == 0)
+		{
+			for(int tc = 1; tc <= conv_config[3]; tc++)
+			{
+				if((conv_config[3]%tc) == 0)
+				{
+					for(int tn = 1; tn <= conv_config[1]; tn++)
+					{
+						if((conv_config[1]%tn) == 0)
+						{
+							for (int tm = 1; tm <= conv_config[4]; tm++)
+							{
+								if((conv_config[4]%tm) == 0)
+								{
+									int tile_I = (tr-1+conv_config[2]) * (tc-1+conv_config[2]) * tn;
+									int tile_W = conv_config[2] * conv_config[2] * tn * tm;
+									int tile_O = tr * tc * tm;
+									if((tile_I + tile_O) <= (int)(4.9*1024*1024/8))
+									{
+										initialization(rd, num, 6);
+										tile[0] = tr;
+										tile[1] = tc;
+										tile[2] = tn;
+										tile[3] = tm;
+										printf("%d\t<tr, tc, tn, tm> = <%d, %d, %d, %d>\n", count, tr, tr, tn, tm);
+										verify_yolo_conv2(&tile[0], rd, num);
+										compute_hit_miss(rd, num, (4.9*1024*1024/8));
+										printf("\n");
+										count++;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+
+	free(num);
+	free(rd);
+}
+
 int main(int argc, char* argv[])
 {
 	// clock_t start, end;
 	// start = clock();
-	run();
+	run_verify();
 	// end = clock();
 	// printf("The time = %ld ms\n", (end-start)*1000000000/CLOCKS_PER_SEC);
 	return 0;
