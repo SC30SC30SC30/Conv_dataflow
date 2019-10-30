@@ -1,16 +1,16 @@
 #如果在工作站跑需要加下面兩行
-# import matplotlib
-# maplotlib.use("Agg")
+import matplotlib
+matplotlib.use("Agg")
 import numpy as np
 import matplotlib.pyplot as plt
 import math
 
 conv_config = [210, 32, 3, 208, 64]
-tile = [0, 0, 0, 0]   # I：8bits、W：4bits、O：8bits
+tile = [0, 0, 0, 0]   # I：8bits、W：4bits、O：16bits
 
 rd = []
 num = []
-cache = (4.9*1024*1024/8)   # 4.9 Mbits
+cache = (4.9*1024*1024/16)/2   # 4.9 Mbits
 
 x = []
 y = []
@@ -30,8 +30,8 @@ def yolo_conv():
 	num[1] = num[1]*conv_config[2]*conv_config[2]*conv_config[1]*conv_config[4];
 	num[2] = num[2]*conv_config[3]*conv_config[3]*conv_config[4];
 
-	for i in range(3):
-		print("rd = ", rd[i], "\tnum = ", num[i])
+	# for i in range(3):
+	# 	print("rd = ", rd[i], "\tnum = ", num[i])
 
 def compute_hit_miss():
 	hit_sum = 0
@@ -46,16 +46,22 @@ def compute_hit_miss():
 	tile_I = (tile[0]-1+conv_config[2]) * (tile[1]-1+conv_config[2]) * tile[2];
 	tile_W = conv_config[2] * conv_config[2] * tile[2] * tile[3];
 	tile_O = tile[0] * tile[1] * tile[3];
-	tile_size = tile_I + tile_W + tile_O;
+	tile_size = tile_I + tile_O;
 
-	print("============> tile_size = ", tile_size, "\thit_sum = ", hit_sum, "\tmiss_sum = ", miss_sum, "\n");
+	i_block_num = ((((tile[0]+2)*(tile[1]+2)*8)/(36*1024))+1)*tile[2]
+	o_block_num = (((tile[0]*tile[1])*16)/(36*1024)+1)*tile[3]
+	num_block = (int)((i_block_num + o_block_num)*2)
 
 	if (tile[2] == 8) and (tile[3] == 32):
+		print("<tr, tc, tn, tm> = <%d, %d, %d, %d>" %(tile[0], tile[1], tile[2], tile[3]));
+		print("tile_size = ", tile_size, "num_block_ram = ", num_block)
+		print("============> hit_sum = ", hit_sum, "\tmiss_sum = ", miss_sum, "\n");
+		print("\n")
 		x.append(tile_size)
 		y.append(miss_sum)
 
 def run():
-	print("on-chip buffer can hold ", ((int)(4.9*1024*1024/8)), "data\n\n")
+	print("on-chip buffer can hold ", cache, "data\n\n")
 
 	count = 1
 	for tr in range(1, conv_config[3]+1):
@@ -78,7 +84,6 @@ def run():
 										tile[1] = tc
 										tile[2] = tn
 										tile[3] = tm
-										print("%d\t<tr, tc, tn, tm> = <%d, %d, %d, %d>\n" %(count, tr, tc, tn, tm));
 										yolo_conv()
 										compute_hit_miss()
 										count = count + 1
