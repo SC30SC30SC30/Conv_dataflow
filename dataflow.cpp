@@ -230,7 +230,7 @@ void compute_rd(bool write_file, tile_param* tile, char* data_type, uint64_t* da
 	// Compute reuse distance
 	for(int i = 0; i < addr_count; i++)
 	{
-		// printf("%c\t%p\n", *(data_type+i), *(data_addr+i));
+		printf("%c\t%ld\n", *(data_type+i), *(data_addr+i));
 		uint64_t dist=0;
 		uint64_t last_t = HASH_TABLE[*(data_addr+i)];
 

@@ -161,6 +161,83 @@ void verify_WR(config* data, tile_param* tile, int cache_size, int block_size)
 	free(I);
 }
 
+void matrix_multiplication(int* config)
+{
+	int row1 = config[4];
+	int col1 = config[2] * config[2] * config[1];
+	int row2 = col1;
+	int col2 = config[3] * config[3];
+	int row3 = row1;
+	int col3 = col2;
+
+	// produce three matrix
+	float* matrix_1 = (float*)malloc((row1*col1) * sizeof(float));
+	srand((unsigned)time(NULL));
+	for(int i=0; i<(row1*col1); i++)
+	{
+		*(matrix_1 + i) = rand() / (RAND_MAX + 1.0);
+	}
+
+	float* matrix_2 = (float*)malloc((row2*col2) * sizeof(float));
+	srand((unsigned)time(NULL));
+	for(int i=0; i<(row2*col2); i++)
+	{
+		*(matrix_2 + i) = rand() / (RAND_MAX + 1.0);
+	}
+
+	float* matrix_3 = (float*)malloc((row3*col3) * sizeof(float));
+	for(int i=0; i<(row3*col3); i++)
+	{
+		*(matrix_3 + i) = 0.0;
+	}
+
+	// record memory access
+	int total_access = 0;
+	for(int i = 0; i < row3; i++)
+	{
+		for(int j = 0; j < col3; j++)
+		{
+			for(int k = 0; k < col1; k++)
+			{
+				total_access += 3;
+			}
+		}
+	}
+	printf("total_access = %d\n", total_access);
+	char* data_type = (char*)malloc(total_access * sizeof(char));
+	uint64_t* data_addr = (uint64_t*)malloc(total_access * sizeof(uint64_t));
+	int addr_idx = 0;
+
+	// matrix multiplication
+	for(int i = 0; i < row3; i++)
+	{
+		for(int j = 0; j < col3; j++)
+		{
+			for(int k = 0; k < col1; k++)
+			{
+				*(matrix_3 + i*col3 + j) += (*(matrix_1 + i*col1 + k) * *(matrix_2 + k*col2 + j));
+				*(data_type + addr_idx) = 'i';
+				*(data_addr + addr_idx) = (uint64_t)(matrix_1 + i*col1 + k);
+				*(data_type + addr_idx + 1) = 'w';
+				*(data_addr + addr_idx + 1) = (uint64_t)(matrix_2 + k*col2 + j);
+				*(data_type + addr_idx + 2) = 'o';
+				*(data_addr + addr_idx + 2) = (uint64_t)(matrix_3 + i*col3 + j);
+				addr_idx += 3;
+			}
+		}
+	}
+	printf("addr_idx = %d\ttotal_access = %d\n", addr_idx, total_access);
+	compute_rd(false, NULL, data_type, data_addr, total_access);
+
+	printf("%d\t%d\t%d\t%d\t%d\t%d\n", row1, col1, row2, col2, row3, col3);
+
+	free(data_addr);
+	free(data_type);
+	free(matrix_3);
+	free(matrix_2);
+	free(matrix_1);
+}
+
 int main(int argc, char* argv[])
 {
 	config* data = (config*)malloc(sizeof(config));
@@ -170,18 +247,20 @@ int main(int argc, char* argv[])
 	// int a[10] = {15, 192, 3, 13, 384, 13, 13, 192, 8, 1};   // AlexNet的CONV4
 	int a[10] = {15, 192, 3, 13, 256, 13, 13, 12, 4, 1};   // AlexNet的CONV5
 	// int a[10] = {8, 8, 1, 8, 16, 2, 2, 4, 2, 1};   // simple test 
-	set_configuration(data, tile, a);
+	// set_configuration(data, tile, a);
 
-	printf("Input : %d x %d x %d\n", data->input_size, data->input_size, data->input_c);
-	printf("Weight : %d x %d x %d x %d\n", data->weight_size, data->weight_size, data->input_c, data->output_c);
-	printf("Output : %d x %d x %d\n", data->output_size, data->output_size, data->output_c);
+	matrix_multiplication(a);
 
-	// verify_IR(data, tile);
-	// verify_WR(data, tile);
-	run_one_case(data, tile, (256*1024/4));
+	// printf("Input : %d x %d x %d\n", data->input_size, data->input_size, data->input_c);
+	// printf("Weight : %d x %d x %d x %d\n", data->weight_size, data->weight_size, data->input_c, data->output_c);
+	// printf("Output : %d x %d x %d\n", data->output_size, data->output_size, data->output_c);
+
+	// // verify_IR(data, tile);
+	// // verify_WR(data, tile);
+	// run_one_case(data, tile, (256*1024/4));
 	
-	free(data);
-	free(tile);
+	// free(data);
+	// free(tile);
 
 	return 0;
 }
