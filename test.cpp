@@ -227,7 +227,8 @@ void matrix_multiplication(int* config)
 		}
 	}
 	printf("addr_idx = %d\ttotal_access = %d\n", addr_idx, total_access);
-	compute_rd(false, NULL, data_type, data_addr, total_access);
+	write_trace_result("mem_trace.out", data_type, data_addr, total_access);
+	// compute_rd(false, NULL, data_type, data_addr, total_access);
 
 	printf("%d\t%d\t%d\t%d\t%d\t%d\n", row1, col1, row2, col2, row3, col3);
 
@@ -243,9 +244,9 @@ int main(int argc, char* argv[])
 	config* data = (config*)malloc(sizeof(config));
 	tile_param* tile = (tile_param*)malloc(sizeof(tile_param));
 	// int a[10] = {31, 48, 5, 27, 256, 16, 16, 4, 4, 1};   // AlexNet的CONV2
-	// int a[10] = {15, 256, 3, 13, 384, 13, 13, 256, 3, 1};   // AlexNet的CONV3
+	int a[10] = {15, 256, 3, 13, 384, 13, 13, 256, 3, 1};   // AlexNet的CONV3
 	// int a[10] = {15, 192, 3, 13, 384, 13, 13, 192, 8, 1};   // AlexNet的CONV4
-	int a[10] = {15, 192, 3, 13, 256, 13, 13, 12, 4, 1};   // AlexNet的CONV5
+	// int a[10] = {15, 192, 3, 13, 256, 13, 13, 12, 4, 1};   // AlexNet的CONV5
 	// int a[10] = {8, 8, 1, 8, 16, 2, 2, 4, 2, 1};   // simple test 
 	// set_configuration(data, tile, a);
 
