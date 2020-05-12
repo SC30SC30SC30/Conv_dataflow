@@ -21,8 +21,8 @@ using namespace std;
 // VGG_CONV9&CONV10 : {30, 512, 3, 28, 512}
 // VGG_CONV11&CONV12&CONV13 : {16, 512, 3, 14, 512}
 
-int conv_config[5] = {210, 32, 3, 208, 64};
-int tile[4] = {0, 0, 0, 0};
+int conv_config[5] = {15, 192, 3, 13, 384};
+int tile[4] = {13, 13, 8, 192};
 
 void initialization(int* rd, uint64_t* num, int size)
 {
@@ -134,9 +134,6 @@ void IR(int* tile, int* rd, uint64_t* num)
 	*(rd+5) = t_isize*t_isize*tile[2] + 
 			  conv_config[2]*conv_config[2]*tile[2]*conv_config[4] + 
 			  tile[0]*tile[1]*conv_config[4];
-
-	for(int i = 0; i < 6; i++)
-		*(rd+i) = *(rd+i) / 16;
 
 	// number
 	*(num+3) = 0;
@@ -278,7 +275,7 @@ void run()
 	int* rd = (int*)malloc(6 * sizeof(int));
 	uint64_t* num = (uint64_t*)malloc(6 * sizeof(uint64_t));
 	int cache_block_size = 4/4;
-	int cache_size = /*256*/7*1024/4;
+	int cache_size = 4*1024/4;
 	int count = 1;
 
 	printf("on-chip buffer can hold %d data\n\n", (cache_size/cache_block_size));
@@ -303,7 +300,7 @@ void run()
 									tile[2] = tn;
 									tile[3] = tm;
 									printf("%d\t<tr, tc, tn, tm> = <%d, %d, %d, %d>\n", count, tr, tr, tn, tm);
-									WR(&tile[0], rd, num);
+									IR(&tile[0], rd, num);
 									compute_hit_miss(rd, num, cache_size/cache_block_size);
 									printf("\n");
 									count++;
@@ -324,7 +321,7 @@ int main(int argc, char* argv[])
 {
 	// clock_t start, end;
 	// start = clock();
-	run_verify();
+	run();
 	// end = clock();
 	// printf("The time = %ld ms\n", (end-start)*1000000000/CLOCKS_PER_SEC);
 	return 0;

@@ -33,8 +33,8 @@ void run_one_case(config* data, tile_param* tile, int cache_size)
 		int tile_O = tile->tr * tile->tc * tile->tm;
 		printf("tile_I=%d\ttile_W=%d\ttile_O=%d\n", tile_I, tile_W, tile_O);
 
-		// tile_conv_oh_ow_ic_oc(I, W, O, data, tile, 1, true, data_type, data_addr, &addr_idx);//IR
-		tile_conv_oc_ic_oh_ow(I, W, O, data, tile, 1, true, data_type, data_addr, &addr_idx);//WR
+		tile_conv_oh_ow_ic_oc(I, W, O, data, tile, 1, true, data_type, data_addr, &addr_idx);//IR
+		// tile_conv_oc_ic_oh_ow(I, W, O, data, tile, 1, true, data_type, data_addr, &addr_idx);//WR
 		// tile_conv_oh_ow_oc_ic(I, W, O, data, tile, 1, true, data_type, data_addr, &addr_idx);//OR
 		// direct_conv_oc_ic_oh_ow(I, W, O, data, tile, false, true, data_type, data_addr, &addr_idx);
 
@@ -244,24 +244,22 @@ int main(int argc, char* argv[])
 	config* data = (config*)malloc(sizeof(config));
 	tile_param* tile = (tile_param*)malloc(sizeof(tile_param));
 	// int a[10] = {31, 48, 5, 27, 256, 16, 16, 4, 4, 1};   // AlexNet的CONV2
-	int a[10] = {15, 256, 3, 13, 384, 13, 13, 256, 3, 1};   // AlexNet的CONV3
-	// int a[10] = {15, 192, 3, 13, 384, 13, 13, 192, 8, 1};   // AlexNet的CONV4
+	// int a[10] = {15, 256, 3, 13, 384, 13, 13, 256, 3, 1};   // AlexNet的CONV3
+	int a[10] = {15, 192, 3, 13, 384, 13, 13, 8, 192, 1};   // AlexNet的CONV4
 	// int a[10] = {15, 192, 3, 13, 256, 13, 13, 12, 4, 1};   // AlexNet的CONV5
 	// int a[10] = {8, 8, 1, 8, 16, 2, 2, 4, 2, 1};   // simple test 
-	// set_configuration(data, tile, a);
+	set_configuration(data, tile, a);
 
-	matrix_multiplication(a);
+	// matrix_multiplication(a);
 
-	// printf("Input : %d x %d x %d\n", data->input_size, data->input_size, data->input_c);
-	// printf("Weight : %d x %d x %d x %d\n", data->weight_size, data->weight_size, data->input_c, data->output_c);
-	// printf("Output : %d x %d x %d\n", data->output_size, data->output_size, data->output_c);
+	printf("Input : %d x %d x %d\n", data->input_size, data->input_size, data->input_c);
+	printf("Weight : %d x %d x %d x %d\n", data->weight_size, data->weight_size, data->input_c, data->output_c);
+	printf("Output : %d x %d x %d\n", data->output_size, data->output_size, data->output_c);
 
-	// // verify_IR(data, tile);
-	// // verify_WR(data, tile);
-	// run_one_case(data, tile, (256*1024/4));
+	run_one_case(data, tile, (4*1024/4));
 	
-	// free(data);
-	// free(tile);
+	free(data);
+	free(tile);
 
 	return 0;
 }
